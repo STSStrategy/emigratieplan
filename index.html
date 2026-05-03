@@ -6,337 +6,104 @@
   <title>Emigratieplan — Reken het door voordat je vertrekt</title>
   <meta name="description" content="Emigratieplan vergelijkt jouw financiële situatie in tien landen. Belasting, pensioen, vermogen, wonen. Jouw cijfers, niet een gemiddelde." />
 
-  <!-- Brevo styles (head) -->
+  <!-- Brevo styles -->
   <style>
-    @font-face {
-      font-display: block;
-      font-family: Roboto;
-      src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
-    }
-    @font-face {
-      font-display: fallback;
-      font-family: Roboto;
-      font-weight: 600;
-      src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
-    }
-    @font-face {
-      font-display: fallback;
-      font-family: Roboto;
-      font-weight: 700;
-      src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
-    }
-    #sib-container input:-ms-input-placeholder { text-align: left; font-family: Helvetica, sans-serif; color: #c0ccda; }
-    #sib-container input::placeholder { text-align: left; font-family: Helvetica, sans-serif; color: #888; }
-    #sib-container textarea::placeholder { text-align: left; font-family: Helvetica, sans-serif; color: #c0ccda; }
-    #sib-container a { text-decoration: underline; color: #ba5229; }
+    @font-face { font-display: block; font-family: Roboto; src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff") }
+    @font-face { font-display: fallback; font-family: Roboto; font-weight: 600; src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff") }
+    @font-face { font-display: fallback; font-family: Roboto; font-weight: 700; src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff") }
+    #sib-container input:-ms-input-placeholder { text-align:left; font-family:Helvetica,sans-serif; color:#c0ccda; }
+    #sib-container input::placeholder { text-align:left; font-family:Helvetica,sans-serif; color:#9a8e89; }
+    #sib-container a { text-decoration:underline; color:#ba5229; }
   </style>
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
-
-  <!-- Page fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream:   #f6f5f2;
-      --brown:   #382c27;
-      --orange:  #ba5229;
-      --muted:   #7a6e69;
-      --border:  #dedad4;
+      --cream:  #f6f5f2;
+      --brown:  #382c27;
+      --orange: #ba5229;
+      --muted:  #7a6e69;
+      --border: #dedad4;
     }
 
-    html, body {
-      height: 100%;
-      background: var(--cream);
-      color: var(--brown);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 18px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    html, body { height:100%; background:var(--cream); color:var(--brown); font-family:"Source Sans 3",sans-serif; font-size:18px; line-height:1.6; -webkit-font-smoothing:antialiased; }
 
-    /* ── Layout ── */
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    .page { min-height:100vh; display:flex; flex-direction:column; }
 
-    header {
-      padding: 2rem 2rem 0;
-    }
+    /* Header */
+    header { padding:2rem 2rem 0; }
+    .header__inner { display:flex; align-items:center; justify-content:space-between; }
+    .wordmark { font-family:"Playfair Display",serif; font-size:1.1rem; font-weight:700; letter-spacing:0.02em; color:var(--brown); text-decoration:none; }
+    .wordmark span { color:var(--orange); }
+    .sts-icon { width:32px; height:32px; object-fit:contain; mix-blend-mode:multiply; }
 
-    .wordmark {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      color: var(--brown);
-      text-decoration: none;
-    }
+    /* Hero */
+    .hero { flex:1; display:flex; align-items:center; justify-content:center; padding:4rem 2rem 3rem; }
+    .hero__inner { max-width:640px; width:100%; }
 
-    .wordmark span {
-      color: var(--orange);
-    }
+    .hero__label { display:inline-block; font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange); margin-bottom:1.5rem; opacity:0; animation:fadeUp 0.6s ease forwards; animation-delay:0.1s; }
 
-    /* ── Hero ── */
-    .hero {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem 3rem;
-    }
+    .hero__heading { font-family:"Playfair Display",serif; font-size:clamp(1.9rem,4.2vw,2.8rem); font-weight:900; line-height:1.15; color:var(--brown); margin-bottom:1.5rem; opacity:0; animation:fadeUp 0.7s ease forwards; animation-delay:0.25s; }
+    .hero__heading em { font-style:italic; color:var(--orange); }
 
-    .hero__inner {
-      max-width: 640px;
-      width: 100%;
-    }
+    .divider { width:40px; height:2px; background:var(--orange); margin-bottom:1.5rem; opacity:0; animation:fadeUp 0.6s ease forwards; animation-delay:0.35s; }
 
-    .hero__label {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards;
-      animation-delay: 0.1s;
-    }
+    .hero__body { font-size:1.05rem; color:var(--muted); max-width:640px; text-align:justify; margin-bottom:2.5rem; opacity:0; animation:fadeUp 0.7s ease forwards; animation-delay:0.4s; }
+    .hero__body strong { color:var(--brown); font-weight:500; }
 
-    .hero__heading {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.9rem, 4.2vw, 2.8rem);
-      font-weight: 900;
-      line-height: 1.15;
-      color: var(--brown);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards;
-      animation-delay: 0.25s;
-    }
+    /* Countries */
+    .countries { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:2.5rem; opacity:0; animation:fadeUp 0.6s ease forwards; animation-delay:0.5s; }
+    .country-tag { font-size:0.75rem; font-weight:500; letter-spacing:0.04em; color:var(--muted); border:1px solid var(--border); border-radius:2px; padding:0.25rem 0.6rem; }
 
-    .hero__heading em {
-      font-style: italic;
-      color: var(--orange);
-    }
+    /* Early bird */
+    .early-bird { display:inline-flex; align-items:center; gap:0.5rem; background:#fff3ee; border:1px solid #f0c4b0; border-radius:2px; padding:0.45rem 0.75rem; margin-bottom:1rem; opacity:0; animation:fadeUp 0.6s ease forwards; animation-delay:0.55s; }
+    .early-bird__label { font-size:0.78rem; font-weight:600; letter-spacing:0.06em; color:var(--orange); text-transform:uppercase; font-family:"Source Sans 3",sans-serif; }
+    .early-bird__text { font-size:0.78rem; color:var(--muted); font-family:"Source Sans 3",sans-serif; }
 
-    .hero__body {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 640px;
-      text-align: justify;
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards;
-      animation-delay: 0.4s;
-    }
+    /* Form */
+    .form-wrap { opacity:0; animation:fadeUp 0.7s ease forwards; animation-delay:0.6s; }
 
-    .hero__body strong {
-      color: var(--brown);
-      font-weight: 500;
-    }
+    .sib-form { background-color:transparent !important; padding:0 !important; margin:0 !important; }
+    .sib-form-container { padding:0 !important; margin:0 !important; }
+    #sib-container { background-color:transparent !important; border:none !important; border-radius:0 !important; max-width:100% !important; padding:0 !important; margin:0 !important; text-align:left !important; }
+    .sib-container--large { padding:0 !important; margin:0 !important; }
+    .form__entry { margin:0 !important; padding:0 !important; }
+    .sib-form-block { padding:0 !important; }
+    .entry__field { margin:0 !important; }
+    .sib-form-message-panel { max-width:100% !important; margin-bottom:1rem; }
 
-    /* ── Divider ── */
-    .divider {
-      width: 40px;
-      height: 2px;
-      background: var(--orange);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards;
-      animation-delay: 0.35s;
-    }
+    .input { border:1px solid var(--border) !important; border-radius:2px !important; background:#fff !important; font-family:"Source Sans 3",sans-serif !important; font-size:1rem !important; color:var(--brown) !important; padding:0.75rem 1rem !important; width:100% !important; transition:border-color 0.2s ease !important; }
+    .input:focus { outline:none !important; border-color:var(--orange) !important; }
 
-    /* ── Countries strip ── */
-    .countries {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards;
-      animation-delay: 0.5s;
-    }
+    .sib-form-block__button { background-color:var(--orange) !important; border-radius:2px !important; font-family:"Source Sans 3",sans-serif !important; font-size:0.85rem !important; letter-spacing:0.08em !important; padding:0.85rem 1.8rem !important; cursor:pointer !important; transition:background 0.2s ease !important; text-transform:uppercase !important; }
+    .sib-form-block__button:hover { background-color:#a04520 !important; }
 
-    .country-tag {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 0.25rem 0.6rem;
-    }
+    .declaration-block-icon { display:none !important; }
+    .sib-form__declaration { padding:0 !important; }
+    .sib-form__declaration div:last-child { font-size:0.78rem !important; color:var(--muted) !important; font-family:"Source Sans 3",sans-serif !important; }
+    .sib-form__declaration a { color:var(--muted) !important; }
 
-    /* ── Form wrapper ── */
-    .form-wrap {
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards;
-      animation-delay: 0.6s;
-    }
+    /* Launch notice */
+    .launch-notice { margin-top:1.25rem; font-size:0.85rem; color:var(--muted); opacity:0; animation:fadeUp 0.7s ease forwards; animation-delay:0.75s; }
+    .launch-notice a { color:var(--orange); text-decoration:none; font-weight:500; }
+    .launch-notice a:hover { text-decoration:underline; }
 
-    /* Override Brevo container styles */
-    .sib-form {
-      background-color: transparent !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
+    /* Footer */
+    footer { padding:2rem; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer__copy { font-size:0.8rem; color:var(--muted); }
+    .footer__countries { font-size:0.8rem; color:var(--muted); }
 
-    .sib-form-container {
-      padding: 0 !important;
-      margin: 0 !important;
-    }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
 
-    #sib-container {
-      background-color: transparent !important;
-      border: none !important;
-      border-radius: 0 !important;
-      max-width: 100% !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      text-align: left !important;
-      direction: ltr !important;
-    }
-
-    .sib-container--large {
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-
-    .form__entry {
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-
-    .sib-form-block {
-      padding: 0 !important;
-    }
-
-    .entry__field {
-      margin: 0 !important;
-    }
-
-    .sib-form-block__button {
-      background-color: var(--orange) !important;
-      border-radius: 2px !important;
-      font-family: 'Source Sans 3', sans-serif !important;
-      font-size: 0.85rem !important;
-      letter-spacing: 0.08em !important;
-      padding: 0.85rem 1.8rem !important;
-      cursor: pointer !important;
-      transition: background 0.2s ease, transform 0.15s ease !important;
-      text-transform: uppercase !important;
-    }
-
-    .sib-form-block__button:hover {
-      background-color: #a04520 !important;
-      transform: translateY(-1px) !important;
-    }
-
-    .input {
-      border: 1px solid var(--border) !important;
-      border-radius: 2px !important;
-      background: #fff !important;
-      font-family: 'Source Sans 3', sans-serif !important;
-      font-size: 1rem !important;
-      color: var(--brown) !important;
-      padding: 0.75rem 1rem !important;
-      width: 100% !important;
-      transition: border-color 0.2s ease !important;
-    }
-
-    .input:focus {
-      outline: none !important;
-      border-color: var(--orange) !important;
-    }
-
-    .entry__label {
-      font-family: 'Source Sans 3', sans-serif !important;
-      font-size: 0.85rem !important;
-      font-weight: 500 !important;
-      letter-spacing: 0.04em !important;
-      color: var(--muted) !important;
-      text-transform: uppercase !important;
-      margin-bottom: 0.5rem !important;
-    }
-
-    .entry__specification {
-      font-family: 'Source Sans 3', sans-serif !important;
-      font-size: 0.78rem !important;
-      color: var(--muted) !important;
-      margin-top: 0.5rem !important;
-    }
-
-
-    .sts-icon {
-      width: 32px;
-      height: 32px;
-      object-fit: contain;
-      mix-blend-mode: multiply;
-    }
-    .header__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .launch-notice {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.85rem;
-      color: var(--muted);
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards;
-      animation-delay: 0.75s;
-    }
-    .launch-notice a {
-      color: var(--orange);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .launch-notice a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── Footer ── */
-    footer {
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer__copy {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .footer__countries {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    /* ── Animations ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── Mobile ── */
-    @media (max-width: 600px) {
-      .hero { padding: 3rem 1.5rem 2.5rem; }
-      header { padding: 1.5rem 1.5rem 0; }
-      footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+    @media (max-width:600px) {
+      .hero { padding:3rem 1.5rem 2.5rem; }
+      header { padding:1.5rem 1.5rem 0; }
+      footer { padding:1.5rem; flex-direction:column; align-items:flex-start; }
     }
   </style>
 </head>
@@ -362,69 +129,81 @@
         <div class="divider"></div>
 
         <p class="hero__body">
-          Meer zon, minder stress, dat gevoel klopt misschien.
-          Maar of je er ook financieel op vooruitgaat, weet je pas als je het doorrekent.
+          Meer zon, minder stress, dat gevoel klopt misschien. Maar of je er ook financieel op vooruitgaat, weet je pas als je het doorrekent.
           <strong>Emigratieplan vergelijkt jouw situatie in tien landen.</strong>
           Belasting, pensioen, vermogen, wonen. Jouw cijfers, niet een gemiddelde.
         </p>
 
         <div class="countries">
-          <span class="country-tag">🇳🇱 Nederland</span>
-          <span class="country-tag">🇬🇷 Griekenland</span>
-          <span class="country-tag">🇨🇾 Cyprus</span>
-          <span class="country-tag">🇵🇹 Portugal</span>
-          <span class="country-tag">🇪🇸 Spanje</span>
-          <span class="country-tag">🇮🇹 Italië</span>
-          <span class="country-tag">🇦🇪 VAE</span>
-          <span class="country-tag">🇧🇬 Bulgarije</span>
-          <span class="country-tag">🇭🇺 Hongarije</span>
-          <span class="country-tag">🇲🇹 Malta</span>
+          <span class="country-tag">&#127475;&#127473; Nederland</span>
+          <span class="country-tag">&#127468;&#127479; Griekenland</span>
+          <span class="country-tag">&#127464;&#127486; Cyprus</span>
+          <span class="country-tag">&#127477;&#127481; Portugal</span>
+          <span class="country-tag">&#127466;&#127480; Spanje</span>
+          <span class="country-tag">&#127470;&#127481; Italie</span>
+          <span class="country-tag">&#127462;&#127466; VAE</span>
+          <span class="country-tag">&#127463;&#127468; Bulgarije</span>
+          <span class="country-tag">&#127469;&#127482; Hongarije</span>
+          <span class="country-tag">&#127474;&#127481; Malta</span>
+        </div>
+
+        <div class="early-bird">
+          <span class="early-bird__label">Early bird</span>
+          <span class="early-bird__text">Inschrijvers krijgen 50 euro korting bij lancering</span>
         </div>
 
         <div class="form-wrap">
-          <!-- Brevo Form -->
           <div class="sib-form">
             <div id="sib-form-container" class="sib-form-container">
-              <div id="error-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:'Source Sans 3',sans-serif; color:#661d1d; background-color:#ffeded; border-radius:2px; border-color:#ff4949; max-width:540px; display:none;">
+              <div id="error-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:'Source Sans 3',sans-serif; color:#661d1d; background-color:#ffeded; border-radius:2px; border-color:#ff4949;">
                 <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                  <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" /></svg>
                   <span class="sib-form-message-panel__inner-text">Oeps, er is iets misgegaan. Probeer het opnieuw.</span>
                 </div>
               </div>
-              <div id="success-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:'Source Sans 3',sans-serif; color:#085229; background-color:#e7faf0; border-radius:2px; border-color:#13ce66; max-width:540px; display:none;">
+              <div id="success-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:'Source Sans 3',sans-serif; color:#085229; background-color:#e7faf0; border-radius:2px; border-color:#13ce66;">
                 <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                  <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg>
                   <span class="sib-form-message-panel__inner-text">Gelukt. Je hoort van ons bij lancering.</span>
                 </div>
               </div>
               <div id="sib-container" class="sib-container--large sib-container--vertical">
                 <form id="sib-form" method="POST" action="https://6fbc4696.sibforms.com/serve/MUIFADlW0KuDOhwEBk4onNFZM0AocsUxfGT7vhRkThLWPfH2udts_zAS5QtJfI4H9WIU3x3ib-P6sbXTUWsNVllhD_ReabqI-hv3af9fEEIih23qoaoHPbfq5dC1IDJusrWeIPs8n-IfAKZK1SdJbdL64AW36Fz9B_QUWZECFfFk896-Mix330vCmeyx_iVUtUq5A7hX6cFJuhJH1w==" data-type="subscription">
-                  <div style="padding: 8px 0;">
+                  <div style="padding:8px 0;">
                     <div class="sib-input sib-form-block">
                       <div class="form__entry entry_block">
                         <div class="form__label-row">
-                          <label class="entry__label" for="EMAIL" data-required="*">Je e-mailadres</label>
                           <div class="entry__field">
-                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="naam@domein.nl" data-required="true" required />
+                            <input class="input" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="off" placeholder="Voornaam" data-required="true" required />
                           </div>
                         </div>
                         <label class="entry__error entry__error--primary" style="font-size:13px; font-family:'Source Sans 3',sans-serif; color:#661d1d; background-color:#ffeded; border-radius:2px; border-color:#ff4949;"></label>
-                        <label class="entry__specification" style="font-size:12px; font-family:'Source Sans 3',sans-serif; color:#7a6e69;">
-                          Alleen een seintje bij lancering. Geen spam.
-                        </label>
                       </div>
                     </div>
                   </div>
-                  <div style="padding: 12px 0 4px;">
-                    <div style="display:inline-flex; align-items:center; gap:0.5rem; background:#fff3ee; border:1px solid #f0c4b0; border-radius:2px; padding:0.45rem 0.75rem; margin-bottom:12px;">
-                      <span style="font-size:0.78rem; font-weight:600; letter-spacing:0.04em; color:#ba5229; font-family:'Source Sans 3',sans-serif; text-transform:uppercase;">Early bird</span>
-                      <span style="font-size:0.78rem; color:#7a6e69; font-family:'Source Sans 3',sans-serif;">Inschrijvers krijgen €50 korting bij lancering</span>
+                  <div style="padding:8px 0;">
+                    <div class="sib-input sib-form-block">
+                      <div class="form__entry entry_block">
+                        <div class="form__label-row">
+                          <div class="entry__field">
+                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="E-mailadres" data-required="true" required />
+                          </div>
+                        </div>
+                        <label class="entry__error entry__error--primary" style="font-size:13px; font-family:'Source Sans 3',sans-serif; color:#661d1d; background-color:#ffeded; border-radius:2px; border-color:#ff4949;"></label>
+                      </div>
                     </div>
                   </div>
-                  <div style="padding: 0 0 8px;">
+                  <div style="padding:8px 0;">
+                    <div class="sib-form__declaration">
+                      <div style="font-size:12px; text-align:left; font-family:'Source Sans 3',sans-serif; color:#9a8e89;">
+                        <p>Je ontvangt een seintje bij lancering. Wij gebruiken Brevo om e-mails te versturen. Door je in te schrijven ga je akkoord met <a href="https://www.brevo.com/en/legal/privacypolicy/" style="color:#9a8e89;">Brevo's privacybeleid</a>.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="padding:8px 0;">
                     <div class="sib-form-block">
                       <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
-                        <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-                          <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-                        </svg>
+                        <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" /></svg>
                         Zet me op de lijst
                       </button>
                     </div>
@@ -435,7 +214,7 @@
               </div>
             </div>
           </div>
-          <!-- End Brevo Form -->
+        </div>
 
         <div class="launch-notice">
           Lancering gepland voor juni 2026. Volg de voortgang via <a href="https://www.linkedin.com/in/kevin-van-grondelle" target="_blank" rel="noopener">LinkedIn</a>.
@@ -445,27 +224,19 @@
     </main>
 
     <footer>
-      <span class="footer__copy">© 2026 emigratieplan.nl</span>
-      <span class="footer__countries">NL · GR · CY · PT · ES · IT · AE · BG · HU · MT</span>
+      <span class="footer__copy">&copy; 2026 emigratieplan.nl</span>
+      <span class="footer__countries">NL &middot; GR &middot; CY &middot; PT &middot; ES &middot; IT &middot; AE &middot; BG &middot; HU &middot; MT</span>
     </footer>
 
   </div>
 
-  <!-- Brevo scripts (footer) -->
   <script>
-    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-    window.LOCALE = 'nl';
+    window.REQUIRED_CODE_ERROR_MESSAGE = "Please choose a country code";
+    window.LOCALE = "nl";
     window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Het e-mailadres dat je hebt ingevoerd lijkt niet geldig. Probeer het opnieuw.";
     window.REQUIRED_ERROR_MESSAGE = "Dit veld mag niet leeg zijn.";
     window.GENERIC_INVALID_MESSAGE = "Het e-mailadres dat je hebt ingevoerd lijkt niet geldig. Probeer het opnieuw.";
-    window.translation = {
-      common: {
-        selectedList: '{quantity} list selected',
-        selectedLists: '{quantity} lists selected',
-        selectedOption: '{quantity} selected',
-        selectedOptions: '{quantity} selected',
-      }
-    };
+    window.translation = { common: { selectedList: "{quantity} list selected", selectedLists: "{quantity} lists selected", selectedOption: "{quantity} selected", selectedOptions: "{quantity} selected" } };
     var AUTOHIDE = Boolean(1);
   </script>
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
