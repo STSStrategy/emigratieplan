@@ -40,7 +40,7 @@
     .header__inner { display:flex; align-items:center; justify-content:space-between; }
     .wordmark { font-family:"Playfair Display",serif; font-size:1.1rem; font-weight:700; letter-spacing:0.02em; color:var(--brown); text-decoration:none; }
     .wordmark span { color:var(--orange); }
-    .sts-icon { width:32px; height:32px; object-fit:contain; mix-blend-mode:multiply; }
+    .sts-icon { width:32px; height:32px; object-fit:contain; mix-blend-mode:screen; }
 
     /* Hero */
     .hero { flex:1; display:flex; align-items:center; justify-content:center; padding:4rem 2rem 3rem; }
@@ -98,6 +98,7 @@
     .footer__copy { font-size:0.8rem; color:var(--muted); }
     .footer__countries { font-size:0.8rem; color:var(--muted); }
 
+    .section-divider { width:100%; height:1px; background:var(--border); margin:2rem 0; }
     @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
 
     @media (max-width:600px) {
@@ -113,7 +114,6 @@
     <header>
       <div class="header__inner">
         <a class="wordmark" href="/">emigratieplan<span>.</span>nl</a>
-        <img src="data:image/png;base64,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" alt="STS Strategy" class="sts-icon" />
       </div>
     </header>
 
@@ -128,24 +128,13 @@
 
         <div class="divider"></div>
 
-        <p class="hero__body">
+        <p class="hero__body" style="animation-delay:0.8s;">
           Meer zon, minder stress, dat gevoel klopt misschien. Maar of je er ook financieel op vooruitgaat, weet je pas als je het doorrekent.
           <strong>Emigratieplan vergelijkt jouw situatie in tien landen.</strong>
           Belasting, pensioen, vermogen, wonen. Jouw cijfers, niet een gemiddelde.
         </p>
 
-        <div class="countries">
-          <span class="country-tag">&#127475;&#127473; Nederland</span>
-          <span class="country-tag">&#127468;&#127479; Griekenland</span>
-          <span class="country-tag">&#127464;&#127486; Cyprus</span>
-          <span class="country-tag">&#127477;&#127481; Portugal</span>
-          <span class="country-tag">&#127466;&#127480; Spanje</span>
-          <span class="country-tag">&#127470;&#127481; Italie</span>
-          <span class="country-tag">&#127462;&#127466; VAE</span>
-          <span class="country-tag">&#127463;&#127468; Bulgarije</span>
-          <span class="country-tag">&#127469;&#127482; Hongarije</span>
-          <span class="country-tag">&#127474;&#127481; Malta</span>
-        </div>
+        <div class="section-divider"></div>
 
         <div class="early-bird">
           <span class="early-bird__label">Early bird</span>
@@ -218,6 +207,27 @@
 
         <div class="launch-notice">
           Lancering gepland voor juni 2026. Volg de voortgang via <a href="https://www.linkedin.com/in/kevin-van-grondelle" target="_blank" rel="noopener">LinkedIn</a>.
+        </div>
+
+        <div class="section-divider"></div>
+
+        <p class="hero__body" style="animation-delay:0.8s;">
+          Meer zon, minder stress, dat gevoel klopt misschien. Maar of je er ook financieel op vooruitgaat, weet je pas als je het doorrekent.
+          <strong>Emigratieplan vergelijkt jouw situatie in tien landen.</strong>
+          Belasting, pensioen, vermogen, wonen. Jouw cijfers, niet een gemiddelde.
+        </p>
+
+        <div class="countries" style="animation-delay:0.9s;">
+          <span class="country-tag">&#127475;&#127473; Nederland</span>
+          <span class="country-tag">&#127468;&#127479; Griekenland</span>
+          <span class="country-tag">&#127464;&#127486; Cyprus</span>
+          <span class="country-tag">&#127477;&#127481; Portugal</span>
+          <span class="country-tag">&#127466;&#127480; Spanje</span>
+          <span class="country-tag">&#127470;&#127481; Italie</span>
+          <span class="country-tag">&#127462;&#127466; VAE</span>
+          <span class="country-tag">&#127463;&#127468; Bulgarije</span>
+          <span class="country-tag">&#127469;&#127482; Hongarije</span>
+          <span class="country-tag">&#127474;&#127481; Malta</span>
         </div>
 
       </div>
