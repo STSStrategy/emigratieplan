@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emigratieplan — Reken het door voordat je vertrekt</title>
+  <title>Emigratieplan.nl — Reken het door voordat je vertrekt</title>
   <meta name="description" content="Emigratieplan vergelijkt jouw financiële situatie in tien landen. Belasting, pensioen, vermogen, wonen. Jouw cijfers, niet een gemiddelde." />
 
   <!-- Brevo styles -->
@@ -98,7 +98,14 @@
     .footer__copy { font-size:0.8rem; color:var(--muted); }
     .footer__countries { font-size:0.8rem; color:var(--muted); }
 
-    .section-divider { width:100%; height:1px; background:var(--border); margin:2rem 0; }
+    /* Countries intro */
+    .countries-intro { margin-bottom:1.25rem; opacity:0; animation:fadeUp 0.6s ease forwards; animation-delay:0.85s; }
+    .countries-intro__heading { font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.5rem; }
+    .countries-intro__body { font-size:0.95rem; color:var(--muted); line-height:1.65; }
+    .countries-intro__body a { color:var(--orange); text-decoration:none; font-weight:500; }
+    .countries-intro__body a:hover { text-decoration:underline; }
+
+        .section-divider { width:100%; height:1px; background:var(--border); margin:2rem 0; }
     @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
 
     @media (max-width:600px) {
@@ -113,7 +120,7 @@
 
     <header>
       <div class="header__inner">
-        <a class="wordmark" href="/">emigratieplan<span>.</span>nl</a>
+        <a class="wordmark" href="/">Emigratieplan<span>.</span>nl</a>
       </div>
     </header>
 
@@ -123,15 +130,13 @@
         <span class="hero__label">Binnenkort beschikbaar</span>
 
         <h1 class="hero__heading">
-          Emigreren klinkt goed. Wat <em>kost het echt?</em>
+          Emigreren klinkt goed. Maar weet je al wat het jou <em>financieel oplevert?</em>
         </h1>
 
         <div class="divider"></div>
 
-        <p class="hero__body" style="animation-delay:0.8s;">
-          Meer zon, minder stress, dat gevoel klopt misschien. Maar of je er ook financieel op vooruitgaat, weet je pas als je het doorrekent.
-          <strong>Emigratieplan vergelijkt jouw situatie in tien landen.</strong>
-          Belasting, pensioen, vermogen, wonen. Jouw cijfers, niet een gemiddelde.
+        <p class="hero__body" style="animation-delay:0.4s;">
+          Meer zon, minder stress, dat gevoel klopt misschien. Maar of je er ook financieel op vooruitgaat, weet je pas als je het doorrekent. Emigratieplan.nl is een rekentool die jouw situatie vergelijkt voor tien landen. Belasting, pensioen, vermogen, wonen. Jouw cijfers, niet een gemiddelde.
         </p>
 
         <div class="section-divider"></div>
@@ -206,10 +211,21 @@
         </div>
 
         <div class="launch-notice">
-          We gaan live in juni 2026. Volg de voortgang via <a href="https://www.linkedin.com/in/kevin-van-grondelle" target="_blank" rel="noopener">LinkedIn</a>.
+          Lancering gepland voor juni 2026. Volg de voortgang via <a href="https://www.linkedin.com/in/kevin-van-grondelle" target="_blank" rel="noopener">LinkedIn</a>.
         </div>
 
         <div class="section-divider"></div>
+
+        <p class="hero__body" style="animation-delay:0.8s;">
+          Meer zon, minder stress, dat gevoel klopt misschien. Maar of je er ook financieel op vooruitgaat, weet je pas als je het doorrekent.
+          <strong>Emigratieplan vergelijkt jouw situatie in tien landen.</strong>
+          Belasting, pensioen, vermogen, wonen. Jouw cijfers, niet een gemiddelde.
+        </p>
+
+        <div class="countries-intro">
+          <p class="countries-intro__heading">Beschikbare landen</p>
+          <p class="countries-intro__body">De tool vergelijkt Nederland met tien emigratiebestemmingen. Kies je landen, vul je situatie in, en zie direct wat het financieel verschil is. Staat jouw voorkeur er niet tussen? <a href="mailto:kevin@stsstrategy.com">Stuur een mail</a> — ik neem het mee.</p>
+        </div>
 
         <div class="countries" style="animation-delay:0.9s;">
           <span class="country-tag">&#127475;&#127473; Nederland</span>
@@ -228,7 +244,7 @@
     </main>
 
     <footer>
-      <span class="footer__copy">&copy; 2026 emigratieplan.nl</span>
+      <span class="footer__copy">&copy; 2026 Emigratieplan.nl</span>
       <span class="footer__countries">NL &middot; GR &middot; CY &middot; PT &middot; ES &middot; IT &middot; AE &middot; BG &middot; HU &middot; MT</span>
     </footer>
 
