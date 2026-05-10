@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/downloads/het-verkeerde-land", "destination": "/beslisgids-01-het-verkeerde-land.pdf" },
+    { "source": "/downloads/de-fiscale-navelstreng", "destination": "/beslisgids-02-de-fiscale-navelstreng.pdf" },
+    { "source": "/downloads/het-pensioengat", "destination": "/beslisgids-03-het-pensioengat.pdf" },
+    { "source": "/downloads/het-huis-als-anker", "destination": "/beslisgids-04-het-huis-als-anker.pdf" },
+    { "source": "/downloads/de-werkvorm-illusie", "destination": "/beslisgids-05-de-werkvorm-illusie.pdf" }
+  ]
+}
