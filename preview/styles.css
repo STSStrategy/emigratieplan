@@ -365,7 +365,6 @@ body {
   line-height: 1.45;
   color: var(--brown-mute);
 }
-
 /* Generic collapsible pattern (patroon + pillar) */
 .ep-collapsible {
   border: 1px solid var(--border);
@@ -386,18 +385,31 @@ body {
 }
 .ep-collapsible summary::-webkit-details-marker { display: none; }
 .ep-collapsible summary:hover { background: var(--cream-warm); }
-.ep-collapsible__toggle {
-  display: none; /* show only on mobile via @media */
-  font-size: 13px;
-  color: var(--orange);
-  font-weight: 600;
+
+/* Chevron op mobile only */
+.ep-collapsible__chev {
+  display: none;
+  width: 10px; height: 10px;
+  border-right: 2px solid var(--orange);
+  border-bottom: 2px solid var(--orange);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
   flex-shrink: 0;
+  margin-right: 4px;
 }
-.ep-collapsible[open] .ep-collapsible__toggle::before { content: 'Sluit'; }
-.ep-collapsible:not([open]) .ep-collapsible__toggle::before { content: 'Lees meer'; }
-.ep-collapsible__toggle { font-size: 0; } /* hide own text, content from ::before */
+.ep-collapsible[open] .ep-collapsible__chev {
+  transform: rotate(-135deg);
+}
+
 .ep-collapsible__body {
   padding: 0 24px 24px;
+}
+
+/* Op desktop: alles open, geen chevron, geen cursor pointer */
+@media (min-width: 981px) {
+  .ep-collapsible summary { cursor: default; }
+  .ep-collapsible summary:hover { background: transparent; }
+  .ep-collapsible__chev { display: none !important; }
 }
 
 /* Patroon */
@@ -770,16 +782,31 @@ body {
 
 .ep-yes {
   display: inline-block;
-  width: 12px; height: 12px;
+  width: 12px;
+  height: 12px;
   background: var(--orange);
   border-radius: 50%;
   vertical-align: middle;
+  line-height: 0;
+  font-size: 0;
+}
+.ep-yes::before,
+.ep-yes::after {
+  content: none;
 }
 .ep-no {
   display: inline-block;
-  width: 12px; height: 1px;
-  background: var(--border);
+  width: 14px;
+  height: 2px;
+  background: var(--brown-mute);
+  border-radius: 1px;
   vertical-align: middle;
+  line-height: 0;
+  font-size: 0;
+}
+.ep-no::before,
+.ep-no::after {
+  content: none;
 }
 
 /* Info tooltip */
@@ -867,6 +894,34 @@ tr:nth-last-child(-n+5) .ep-info::before {
   gap: 24px;
   margin-top: 48px;
 }
+
+/* Waitlist form */
+.ep-waitlist .ep-form-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+.ep-input {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--cream);
+  color: var(--brown);
+  transition: border-color 0.15s ease;
+}
+.ep-input:focus { outline: none; border-color: var(--orange); }
+.ep-form-meta {
+  font-size: 13px;
+  color: var(--brown-mute);
+  margin: 16px 0 0;
+  text-align: center;
+}
+.ep-form-meta a { color: var(--orange); text-decoration: underline; }
+
 .ep-shot {
   margin: 0;
   display: flex;
@@ -1042,36 +1097,21 @@ tr:nth-last-child(-n+5) .ep-info::before {
   .ep-nav-top { display: none; }
   .ep-hamburger { display: block; }
 
-  /* HIDE hero stat-cards on mobile */
   .ep-hero__stats { display: none; }
-
   .ep-hero__grid { grid-template-columns: 1fr; gap: 32px; }
 
-  /* Three col stack */
   .ep-three-col { grid-template-columns: 1fr; gap: 12px; }
 
-  /* Show collapsible toggles on mobile */
-  .ep-collapsible__toggle { display: inline-block; font-size: 13px; }
+  /* Chevron zichtbaar op mobile bij collapsible */
+  .ep-collapsible__chev { display: inline-block !important; }
 
-  /* Patterns become collapsible look like accordion */
-  .ep-pattern,
-  .ep-pillar {
-    margin: 8px 0;
-  }
-  .ep-pattern summary,
-  .ep-pillar summary {
-    padding: 16px 20px;
-  }
-  .ep-pattern__title,
-  .ep-pillar__title {
-    font-size: 19px;
-  }
+  .ep-pattern, .ep-pillar { margin: 8px 0; }
+  .ep-pattern summary, .ep-pillar summary { padding: 16px 20px; }
+  .ep-pattern__title, .ep-pillar__title { font-size: 19px; }
 
-  /* Pakketten as accordion stack */
+  /* Pakketten als accordion stack */
   .ep-pkg-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 40px; }
-  .ep-pkg {
-    transform: none !important;
-  }
+  .ep-pkg { transform: none !important; }
   .ep-pkg__summary {
     padding: 24px 20px 20px;
     display: grid;
@@ -1080,22 +1120,18 @@ tr:nth-last-child(-n+5) .ep-info::before {
     align-items: center;
     cursor: pointer;
   }
-  .ep-pkg__head {
-    margin-top: 0;
-  }
+  .ep-pkg__head { margin-top: 0; }
   .ep-pkg__name { font-size: 22px; }
   .ep-pkg__subtitle { margin-bottom: 0; font-size: 12px; }
-  .ep-pkg__priceblock {
-    text-align: right;
-  }
+  .ep-pkg__priceblock { text-align: right; }
   .ep-pkg__price { font-size: 32px; }
   .ep-pkg__currency { font-size: 20px; }
   .ep-pkg__sub { font-size: 11px; }
   .ep-pkg__chev {
     display: block;
     width: 10px; height: 10px;
-    border-right: 1.5px solid var(--brown-mute);
-    border-bottom: 1.5px solid var(--brown-mute);
+    border-right: 2px solid var(--orange);
+    border-bottom: 2px solid var(--orange);
     transform: rotate(45deg);
     transition: transform 0.2s ease;
     justify-self: end;
@@ -1131,20 +1167,12 @@ tr:nth-last-child(-n+5) .ep-info::before {
   }
   .ep-garantie__badge { font-size: 64px; }
 
-  /* Vergelijkings-sectie verborgen tot toggle */
-  #vergelijking {
-    display: none;
-  }
-  #vergelijking.is-mobile-shown {
-    display: block;
-  }
-  /* Tabel mobile: compact, geen horizontaal scrollen, alle 3 erop */
+  /* Vergelijking-sectie verborgen tot toggle */
+  #vergelijking { display: none; }
+  #vergelijking.is-mobile-shown { display: block; }
   .ep-compare { overflow-x: visible; }
   .ep-compare__table { min-width: 0; font-size: 12px; }
-  .ep-compare__sticky th {
-    padding: 12px 6px;
-    font-size: 13px;
-  }
+  .ep-compare__sticky th { padding: 12px 6px; font-size: 13px; }
   .ep-compare__pkg-name { font-size: 13px; }
   .ep-compare__price { font-size: 11px; }
   .ep-compare__pkg-badge { font-size: 8px; }
@@ -1165,20 +1193,23 @@ tr:nth-last-child(-n+5) .ep-info::before {
   }
   .ep-compare__cta-row td { padding: 14px 4px; }
   .ep-yes { width: 10px; height: 10px; }
+  .ep-no { width: 12px; height: 2px; }
 
-  /* Screenshots */
-  .ep-screenshots { grid-template-columns: 1fr; }
+  /* Screenshots: 2 columns op mobile-tablet, 1 op echt klein */
+  .ep-screenshots { grid-template-columns: 1fr 1fr; gap: 16px; }
 
-  /* Testimonials */
   .ep-testimonial-grid { grid-template-columns: 1fr; }
 
-  /* Footer */
   .ep-footer__inner { grid-template-columns: 1fr; gap: 32px; }
   .ep-footer__cols { grid-template-columns: 1fr 1fr; }
+
+  /* Waitlist form op mobile */
+  .ep-form-row { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 540px) {
   .ep-container { padding: 0 20px; }
   .ep-h1-display { font-size: clamp(32px, 9vw, 44px); }
   .ep-h2 { font-size: clamp(24px, 7vw, 32px); }
+  .ep-screenshots { grid-template-columns: 1fr; }
 }
