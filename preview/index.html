@@ -11,7 +11,7 @@
   <meta name="description" content="Reken je situatie door op tien landen en vergelijk dat met Nederland. Cijfers in plaats van twijfel.">
   <link rel="canonical" href="https://www.emigratieplan.nl/">
 
-  <!-- Fonts (aligned met EB pagina) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,10 +21,8 @@
 </head>
 <body>
 
-<!-- Scroll progress bar -->
 <div id="ep-scroll-progress" aria-hidden="true"></div>
 
-<!-- Floating section nav (right side, desktop only) -->
 <nav id="ep-section-nav" aria-label="Sectie-navigatie">
   <ul>
     <li><a href="#hero"><span class="dot"></span><span class="lbl">Start</span></a></li>
@@ -38,10 +36,10 @@
     <li><a href="#wat-erin-zit"><span class="dot"></span><span class="lbl">Onder de motorkap</span></a></li>
     <li><a href="#garantie"><span class="dot"></span><span class="lbl">Garantie</span></a></li>
     <li><a href="#faq"><span class="dot"></span><span class="lbl">FAQ</span></a></li>
+    <li><a href="#waitlist"><span class="dot"></span><span class="lbl">Updates</span></a></li>
   </ul>
 </nav>
 
-<!-- Top nav -->
 <header class="ep-header">
   <div class="ep-container ep-header__inner">
     <a href="#hero" class="ep-logo">
@@ -54,15 +52,12 @@
       <a href="#faq">Veelgestelde vragen</a>
       <a href="#pakketten" class="ep-btn ep-btn--primary ep-btn--sm">Bekijk pakketten</a>
     </nav>
-
-    <!-- Mobile hamburger -->
     <button id="ep-hamburger" class="ep-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="ep-mobile-drawer">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<!-- Mobile drawer -->
 <div id="ep-mobile-drawer" class="ep-mobile-drawer" aria-hidden="true">
   <button id="ep-mobile-close" class="ep-mobile-close" aria-label="Sluit menu">×</button>
   <nav class="ep-mobile-nav">
@@ -77,6 +72,7 @@
     <a href="#wat-erin-zit" class="ep-mobile-link">Onder de motorkap</a>
     <a href="#garantie" class="ep-mobile-link">Garantie</a>
     <a href="#faq" class="ep-mobile-link">FAQ</a>
+    <a href="#waitlist" class="ep-mobile-link">Updates</a>
     <a href="#pakketten" class="ep-btn ep-btn--accent ep-btn--full ep-mobile-cta">Bekijk pakketten</a>
   </nav>
 </div>
@@ -85,7 +81,6 @@
 <!-- ============ HERO ============ -->
 <section id="hero" class="ep-section ep-hero">
   <div class="ep-container ep-hero__grid">
-
     <div class="ep-hero__copy">
       <p class="ep-eyebrow">Voor wie emigratie overweegt</p>
       <h1 class="ep-h1-display">
@@ -105,7 +100,6 @@
         <a href="#wat-erin-zit" class="ep-btn ep-btn--ghost">Lees hoe het werkt</a>
       </div>
     </div>
-
     <div class="ep-hero__stats">
       <div class="ep-stat-card">
         <div class="ep-stat-card__num">10</div>
@@ -120,11 +114,10 @@
         <div class="ep-stat-card__cap">Vanafprijs. Eenmalige aankoop, lifetime toegang.</div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ============ LANDEN OVERZICHT (verplaatst naar boven) ============ -->
+<!-- ============ LANDEN ============ -->
 <section id="landen" class="ep-section ep-section--alt">
   <div class="ep-container">
     <p class="ep-eyebrow">Wat je doorrekent</p>
@@ -348,7 +341,7 @@
     <details class="ep-pattern ep-collapsible">
       <summary>
         <h3 class="ep-pattern__title">Je stelt het uit</h3>
-        <span class="ep-collapsible__toggle">Lees meer</span>
+        <span class="ep-collapsible__chev" aria-hidden="true"></span>
       </summary>
       <div class="ep-collapsible__body">
         <p>
@@ -363,7 +356,7 @@
     <details class="ep-pattern ep-collapsible">
       <summary>
         <h3 class="ep-pattern__title">Je kiest op gevoel</h3>
-        <span class="ep-collapsible__toggle">Lees meer</span>
+        <span class="ep-collapsible__chev" aria-hidden="true"></span>
       </summary>
       <div class="ep-collapsible__body">
         <p>
@@ -378,7 +371,7 @@
     <details class="ep-pattern ep-collapsible">
       <summary>
         <h3 class="ep-pattern__title">Je raakt verstrooid</h3>
-        <span class="ep-collapsible__toggle">Lees meer</span>
+        <span class="ep-collapsible__chev" aria-hidden="true"></span>
       </summary>
       <div class="ep-collapsible__body">
         <p>
@@ -396,7 +389,7 @@
   </div>
 </section>
 
-<!-- ============ VOOR WIE DIT IS ============ -->
+<!-- ============ VOOR WIE ============ -->
 <section id="voor-wie" class="ep-section ep-section--alt">
   <div class="ep-container">
     <p class="ep-eyebrow ep-eyebrow--center">Voor wie Emigratieplan gebouwd is</p>
@@ -406,7 +399,7 @@
       <details class="ep-pillar ep-collapsible">
         <summary>
           <h3 class="ep-pillar__title">Je weet welk land het wordt</h3>
-          <span class="ep-collapsible__toggle">Lees meer</span>
+          <span class="ep-collapsible__chev" aria-hidden="true"></span>
         </summary>
         <div class="ep-collapsible__body">
           <p>
@@ -422,7 +415,7 @@
       <details class="ep-pillar ep-collapsible">
         <summary>
           <h3 class="ep-pillar__title">Je hebt een shortlist</h3>
-          <span class="ep-collapsible__toggle">Lees meer</span>
+          <span class="ep-collapsible__chev" aria-hidden="true"></span>
         </summary>
         <div class="ep-collapsible__body">
           <p>
@@ -438,7 +431,7 @@
       <details class="ep-pillar ep-collapsible">
         <summary>
           <h3 class="ep-pillar__title">Je wilt het complete plaatje</h3>
-          <span class="ep-collapsible__toggle">Lees meer</span>
+          <span class="ep-collapsible__chev" aria-hidden="true"></span>
         </summary>
         <div class="ep-collapsible__body">
           <p>
@@ -455,7 +448,7 @@
   </div>
 </section>
 
-<!-- ============ 30 DAGEN GARANTIE ============ -->
+<!-- ============ GARANTIE ============ -->
 <section id="garantie" class="ep-section ep-garantie">
   <div class="ep-container ep-narrow">
     <div class="ep-garantie__card">
@@ -487,7 +480,6 @@
 
     <div class="ep-pkg-grid">
 
-      <!-- COMPARE -->
       <details id="pkg-compare" class="ep-pkg" data-pkg="compare">
         <summary class="ep-pkg__summary">
           <span class="ep-pkg__badge ep-pkg__badge--neutral">Instap</span>
@@ -516,8 +508,7 @@
         </div>
       </details>
 
-      <!-- EXPLORE (featured, default open on mobile) -->
-      <details id="pkg-explore" class="ep-pkg ep-pkg--featured" data-pkg="explore" open>
+      <details id="pkg-explore" class="ep-pkg ep-pkg--featured" data-pkg="explore">
         <summary class="ep-pkg__summary">
           <span class="ep-pkg__badge">Meest gekozen</span>
           <span class="ep-pkg__head">
@@ -547,7 +538,6 @@
         </div>
       </details>
 
-      <!-- DECIDE -->
       <details id="pkg-decide" class="ep-pkg" data-pkg="decide">
         <summary class="ep-pkg__summary">
           <span class="ep-pkg__badge ep-pkg__badge--neutral">Compleet</span>
@@ -593,7 +583,7 @@
   </div>
 </section>
 
-<!-- ============ VERGELIJKING TABEL (verborgen op mobile tot button) ============ -->
+<!-- ============ VERGELIJKING ============ -->
 <section id="vergelijking" class="ep-section ep-section--alt">
   <div class="ep-container">
     <p class="ep-eyebrow">Wat zit er in welk pakket</p>
@@ -634,19 +624,13 @@
 
           <tr><td colspan="4" class="ep-compare__group">Landen</td></tr>
           <tr>
-            <th scope="row">
-              Nederland (basis)
-              <button class="ep-info" data-tip="Nederland is altijd het referentiepunt. Niet als credit, wel als volledige doorrekening van box 1, 2 en 3.">i</button>
-            </th>
-            <td><span class="ep-yes">●</span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <th scope="row">Nederland (basis)<button class="ep-info" data-tip="Nederland is altijd het referentiepunt. Niet als credit, wel als volledige doorrekening van box 1, 2 en 3.">i</button></th>
+            <td><span class="ep-yes" aria-label="Inbegrepen"></span></td>
+            <td class="ep-compare__featured"><span class="ep-yes" aria-label="Inbegrepen"></span></td>
+            <td><span class="ep-yes" aria-label="Inbegrepen"></span></td>
           </tr>
           <tr>
-            <th scope="row">
-              Doellanden naar keuze
-              <button class="ep-info" data-tip="Je kiest na aankoop welke landen je inzet uit het beschikbare pakket (Griekenland, Cyprus, Portugal, Spanje, Italië, UAE, Bulgarije, Hongarije, Malta).">i</button>
-            </th>
+            <th scope="row">Doellanden naar keuze<button class="ep-info" data-tip="Je kiest na aankoop welke landen je inzet uit het beschikbare pakket (Griekenland, Cyprus, Portugal, Spanje, Italië, UAE, Bulgarije, Hongarije, Malta).">i</button></th>
             <td>1</td>
             <td class="ep-compare__featured">5</td>
             <td>10</td>
@@ -654,144 +638,99 @@
 
           <tr><td colspan="4" class="ep-compare__group">Rekenen</td></tr>
           <tr>
-            <th scope="row">
-              Cashflow per jaar
-              <button class="ep-info" data-tip="Maand- en jaarcashflow doorgerekend over de volledige horizon, inclusief inflatie- en groeiaannames.">i</button>
-            </th>
-            <td><span class="ep-yes">●</span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <th scope="row">Cashflow per jaar<button class="ep-info" data-tip="Maand- en jaarcashflow doorgerekend over de volledige horizon, inclusief inflatie- en groeiaannames.">i</button></th>
+            <td><span class="ep-yes"></span></td>
+            <td class="ep-compare__featured"><span class="ep-yes"></span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
           <tr>
-            <th scope="row">
-              Belasting (alle lagen)
-              <button class="ep-info" data-tip="Inkomstenbelasting, sociale premies, vermogensbelasting waar van toepassing, en lokale heffingen per land.">i</button>
-            </th>
-            <td><span class="ep-yes">●</span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <th scope="row">Belasting (alle lagen)<button class="ep-info" data-tip="Inkomstenbelasting, sociale premies, vermogensbelasting waar van toepassing, en lokale heffingen per land.">i</button></th>
+            <td><span class="ep-yes"></span></td>
+            <td class="ep-compare__featured"><span class="ep-yes"></span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
           <tr>
-            <th scope="row">
-              Vermogensontwikkeling
-              <button class="ep-info" data-tip="Per asset-klasse: aandelen, obligaties, crypto, cash, vastgoed. Inclusief jaarlijkse inleg en compound rendement.">i</button>
-            </th>
-            <td><span class="ep-yes">●</span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <th scope="row">Vermogensontwikkeling<button class="ep-info" data-tip="Per asset-klasse: aandelen, obligaties, crypto, cash, vastgoed. Inclusief jaarlijkse inleg en compound rendement.">i</button></th>
+            <td><span class="ep-yes"></span></td>
+            <td class="ep-compare__featured"><span class="ep-yes"></span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
           <tr>
-            <th scope="row">
-              Pensioen + AOW
-              <button class="ep-info" data-tip="AOW bevriest bij emigratie, indexeert 2%/jr. Privépensioen compound. Pensioenverdrag per land toegepast (NL-GR, NL-CY, etc).">i</button>
-            </th>
-            <td><span class="ep-yes">●</span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <th scope="row">Pensioen + AOW<button class="ep-info" data-tip="AOW bevriest bij emigratie, indexeert 2%/jr. Privépensioen compound. Pensioenverdrag per land toegepast (NL-GR, NL-CY, etc).">i</button></th>
+            <td><span class="ep-yes"></span></td>
+            <td class="ep-compare__featured"><span class="ep-yes"></span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
           <tr>
-            <th scope="row">
-              Woonlasten + woningwaarde
-              <button class="ep-info" data-tip="Koop (annuïtair/lineair, rente, HRA waar geldend) of huur. Lokale onroerendezaakbelasting per land.">i</button>
-            </th>
-            <td><span class="ep-yes">●</span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <th scope="row">Woonlasten + woningwaarde<button class="ep-info" data-tip="Koop (annuïtair/lineair, rente, HRA waar geldend) of huur. Lokale onroerendezaakbelasting per land.">i</button></th>
+            <td><span class="ep-yes"></span></td>
+            <td class="ep-compare__featured"><span class="ep-yes"></span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
           <tr>
-            <th scope="row">
-              Horizon vrij instelbaar
-              <button class="ep-info" data-tip="Slider van 1 tot 30 jaar. Pensioen en vermogen bouwen pas zichtbaar op bij langere horizon.">i</button>
-            </th>
-            <td><span class="ep-yes">●</span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <th scope="row">Horizon vrij instelbaar<button class="ep-info" data-tip="Slider van 1 tot 30 jaar. Pensioen en vermogen bouwen pas zichtbaar op bij langere horizon.">i</button></th>
+            <td><span class="ep-yes"></span></td>
+            <td class="ep-compare__featured"><span class="ep-yes"></span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
 
           <tr><td colspan="4" class="ep-compare__group">Vergelijken</td></tr>
           <tr>
-            <th scope="row">
-              Naast Nederland gelegd
-              <button class="ep-info" data-tip="Elk land wordt op dezelfde aannames als NL doorgerekend, zodat de cijfers vergelijkbaar zijn.">i</button>
-            </th>
-            <td><span class="ep-yes">●</span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <th scope="row">Naast Nederland gelegd<button class="ep-info" data-tip="Elk land wordt op dezelfde aannames als NL doorgerekend, zodat de cijfers vergelijkbaar zijn.">i</button></th>
+            <td><span class="ep-yes"></span></td>
+            <td class="ep-compare__featured"><span class="ep-yes"></span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
           <tr>
-            <th scope="row">
-              Ranking op meerdere criteria
-              <button class="ep-info" data-tip="Sorteer landen op netto cashflow, totale belasting, vermogen na X jaar, of pensioenuitkomst.">i</button>
-            </th>
-            <td><span class="ep-no"></span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <th scope="row">Ranking op meerdere criteria<button class="ep-info" data-tip="Sorteer landen op netto cashflow, totale belasting, vermogen na X jaar, of pensioenuitkomst.">i</button></th>
+            <td><span class="ep-no" aria-label="Niet inbegrepen"></span></td>
+            <td class="ep-compare__featured"><span class="ep-yes"></span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
 
           <tr><td colspan="4" class="ep-compare__group">Beslissen</td></tr>
           <tr>
-            <th scope="row">
-              Beslisgids (PDF)
-              <button class="ep-info" data-tip="Rapport met top 3 landen op netto resultaat, top 3 op risico, trade-off matrix, AOW-impact, vermogensimpact, partner-view, vragen voor je fiscalist, en rode vlaggen per land. 8 onderdelen, downloadbaar.">i</button>
-            </th>
+            <th scope="row">Beslisgids (PDF)<button class="ep-info" data-tip="Rapport met top 3 landen op netto resultaat, top 3 op risico, trade-off matrix, AOW-impact, vermogensimpact, partner-view, vragen voor je fiscalist, en rode vlaggen per land. 8 onderdelen, downloadbaar.">i</button></th>
             <td><span class="ep-no"></span></td>
             <td class="ep-compare__featured"><span class="ep-no"></span></td>
-            <td><span class="ep-yes">●</span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
           <tr>
-            <th scope="row">
-              Fiscalist Prep Checklist
-              <button class="ep-info" data-tip="8-12 specifieke vragen op maat van jouw voorkeurscenario, klaar om mee te nemen naar je gesprek met een fiscalist of notaris.">i</button>
-            </th>
+            <th scope="row">Fiscalist Prep Checklist<button class="ep-info" data-tip="8-12 specifieke vragen op maat van jouw voorkeurscenario, klaar om mee te nemen naar je gesprek met een fiscalist of notaris.">i</button></th>
             <td><span class="ep-no"></span></td>
             <td class="ep-compare__featured"><span class="ep-no"></span></td>
-            <td><span class="ep-yes">●</span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
           <tr>
-            <th scope="row">
-              Top 3 + rode vlaggen
-              <button class="ep-info" data-tip="Per voorkeurland een overzicht van risico's en aandachtspunten die je voor de beslissing moet wegen.">i</button>
-            </th>
+            <th scope="row">Top 3 + rode vlaggen<button class="ep-info" data-tip="Per voorkeurland een overzicht van risico's en aandachtspunten die je voor de beslissing moet wegen.">i</button></th>
             <td><span class="ep-no"></span></td>
             <td class="ep-compare__featured"><span class="ep-no"></span></td>
-            <td><span class="ep-yes">●</span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
 
           <tr><td colspan="4" class="ep-compare__group">Opslaan</td></tr>
           <tr>
-            <th scope="row">
-              Sla je resultaten op met export &amp; import
-              <button class="ep-info" data-tip="Sla je scenario op je eigen apparaat op en laad het later opnieuw in. Geen account, geen cloud, jouw data blijft van jou.">i</button>
-            </th>
-            <td><span class="ep-yes">●</span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <th scope="row">Sla je resultaten op met export &amp; import<button class="ep-info" data-tip="Sla je scenario op je eigen apparaat op en laad het later opnieuw in. Geen account, geen cloud, jouw data blijft van jou.">i</button></th>
+            <td><span class="ep-yes"></span></td>
+            <td class="ep-compare__featured"><span class="ep-yes"></span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
 
           <tr><td colspan="4" class="ep-compare__group">Overig</td></tr>
           <tr>
-            <th scope="row">
-              30 dagen geld-terug-garantie
-              <button class="ep-info" data-tip="Niet wat je verwacht? Eén mail naar kevin@emigratieplan.nl binnen 30 dagen. Geld binnen 5 werkdagen terug. Geen vragen vooraf.">i</button>
-            </th>
-            <td><span class="ep-yes">●</span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <th scope="row">30 dagen geld-terug-garantie<button class="ep-info" data-tip="Niet wat je verwacht? Eén mail naar kevin@emigratieplan.nl binnen 30 dagen. Geld binnen 5 werkdagen terug. Geen vragen vooraf.">i</button></th>
+            <td><span class="ep-yes"></span></td>
+            <td class="ep-compare__featured"><span class="ep-yes"></span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
           <tr>
-            <th scope="row">
-              €100 korting op Deep-Dive
-              <button class="ep-info" data-tip="Deep-Dive is een 90-minuten persoonlijke sessie. €349 los, €249 voor Explore- en Decide-kopers.">i</button>
-            </th>
+            <th scope="row">€100 korting op Deep-Dive<button class="ep-info" data-tip="Deep-Dive is een 90-minuten persoonlijke sessie. €349 los, €249 voor Explore- en Decide-kopers.">i</button></th>
             <td><span class="ep-no"></span></td>
-            <td class="ep-compare__featured"><span class="ep-yes">●</span></td>
-            <td><span class="ep-yes">●</span></td>
+            <td class="ep-compare__featured"><span class="ep-yes"></span></td>
+            <td><span class="ep-yes"></span></td>
           </tr>
           <tr>
-            <th scope="row">
-              Toegang
-              <button class="ep-info" data-tip="Lifetime toegang tot de versie die je koopt. Geen abonnement, geen automatische incasso.">i</button>
-            </th>
+            <th scope="row">Toegang<button class="ep-info" data-tip="Lifetime toegang tot de versie die je koopt. Geen abonnement, geen automatische incasso.">i</button></th>
             <td>Lifetime</td>
             <td class="ep-compare__featured">Lifetime</td>
             <td>Lifetime</td>
@@ -799,21 +738,9 @@
 
           <tr class="ep-compare__cta-row">
             <th scope="row"></th>
-            <td>
-              <a href="https://emigratieplan.lemonsqueezy.com/checkout/buy/15ea1bac-bc83-40fd-93cd-6f6a36870a78?embed=1" class="ep-btn ep-btn--primary ep-btn--sm ep-btn--full lemonsqueezy-button">
-                Koop Compare
-              </a>
-            </td>
-            <td class="ep-compare__featured">
-              <a href="https://emigratieplan.lemonsqueezy.com/checkout/buy/ee014d51-2c73-4d0c-82dc-86928ba79db4?embed=1" class="ep-btn ep-btn--accent ep-btn--sm ep-btn--full lemonsqueezy-button">
-                Koop Explore
-              </a>
-            </td>
-            <td>
-              <a href="https://emigratieplan.lemonsqueezy.com/checkout/buy/74131001-b2cb-4251-9813-aa3f48ad8221?embed=1" class="ep-btn ep-btn--primary ep-btn--sm ep-btn--full lemonsqueezy-button">
-                Koop Decide
-              </a>
-            </td>
+            <td><a href="https://emigratieplan.lemonsqueezy.com/checkout/buy/15ea1bac-bc83-40fd-93cd-6f6a36870a78?embed=1" class="ep-btn ep-btn--primary ep-btn--sm ep-btn--full lemonsqueezy-button">Koop Compare</a></td>
+            <td class="ep-compare__featured"><a href="https://emigratieplan.lemonsqueezy.com/checkout/buy/ee014d51-2c73-4d0c-82dc-86928ba79db4?embed=1" class="ep-btn ep-btn--accent ep-btn--sm ep-btn--full lemonsqueezy-button">Koop Explore</a></td>
+            <td><a href="https://emigratieplan.lemonsqueezy.com/checkout/buy/74131001-b2cb-4251-9813-aa3f48ad8221?embed=1" class="ep-btn ep-btn--primary ep-btn--sm ep-btn--full lemonsqueezy-button">Koop Decide</a></td>
           </tr>
 
         </tbody>
@@ -822,7 +749,7 @@
   </div>
 </section>
 
-<!-- ============ VOORBEELD (screenshots + sample PDF placeholder) ============ -->
+<!-- ============ VOORBEELD ============ -->
 <section id="voorbeeld" class="ep-section">
   <div class="ep-container">
     <p class="ep-eyebrow">Hoe het eruitziet</p>
@@ -834,30 +761,27 @@
 
     <div class="ep-screenshots">
       <figure class="ep-shot" data-placeholder="true">
-        <div class="ep-shot__img">
-          <span>Screenshot 1 — Cashflow overzicht</span>
-        </div>
+        <div class="ep-shot__img"><span>Screenshot 1 — Cashflow overzicht</span></div>
         <figcaption>Vervang met een echte screenshot van het cashflow-tab.</figcaption>
       </figure>
 
       <figure class="ep-shot" data-placeholder="true">
-        <div class="ep-shot__img">
-          <span>Screenshot 2 — Vergelijking landen</span>
-        </div>
+        <div class="ep-shot__img"><span>Screenshot 2 — Vergelijking landen</span></div>
         <figcaption>Vervang met de vergelijkingsweergave naast NL.</figcaption>
       </figure>
 
       <figure class="ep-shot" data-placeholder="true">
-        <div class="ep-shot__img">
-          <span>Screenshot 3 — Pensioen + AOW</span>
-        </div>
+        <div class="ep-shot__img"><span>Screenshot 3 — Pensioen + AOW</span></div>
         <figcaption>Vervang met de pensioen-tab.</figcaption>
       </figure>
 
+      <figure class="ep-shot" data-placeholder="true">
+        <div class="ep-shot__img"><span>Screenshot 4 — Vermogensontwikkeling</span></div>
+        <figcaption>Vervang met de vermogens-tab over 30 jaar.</figcaption>
+      </figure>
+
       <figure class="ep-shot ep-shot--pdf" data-placeholder="true">
-        <div class="ep-shot__img ep-shot__img--pdf">
-          <span>Voorbeeld Beslisgids PDF</span>
-        </div>
+        <div class="ep-shot__img ep-shot__img--pdf"><span>Voorbeeld Beslisgids PDF</span></div>
         <figcaption>
           Plak hier een link naar het voorbeeld-PDF zodra die gerendered is.
           <a href="#" class="ep-pkg-link">Download voorbeeld (PDF)</a>
@@ -871,7 +795,7 @@
   </div>
 </section>
 
-<!-- ============ TESTIMONIALS (placeholder, nu BOVEN wat-erin-zit) ============ -->
+<!-- ============ TESTIMONIALS ============ -->
 <section id="testimonials" class="ep-section ep-section--alt">
   <div class="ep-container">
     <p class="ep-eyebrow ep-eyebrow--center">Reviews</p>
@@ -910,7 +834,7 @@
   </div>
 </section>
 
-<!-- ============ WAT ERIN ZIT (onder de motorkap) ============ -->
+<!-- ============ WAT ERIN ZIT ============ -->
 <section id="wat-erin-zit" class="ep-section">
   <div class="ep-container ep-narrow">
     <p class="ep-eyebrow">Onder de motorkap</p>
@@ -953,65 +877,66 @@
 
     <details class="ep-faq">
       <summary>Wat als ik later wil upgraden?</summary>
-      <p>
-        Upgraden van <a href="#pkg-compare" class="ep-pkg-link">Compare</a> naar <a href="#pkg-explore" class="ep-pkg-link">Explore</a> of <a href="#pkg-decide" class="ep-pkg-link">Decide</a> komt in een volgende versie.
-        Voor nu kies je het pakket dat past bij hoeveel landen je wilt
-        vergelijken. Heb je echt de verkeerde keuze gemaakt?
-        Mail me even op <a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a> en we regelen het.
-      </p>
+      <p>Upgraden van <a href="#pkg-compare" class="ep-pkg-link">Compare</a> naar <a href="#pkg-explore" class="ep-pkg-link">Explore</a> of <a href="#pkg-decide" class="ep-pkg-link">Decide</a> komt in een volgende versie. Voor nu kies je het pakket dat past bij hoeveel landen je wilt vergelijken. Heb je echt de verkeerde keuze gemaakt? Mail me even op <a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a> en we regelen het.</p>
     </details>
 
     <details class="ep-faq">
       <summary>Werkt dit als ik ZZP'er ben? Of in loondienst? Of DGA?</summary>
-      <p>
-        Ja. De tool ondersteunt alle drie en kan ze ook combineren: bijvoorbeeld
-        jij in loondienst en je partner ZZP. Ook samen actief in een buitenlandse BV (zoals IKE of Ltd)
-        wordt ondersteund. Je kunt zo makkelijk zelf rekenen met meerdere scenario's.
-      </p>
+      <p>Ja. De tool ondersteunt alle drie en kan ze ook combineren: bijvoorbeeld jij in loondienst en je partner ZZP. Ook samen actief in een buitenlandse BV (zoals IKE of Ltd) wordt ondersteund. Je kunt zo makkelijk zelf rekenen met meerdere scenario's.</p>
     </details>
 
     <details class="ep-faq">
       <summary>Kan ik mijn data bewaren?</summary>
-      <p>
-        Ja! Je exporteert jouw scenario met 1 druk op de knop.
-        Wil je weer verder? Dan upload je gewoon die export weer in de tool.
-        Zo kun je dus ook meerdere scenario's maken en opslaan.
-        Je hebt geen account nodig, jouw data blijft op jouw apparaat. Wel zo'n fijn gevoel.
-      </p>
+      <p>Ja! Je exporteert jouw scenario met 1 druk op de knop. Wil je weer verder? Dan upload je gewoon die export weer in de tool. Zo kun je dus ook meerdere scenario's maken en opslaan. Je hebt geen account nodig, jouw data blijft op jouw apparaat. Wel zo'n fijn gevoel.</p>
     </details>
 
     <details class="ep-faq">
       <summary>Is dit fiscaal advies?</summary>
-      <p>
-        Nee, bewust niet. Het is een rekentool die scenario's doorrekent op basis van actuele
-        regels per land. Voor formeel advies stap je naar een fiscalist met
-        WFT-vergunning. De tool helpt je om met een concreet plan het gesprek aan te gaan.
-        De Beslisgids in <a href="#pkg-decide" class="ep-pkg-link">Decide</a> bevat een persoonlijke checklist met de
-        juiste vragen voor dat gesprek.
-      </p>
+      <p>Nee, bewust niet. Het is een rekentool die scenario's doorrekent op basis van actuele regels per land. Voor formeel advies stap je naar een fiscalist met WFT-vergunning. De tool helpt je om met een concreet plan het gesprek aan te gaan. De Beslisgids in <a href="#pkg-decide" class="ep-pkg-link">Decide</a> bevat een persoonlijke checklist met de juiste vragen voor dat gesprek.</p>
     </details>
 
     <details class="ep-faq">
       <summary>Hoe zit het met de garantie?</summary>
-      <p>
-        30 dagen, niet tevreden = geld terug, geen vragen. Stuur één mail naar
-        <a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a>.
-      </p>
+      <p>30 dagen, niet tevreden = geld terug, geen vragen. Stuur één mail naar <a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a>.</p>
     </details>
 
     <details class="ep-faq">
       <summary>Wat als ik nog niet weet welk land?</summary>
-      <p>
-        Dan is <a href="#pkg-explore" class="ep-pkg-link">Explore</a> of <a href="#pkg-decide" class="ep-pkg-link">Decide</a> logischer dan <a href="#pkg-compare" class="ep-pkg-link">Compare</a>. Explore geeft je vijf
-        landen plus Nederland op dezelfde aannames. Decide geeft je er tien
-        plus een Beslisgids die de cijfers vertaalt naar top 3's en
-        aandachtspunten.
-      </p>
+      <p>Dan is <a href="#pkg-explore" class="ep-pkg-link">Explore</a> of <a href="#pkg-decide" class="ep-pkg-link">Decide</a> logischer dan <a href="#pkg-compare" class="ep-pkg-link">Compare</a>. Explore geeft je vijf landen plus Nederland op dezelfde aannames. Decide geeft je er tien plus een Beslisgids die de cijfers vertaalt naar top 3's en aandachtspunten.</p>
     </details>
 
     <div class="ep-cta-row">
       <a href="#pakketten" class="ep-btn ep-btn--accent">Naar de pakketten</a>
     </div>
+  </div>
+</section>
+
+<!-- ============ WAITLIST (Brevo, terug) ============ -->
+<section id="waitlist" class="ep-section ep-waitlist">
+  <div class="ep-container ep-narrow">
+    <p class="ep-eyebrow ep-eyebrow--center">Nog niet klaar om te kiezen?</p>
+    <h2 class="ep-h2 ep-h2--center">Ontvang een seintje bij volgende updates</h2>
+    <p class="ep-lead ep-lead--center">
+      Geen spam, promise. Eén mail wanneer er een nieuw land of regime
+      bijkomt, een paar super handige content stukken, en eenmalig een seintje bij grote releases.
+    </p>
+
+    <form id="ep-brevo-form"
+          method="POST"
+          action="https://6fbc4696.sibforms.com/serve/MUIFAOwtZLhUcUx4enS_K0s-jGSX6VnDjFc7pZBia6t7gLTvtDxvzxroRRx4Jl_GAP4K9_0RDPkQWBZHkSf786iv7Xyd9lmEdP9TVFoDMu0J_Vk0xPG70sTTn0qFoDNOe3owAQsHnRgBQNKG6psfmx1IEZDtpwpT5tpxtOb0IyNxQOtFvV43RiPwYkxRot2XaGrzNVtJkL1_PTqG1g=="
+          data-type="subscription">
+      <div class="ep-form-row">
+        <input class="ep-input" type="text" id="FIRSTNAME" name="FIRSTNAME" placeholder="Voornaam" autocomplete="given-name" required>
+        <input class="ep-input" type="email" id="EMAIL" name="EMAIL" placeholder="E-mailadres" autocomplete="email" required>
+      </div>
+      <button class="ep-btn ep-btn--accent ep-btn--full" type="submit">Zet me op de lijst</button>
+      <p class="ep-form-meta">
+        Je gebruikt Brevo voor verzending. Door je in te schrijven ga je akkoord
+        met <a href="https://www.brevo.com/en/legal/privacypolicy/" rel="nofollow noopener">het privacybeleid van Brevo</a>.
+      </p>
+      <input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="locale" value="nl">
+    </form>
   </div>
 </section>
 
@@ -1049,10 +974,9 @@
   </div>
 </footer>
 
-<!-- Lemon Squeezy embed -->
 <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
-<!-- Tiny JS -->
 <script>
 (function () {
 
@@ -1067,16 +991,15 @@
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Side nav active
+  // Side nav active state
   var sections = document.querySelectorAll('section[id]');
   var navLinks = document.querySelectorAll('#ep-section-nav a');
   function setActive() {
     var fromTop = window.scrollY + 120;
     sections.forEach(function (sec) {
-      var id = sec.id;
       var top = sec.offsetTop;
       var bottom = top + sec.offsetHeight;
-      var link = document.querySelector('#ep-section-nav a[href="#' + id + '"]');
+      var link = document.querySelector('#ep-section-nav a[href="#' + sec.id + '"]');
       if (!link) return;
       if (fromTop >= top && fromTop < bottom) {
         navLinks.forEach(function (l) { l.classList.remove('is-active'); });
@@ -1092,17 +1015,15 @@
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
-      document.querySelectorAll('.ep-info.is-open').forEach(function (other) {
-        if (other !== btn) other.classList.remove('is-open');
+      document.querySelectorAll('.ep-info.is-open').forEach(function (o) {
+        if (o !== btn) o.classList.remove('is-open');
       });
       btn.classList.toggle('is-open');
     });
   });
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.ep-info')) {
-      document.querySelectorAll('.ep-info.is-open').forEach(function (b) {
-        b.classList.remove('is-open');
-      });
+      document.querySelectorAll('.ep-info.is-open').forEach(function (b) { b.classList.remove('is-open'); });
     }
   });
 
@@ -1111,19 +1032,16 @@
   var drawer = document.getElementById('ep-mobile-drawer');
   var backdrop = document.getElementById('ep-mobile-backdrop');
   var closeBtn = document.getElementById('ep-mobile-close');
-
   function openDrawer() {
     drawer.classList.add('is-open');
     backdrop.classList.add('is-open');
     hamburger.setAttribute('aria-expanded', 'true');
-    drawer.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
   function closeDrawer() {
     drawer.classList.remove('is-open');
     backdrop.classList.remove('is-open');
     hamburger.setAttribute('aria-expanded', 'false');
-    drawer.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
   if (hamburger) hamburger.addEventListener('click', openDrawer);
@@ -1148,18 +1066,39 @@
     });
   }
 
-  // Make pkg-link / ep-compare__pkg-link anchor navigation also open the target details panel
+  // Anchor naar pakket opent ook de details
   function openTargetPkg(href) {
     if (!href || href.charAt(0) !== '#') return;
     var target = document.querySelector(href);
-    if (target && target.tagName === 'DETAILS') {
-      target.open = true;
-    }
+    if (target && target.tagName === 'DETAILS') target.open = true;
   }
   document.querySelectorAll('a[href^="#pkg-"]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      openTargetPkg(a.getAttribute('href'));
+    a.addEventListener('click', function () { openTargetPkg(a.getAttribute('href')); });
+  });
+
+  // Open-by-default on desktop, closed on mobile for collapsibles
+  var MOBILE_BREAKPOINT = 980;
+  var collapsibleSelectors = '.ep-collapsible, .ep-pkg';
+  function applyOpenState() {
+    var isDesktop = window.innerWidth > MOBILE_BREAKPOINT;
+    document.querySelectorAll(collapsibleSelectors).forEach(function (el) {
+      if (isDesktop) {
+        el.open = true;
+      } else {
+        // op mobile: alles dicht behalve Explore-pakket
+        if (el.id === 'pkg-explore') {
+          el.open = true;
+        } else {
+          el.open = false;
+        }
+      }
     });
+  }
+  applyOpenState();
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(applyOpenState, 150);
   });
 
 })();
