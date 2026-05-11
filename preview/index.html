@@ -1,640 +1,769 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Primary SEO -->
-<title>Emigratieplan — Reken jouw emigratie door op tien landen plus Nederland</title>
-<meta name="description" content="Emigratieplan rekent jouw situatie door op tien landen en vergelijkt dit met Nederland. Belasting, cashflow, vermogen, pensioen en AOW over vijf, tien, twintig jaar. Vanaf €189, eenmalige aankoop, lifetime toegang.">
-<link rel="canonical" href="https://emigratieplan.nl/">
+  <!-- Stealth -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://emigratieplan.nl/">
-<meta property="og:title" content="Emigratieplan — Reken jouw emigratie door op tien landen plus Nederland">
-<meta property="og:description" content="Reken jouw emigratie door op cashflow, belasting, vermogen, pensioen en AOW over vijf, tien, twintig jaar. Tien landen plus Nederland. Vanaf €189.">
-<meta property="og:locale" content="nl_NL">
-<meta property="og:image" content="https://emigratieplan.nl/og-image.png">
+  <title>Emigratieplan -- Wat emigreren je écht kost</title>
+  <meta name="description" content="Reken je situatie door op tien landen en vergelijk dat met Nederland. Cijfers in plaats van twijfel.">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Emigratieplan — Reken jouw emigratie door op tien landen plus Nederland">
-<meta name="twitter:description" content="Reken jouw emigratie door op cashflow, belasting, vermogen, pensioen en AOW. Tien landen. Vanaf €189.">
-<meta name="twitter:image" content="https://emigratieplan.nl/og-image.png">
+  <!-- Canonical wijst naar root, want bij launch verhuist /preview/ naar /. -->
+  <link rel="canonical" href="https://www.emigratieplan.nl/">
 
-<!-- STEALTH MODE — geen indexering tot launch -->
-<meta name="robots" content="noindex, nofollow">
-<meta name="googlebot" content="noindex, nofollow">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="styles.css">
-
-<!-- JSON-LD: Organization -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Emigratieplan",
-  "url": "https://emigratieplan.nl",
-  "email": "kevin@emigratieplan.nl",
-  "founder": {
-    "@type": "Person",
-    "name": "Kevin van Grondelle"
-  },
-  "description": "Emigratieplan is een rekentool voor Nederlandse ondernemers en particulieren die emigratie overwegen. De tool vergelijkt de financiële uitkomst van tien bestemmingslanden naast Nederland over een horizon van vijf tot twintig jaar."
-}
-</script>
-
-<!-- JSON-LD: Product with three Offers -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Emigratieplan",
-  "description": "Reken jouw emigratie door op cashflow, belasting, vermogen, pensioen en AOW. Vergelijk Nederland met maximaal tien bestemmingslanden over een horizon van vijf tot twintig jaar.",
-  "brand": {
-    "@type": "Brand",
-    "name": "Emigratieplan"
-  },
-  "category": "Financial planning software",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Compare — Nederland plus één land",
-      "price": "189",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock",
-      "url": "https://emigratieplan.nl/#pakketten"
-    },
-    {
-      "@type": "Offer",
-      "name": "Explore — Nederland plus vijf landen",
-      "price": "279",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock",
-      "url": "https://emigratieplan.nl/#pakketten"
-    },
-    {
-      "@type": "Offer",
-      "name": "Decide — Nederland plus tien landen plus Beslisgids",
-      "price": "449",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock",
-      "url": "https://emigratieplan.nl/#pakketten"
-    }
-  ]
-}
-</script>
-
-<!-- JSON-LD: FAQPage (combined twijfel + faq) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Wat als ik nog niet zeker weet of ik wil emigreren?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dan ben je precies de persoon waarvoor Emigratieplan is gebouwd. De tool is niet bedoeld om je over de streep te trekken, maar om te laten zien wat het betekent als je gaat. Je krijgt cijfers in handen waarmee je je twijfel kunt onderbouwen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wat als mijn situatie te complex is voor een tool?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "De tool is gebouwd voor situaties die in werkelijkheid voorkomen. ZZP plus loondienst, twee partners met verschillende inkomsten, vermogen verspreid over rekeningen, beleggingen en vastgoed, pensioenopbouw in meerdere lagen. Allemaal mogelijk."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Werkt dit als ik ZZP'er ben? Of in loondienst? Of DGA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. De tool ondersteunt alle drie en kan ze ook combineren, bijvoorbeeld jij in loondienst en je partner ZZP."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is dit fiscaal advies?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nee. Het is een rekentool die scenario's doorrekent op basis van actuele regels per land. Voor formeel advies stap je naar een fiscalist met WFT-vergunning. De Beslisgids in Decide bevat een checklist met de juiste vragen voor dat gesprek."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hoe zit het met de geld-terug-garantie?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "30 dagen geld terug, geen vragen. Eén mail naar kevin@emigratieplan.nl is genoeg."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wat als de wet verandert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Je houdt lifetime toegang tot de versie die je koopt. Er komt een update-abonnement voor wie de cijfers actueel wil houden. Bestaande pakket-houders krijgen voorrang en korting zodra dat beschikbaar is."
-      }
-    }
-  ]
-}
-</script>
-
-<!-- Lemon Squeezy overlay JS -->
-<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="#" class="brand">
-      <span class="brand-mark">EP</span>
-      <span class="brand-name">Emigratieplan</span>
+<!-- Scroll progress bar -->
+<div id="ep-scroll-progress" aria-hidden="true"></div>
+
+<!-- Floating section nav (right side) -->
+<nav id="ep-section-nav" aria-label="Sectie-navigatie">
+  <ul>
+    <li><a href="#hero" data-label="Start"><span class="dot"></span><span class="lbl">Start</span></a></li>
+    <li><a href="#patronen" data-label="Patronen"><span class="dot"></span><span class="lbl">Patronen</span></a></li>
+    <li><a href="#voor-wie" data-label="Voor wie"><span class="dot"></span><span class="lbl">Voor wie</span></a></li>
+    <li><a href="#landen" data-label="Landen"><span class="dot"></span><span class="lbl">Landen</span></a></li>
+    <li><a href="#pakketten" data-label="Pakketten"><span class="dot"></span><span class="lbl">Pakketten</span></a></li>
+    <li><a href="#vergelijking" data-label="Vergelijking"><span class="dot"></span><span class="lbl">Vergelijking</span></a></li>
+    <li><a href="#garantie" data-label="Garantie"><span class="dot"></span><span class="lbl">Garantie</span></a></li>
+    <li><a href="#faq" data-label="FAQ"><span class="dot"></span><span class="lbl">FAQ</span></a></li>
+  </ul>
+</nav>
+
+<!-- Top nav -->
+<header class="ep-header">
+  <div class="ep-container ep-header__inner">
+    <a href="#hero" class="ep-logo">
+      <span class="ep-logo__mark">EP</span>
+      <span class="ep-logo__wordmark">Emigratieplan</span>
     </a>
-    <nav class="site-nav">
+    <nav class="ep-nav-top">
       <a href="#pakketten">Pakketten</a>
       <a href="#vergelijking">Vergelijking</a>
       <a href="#faq">Veelgestelde vragen</a>
-      <a href="#pakketten" class="nav-cta">Bekijk pakketten</a>
+      <a href="#pakketten" class="ep-btn ep-btn--primary ep-btn--sm">Bekijk pakketten</a>
     </nav>
   </div>
 </header>
 
-<!-- SECTIE 1, HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <span class="eyebrow">Voor wie emigratie overweegt</span>
-        <h1 class="hero-title">
-          Je overweegt te emigreren.<br>
-          Je twijfelt nog.<br>
-          <em>Dat is logisch.</em>
-        </h1>
-        <p class="hero-sub">
-          Want je weet niet wat het je écht kost. Emigratieplan rekent jouw situatie door op tien landen en vergelijkt dit met Nederland. Wat blijft er over per maand, hoeveel belasting betaal je, hoe groeit je vermogen, wat gebeurt er met je pensioen, over vijf, tien, twintig jaar. Je rekent op je eigen cijfers en in het tempo dat bij jouw plan past. Zodat je niet langer gokt, maar weet.
+<!-- ============ HERO ============ -->
+<section id="hero" class="ep-section ep-hero">
+  <div class="ep-container ep-hero__grid">
+
+    <div class="ep-hero__copy">
+      <p class="ep-eyebrow">Voor wie emigratie overweegt</p>
+      <h1 class="ep-h1-display">
+        Je overweegt te emigreren.<br>
+        Je twijfelt nog.<br>
+        <em class="ep-accent">Dat is logisch.</em>
+      </h1>
+      <p class="ep-lead">
+        Want je weet niet wat het je écht kost. Emigratieplan rekent jouw
+        situatie door op tien landen en vergelijkt dit met Nederland. Wat blijft
+        er over per maand, hoeveel belasting betaal je, hoe groeit je vermogen,
+        wat gebeurt er met je pensioen, over vijf, tien, twintig jaar. Je rekent
+        op je eigen cijfers en in het tempo dat bij jouw plan past. Zodat je
+        niet langer gokt, maar weet.
+      </p>
+      <div class="ep-hero__ctas">
+        <a href="#pakketten" class="ep-btn ep-btn--primary">Bekijk pakketten</a>
+        <a href="#patronen" class="ep-btn ep-btn--ghost">Lees verder</a>
+      </div>
+    </div>
+
+    <div class="ep-hero__stats">
+      <div class="ep-stat-card">
+        <div class="ep-stat-card__num">10</div>
+        <div class="ep-stat-card__cap">Landen doorgerekend naast Nederland</div>
+      </div>
+      <div class="ep-stat-card">
+        <div class="ep-stat-card__num">20<span class="ep-stat-card__unit">jr</span></div>
+        <div class="ep-stat-card__cap">Horizon naar keuze, vermogen en pensioen meegenomen</div>
+      </div>
+      <div class="ep-stat-card">
+        <div class="ep-stat-card__num">€189</div>
+        <div class="ep-stat-card__cap">Vanaf. Eenmalige aankoop, geen abonnement</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ DRIE PATRONEN ============ -->
+<section id="patronen" class="ep-section ep-section--alt">
+  <div class="ep-container ep-narrow">
+    <h2 class="ep-h2">Wat er gebeurt als je het niet uitrekent</h2>
+    <p class="ep-body-lg">
+      Je gaat door zonder de cijfers. Veel mensen doen dat. Niet uit luiheid,
+      maar omdat de berekening te ingewikkeld is om er alleen een zaterdag aan
+      te besteden, en omdat losse rekentools losse antwoorden geven die zich
+      niet tot één plaatje laten optellen.
+    </p>
+    <p class="ep-body-lg">Er zijn drie patronen die we steeds terugzien.</p>
+
+    <div class="ep-pattern">
+      <h3 class="ep-pattern__title">De uitsteller</h3>
+      <p>
+        Je zegt: ik kijk er volgend kwartaal naar. Dan komt de zomer, dan komt
+        het einde van het jaar, en dan zit je een jaar verder met dezelfde
+        twijfel. Het plan blijft hangen in je hoofd, niet op papier. Je leeft
+        ondertussen door in een leven waar je eigenlijk al uit wilde stappen.
+      </p>
+    </div>
+
+    <div class="ep-pattern">
+      <h3 class="ep-pattern__title">De optimist</h3>
+      <p>
+        Je hebt een land gekozen op gevoel. Je vrienden wonen er, het klimaat
+        is mooi, de huizen zijn goedkoper. Je rekent op gevoel verder. Pas als
+        je er zit kom je erachter dat de fiscale situatie anders ligt dan
+        gedacht en dat je pensioen in een grijs gebied valt.
+      </p>
+    </div>
+
+    <div class="ep-pattern">
+      <h3 class="ep-pattern__title">De verstrooide</h3>
+      <p>
+        Je gebruikt drie verschillende online tools, leest tien forum-threads,
+        en hebt nu vier verschillende cijfers in je hoofd. Geen daarvan klopt
+        helemaal met jouw situatie, geen daarvan kun je naast elkaar leggen.
+        De optelsom kun je niet maken.
+      </p>
+    </div>
+
+    <div class="ep-cta-row">
+      <a href="#pakketten" class="ep-btn ep-btn--accent">Bekijk de pakketten</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOOR WIE DIT IS ============ -->
+<section id="voor-wie" class="ep-section">
+  <div class="ep-container">
+    <p class="ep-eyebrow ep-eyebrow--center">Voor wie dit is</p>
+    <h2 class="ep-h2 ep-h2--center">Drie typen mensen die hier baat bij hebben</h2>
+
+    <div class="ep-three-col">
+      <div class="ep-pillar">
+        <h3 class="ep-pillar__title">De serieuze planner</h3>
+        <p>
+          Je wilt emigreren binnen drie jaar. Je hebt een richting, je hebt
+          vermogen, je hebt een gezin. Je wilt geen verrassingen achteraf.
+          Voor jou is dit het rekenwerk dat je anders bij drie adviseurs
+          had moeten kopen.
         </p>
-        <div class="hero-cta-row">
-          <a href="#pakketten" class="btn btn-primary">Bekijk de pakketten, vanaf €189</a>
-          <a href="#hoe-werkt-het" class="btn btn-ghost">Of zie eerst hoe het werkt ↓</a>
-        </div>
-        <p class="trust-line">
-          Eenmalig kopen, lifetime toegang. Volledige privacy, jouw cijfers blijven op jouw apparaat. Niet tevreden binnen 30 dagen, geld terug.
+        <a href="#vergelijking" class="ep-btn ep-btn--ghost ep-btn--sm">Vergelijk pakketten</a>
+      </div>
+
+      <div class="ep-pillar">
+        <h3 class="ep-pillar__title">De rationele twijfelaar</h3>
+        <p>
+          Je weet niet of emigreren financieel slimmer is dan blijven. Je hebt
+          geen tijd om dat zelf uit te zoeken, en je vertrouwt geen forum-cijfers.
+          Voor jou is dit het beslismodel dat zegt: blijven of vertrekken, en
+          waarom.
+        </p>
+        <a href="#vergelijking" class="ep-btn ep-btn--ghost ep-btn--sm">Vergelijk pakketten</a>
+      </div>
+
+      <div class="ep-pillar">
+        <h3 class="ep-pillar__title">De vermogensoptimaliseerder</h3>
+        <p>
+          Je hebt vermogen opgebouwd, je hebt een pensioenpot, je hebt een
+          eigen zaak of een eigen woning. Je wilt weten waar dat vermogen het
+          beste landt over tien tot twintig jaar. Voor jou is dit de
+          fiscale stress-test.
+        </p>
+        <a href="#vergelijking" class="ep-btn ep-btn--ghost ep-btn--sm">Vergelijk pakketten</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LANDEN OVERZICHT ============ -->
+<section id="landen" class="ep-section ep-section--alt">
+  <div class="ep-container">
+    <p class="ep-eyebrow">Wat we doorrekenen</p>
+    <h2 class="ep-h2">Tien landen, één model, jouw cijfers</h2>
+    <p class="ep-lead ep-narrow-inline">
+      Elk land heeft een eigen belastingengine. Geen gemiddelden, geen
+      vuistregels. We rekenen wat jij betaalt in jouw situatie.
+    </p>
+
+    <div class="ep-country-grid">
+
+      <div class="ep-country">
+        <div class="ep-country__flag" aria-hidden="true">🇳🇱</div>
+        <h4 class="ep-country__name">Nederland</h4>
+        <p class="ep-country__note">Referentiepunt. Box 1, 2, 3. ZZP, loondienst, DGA. AOW, lijfrente, eigen woning.</p>
+      </div>
+
+      <div class="ep-country">
+        <div class="ep-country__flag" aria-hidden="true">🇬🇷</div>
+        <h4 class="ep-country__name">Griekenland</h4>
+        <p class="ep-country__note">Artikel 5C flat tax (50% korting, 15 jr), IKE structuur, EFKA, pensioenverdrag NL-GR.</p>
+      </div>
+
+      <div class="ep-country">
+        <div class="ep-country__flag" aria-hidden="true">🇨🇾</div>
+        <h4 class="ep-country__name">Cyprus</h4>
+        <p class="ep-country__note">Non-dom regime (17 jr), 15% CIT (2026), GHS plafond, geen WHT op dividend voor non-dom.</p>
+      </div>
+
+      <div class="ep-country">
+        <div class="ep-country__flag" aria-hidden="true">🇵🇹</div>
+        <h4 class="ep-country__name">Portugal</h4>
+        <p class="ep-country__note">NHR-2 (IFICI) waar van toepassing, anders standaard IRS, AIMI op vastgoed.</p>
+      </div>
+
+      <div class="ep-country">
+        <div class="ep-country__flag" aria-hidden="true">🇪🇸</div>
+        <h4 class="ep-country__name">Spanje</h4>
+        <p class="ep-country__note">Beckham Law (24% / 15% flat, 6 jr), autonome regio verschillen, vermogensbelasting.</p>
+      </div>
+
+      <div class="ep-country">
+        <div class="ep-country__flag" aria-hidden="true">🇮🇹</div>
+        <h4 class="ep-country__name">Italië</h4>
+        <p class="ep-country__note">Impatriate regime (70% korting, 5 jr), flat tax buitenlands inkomen €200k.</p>
+      </div>
+
+      <div class="ep-country">
+        <div class="ep-country__flag" aria-hidden="true">🇦🇪</div>
+        <h4 class="ep-country__name">UAE / Dubai</h4>
+        <p class="ep-country__note">0% IB, 9% CIT vanaf AED 375k winst, golden visa-paden, geen verdrag met NL op pensioen.</p>
+      </div>
+
+      <div class="ep-country">
+        <div class="ep-country__flag" aria-hidden="true">🇧🇬</div>
+        <h4 class="ep-country__name">Bulgarije</h4>
+        <p class="ep-country__note">10% flat IB en CIT, lage sociale lasten, EU-lidstaat, lage kosten van levensonderhoud.</p>
+      </div>
+
+      <div class="ep-country">
+        <div class="ep-country__flag" aria-hidden="true">🇭🇺</div>
+        <h4 class="ep-country__name">Hongarije</h4>
+        <p class="ep-country__note">15% flat IB, 9% CIT, KATA voor klein-ondernemers, EU-lidstaat.</p>
+      </div>
+
+      <div class="ep-country">
+        <div class="ep-country__flag" aria-hidden="true">🇲🇹</div>
+        <h4 class="ep-country__name">Malta</h4>
+        <p class="ep-country__note">GRP (alleen niet-EU, dus niet voor Nederlanders), standaard IB en CIT met refund-systeem.</p>
+      </div>
+
+    </div>
+
+    <div class="ep-cta-row">
+      <a href="#pakketten" class="ep-btn ep-btn--accent">Reken jouw situatie door</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 30 DAGEN GARANTIE (verplaatst naar boven) ============ -->
+<section id="garantie" class="ep-section ep-garantie">
+  <div class="ep-container ep-narrow">
+    <div class="ep-garantie__card">
+      <div class="ep-garantie__badge" aria-hidden="true">30</div>
+      <div class="ep-garantie__copy">
+        <p class="ep-eyebrow">30 dagen geld-terug-garantie</p>
+        <h2 class="ep-h3">Niet wat je verwacht? Je krijgt je geld terug.</h2>
+        <p>
+          Geen kleine letters. Geen formulier van drie pagina's. Eén mailtje
+          naar <a href="mailto:hallo@emigratieplan.nl">hallo@emigratieplan.nl</a>
+          binnen dertig dagen na aankoop. We storten het bedrag binnen vijf
+          werkdagen terug op dezelfde rekening waarmee je hebt betaald. Zonder
+          vragen vooraf.
         </p>
       </div>
-      <aside class="hero-stat-block">
-        <div class="stat-card">
-          <span class="stat-num">10</span>
-          <span class="stat-label">Landen doorgerekend naast Nederland</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">20<small>jr</small></span>
-          <span class="stat-label">Horizon naar keuze, vermogen en pensioen meegenomen</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">€189</span>
-          <span class="stat-label">Vanaf, eenmalige aankoop</span>
-        </div>
-      </aside>
     </div>
   </div>
 </section>
 
-<!-- SECTIE 2, Wat er gebeurt als je het niet uitrekent -->
-<section class="section section-failure" id="hoe-werkt-het">
-  <div class="container narrow">
-    <h2 class="section-title">Wat er gebeurt als je het niet uitrekent</h2>
-    <p>Je gaat door zonder de cijfers. Veel mensen doen dat. Niet uit luiheid, maar omdat de berekening te ingewikkeld is om er alleen een zaterdag aan te besteden, en omdat losse rekentools losse antwoorden geven die zich niet tot één plaatje laten optellen.</p>
-    <p>Er zijn drie patronen die we steeds terugzien.</p>
+<!-- ============ PAKKETTEN ============ -->
+<section id="pakketten" class="ep-section">
+  <div class="ep-container">
+    <p class="ep-eyebrow ep-eyebrow--center">Pakketten</p>
+    <h2 class="ep-h2 ep-h2--center">Kies wat past bij jouw fase</h2>
+    <p class="ep-lead ep-lead--center ep-narrow-inline">
+      Eenmalige aankoop. Geen abonnement. Eigenaarschap van je eigen plan.
+    </p>
 
-    <div class="archetype">
-      <h3>De uitsteller</h3>
-      <p>Je zegt: ik kijk er volgend kwartaal naar. Dan komt de zomer, dan komt het einde van het jaar, en dan zit je een jaar verder met dezelfde twijfel. Het plan blijft hangen in je hoofd, niet op papier. Je leeft ondertussen door in een leven waar je eigenlijk al uit wilde stappen.</p>
-    </div>
+    <div class="ep-pkg-grid">
 
-    <div class="archetype">
-      <h3>De gutfeeling-emigrant</h3>
-      <p>Je kiest het land waar de buren naartoe gingen, of het land waar je twee weken vakantie had. Twee jaar later zit je in Spanje en kom je erachter dat je vermogen anders wordt belast dan je dacht, dat je AOW-opbouw is gestopt op een moment dat je niet had gepland, of dat je netto per maand minder overhoudt dan in Nederland. De droom klopt nog, het plaatje eronder niet. En terug verhuizen is duurder dan vooraf rekenen.</p>
-    </div>
-
-    <div class="archetype">
-      <h3>De uitbesteder</h3>
-      <p>Je betaalt een fiscalist een paar honderd euro per uur om vragen te beantwoorden die je zelf had kunnen voorbereiden. Je krijgt goede antwoorden op de verkeerde vragen, omdat je zonder eigen cijfers niet weet welke vragen ertoe doen. Je gaat naar huis met een rekening en het gevoel dat je nog steeds geen overzicht hebt.</p>
-    </div>
-
-    <p class="closing-graf">Wat in alle drie de gevallen ontbreekt, is hetzelfde: <strong>grip</strong>. Je weet niet zeker wat je weet, je weet niet wat je mist, en je weet niet hoe jouw landen zich tot elkaar verhouden. En dat ontbreken weegt. Het houdt je vast in een fase waar je eigenlijk doorheen wilt, omdat je geen onderbouwd antwoord hebt op de vragen die ertoe doen. Een eigen overzicht dat klopt, op jouw cijfers, geeft je dat antwoord. En daarmee de rust om de volgende stap te nemen, of bewust te kiezen om te blijven.</p>
-  </div>
-</section>
-
-<!-- SECTIE 3, Waar mensen aan voorbij gaan -->
-<section class="section section-alt">
-  <div class="container narrow">
-    <h2 class="section-title">Waar mensen aan voorbij gaan</h2>
-    <p>Je huishoudbudget maken kost een avond. Je financiële meerjarenplan voor Nederland maken kost een weekend. Eén land serieus doorrekenen kost een maand, en dan ben je nog niet klaar.</p>
-    <p>Het is niet alleen het belastingtarief dat het werk maakt. Het zijn alle dingen die er omheen lopen. Wat een normaal leven kost in Lissabon versus Larnaca versus Limburg, en hoe dat zich verhoudt tot je inkomen daar. Wat een huis kopen of huren echt doet in jouw scenario, inclusief lokale lasten, onderhoud en verschillen in hypotheekrenteaftrek tussen Nederland en je nieuwe land. Hoe je inkomen daar gaat lopen, of je nou ZZP'er blijft, in loondienst gaat of een lokale onderneming opzet, want elk van die structuren rekent anders uit.</p>
-    <p>En dan je pensioen, in alle drie de pijlers. Je AOW-opbouw stopt of loopt door, afhankelijk van waar je je vestigt en of je vrijwillig blijft doorbouwen. Je werkgeverspensioen blijft in Nederland staan, maar de uitkering kan in je nieuwe land anders worden belast dan je hier gewend bent. Je lijfrente-aftrek vervalt zodra je geen Nederlands belastingplichtige meer bent, en de premies die je in Nederland al hebt afgetrokken kunnen bij uitkering opnieuw worden belast. Daarbovenop heeft elk land een eigen staatspensioen-stelsel, met eigen opbouweisen en eigen uitkeringen. Drie pijlers, twee landen, één toekomst die je probeert kloppend te krijgen.</p>
-    <p>Wat je in feite probeert is appels met peren met ananassen te vergelijken. Tien landen, drie inkomensvormen, drie pensioenlagen, twintig jaar vooruit. Dat is geen avond werk. Dat is het soort onderzoek waar mensen maanden in stoppen en alsnog niet zeker weten of ze niets zijn vergeten.</p>
-    <p class="closing-graf">Emigratieplan rekent het voor je door. Je voert je situatie in en je krijgt per land hetzelfde overzicht: wat blijft er over per maand, hoe ontwikkelt je vermogen zich, wat doet je woonsituatie, hoe staan je pensioenlagen ervoor en wat betekent het allemaal bij elkaar over vijf, tien, twintig jaar. In één tool met dezelfde aannames naast Nederland gelegd.</p>
-  </div>
-</section>
-
-<!-- SECTIE 4, Voor wie dit is -->
-<section class="section section-archetypes">
-  <div class="container">
-    <h2 class="section-title">Voor wie dit is</h2>
-    <p class="section-intro">Drie situaties waarin Emigratieplan klopt. Lees ze rustig door, je herkent jezelf in één ervan.</p>
-
-    <div class="archetype-grid">
-      <div class="archetype-card">
-        <span class="archetype-num">01</span>
-        <h3>Je weet al welk land het wordt</h3>
-        <p>Je hebt gekozen. De vraag is niet meer waar, de vraag is wat het je oplevert. Wat blijft er over per maand. Wat doet je vermogen over tien jaar. Hoe valt je pensioen uit. Je wilt cijfers zien voordat je een fiscalist belt, omdat je wilt weten welke vragen je moet stellen, niet welke antwoorden er voor je worden ingevuld.</p>
-        <p class="archetype-match"><em>Compare past bij jou.</em> Eén land, doorgerekend naast Nederland, op jouw eigen scenario.</p>
+      <div class="ep-pkg">
+        <h3 class="ep-pkg__name">Quickscan</h3>
+        <p class="ep-pkg__price"><span class="ep-pkg__currency">€</span>189</p>
+        <p class="ep-pkg__sub">Eenmalig</p>
+        <ul class="ep-pkg__features">
+          <li>Doorrekening op 3 landen naar keuze</li>
+          <li>Horizon tot 10 jaar</li>
+          <li>Vergelijking met Nederland</li>
+          <li>Eigen cijfers, eigen scenario</li>
+          <li>PDF export beslisgids</li>
+        </ul>
+        <a href="#vergelijking" class="ep-btn ep-btn--ghost ep-btn--full">Vergelijk inhoud</a>
+        <a href="#" class="ep-btn ep-btn--primary ep-btn--full" data-lemonsqueezy>Koop Quickscan</a>
       </div>
 
-      <div class="archetype-card">
-        <span class="archetype-num">02</span>
-        <h3>Je hebt een shortlist en wilt voorkomen dat je te snel kiest</h3>
-        <p>Je twijfelt tussen drie, vier, vijf landen. Je hebt al uren gestoken in losse vergelijkingen, in expat-fora, in gesprekken met mensen die de stap al hebben gezet. Wat je daar terugkrijgt zijn losse antwoorden op andermans aannames, in andermans situatie. Je wilt jouw cijfers zien, in jouw situatie, voor vijf landen tegelijk. Niet om de keuze te laten maken door een tool, maar om de keuze te laten ondersteunen door de cijfers.</p>
-        <p class="archetype-match"><em>Explore past bij jou.</em> Vijf landen plus Nederland, dezelfde aannames, dezelfde rekenmethode, één overzicht.</p>
+      <div class="ep-pkg ep-pkg--featured">
+        <p class="ep-pkg__badge">Meest gekozen</p>
+        <h3 class="ep-pkg__name">Volledig plan</h3>
+        <p class="ep-pkg__price"><span class="ep-pkg__currency">€</span>389</p>
+        <p class="ep-pkg__sub">Eenmalig</p>
+        <ul class="ep-pkg__features">
+          <li>Doorrekening op alle 10 landen</li>
+          <li>Horizon tot 20 jaar</li>
+          <li>Vergelijking met Nederland</li>
+          <li>Pensioen, vermogen, vastgoed</li>
+          <li>Eigen cijfers, scenario's, gevoeligheidsanalyse</li>
+          <li>PDF export beslisgids</li>
+          <li>1 jaar update-rechten</li>
+        </ul>
+        <a href="#vergelijking" class="ep-btn ep-btn--ghost ep-btn--full">Vergelijk inhoud</a>
+        <a href="#" class="ep-btn ep-btn--accent ep-btn--full" data-lemonsqueezy>Koop Volledig plan</a>
       </div>
 
-      <div class="archetype-card">
-        <span class="archetype-num">03</span>
-        <h3>Je wilt alle opties op tafel voor je beslist</h3>
-        <p>Je bent het type dat alles wil zien voor je kiest. Niet uit indecisie, maar omdat je weet dat een serieuze beslissing serieuze input vraagt. Je wilt alle landen doorrekenen, je wilt een leesbaar rapport dat de top 3 op netto resultaat laat zien naast de top 3 op risico, je wilt de afwegingen op tafel, en je wilt de juiste vragen voor je fiscalist zonder ze zelf te hoeven samenstellen. Je waardeert dat het werk gedaan is, zodat jij kunt beslissen.</p>
-        <p class="archetype-match"><em>Decide past bij jou.</em> Alle landen, vergelijkingsoverzicht, Beslisgids, Fiscalist Prep Checklist.</p>
+      <div class="ep-pkg">
+        <h3 class="ep-pkg__name">Volledig plan + advies</h3>
+        <p class="ep-pkg__price"><span class="ep-pkg__currency">€</span>789</p>
+        <p class="ep-pkg__sub">Eenmalig</p>
+        <ul class="ep-pkg__features">
+          <li>Alles in Volledig plan</li>
+          <li>60 min videocall persoonlijk advies</li>
+          <li>Reviewdocument na call</li>
+          <li>Doorverwijzing naar fiscalist of notaris</li>
+        </ul>
+        <a href="#vergelijking" class="ep-btn ep-btn--ghost ep-btn--full">Vergelijk inhoud</a>
+        <a href="#" class="ep-btn ep-btn--primary ep-btn--full" data-lemonsqueezy>Koop met advies</a>
       </div>
-    </div>
-
-    <p class="archetype-footer">Twijfel je nog? De meeste mensen kiezen Explore, omdat het ruimte geeft om verrast te worden door het juiste land.</p>
-  </div>
-</section>
-
-<!-- SECTIE 5, PAKKETKAARTEN — DE KIEZER -->
-<section class="section section-pricing" id="pakketten">
-  <div class="container">
-    <h2 class="section-title">Kies je pakket</h2>
-    <p class="section-intro">Drie pakketten. Dezelfde rekenmotor onder de motorkap. Het verschil zit in het aantal landen dat je doorrekent en of je de Beslisgids erbij wilt.</p>
-
-    <div class="pricing-grid">
-
-      <!-- COMPARE -->
-      <article class="price-card">
-        <div class="price-card-head">
-          <span class="badge badge-instap">Instap</span>
-          <h3 class="price-name">Compare</h3>
-          <p class="price-sub">Nederland + 1 land</p>
-          <div class="price-amount">
-            <span class="currency">€</span><span class="amount">189</span>
-          </div>
-          <p class="price-payoff">Jouw doelland, doorgerekend naast Nederland.</p>
-        </div>
-        <div class="price-card-body">
-          <p class="price-desc">Voor wie weet welk land het wordt. Reken jouw doelland en Nederland zij aan zij door op cashflow, belasting, vermogen en pensioen, op de horizon die je zelf kiest.</p>
-          <ul class="feature-list">
-            <li>1 doelland naar keuze + Nederland als basis</li>
-            <li>Volledige rekentool: cashflow, belasting, vermogen, pensioen, AOW, woonlasten</li>
-            <li>JSON export en import</li>
-            <li>30 dagen geld-terug-garantie</li>
-            <li>Lifetime toegang tot gekochte versie</li>
-          </ul>
-        </div>
-        <div class="price-card-foot">
-          <!-- TODO LS: vervang href door je Lemon Squeezy overlay URL voor Compare -->
-          <a href="https://YOUR-STORE.lemonsqueezy.com/buy/COMPARE-PRODUCT-ID?embed=1" class="btn btn-primary btn-block lemonsqueezy-button" data-checkout-modal>
-            Kies Compare — €189
-          </a>
-          <p class="price-fineprint">Eenmalige aankoop. Geen abonnement.</p>
-        </div>
-      </article>
-
-      <!-- EXPLORE — featured -->
-      <article class="price-card price-card-featured">
-        <div class="price-card-head">
-          <span class="badge badge-featured">Meest gekozen</span>
-          <h3 class="price-name">Explore</h3>
-          <p class="price-sub">Nederland + 5 landen</p>
-          <div class="price-amount">
-            <span class="currency">€</span><span class="amount">279</span>
-          </div>
-          <p class="price-payoff">Vijf landen, één set cijfers, één eerlijk overzicht.</p>
-        </div>
-        <div class="price-card-body">
-          <p class="price-desc">Voor wie wil vergelijken voor er tunnelvisie ontstaat. Reken vijf landen plus Nederland door op exact dezelfde aannames en zie zwart op wit waar jouw scenario het sterkst staat.</p>
-          <ul class="feature-list">
-            <li>5 doellanden naar keuze + Nederland als basis</li>
-            <li>Volledige rekentool per land</li>
-            <li>Vergelijkingsoverzicht: ranking op cashflow, belasting, vermogen, pensioen</li>
-            <li>JSON export en import</li>
-            <li>€100 korting op Deep-Dive</li>
-            <li>30 dagen geld-terug-garantie</li>
-            <li>Lifetime toegang tot gekochte versie</li>
-          </ul>
-        </div>
-        <div class="price-card-foot">
-          <!-- TODO LS: vervang href door je Lemon Squeezy overlay URL voor Explore -->
-          <a href="https://YOUR-STORE.lemonsqueezy.com/buy/EXPLORE-PRODUCT-ID?embed=1" class="btn btn-primary btn-block lemonsqueezy-button" data-checkout-modal>
-            Kies Explore — €279
-          </a>
-          <p class="price-fineprint">Eenmalige aankoop. Geen abonnement.</p>
-        </div>
-      </article>
-
-      <!-- DECIDE -->
-      <article class="price-card price-card-decide">
-        <div class="price-card-head">
-          <span class="badge badge-compleet">Compleet</span>
-          <h3 class="price-name">Decide</h3>
-          <p class="price-sub">Nederland + 10 landen + Beslisgids</p>
-          <div class="price-amount">
-            <span class="currency">€</span><span class="amount">449</span>
-          </div>
-          <p class="price-payoff">Tien landen plus een Beslisgids die het werk voor je doet.</p>
-        </div>
-        <div class="price-card-body">
-          <p class="price-desc">Voor wie de cijfers wil én een leesbaar overzicht om mee te nemen. Toegang tot alle tien landen plus een Beslisgids die je scenario's vertaalt naar top 3's, trade-offs en de juiste vragen voor je fiscalist.</p>
-          <ul class="feature-list">
-            <li>Alle 10 landen + Nederland als basis</li>
-            <li>Volledige rekentool per land</li>
-            <li>Vergelijkingsoverzicht over alle landen</li>
-            <li><strong>Beslisgids</strong>: 8 onderdelen, downloadbaar als PDF</li>
-            <li><strong>Fiscalist Prep Checklist</strong>: 8-12 vragen op maat</li>
-            <li>JSON export en import</li>
-            <li>€100 korting op Deep-Dive</li>
-            <li>30 dagen geld-terug-garantie</li>
-            <li>Lifetime toegang tot gekochte versie</li>
-          </ul>
-        </div>
-        <div class="price-card-foot">
-          <!-- TODO LS: vervang href door je Lemon Squeezy overlay URL voor Decide -->
-          <a href="https://YOUR-STORE.lemonsqueezy.com/buy/DECIDE-PRODUCT-ID?embed=1" class="btn btn-primary btn-block lemonsqueezy-button" data-checkout-modal>
-            Kies Decide — €449
-          </a>
-          <p class="price-fineprint">Eenmalige aankoop. Geen abonnement.</p>
-        </div>
-      </article>
 
     </div>
 
-    <p class="pricing-footer">Veilig afrekenen via Lemon Squeezy. iDEAL, creditcard, SEPA en meer. Je ontvangt direct na betaling een magic link in je inbox.</p>
+    <p class="ep-pkg__legal">
+      Eenmalige aankoop, geen abonnement. Direct toegang na betaling.
+      30 dagen geld-terug-garantie. Geen herhaalde incasso, geen automatische verlenging.
+    </p>
+
+    <div class="ep-cta-row">
+      <a href="#vergelijking" class="ep-btn ep-btn--accent">Bekijk uitgebreide vergelijking</a>
+    </div>
   </div>
 </section>
 
-<!-- SECTIE 6, Wat erin zit -->
-<section class="section section-alt" id="vergelijking">
-  <div class="container narrow">
-    <h2 class="section-title">Wat erin zit</h2>
-    <p>Emigratieplan is gebouwd over zes maanden, gevoed door zeventien gesprekken met mensen die emigratie overwegen of net achter de rug hebben. De tax engine per land is opgebouwd uit officiële bronnen: Belastingdienst, AADE in Griekenland, AT in Portugal, AGI in Italië, Tax Department Cyprus, Federal Tax Authority UAE. Gemodelleerd op de regimes die ertoe doen: Box 3 in Nederland, NHR in Portugal, IKE en Article 5C in Griekenland, non-dom in Cyprus, vlakke tax in Bulgarije, lump sum in Italië, en het ontbreken van inkomstenbelasting in UAE.</p>
-    <p>Tien landen zijn nu beschikbaar. Geen vereenvoudigde percentages, geen ruwe schattingen. Iedere uitbreiding kost weken werk, omdat ik geen land toevoeg waar de regels niet kloppen.</p>
-  </div>
-</section>
+<!-- ============ VERGELIJKING TABEL (uitgebreid, met sticky header) ============ -->
+<section id="vergelijking" class="ep-section ep-section--alt">
+  <div class="ep-container">
+    <p class="ep-eyebrow">Wat zit er in welk pakket</p>
+    <h2 class="ep-h2">Uitgebreide vergelijking</h2>
+    <p class="ep-lead ep-narrow-inline">
+      Volledige feature-lijst per pakket. Hover op de
+      <span class="ep-info-inline" aria-hidden="true">i</span>
+      voor uitleg.
+    </p>
 
-<!-- SECTIE 7, Vergelijkingstabel -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Pakketten naast elkaar</h2>
-
-    <div class="compare-table-wrap">
-      <table class="compare-table">
-        <thead>
+    <div class="ep-compare">
+      <table class="ep-compare__table">
+        <thead class="ep-compare__sticky">
           <tr>
-            <th class="cell-feature"></th>
-            <th class="cell-pkg">
-              <span class="th-name">Compare</span>
-              <span class="th-price">€189</span>
-              <span class="th-badge">Instap</span>
-            </th>
-            <th class="cell-pkg cell-pkg-featured">
-              <span class="th-name">Explore</span>
-              <span class="th-price">€279</span>
-              <span class="th-badge">Meest gekozen</span>
-            </th>
-            <th class="cell-pkg">
-              <span class="th-name">Decide</span>
-              <span class="th-price">€449</span>
-              <span class="th-badge">Compleet</span>
-            </th>
+            <th scope="col" class="ep-compare__feature">Onderdeel</th>
+            <th scope="col">Quickscan<br><span class="ep-compare__price">€189</span></th>
+            <th scope="col" class="ep-compare__featured">Volledig plan<br><span class="ep-compare__price">€389</span></th>
+            <th scope="col">Plan + advies<br><span class="ep-compare__price">€789</span></th>
           </tr>
         </thead>
         <tbody>
-          <tr class="row-group"><td colspan="4">Landen</td></tr>
-          <tr><td>Nederland (basis)</td><td>✓</td><td>✓</td><td>✓</td></tr>
-          <tr><td>Doellanden</td><td>1</td><td>5</td><td>alle 10</td></tr>
 
-          <tr class="row-group"><td colspan="4">Rekenen</td></tr>
-          <tr><td>Cashflow per jaar</td><td>✓</td><td>✓</td><td>✓</td></tr>
-          <tr><td>Belasting (alle lagen)</td><td>✓</td><td>✓</td><td>✓</td></tr>
-          <tr><td>Vermogensontwikkeling</td><td>✓</td><td>✓</td><td>✓</td></tr>
-          <tr><td>Pensioen + AOW</td><td>✓</td><td>✓</td><td>✓</td></tr>
-          <tr><td>Woonlasten + woningwaarde</td><td>✓</td><td>✓</td><td>✓</td></tr>
-          <tr><td>Horizon vrij instelbaar</td><td>✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td colspan="4" class="ep-compare__group">Doorrekening</td></tr>
 
-          <tr class="row-group"><td colspan="4">Vergelijken</td></tr>
-          <tr><td>Naast Nederland gelegd</td><td>✓</td><td>✓</td><td>✓</td></tr>
-          <tr><td>Ranking op meerdere criteria</td><td class="muted">—</td><td>✓</td><td>✓</td></tr>
+          <tr>
+            <th scope="row">
+              Aantal landen
+              <button class="ep-info" data-tip="Hoeveel bestemmingslanden je kunt doorrekenen naast Nederland.">i</button>
+            </th>
+            <td>3 naar keuze</td>
+            <td class="ep-compare__featured">Alle 10</td>
+            <td>Alle 10</td>
+          </tr>
 
-          <tr class="row-group"><td colspan="4">Beslissen</td></tr>
-          <tr><td>Beslisgids (PDF)</td><td class="muted">—</td><td class="muted">—</td><td>✓</td></tr>
-          <tr><td>Fiscalist Prep Checklist</td><td class="muted">—</td><td class="muted">—</td><td>✓</td></tr>
-          <tr><td>Top 3 + rode vlaggen</td><td class="muted">—</td><td class="muted">—</td><td>✓</td></tr>
+          <tr>
+            <th scope="row">
+              Horizon
+              <button class="ep-info" data-tip="Hoe ver vooruit je rekent. Pensioen en vermogen bouwen pas zichtbaar op bij langere horizon.">i</button>
+            </th>
+            <td>10 jaar</td>
+            <td class="ep-compare__featured">20 jaar</td>
+            <td>20 jaar</td>
+          </tr>
 
-          <tr class="row-group"><td colspan="4">Exporteren</td></tr>
-          <tr><td>JSON export en import</td><td>✓</td><td>✓</td><td>✓</td></tr>
+          <tr>
+            <th scope="row">
+              Scenario's per land
+              <button class="ep-info" data-tip="Conservatief / neutraal / progressief preset plus volledig eigen invoer.">i</button>
+            </th>
+            <td>1</td>
+            <td class="ep-compare__featured">3 + eigen</td>
+            <td>3 + eigen</td>
+          </tr>
 
-          <tr class="row-group"><td colspan="4">Overig</td></tr>
-          <tr><td>30 dagen geld-terug-garantie</td><td>✓</td><td>✓</td><td>✓</td></tr>
-          <tr><td>Korting Deep-Dive (€100)</td><td class="muted">—</td><td>✓</td><td>✓</td></tr>
-          <tr><td>Toegang</td><td>lifetime</td><td>lifetime</td><td>lifetime</td></tr>
+          <tr>
+            <th scope="row">
+              Gevoeligheidsanalyse
+              <button class="ep-info" data-tip="Per variabele zien hoe gevoelig de uitkomst is. Bijvoorbeeld: wat als rendement 2% lager uitvalt.">i</button>
+            </th>
+            <td>—</td>
+            <td class="ep-compare__featured">Ja</td>
+            <td>Ja</td>
+          </tr>
+
+          <tr><td colspan="4" class="ep-compare__group">Inhoud per land</td></tr>
+
+          <tr>
+            <th scope="row">
+              Inkomstenbelasting
+              <button class="ep-info" data-tip="Volledige IB-engine per land met schijven, kortingen, regimes (Beckham, NHR, 5C, non-dom).">i</button>
+            </th>
+            <td>Ja</td>
+            <td class="ep-compare__featured">Ja</td>
+            <td>Ja</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Vermogensbelasting
+              <button class="ep-info" data-tip="Box 3 NL + lokale vermogensbelasting per land waar van toepassing.">i</button>
+            </th>
+            <td>Ja</td>
+            <td class="ep-compare__featured">Ja</td>
+            <td>Ja</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Pensioen (AOW + privé)
+              <button class="ep-info" data-tip="AOW bevriest bij emigratie, indexeert 2%/jr. Privépensioen rendement compound. Pensioenverdrag per land toegepast.">i</button>
+            </th>
+            <td>Basis</td>
+            <td class="ep-compare__featured">Volledig</td>
+            <td>Volledig</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Eigen woning of huur
+              <button class="ep-info" data-tip="Koop met annuitair/lineair, rente, HRA. Of huur. Per land instelbaar.">i</button>
+            </th>
+            <td>Ja</td>
+            <td class="ep-compare__featured">Ja</td>
+            <td>Ja</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Sociale premies
+              <button class="ep-info" data-tip="EFKA (GR), GHS (CY), SS (ES/PT/IT). Locale niveaus toegepast.">i</button>
+            </th>
+            <td>Ja</td>
+            <td class="ep-compare__featured">Ja</td>
+            <td>Ja</td>
+          </tr>
+
+          <tr><td colspan="4" class="ep-compare__group">Output en export</td></tr>
+
+          <tr>
+            <th scope="row">
+              Beslisgids PDF
+              <button class="ep-info" data-tip="PDF-export van je volledige plan: alle landen naast elkaar, jaar-op-jaar, plus aannames. Klaar om te delen met je fiscalist of partner.">i</button>
+            </th>
+            <td>Ja</td>
+            <td class="ep-compare__featured">Ja</td>
+            <td>Ja</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Scenario opslaan en herzien
+              <button class="ep-info" data-tip="Plannen opslaan in je account en later herzien als je situatie verandert. Niet voor Quickscan.">i</button>
+            </th>
+            <td>—</td>
+            <td class="ep-compare__featured">Ja</td>
+            <td>Ja</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Update-rechten
+              <button class="ep-info" data-tip="Belastingregels veranderen. Met update-rechten krijg je de nieuwste cijfers en regimes binnen je termijn.">i</button>
+            </th>
+            <td>—</td>
+            <td class="ep-compare__featured">1 jaar</td>
+            <td>1 jaar</td>
+          </tr>
+
+          <tr><td colspan="4" class="ep-compare__group">Persoonlijk</td></tr>
+
+          <tr>
+            <th scope="row">
+              Videocall persoonlijk advies
+              <button class="ep-info" data-tip="60 minuten via Google Meet of Zoom. Je deelt vooraf je plan, we gaan in op de keuzemomenten.">i</button>
+            </th>
+            <td>—</td>
+            <td class="ep-compare__featured">—</td>
+            <td>60 min</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Reviewdocument na call
+              <button class="ep-info" data-tip="Schriftelijke samenvatting van het gesprek met conclusies, aanbevelingen en aanpassingen op je plan.">i</button>
+            </th>
+            <td>—</td>
+            <td class="ep-compare__featured">—</td>
+            <td>Ja</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Doorverwijzing fiscalist of notaris
+              <button class="ep-info" data-tip="Korte intro naar de juiste lokale specialist in jouw doelland uit ons netwerk. Geen verplichting, geen commissie.">i</button>
+            </th>
+            <td>—</td>
+            <td class="ep-compare__featured">—</td>
+            <td>Ja</td>
+          </tr>
+
+          <tr><td colspan="4" class="ep-compare__group">Voorwaarden</td></tr>
+
+          <tr>
+            <th scope="row">
+              30 dagen geld terug
+              <button class="ep-info" data-tip="Niet wat je verwacht? Mail binnen 30 dagen, geld binnen 5 werkdagen terug. Geen vragen vooraf.">i</button>
+            </th>
+            <td>Ja</td>
+            <td class="ep-compare__featured">Ja</td>
+            <td>Ja</td>
+          </tr>
+
+          <tr class="ep-compare__cta-row">
+            <th scope="row"></th>
+            <td><a href="#" class="ep-btn ep-btn--primary ep-btn--sm ep-btn--full" data-lemonsqueezy>Koop Quickscan</a></td>
+            <td class="ep-compare__featured"><a href="#" class="ep-btn ep-btn--accent ep-btn--sm ep-btn--full" data-lemonsqueezy>Koop Volledig plan</a></td>
+            <td><a href="#" class="ep-btn ep-btn--primary ep-btn--sm ep-btn--full" data-lemonsqueezy>Koop met advies</a></td>
+          </tr>
+
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- SECTIE 8, Wat er na aankoop gebeurt -->
-<section class="section section-alt">
-  <div class="container narrow">
-    <h2 class="section-title">Wat er na aankoop gebeurt</h2>
-    <p>Je koopt lifetime toegang tot de versie die je aanschaft. Wat je koopt, blijft van jou. Geen abonnement, geen automatische incasso, geen verrassingen op je rekening.</p>
-    <p>Belastingregels veranderen. Box 3 schuift richting werkelijk rendement, NHR is in Portugal afgebouwd, andere landen passen tarieven aan. Daarom werk ik aan een update-abonnement voor wie de cijfers actueel wil houden, plus uitbreidingen naar nieuwe landen. Beschikbaar zodra de eerste versie van Emigratieplan zich heeft bewezen. Bestaande pakket-houders krijgen voorrang en korting.</p>
+<!-- ============ FAQ ============ -->
+<section id="faq" class="ep-section">
+  <div class="ep-container ep-narrow">
+    <p class="ep-eyebrow">Veelgestelde vragen</p>
+    <h2 class="ep-h2">Wat mensen vooraf willen weten</h2>
+
+    <details class="ep-faq">
+      <summary>Is dit fiscaal advies?</summary>
+      <p>
+        Nee. Emigratieplan is een rekenmodel en een beslismodel. Het geeft je
+        cijfers op basis van publiek beschikbare belastingregels en jouw eigen
+        invoer. Voor de uiteindelijke beslissing en de fiscale implementatie
+        verwijzen we naar een fiscalist of notaris. Het pakket "Volledig plan
+        + advies" bevat een doorverwijzing naar de juiste specialist in jouw
+        doelland.
+      </p>
+    </details>
+
+    <details class="ep-faq">
+      <summary>Hoe accuraat zijn de berekeningen?</summary>
+      <p>
+        De engines per land zijn gebouwd op de huidige belastingregels en
+        regimes. We werken ze bij wanneer regels veranderen. Voor klanten
+        met update-rechten zijn die wijzigingen automatisch beschikbaar.
+        We zijn transparant over de aannames: alle parameters zijn zichtbaar
+        en aanpasbaar, zodat je weet waarop je rekent.
+      </p>
+    </details>
+
+    <details class="ep-faq">
+      <summary>Wat als ik nog niet weet welk land?</summary>
+      <p>
+        Dan is dit precies waar Emigratieplan voor bedoeld is. Reken alle tien
+        landen door op jouw situatie. Het Volledig plan laat naast elkaar zien
+        wat ieder land jou kost en oplevert over jouw horizon. Daarna kies je
+        op cijfers, niet op gevoel.
+      </p>
+    </details>
+
+    <details class="ep-faq">
+      <summary>Werkt dit ook voor DGA's of ZZP'ers?</summary>
+      <p>
+        Ja. Het model ondersteunt ZZP (eenmanszaak), loondienst en DGA (BV)
+        in Nederland, met de juiste belastingbehandeling. Bij emigratie wordt
+        de structuur per land doorgerekend, inclusief het effect van eventuele
+        herstructurering (bijvoorbeeld een IKE in Griekenland of een Ltd in
+        Cyprus).
+      </p>
+    </details>
+
+    <details class="ep-faq">
+      <summary>Krijg ik mijn geld terug als het niets voor mij blijkt?</summary>
+      <p>
+        Ja. 30 dagen geld-terug-garantie. Mail naar
+        <a href="mailto:hallo@emigratieplan.nl">hallo@emigratieplan.nl</a>
+        binnen dertig dagen na aankoop. Geld binnen vijf werkdagen terug
+        op dezelfde rekening. Geen vragen vooraf.
+      </p>
+    </details>
+
+    <details class="ep-faq">
+      <summary>Wie zit hierachter?</summary>
+      <p>
+        Emigratieplan is gebouwd door Kevin van Grondelle, oprichter van
+        STS Strategy, een strategisch adviespraktijk in Amsterdam. Het model
+        is voortgekomen uit een persoonlijk vraagstuk: zelf de cijfers willen
+        zien voor een eventuele emigratie. Wat begon als een Excel werd een
+        model dat ook voor anderen bruikbaar bleek.
+      </p>
+    </details>
+
+    <div class="ep-cta-row">
+      <a href="#pakketten" class="ep-btn ep-btn--accent">Naar de pakketten</a>
+    </div>
   </div>
 </section>
 
-<!-- SECTIE 9, Wie heeft dit gebouwd -->
-<section class="section section-builder">
-  <div class="container">
-    <div class="builder-grid">
-      <div class="builder-content">
-        <h2 class="section-title">Wie heeft dit gebouwd</h2>
-        <p><strong>Kevin van Grondelle.</strong> Strateeg, geen fiscalist. Ik bouwde Emigratieplan omdat ik mijn eigen vraag niet beantwoord kreeg: wat doet emigratie écht met je netto positie over tien tot twintig jaar? Geen enkele rekentool gaf het volledige antwoord, dus heb ik het zelf gemaakt. Voor mezelf, voor mijn partner, en nu voor wie dezelfde vraag heeft.</p>
-        <p>Ik ben geen WFT-adviseur, en deze tool is geen vervanging van een fiscalist. Wel maakt hij het gesprek met een fiscalist effectiever, omdat je met cijfers binnenkomt in plaats van met vragen.</p>
+<!-- ============ WAITLIST / BREVO ============ -->
+<section id="waitlist" class="ep-section ep-waitlist">
+  <div class="ep-container ep-narrow">
+    <p class="ep-eyebrow ep-eyebrow--center">Nog niet klaar om te kiezen?</p>
+    <h2 class="ep-h2 ep-h2--center">Ontvang een seintje bij grote updates</h2>
+    <p class="ep-lead ep-lead--center">
+      Geen marketing-stroom. Eén mail wanneer er een nieuw land of regime
+      bijkomt, en eenmalig een seintje bij grote releases.
+    </p>
+
+    <form id="ep-brevo-form"
+          method="POST"
+          action="https://6fbc4696.sibforms.com/serve/MUIFAOwtZLhUcUx4enS_K0s-jGSX6VnDjFc7pZBia6t7gLTvtDxvzxroRRx4Jl_GAP4K9_0RDPkQWBZHkSf786iv7Xyd9lmEdP9TVFoDMu0J_Vk0xPG70sTTn0qFoDNOe3owAQsHnRgBQNKG6psfmx1IEZDtpwpT5tpxtOb0IyNxQOtFvV43RiPwYkxRot2XaGrzNVtJkL1_PTqG1g=="
+          data-type="subscription">
+      <div class="ep-form-row">
+        <input class="ep-input" type="text" id="FIRSTNAME" name="FIRSTNAME" placeholder="Voornaam" autocomplete="given-name" required>
+        <input class="ep-input" type="email" id="EMAIL" name="EMAIL" placeholder="E-mailadres" autocomplete="email" required>
       </div>
-      <aside class="builder-meta">
-        <dl>
-          <dt>Achtergrond</dt>
-          <dd>Fractional strategisch adviseur, ex-CCO/CBDO Onemeeting, oprichter STS Strategy.</dd>
-          <dt>Bouwperiode</dt>
-          <dd>Zes maanden, zeventien klantgesprekken, tien landen.</dd>
-          <dt>Contact</dt>
-          <dd><a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a></dd>
-        </dl>
-      </aside>
+      <button class="ep-btn ep-btn--accent ep-btn--full" type="submit">Zet me op de lijst</button>
+      <p class="ep-form-meta">
+        We gebruiken Brevo voor verzending. Door je in te schrijven ga je
+        akkoord met
+        <a href="https://www.brevo.com/en/legal/privacypolicy/" rel="nofollow noopener">het privacybeleid van Brevo</a>.
+      </p>
+      <input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="locale" value="nl">
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ep-footer">
+  <div class="ep-container ep-footer__inner">
+    <div>
+      <p class="ep-logo">
+        <span class="ep-logo__mark">EP</span>
+        <span class="ep-logo__wordmark">Emigratieplan</span>
+      </p>
+      <p class="ep-footer__tag">Wat emigreren je écht kost.</p>
     </div>
-  </div>
-</section>
-
-<!-- SECTIE 10, Garantie -->
-<section class="section section-guarantee">
-  <div class="container narrow">
-    <div class="guarantee-block">
-      <span class="guarantee-icon" aria-hidden="true">↺</span>
-      <h2>30 dagen geld-terug-garantie</h2>
-      <p>Reken een week, twee weken, een maand. Werkt het niet voor jouw situatie? Stuur één mail naar <a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a> en je krijgt je geld terug. Geen vragen, geen formulieren, geen telefoontjes.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTIE 11, Privacy -->
-<section class="section section-alt">
-  <div class="container narrow">
-    <h2 class="section-title">Privacy</h2>
-    <p>Geen accounts vereist. Geen data die we doorverkopen. Geen mailinglijst waar je ongevraagd in belandt. Je koopt het pakket, je rekent, je houdt je eigen exports.</p>
-  </div>
-</section>
-
-<!-- SECTIE 12, Wat als je nog twijfelt -->
-<section class="section" id="faq">
-  <div class="container narrow">
-    <h2 class="section-title">Wat als je nog twijfelt</h2>
-    <p class="section-intro">Je hebt de pakketten gezien, je hebt de tabel gelezen. Toch blijft er één vraag hangen. Hieronder staan de twijfels die we het vaakst horen.</p>
-
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>Wat als ik nog niet zeker weet of ik wil emigreren?</summary>
-        <div class="faq-answer">
-          <p>Dan ben je precies de persoon waarvoor Emigratieplan is gebouwd. De tool is niet bedoeld om je over de streep te trekken, maar om te laten zien wat het betekent als je gaat. Je krijgt cijfers in handen waarmee je je twijfel kunt onderbouwen. Misschien blijkt emigreren financieel minder oplevert dan je hoopte, en kies je bewust om te blijven. Ook dat is waarde.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Wat als mijn situatie te complex is voor een tool?</summary>
-        <div class="faq-answer">
-          <p>De tool is gebouwd voor situaties die in werkelijkheid voorkomen, niet voor leerboekvoorbeelden. ZZP plus loondienst, twee partners met verschillende inkomsten, vermogen verspreid over rekeningen, beleggingen en vastgoed, pensioenopbouw in meerdere lagen. Allemaal mogelijk. Loop je tegen een grens van de tool aan, dan is dat zelf ook een uitkomst: je weet welk deel je extra moet bespreken met een fiscalist.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Wat als ik niet zo technisch ben?</summary>
-        <div class="faq-answer">
-          <p>Je hoeft niets te installeren. Je krijgt een link, je opent die in je browser, je vult je situatie in, je klikt door. Wie zelf zijn belastingaangifte kan doen, kan met Emigratieplan overweg. Heb je behoefte aan een persoonlijke toelichting op je cijfers, dan kun je een Deep-Dive boeken: 90 minuten 1-op-1, met een schriftelijke samenvatting binnen 48 uur.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Wat als ik later van gedachten verander?</summary>
-        <div class="faq-answer">
-          <p>Je hebt 30 dagen om te beslissen of het je geld waard is. Past het niet bij wat je nodig hebt, dan stuur je één mail naar <a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a> en je krijgt het volledige bedrag terug. Geen vragen, geen formulieren, geen telefoontjes.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Wat als de wet verandert?</summary>
-        <div class="faq-answer">
-          <p>Belastingregels veranderen, in Nederland en in elk ander land. Je houdt lifetime toegang tot de versie die je koopt, en ik werk aan een update-abonnement voor wie de cijfers actueel wil houden. Bestaande pakket-houders krijgen voorrang en korting zodra dat beschikbaar is.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Werkt dit als ik ZZP'er ben? Of in loondienst? Of DGA?</summary>
-        <div class="faq-answer">
-          <p>Ja. De tool ondersteunt alle drie en kan ze ook combineren, bijvoorbeeld jij in loondienst en je partner ZZP.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is dit fiscaal advies?</summary>
-        <div class="faq-answer">
-          <p>Nee. Het is een rekentool die scenario's doorrekent op basis van actuele regels per land. Voor formeel advies stap je naar een fiscalist met WFT-vergunning. De Beslisgids in Decide bevat een checklist met de juiste vragen voor dat gesprek.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Wat als ik twijfel tussen twee pakketten?</summary>
-        <div class="faq-answer">
-          <p>Compare als je het simpel wilt houden en je land al weet. Explore als je zelf wilt vergelijken op een handvol landen die op je shortlist staan. Decide als je het werk uit handen wilt geven en een leesbaar overzicht wilt waarmee je direct verder kunt, met je partner of je fiscalist.</p>
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- SECTIE 14, Final CTA -->
-<section class="section section-final">
-  <div class="container narrow">
-    <h2 class="final-title">Tijd om te beslissen wat je gaat weten</h2>
-    <p>Je bent aan het einde van deze pagina. Je hebt gezien wat de tool doet, voor wie hij is, wat erin zit en wat je terugkrijgt. Wat je nog niet hebt, zijn jouw cijfers in jouw scenario.</p>
-    <p>Emigratieplan rekent voor jouw situatie door wat het betekent om in een ander land te wonen. Op je inkomen, je woning, je vermogen, je pensioen. Naast Nederland gelegd, met dezelfde aannames, over de horizon die jij kiest. Een avond werk in plaats van maanden onderzoek. Één overzicht in plaats van losse antwoorden uit losse tools.</p>
-    <p>Wat je koopt is geen software. Wat je koopt is grip op een beslissing die je anders blijft uitstellen, of te snel neemt op gevoel. Cijfers waar je achter staat, omdat ze op jouw input zijn berekend en niet op andermans aannames. Een gesprek met je partner dat over hetzelfde plaatje gaat. Een gesprek met een fiscalist waarin jij de juiste vragen stelt.</p>
-    <p class="final-fineprint">Eenmalige aankoop. Lifetime toegang. Jouw cijfers blijven op jouw apparaat. Past het niet bij wat je nodig hebt, dan krijg je binnen 30 dagen je geld terug.</p>
-
-    <a href="#pakketten" class="btn btn-primary btn-large">Bekijk de pakketten, vanaf €189</a>
-
-    <div class="leadmagnet-block">
-      <h3>Nog niet klaar om te kiezen?</h3>
-      <p>Laat je e-mail achter en ontvang Beslisgids 01: de eerste vragen die je jezelf moet stellen voordat je een land kiest. Geen verkoopmail, geen drip-funnel, gewoon de gids in je inbox.</p>
-      <!-- TODO LS/Email: vervang form action door je email-capture endpoint (bv. ConvertKit, MailerLite, Buttondown) -->
-      <form class="leadmagnet-form" action="https://YOUR-EMAIL-PROVIDER/subscribe" method="POST">
-        <input type="email" name="email" placeholder="naam@voorbeeld.nl" required aria-label="E-mailadres">
-        <button type="submit" class="btn btn-primary">Stuur me Beslisgids 01</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
+    <div class="ep-footer__cols">
       <div>
-        <span class="brand-mark">EP</span>
-        <p>Emigratieplan is een product van STS Strategy. Gebouwd door Kevin van Grondelle.</p>
+        <p class="ep-footer__col-title">Product</p>
+        <a href="#pakketten">Pakketten</a>
+        <a href="#vergelijking">Vergelijking</a>
+        <a href="#faq">Veelgestelde vragen</a>
       </div>
       <div>
-        <h4>Product</h4>
-        <ul>
-          <li><a href="#pakketten">Pakketten</a></li>
-          <li><a href="#vergelijking">Wat erin zit</a></li>
-          <li><a href="#faq">Veelgestelde vragen</a></li>
-        </ul>
+        <p class="ep-footer__col-title">Bedrijf</p>
+        <a href="https://www.stsstrategy.com" rel="noopener">STS Strategy</a>
+        <a href="mailto:hallo@emigratieplan.nl">Contact</a>
       </div>
       <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Juridisch</h4>
-        <ul>
-          <li><a href="/privacy">Privacy</a></li>
-          <li><a href="/algemene-voorwaarden">Algemene voorwaarden</a></li>
-        </ul>
+        <p class="ep-footer__col-title">Juridisch</p>
+        <a href="#">Privacy</a>
+        <a href="#">Algemene voorwaarden</a>
       </div>
     </div>
-    <p class="footer-bottom">© 2026 Emigratieplan / STS Strategy. Emigratieplan is geen fiscaal of juridisch advies. Voor formele toetsing van je beslissing schakel je een fiscalist met WFT-vergunning in.</p>
+  </div>
+  <div class="ep-footer__bottom">
+    <p>© 2026 STS Strategy. Emigratieplan is een product van STS Strategy.</p>
   </div>
 </footer>
 
-<script src="script.js" defer></script>
+<!-- Brevo loader -->
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
+<!-- Tiny JS for scroll progress, active section, tooltips -->
+<script>
+(function () {
+  // Scroll progress
+  var bar = document.getElementById('ep-scroll-progress');
+  function onScroll() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Active section in side nav
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('#ep-section-nav a');
+  function setActive() {
+    var fromTop = window.scrollY + 120;
+    sections.forEach(function (sec) {
+      var id = sec.id;
+      var top = sec.offsetTop;
+      var bottom = top + sec.offsetHeight;
+      var link = document.querySelector('#ep-section-nav a[href="#' + id + '"]');
+      if (!link) return;
+      if (fromTop >= top && fromTop < bottom) {
+        navLinks.forEach(function (l) { l.classList.remove('is-active'); });
+        link.classList.add('is-active');
+      }
+    });
+  }
+  document.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+
+  // Tooltip toggle on click for touch devices
+  document.querySelectorAll('.ep-info').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelectorAll('.ep-info.is-open').forEach(function (other) {
+        if (other !== btn) other.classList.remove('is-open');
+      });
+      btn.classList.toggle('is-open');
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.ep-info')) {
+      document.querySelectorAll('.ep-info.is-open').forEach(function (b) {
+        b.classList.remove('is-open');
+      });
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
