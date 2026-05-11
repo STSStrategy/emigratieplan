@@ -1,0 +1,59 @@
+# Emigratieplan — robots.txt
+# Early-bird landing pagina is indexeerbaar.
+# Salespage (in /preview/) is geblokkeerd tot launch.
+
+User-agent: *
+Allow: /
+Disallow: /preview/
+
+Sitemap: https://emigratieplan.nl/sitemap.xml
+
+# AI crawlers — early-bird wel, preview niet
+
+User-agent: GPTBot
+Allow: /
+Disallow: /preview/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /preview/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /preview/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /preview/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /preview/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /preview/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /preview/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /preview/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /preview/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /preview/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /preview/
+
+User-agent: CCBot
+Allow: /
+Disallow: /preview/
