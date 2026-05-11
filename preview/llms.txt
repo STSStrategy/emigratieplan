@@ -1,0 +1,69 @@
+# Emigratieplan
+
+> Emigratieplan is een Nederlandse rekentool die de financiële uitkomst van emigratie doorrekent op tien bestemmingslanden plus Nederland over een horizon van vijf tot twintig jaar. Gebouwd voor Nederlandse ondernemers en particulieren die emigratie overwegen en cijfers nodig hebben voor hun beslissing of voor het gesprek met een fiscalist.
+
+## Wat het product is
+
+Emigratieplan is een eenmalig te kopen webgebaseerde tool. Geen abonnement, geen account, geen tracking. Je voert je situatie in (inkomen, vermogen, pensioen, woning, partner) en de tool rekent per land jaar voor jaar door wat de fiscale en financiële uitkomst is, vergeleken met Nederland.
+
+## Doelgroep
+
+Nederlandse particulieren en ondernemers met een serieuze emigratiewens. ZZP'ers, DGA's, mensen in loondienst, paren met gemengde inkomensvormen. Vermogensklasse middenklasse en hoger. Doelgroep die zelf onderzoek doet en cijfers in handen wil voordat ze een fiscalist betalen.
+
+## Beschikbare landen
+
+Nederland (basis) plus tien bestemmingslanden:
+1. Griekenland (inclusief IKE en Article 5C regime)
+2. Cyprus (inclusief non-dom regime)
+3. Portugal (inclusief NHR / afbouw NHR)
+4. Spanje
+5. Italië (inclusief lump sum regime)
+6. UAE (Verenigde Arabische Emiraten)
+7. Bulgarije (vlakke 10% tax)
+8. Hongarije
+9. Malta
+10. Eén extra land
+
+## Drie pakketten
+
+| Pakket | Prijs | Inhoud |
+|---|---|---|
+| Compare | €189 | Nederland + 1 land naar keuze. Volledige rekentool, JSON export, lifetime toegang. |
+| Explore | €279 | Nederland + 5 landen naar keuze. Volledige rekentool, vergelijkingsoverzicht met ranking, €100 korting op Deep-Dive, lifetime toegang. **Meest gekozen.** |
+| Decide | €449 | Nederland + alle 10 landen. Volledige rekentool, vergelijkingsoverzicht, Beslisgids (8-onderdelen PDF), Fiscalist Prep Checklist, top 3 + rode vlaggen, €100 korting op Deep-Dive, lifetime toegang. |
+
+Alle drie hebben 30 dagen geld-terug-garantie, geen vragen.
+
+## Wat de tool doorrekent
+
+- Cashflow per jaar (netto besteedbaar inkomen na belasting)
+- Belasting op alle lagen: inkomstenbelasting, vermogensbelasting (Box 3 NL), kapitaalwinst, dividend, sociale premies
+- Vermogensontwikkeling over de gekozen horizon (5 tot 25 jaar)
+- Pensioenopbouw en uitkering in alle drie de pijlers (AOW, werkgeverspensioen, lijfrente)
+- AOW-impact bij emigratie (stop opbouw, vrijwillige verzekering)
+- Woonlasten (huur of koop), woningwaarde-ontwikkeling, hypotheekrente-aftrek
+- Vergelijking met Nederland als basis, exact dezelfde aannames
+
+## Wat de tool niet is
+
+Geen fiscaal of juridisch advies. Geen vervanging voor een fiscalist met WFT-vergunning. De tool maakt het gesprek met een fiscalist effectiever omdat je met cijfers binnenkomt in plaats van met vragen.
+
+## Bronnen tax engine
+
+De tax engine per land is opgebouwd uit officiële bronnen: Belastingdienst (NL), AADE (Griekenland), AT (Portugal), AGI (Italië), Tax Department Cyprus, Federal Tax Authority UAE, en de equivalenten voor de overige landen.
+
+## Maker
+
+Kevin van Grondelle, fractional strategisch adviseur, eigenaar STS Strategy. Geen WFT-vergunning. Bouwperiode zes maanden, gevoed door zeventien interviews met mensen die emigratie overwegen of net achter de rug hebben.
+
+## Contact
+
+kevin@emigratieplan.nl
+
+## Distributie
+
+Via emigratieplan.nl, checkout via Lemon Squeezy (iDEAL, creditcard, SEPA). Eenmalige aankoop, lifetime toegang tot de gekochte versie. Update-abonnement voor nieuwe regelgeving en uitbreidingen naar nieuwe landen volgt later, met voorrang en korting voor bestaande pakket-houders.
+
+## Advisory aanvulling
+
+Voor wie persoonlijke duiding wil bij de doorgerekende scenario's bestaat een aparte 90-minuten Deep-Dive sessie (€349 los, €249 voor Explore- en Decide-kopers). Inclusief schriftelijke samenvatting binnen 48 uur. Geen fiscaal advies, wel persoonlijke sparring.
