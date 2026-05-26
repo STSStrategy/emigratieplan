@@ -1,0 +1,2481 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Beslisgids · Emigratieplan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Brandbook tokens v1.0 (locked, do not add tokens) */
+  :root {
+    --paper: #f6f5f2;
+    --paper-warm: #f1ece2;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-mute: #8a8580;
+    --terracotta: #ba5229;
+    --terracotta-deep: #9a4322;
+    --olive: #5a6b3e;
+    --line: #d9d3c5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--paper);
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    color: var(--ink);
+    font-size: 11pt;
+    line-height: 1.55;
+  }
+
+  .doc {
+    max-width: 210mm;
+    margin: 0 auto;
+    background: var(--paper);
+  }
+
+  /* Page system, print as A4 */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 22mm 20mm 24mm;
+    background: var(--paper);
+    position: relative;
+    page-break-after: always;
+    overflow: hidden;
+  }
+
+  .page--warm { background: var(--paper-warm); }
+  .page:last-child { page-break-after: auto; }
+
+  /* Running header & footer */
+  .page-header {
+    position: absolute;
+    top: 10mm;
+    left: 20mm;
+    right: 20mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Inter Tight';
+    font-size: 9pt;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6mm;
+  }
+  .page-header .brand { color: var(--ink); font-weight: 600; }
+  .page-header .pgnum { font-feature-settings: "tnum"; }
+
+  .page-footer {
+    position: absolute;
+    bottom: 12mm;
+    left: 20mm;
+    right: 20mm;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter Tight';
+    font-size: 8.5pt;
+    color: var(--ink-mute);
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, .display { font-family: 'Fraunces', Georgia, serif; font-weight: 400; }
+  h1 { font-size: 44pt; line-height: 1.02; letter-spacing: -0.02em; }
+  h2 { font-size: 26pt; line-height: 1.08; letter-spacing: -0.015em; font-weight: 400; }
+  h3 { font-size: 17pt; line-height: 1.2; letter-spacing: -0.01em; font-weight: 500; }
+  h4 { font-size: 13pt; line-height: 1.3; font-weight: 500; }
+
+  .lead {
+    font-family: 'Fraunces';
+    font-size: 16pt;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    max-width: 150mm;
+  }
+
+  .eyebrow {
+    font-family: 'Inter Tight';
+    font-size: 9pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--terracotta);
+    margin-bottom: 6mm;
+  }
+
+  .italic-accent {
+    font-family: 'Fraunces';
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  p { margin-bottom: 3mm; }
+  p + p { margin-top: 0; }
+
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+
+  .meta-label {
+    font-family: 'Inter Tight';
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+    font-weight: 600;
+  }
+
+  /* ====================== COVER ====================== */
+  .cover {
+    background: var(--paper);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 297mm;
+  }
+  .cover-top { padding: 22mm 20mm 0; }
+  .cover-mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 60mm;
+  }
+  .cover-mark .ep-monogram {
+    width: 32px; height: 32px;
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces';
+    font-weight: 500;
+    color: var(--terracotta);
+    font-size: 14pt;
+  }
+  .cover-mark .ep-wordmark {
+    font-family: 'Fraunces';
+    font-weight: 400;
+    font-size: 14pt;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .cover-eyebrow {
+    font-family: 'Inter Tight';
+    font-size: 10pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--terracotta);
+    margin-bottom: 14mm;
+  }
+  .cover-title {
+    font-family: 'Fraunces';
+    font-size: 64pt;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+    margin-bottom: 10mm;
+    max-width: 170mm;
+  }
+  .cover-title em {
+    color: var(--terracotta);
+    font-style: italic;
+  }
+  .cover-sub {
+    font-family: 'Fraunces';
+    font-size: 18pt;
+    line-height: 1.35;
+    color: var(--ink-soft);
+    max-width: 130mm;
+    margin-top: 8mm;
+  }
+
+  .cover-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8mm;
+    border-top: 1px solid var(--line);
+    padding-top: 8mm;
+    padding-bottom: 22mm;
+    margin: 0 20mm;
+  }
+  .cover-meta { font-size: 10pt; }
+  .cover-meta .label {
+    font-family: 'Inter Tight';
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+    margin-bottom: 2mm;
+    font-weight: 600;
+  }
+  .cover-meta .value {
+    font-family: 'Fraunces';
+    font-size: 13pt;
+    color: var(--ink);
+  }
+
+  /* ====================== INTRO / TOC ====================== */
+  .toc {
+    list-style: none;
+    counter-reset: section;
+    margin-top: 12mm;
+  }
+  .toc li {
+    counter-increment: section;
+    display: grid;
+    grid-template-columns: 14mm 1fr auto;
+    align-items: baseline;
+    padding: 5mm 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .toc li::before {
+    content: counter(section, decimal-leading-zero);
+    font-family: 'Fraunces';
+    font-size: 14pt;
+    color: var(--terracotta);
+  }
+  .toc .title {
+    font-family: 'Fraunces';
+    font-size: 14pt;
+    color: var(--ink);
+  }
+  .toc .pgnum {
+    font-family: 'Inter Tight';
+    font-size: 10pt;
+    color: var(--ink-mute);
+    font-feature-settings: "tnum";
+  }
+
+  /* ====================== SECTION OPENER ====================== */
+  .section-opener {
+    display: flex;
+    align-items: baseline;
+    gap: 8mm;
+    margin-bottom: 8mm;
+    padding-bottom: 6mm;
+    border-bottom: 2px solid var(--ink);
+  }
+  .section-opener .number {
+    font-family: 'Fraunces';
+    font-size: 36pt;
+    line-height: 1;
+    color: var(--terracotta);
+    font-weight: 400;
+    font-feature-settings: "tnum";
+  }
+  .section-opener .heading { flex: 1; }
+  .section-opener .heading h2 { margin-bottom: 2mm; }
+  .section-opener .heading .sub {
+    font-family: 'Inter Tight';
+    font-size: 10pt;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ====================== COMPONENTS ====================== */
+  .pull-quote {
+    font-family: 'Fraunces';
+    font-style: italic;
+    font-size: 22pt;
+    line-height: 1.25;
+    color: var(--terracotta);
+    border-left: 2px solid var(--terracotta);
+    padding: 4mm 0 4mm 8mm;
+    margin: 8mm 0;
+    max-width: 140mm;
+  }
+
+  .callout {
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 6mm 8mm;
+    margin: 6mm 0;
+  }
+  .callout .label {
+    font-family: 'Inter Tight';
+    font-size: 8.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--terracotta);
+    margin-bottom: 2mm;
+  }
+  .callout p { font-size: 10.5pt; }
+
+  .stat-card {
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 7mm 8mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 36mm;
+  }
+  .stat-card .num {
+    font-family: 'Fraunces';
+    font-size: 30pt;
+    line-height: 1;
+    color: var(--ink);
+    font-feature-settings: "tnum";
+  }
+  .stat-card .num .unit {
+    font-family: 'Inter Tight';
+    font-weight: 500;
+    font-size: 12pt;
+    color: var(--ink-mute);
+    margin-left: 2px;
+  }
+  .stat-card .num.accent { color: var(--terracotta); }
+  .stat-card .caption {
+    font-family: 'Inter Tight';
+    font-size: 9.5pt;
+    color: var(--ink-mute);
+    margin-top: 4mm;
+    line-height: 1.4;
+  }
+
+  .stat-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5mm;
+    margin: 6mm 0;
+  }
+  .stat-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm;
+    margin: 6mm 0;
+  }
+
+  /* Ranked country block */
+  .rank-list {
+    list-style: none;
+    margin: 6mm 0;
+  }
+  .rank-list li {
+    display: grid;
+    grid-template-columns: 12mm 1fr auto;
+    align-items: baseline;
+    padding: 5mm 0;
+    border-bottom: 1px solid var(--line);
+    gap: 6mm;
+  }
+  .rank-list li:first-child { border-top: 1px solid var(--line); }
+  .rank-list .rank {
+    font-family: 'Fraunces';
+    font-size: 22pt;
+    color: var(--terracotta);
+    line-height: 1;
+  }
+  .rank-list .country {
+    font-family: 'Fraunces';
+    font-size: 15pt;
+    color: var(--ink);
+  }
+  .rank-list .country .flag { margin-right: 5px; }
+  .rank-list .country .note {
+    display: block;
+    font-family: 'Inter Tight';
+    font-size: 10pt;
+    color: var(--ink-mute);
+    margin-top: 1mm;
+  }
+  .rank-list .value {
+    font-family: 'Fraunces';
+    font-size: 18pt;
+    color: var(--ink);
+    font-feature-settings: "tnum";
+    text-align: right;
+  }
+  .rank-list .value .delta {
+    display: block;
+    font-family: 'Inter Tight';
+    font-size: 9pt;
+    color: var(--ink-mute);
+    margin-top: 1mm;
+  }
+  .rank-list .value .delta.up { color: var(--olive); }
+  .rank-list .value .delta.down { color: var(--terracotta); }
+
+  /* Trade-off matrix */
+  table.matrix {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6mm 0;
+    font-size: 9.5pt;
+  }
+  table.matrix th {
+    font-family: 'Inter Tight';
+    font-size: 8.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    text-align: left;
+    padding: 4mm 3mm;
+    border-bottom: 2px solid var(--ink);
+    vertical-align: bottom;
+  }
+  table.matrix th.country-h {
+    font-family: 'Fraunces';
+    font-size: 11pt;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--ink);
+  }
+  table.matrix td {
+    padding: 4mm 3mm;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  table.matrix td.dim-cell {
+    font-family: 'Inter Tight';
+    font-weight: 600;
+    font-size: 9.5pt;
+    color: var(--ink);
+    width: 40mm;
+  }
+  table.matrix td.cell-val {
+    font-family: 'Fraunces';
+    font-size: 11pt;
+    color: var(--ink);
+    font-feature-settings: "tnum";
+  }
+  table.matrix td.cell-note {
+    font-size: 8.5pt;
+    color: var(--ink-mute);
+    line-height: 1.4;
+  }
+
+  /* SEVERITY BADGES, v5 fully readable, no greyed-out
+     baseline: solid ink readable, paper-warm bg
+     attend: ink text, neutral
+     signal: terracotta text on light terracotta bg
+     gain: olive text on light olive bg */
+  .badge {
+    display: inline-block;
+    padding: 1.5mm 3mm;
+    font-family: 'Inter Tight';
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 2px;
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+  /* Attend: relevant maar te beheersen */
+  .badge.attend {
+    color: var(--ink);
+    background: var(--paper-warm);
+    border: 1px solid var(--ink-mute);
+  }
+  /* Signal: aandacht vereist, terracotta */
+  .badge.signal {
+    color: var(--terracotta);
+    background: rgba(186, 82, 41, 0.10);
+    border: 1px solid var(--terracotta);
+  }
+  /* Gain: voordeel vs NL, olive */
+  .badge.gain {
+    color: var(--olive);
+    background: rgba(90, 107, 62, 0.10);
+    border: 1px solid var(--olive);
+  }
+
+  /* Matrix-bar v5: cell-tinting, no left bar.
+     Severity carried entirely by background tint + text color. */
+  table.matrix-bar {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6mm 0;
+    table-layout: fixed;
+  }
+  table.matrix-bar th {
+    font-family: 'Inter Tight';
+    font-size: 7.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    text-align: left;
+    padding: 4mm 2mm 3mm;
+    border-bottom: 2px solid var(--ink);
+    vertical-align: bottom;
+  }
+  table.matrix-bar th.col-land { width: 18%; }
+  table.matrix-bar th.col-netto { width: 11%; }
+  table.matrix-bar th.col-dim { width: 14.2%; }
+  table.matrix-bar td {
+    padding: 3mm 3mm;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+    height: 11mm;
+    font-family: 'Inter Tight';
+    font-size: 9pt;
+    line-height: 1.3;
+  }
+  table.matrix-bar td.cell-land {
+    font-family: 'Fraunces';
+    font-size: 11pt;
+    color: var(--ink);
+    background: var(--paper) !important;
+  }
+  table.matrix-bar td.cell-land .flag {
+    margin-right: 5px;
+    font-size: 12pt;
+  }
+  table.matrix-bar td.cell-netto {
+    font-family: 'Fraunces';
+    font-size: 11pt;
+    color: var(--ink);
+    font-feature-settings: "tnum";
+    background: var(--paper) !important;
+  }
+  table.matrix-bar td.cell-netto.baseline {
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+  /* Severity-tinted cells, replaces the bar system */
+  table.matrix-bar td.cell {
+    font-family: 'Inter Tight';
+    font-size: 9pt;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  table.matrix-bar td.cell.s-light {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  table.matrix-bar td.cell.s-attend {
+    background: rgba(241, 236, 226, 0.45);
+    color: var(--ink);
+  }
+  table.matrix-bar td.cell.s-signal {
+    background: rgba(186, 82, 41, 0.07);
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+  table.matrix-bar td.cell.s-gain {
+    background: rgba(90, 107, 62, 0.07);
+    color: var(--olive);
+    font-weight: 500;
+  }
+  /* Legend block under matrix-bar */
+  .bar-legend {
+    margin-top: 4mm;
+    display: flex;
+    gap: 8mm;
+    font-family: 'Inter Tight';
+    font-size: 8pt;
+    color: var(--ink-mute);
+    flex-wrap: wrap;
+  }
+  .bar-legend .item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .bar-legend .sw {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+  }
+  .bar-legend .sw.light { background: var(--paper); }
+  .bar-legend .sw.attend { background: rgba(241, 236, 226, 0.45); }
+  .bar-legend .sw.signal { background: rgba(186, 82, 41, 0.07); border-color: var(--terracotta); }
+  .bar-legend .sw.gain { background: rgba(90, 107, 62, 0.07); border-color: var(--olive); }
+
+  /* Two-col layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10mm;
+    margin: 6mm 0;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6mm;
+    margin: 6mm 0;
+  }
+
+  /* Body lists */
+  ul.dashes, ol.numbered {
+    list-style: none;
+    margin: 4mm 0 4mm 0;
+  }
+  ul.dashes li {
+    padding-left: 8mm;
+    position: relative;
+    margin-bottom: 3mm;
+    line-height: 1.55;
+  }
+  ul.dashes li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2.5mm;
+    width: 5mm;
+    height: 1px;
+    background: var(--terracotta);
+  }
+  ol.numbered { counter-reset: nlist; }
+  ol.numbered li {
+    counter-increment: nlist;
+    padding-left: 9mm;
+    position: relative;
+    margin-bottom: 4mm;
+    line-height: 1.55;
+  }
+  ol.numbered li::before {
+    content: counter(nlist, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'Fraunces';
+    font-size: 11pt;
+    color: var(--terracotta);
+  }
+
+  /* Red flag / signaal block. Brandbook redflag uses terracotta accent. */
+  .redflag {
+    border-left: 2px solid var(--terracotta);
+    background: var(--paper-warm);
+    padding: 4mm 6mm;
+    margin: 4mm 0;
+  }
+  .redflag .label {
+    font-family: 'Inter Tight';
+    font-size: 8.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--terracotta);
+    margin-bottom: 2mm;
+  }
+  .redflag h4 { margin-bottom: 2mm; }
+  .redflag p {
+    font-size: 10pt;
+    color: var(--ink-soft);
+  }
+
+  /* Partner view dual-column */
+  .partner-view {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 6mm 0;
+  }
+  .partner-view .col {
+    padding: 6mm 7mm;
+  }
+  .partner-view .col + .col {
+    border-left: 1px solid var(--line);
+  }
+  .partner-view .name {
+    font-family: 'Fraunces';
+    font-size: 14pt;
+    color: var(--ink);
+    margin-bottom: 1mm;
+  }
+  .partner-view .role {
+    font-family: 'Inter Tight';
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    margin-bottom: 4mm;
+  }
+  .partner-view .num-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5mm 0;
+    border-bottom: 1px dotted var(--line);
+    font-size: 10pt;
+  }
+  .partner-view .num-line:last-child { border-bottom: none; }
+  .partner-view .num-line .lbl { color: var(--ink-soft); }
+  .partner-view .num-line .val {
+    font-family: 'Fraunces';
+    color: var(--ink);
+    font-feature-settings: "tnum";
+  }
+
+  /* Checklist */
+  .checklist { margin: 5mm 0; }
+  .checklist .item {
+    display: grid;
+    grid-template-columns: 7mm 1fr;
+    gap: 4mm;
+    padding: 4mm 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .checklist .box {
+    width: 5mm;
+    height: 5mm;
+    border: 1.5px solid var(--ink);
+    border-radius: 1px;
+    margin-top: 1mm;
+  }
+  .checklist .question {
+    font-family: 'Fraunces';
+    font-size: 12pt;
+    color: var(--ink);
+    line-height: 1.35;
+    margin-bottom: 1.5mm;
+  }
+  .checklist .why {
+    font-family: 'Inter Tight';
+    font-size: 9pt;
+    color: var(--ink-mute);
+    line-height: 1.5;
+  }
+
+  /* Chart frame, no shadow per brandbook §8 */
+  .chart-frame {
+    border: 1px solid var(--line);
+    background: var(--paper);
+    padding: 5mm;
+    margin: 5mm 0;
+  }
+  .chart-title {
+    font-family: 'Inter Tight';
+    font-size: 9pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    margin-bottom: 3mm;
+  }
+  .chart-legend {
+    display: flex;
+    gap: 6mm;
+    margin-top: 4mm;
+    font-size: 9pt;
+    color: var(--ink-soft);
+  }
+  .chart-legend .swatch {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+
+  /* Decision summary banner */
+  .decision-banner {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12mm 12mm;
+    margin: 8mm 0;
+    border-radius: 4px;
+  }
+  .decision-banner .label {
+    font-family: 'Inter Tight';
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 3mm;
+  }
+  .decision-banner h3 {
+    color: var(--paper);
+    font-size: 22pt;
+    line-height: 1.2;
+    max-width: 130mm;
+    margin-bottom: 4mm;
+  }
+  .decision-banner p {
+    color: rgba(246, 245, 242, 0.78);
+    font-size: 10.5pt;
+    max-width: 140mm;
+  }
+
+  /* Print rules */
+  @media print {
+    html, body { background: var(--paper); }
+    .doc { max-width: none; }
+    .page { margin: 0; }
+  }
+  @media screen {
+    .doc { margin: 20mm auto; }
+    .page + .page { margin-top: 8mm; }
+  }
+
+  /* Footnote line */
+  .footnotes {
+    margin-top: 8mm;
+    padding-top: 4mm;
+    border-top: 1px solid var(--line);
+    font-size: 8.5pt;
+    color: var(--ink-mute);
+    line-height: 1.5;
+  }
+
+  .version-pill {
+    display: inline-block;
+    padding: 1mm 2.5mm;
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    font-family: 'Inter Tight';
+    font-size: 8pt;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="doc">
+
+<!-- =================================================== -->
+<!-- COVER                                                -->
+<!-- =================================================== -->
+<section id="page-1" class="page cover">
+  <div class="cover-top">
+    <div class="cover-mark">
+      <div class="ep-monogram">EP</div>
+      <div class="ep-wordmark">Emigratieplan</div>
+    </div>
+    <div class="cover-eyebrow">Beslisgids</div>
+    <h1 class="cover-title">Jouw cijfers,<br><em>geordend</em>.</h1>
+    <p class="cover-sub">Tien landen, één set aannames, één leesbaar overzicht. Klaar voor het gesprek met je fiscalist.</p>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="cover-meta">
+      <div class="label">Opgesteld voor</div>
+      <div class="value">Kevin &amp; Muriel</div>
+    </div>
+    <div class="cover-meta">
+      <div class="label">Scenario-versie</div>
+      <div class="value">v1, 13 mei 2026</div>
+    </div>
+    <div class="cover-meta">
+      <div class="label">Pakket</div>
+      <div class="value">Decide, 10 landen</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- INTRO + TOC                                          -->
+<!-- =================================================== -->
+<section id="page-2" class="page">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">02</span>
+  </div>
+
+  <div class="eyebrow">Hoe je dit document leest</div>
+  <h2>Geen advies. Een geordend beeld.</h2>
+  <p class="lead" style="margin-top: 6mm;">Je hebt tien landen doorgerekend. Dit document zet de uitkomsten op een rij, benoemt waar het schuurt, en bereidt je voor op het gesprek met je fiscalist.</p>
+
+  <div style="margin-top: 10mm; max-width: 150mm;">
+    <p>De cijfers in dit overzicht komen één-op-één uit jouw scenario in de tool. Verander je een aanname, dan verschuiven de uitkomsten. Zie deze gids als een momentopname.</p>
+    <p>Wat je hier <em>niet</em> vindt: persoonlijk fiscaal advies. Wel: de structuur, de vragen, en de cijfers waarmee je dat advies efficiënt kunt inkopen.</p>
+  </div>
+
+  <div class="pull-quote">
+    Je beslist niet op gevoel.<br>Je beslist op cijfers die je begrijpt.
+  </div>
+
+  <ol class="toc" style="margin-top: 10mm;">
+    <li><span class="title">Aannames en invoer</span><span class="pgnum">03</span></li>
+    <li><span class="title">Top 3 op netto uitkomst</span><span class="pgnum">04</span></li>
+    <li><span class="title">Top 3 op risico en complexiteit</span><span class="pgnum">05</span></li>
+    <li><span class="title">Trade-off matrix per land</span><span class="pgnum">06</span></li>
+    <li><span class="title">Wat de uitvoering kost</span><span class="pgnum">07</span></li>
+    <li><span class="title">AOW en pensioen samenvatting</span><span class="pgnum">08</span></li>
+    <li><span class="title">Vermogensimpact Box 3 vs nieuw land</span><span class="pgnum">09</span></li>
+    <li><span class="title">Partner-view</span><span class="pgnum">10</span></li>
+    <li><span class="title">Vragen voor je fiscalist</span><span class="pgnum">11-12</span></li>
+    <li><span class="title">Aandachtspunten per voorkeurland</span><span class="pgnum">13</span></li>
+    <li><span class="title">Netto-netto bottomline</span><span class="pgnum">14</span></li>
+    <li><span class="title">Eerste 30 dagen</span><span class="pgnum">15</span></li>
+  </ol>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- NEW SECTION 01, AANNAMES & INVOER                    -->
+<!-- =================================================== -->
+<section id="page-3" class="page page--warm">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">03</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">01</div>
+    <div class="heading">
+      <h2>Aannames en invoer</h2>
+      <div class="sub">Wat jij hebt ingevoerd · wat de tool heeft aangenomen</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">Alle uitkomsten in dit document staan of vallen met de invoer hieronder. Print deze pagina mee naar je fiscalist. Vraag hem of de aannames matchen met zijn praktijk. Wijkt iets af, dan wijken de uitkomsten ook af.</p>
+
+  <h3 style="margin-top: 8mm;">Persoonlijke gegevens</h3>
+  <table class="matrix" style="margin-top: 3mm;">
+    <thead>
+      <tr>
+        <th>Veld</th>
+        <th class="country-h">Persoon 1 (Kevin)</th>
+        <th class="country-h">Persoon 2 (Muriel)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dim-cell">Geboortejaar</td>
+        <td class="cell-val">1968</td>
+        <td class="cell-val">1969</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Huidige fiscale residentie</td>
+        <td class="cell-val">Nederland</td>
+        <td class="cell-val">Nederland</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Beoogde emigratiedatum</td>
+        <td class="cell-val">2027-Q3</td>
+        <td class="cell-val">2027-Q3</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Pensioendatum (AOW-leeftijd)</td>
+        <td class="cell-val">2035 (67 jr)</td>
+        <td class="cell-val">2036 (67 jr)</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">AOW-opbouwjaren tot emigratie</td>
+        <td class="cell-val">34 (68%)</td>
+        <td class="cell-val">32 (64%)</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Fiscaal partnerschap</td>
+        <td class="cell-val" colspan="2" style="text-align: left;">Ja, gehuwd in gemeenschap van goederen</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top: 8mm;">Inkomstructuur en vermogen</h3>
+  <table class="matrix" style="margin-top: 3mm;">
+    <thead>
+      <tr>
+        <th>Veld</th>
+        <th class="country-h">Waarde</th>
+        <th class="country-h">Toelichting</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dim-cell">Gewenste structuur in nieuw land</td>
+        <td class="cell-val">IKE / Ltd / sole-trader</td>
+        <td class="cell-note">Per top-3 land doorgerekend, niet handmatig gekozen</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Inkomensbron primair</td>
+        <td class="cell-val">Advisory / consultancy</td>
+        <td class="cell-note">Diensten geleverd aan NL- en internationale klanten</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Bruto inkomen huidige situatie /jr</td>
+        <td class="cell-val">€172.000 gezamenlijk</td>
+        <td class="cell-note">€86.000 per persoon, indicatief, vóór emigratie</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Vermogen totaal exclusief eigen woning</td>
+        <td class="cell-val">€1.247.392</td>
+        <td class="cell-note">Peildatum 2026-01-01, beleggingsportefeuille + spaargeld</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Vermogenssplitsing aandelen / cash / overig</td>
+        <td class="cell-val">62 / 24 / 14%</td>
+        <td class="cell-note">Bepaalt vermogensbelasting in elk land verschillend</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Eigen woning NL (WOZ-waarde)</td>
+        <td class="cell-val">€612.000</td>
+        <td class="cell-note">Hypotheek €184.000, scenario gaat uit van verhuur na emigratie</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Pijler 2 pensioenpot (Kevin)</td>
+        <td class="cell-val">€213.847</td>
+        <td class="cell-note">ABP, opvraagbaar vanaf 67</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Pijler 2 pensioenpot (Muriel)</td>
+        <td class="cell-val">€189.421</td>
+        <td class="cell-note">Diverse fondsen, lager door parttime-perioden</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Pijler 3 lijfrente totaal</td>
+        <td class="cell-val">€67.940</td>
+        <td class="cell-note">Box-1-aftrekbare inleg, kan worden verhoogd tot emigratie</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top: 8mm;">Modelaannames</h3>
+  <table class="matrix" style="margin-top: 3mm;">
+    <thead>
+      <tr>
+        <th>Aanname</th>
+        <th class="country-h">Waarde</th>
+        <th class="country-h">Bron / rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dim-cell">Inflatie</td>
+        <td class="cell-val">2,1% /jr</td>
+        <td class="cell-note">DNB lange-termijn aanname EU</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Vermogensgroei aandelen</td>
+        <td class="cell-val">7,5% nominaal /jr</td>
+        <td class="cell-note">S&amp;P 500 100-jaar gemiddelde</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Vastgoed-appreciatie NL</td>
+        <td class="cell-val">5,0% /jr</td>
+        <td class="cell-note">CBS lange-termijn, exclusief inflatie-aftrek</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">AOW-indexatie na emigratie</td>
+        <td class="cell-val">2,0% /jr</td>
+        <td class="cell-note">SVB historisch gemiddelde, conservatief</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Belastingverdragen status</td>
+        <td class="cell-val">Stabiel</td>
+        <td class="cell-note">Tool rekent geen verdragsherzieningen in 20-jr horizon</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Box 3 werkelijk-rendement</td>
+        <td class="cell-val">Niet meegerekend</td>
+        <td class="cell-note">2028-overgang nog niet definitief, forfaitair model aangehouden</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Horizon</td>
+        <td class="cell-val">20 jaar</td>
+        <td class="cell-note">Kevin 58 → 78, Muriel 57 → 77</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin-top: 6mm;">
+    <div class="label">Wat te doen als een aanname afwijkt</div>
+    <p>Wijkt een persoonsgegeven af? Pas aan in de tool en regenereer. Wijkt een modelaanname af volgens je fiscalist? Vraag hem welke waarde in zijn praktijk gebruikelijk is, pas aan in de tool, regenereer. De tool is gemaakt om herhaaldelijk te draaien tot de aannames kloppen.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 02, TOP 3 NETTO UITKOMST  (was 01)           -->
+<!-- =================================================== -->
+<section id="page-4" class="page">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">04</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">02</div>
+    <div class="heading">
+      <h2>Top 3 op netto uitkomst</h2>
+      <div class="sub">Cumulatief vrij besteedbaar · 20 jaar · na belasting</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">Drie landen leveren over twintig jaar de hoogste netto-uitkomst voor jouw scenario. Verschil ten opzichte van Nederland als baseline.</p>
+
+  <div style="margin: 5mm 0 6mm; padding: 3mm 5mm; background: var(--paper-warm); border-left: 2px solid var(--ink); font-size: 9.5pt; color: var(--ink-soft); max-width: 150mm;">
+    <strong style="color: var(--ink); font-family: 'Inter Tight'; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.08em;">Definitie</strong><br>
+    <span style="font-family: 'Inter Tight'; line-height: 1.5;"><strong>Cumulatief vrij besteedbaar over 20 jaar</strong> is de som van jaarlijks netto-inkomen na belasting en sociale lasten, na aftrek van huishoudelijke vaste lasten (wonen, zorg, levensonderhoud), inclusief vermogensgroei op surplus tegen 7,5% nominaal (S&amp;P-aanname). Cijfers voor Kevin + Muriel gezamenlijk. Per-persoon cijfers staan in sectie 08.</span>
+  </div>
+
+  <ol class="rank-list">
+    <li>
+      <span class="rank">01</span>
+      <span class="country">
+        <span class="flag">🇬🇷</span>Griekenland
+        <span class="note">IKE-structuur · Artikel 5C · 50% vrijstelling 7 jaar</span>
+      </span>
+      <span class="value">€2.834.215<span class="delta up">+€598.847 vs NL</span></span>
+    </li>
+    <li>
+      <span class="rank">02</span>
+      <span class="country">
+        <span class="flag">🇨🇾</span>Cyprus
+        <span class="note">Non-dom · GHS 2,65% op dividend · 17 jaar</span>
+      </span>
+      <span class="value">€2.781.493<span class="delta up">+€546.125 vs NL</span></span>
+    </li>
+    <li>
+      <span class="rank">03</span>
+      <span class="country">
+        <span class="flag">🇵🇹</span>Portugal
+        <span class="note">IFICI-regime · 20% flat op kwalificerend inkomen</span>
+      </span>
+      <span class="value">€2.647.328<span class="delta up">+€411.960 vs NL</span></span>
+    </li>
+  </ol>
+
+  <div class="callout">
+    <div class="label">Lees dit naast sectie 03 en 05</div>
+    <p>Een hogere netto-uitkomst zegt niets over de moeite om die uitkomst te realiseren, of wat het kost om dat structuur jaar na jaar te onderhouden. Sectie 02 toont complexiteit en regime-risico. Sectie 04 toont wat de executie van het plan jaarlijks kost in advies, admin en setup. Het netto-voordeel boven is bruto, vóór die kosten.</p>
+  </div>
+
+  <div class="chart-frame">
+    <div class="chart-title">Cumulatief vrij besteedbaar · 20 jaar horizon</div>
+    <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+      <line x1="40" y1="20" x2="40" y2="170" stroke="#d9d3c5" stroke-width="1"/>
+      <line x1="40" y1="170" x2="490" y2="170" stroke="#d9d3c5" stroke-width="1"/>
+      <line x1="40" y1="58" x2="490" y2="58" stroke="#d9d3c5" stroke-width="0.5" stroke-dasharray="3,5" opacity="0.4"/>
+      <line x1="40" y1="96" x2="490" y2="96" stroke="#d9d3c5" stroke-width="0.5" stroke-dasharray="3,5" opacity="0.4"/>
+      <line x1="40" y1="134" x2="490" y2="134" stroke="#d9d3c5" stroke-width="0.5" stroke-dasharray="3,5" opacity="0.4"/>
+      <text x="36" y="172" text-anchor="end" font-family="Inter Tight" font-size="8" fill="#8a8580">€0</text>
+      <text x="36" y="136" text-anchor="end" font-family="Inter Tight" font-size="8" fill="#8a8580">€1M</text>
+      <text x="36" y="98" text-anchor="end" font-family="Inter Tight" font-size="8" fill="#8a8580">€2M</text>
+      <text x="36" y="60" text-anchor="end" font-family="Inter Tight" font-size="8" fill="#8a8580">€3M</text>
+      <text x="40" y="184" font-family="Inter Tight" font-size="8" fill="#8a8580">Jr 1</text>
+      <text x="265" y="184" text-anchor="middle" font-family="Inter Tight" font-size="8" fill="#8a8580">Jr 10</text>
+      <text x="490" y="184" text-anchor="end" font-family="Inter Tight" font-size="8" fill="#8a8580">Jr 20</text>
+      <path d="M 40 168 Q 200 130 490 62" fill="none" stroke="#1a1a1a" stroke-width="1.4" stroke-dasharray="6,4" opacity="0.6"/>
+      <path d="M 40 168 Q 200 110 490 48" fill="none" stroke="#5a6b3e" stroke-width="1.4"/>
+      <path d="M 40 168 Q 200 100 490 36" fill="none" stroke="#9a4322" stroke-width="1.4"/>
+      <path d="M 40 168 Q 200 95 490 33" fill="none" stroke="#ba5229" stroke-width="2"/>
+    </svg>
+    <div class="chart-legend">
+      <span><span class="swatch" style="background: #ba5229"></span>Griekenland</span>
+      <span><span class="swatch" style="background: #9a4322"></span>Cyprus</span>
+      <span><span class="swatch" style="background: #5a6b3e"></span>Portugal</span>
+      <span><span class="swatch" style="background: #1a1a1a"></span>Nederland (baseline)</span>
+    </div>
+  </div>
+
+  <div class="footnotes">
+    <strong>Scenario-aannames:</strong> Inflatie 2,1%/jr. S&amp;P 7,5% nominaal. Vastgoed NL 5%/jr appreciatie. AOW-bevriezing bij emigratiejaar, indexatie 2%/jr daarna. Box 3 forfaitair, geen werkelijk-rendement-overgang in horizon. Volledige aannamelijst in Bijlage A van tool-export.<br>
+    <strong>Tax engine validatie-status (zie pagina 16 disclaimer):</strong> NL Box 1/3 forfaitair 2026, geverifieerd via Belastingdienst-tabellen. GR 5C, niet onafhankelijk gevalideerd. CY non-dom, niet onafhankelijk gevalideerd. PT IFICI, niet onafhankelijk gevalideerd.
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 02, RISICO EN COMPLEXITEIT                   -->
+<!-- =================================================== -->
+<section id="page-5" class="page page--warm">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">05</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">03</div>
+    <div class="heading">
+      <h2>Top 3 op risico en complexiteit</h2>
+      <div class="sub">Implementatielast · juridisch risico · regime-stabiliteit</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">Netto-uitkomst is één dimensie. De moeite om die uitkomst te realiseren is een andere. Drie landen waar het rendement het hoogst is, en waar de complexiteit dat ook is.</p>
+
+  <div class="three-col" style="margin-top: 8mm;">
+    <div class="stat-card">
+      <div class="num accent">🇬🇷</div>
+      <div>
+        <h4 style="margin: 4mm 0 2mm;">Griekenland</h4>
+        <div class="caption">
+          <strong style="color: var(--ink); font-family: 'Inter Tight';">Hoog netto · Hoog risico</strong><br>
+          IKE-structuur vereist Griekse advocaat plus EFKA-registratie. Artikel 5C is regime-afhankelijk en politiek volatiel.
+        </div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="num accent">🇨🇾</div>
+      <div>
+        <h4 style="margin: 4mm 0 2mm;">Cyprus</h4>
+        <div class="caption">
+          <strong style="color: var(--ink); font-family: 'Inter Tight';">Hoog netto · Middel risico</strong><br>
+          Non-dom is wettelijk gewaarborgd voor 17 jaar. Daarna eindigt het regime. GHS 2,65% op alle inkomen vanaf jaar 18.
+        </div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="num accent">🇮🇹</div>
+      <div>
+        <h4 style="margin: 4mm 0 2mm;">Italië</h4>
+        <div class="caption">
+          <strong style="color: var(--ink); font-family: 'Inter Tight';">Middel netto · Hoog risico</strong><br>
+          Lumpsum €300k per jaar is hoge entry. Politiek discutabel, regime kan herzien worden. Veel administratie per euro.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 12mm;">Complexiteit-score per dimensie</h3>
+  <table class="matrix" style="margin-top: 4mm;">
+    <thead>
+      <tr>
+        <th>Dimensie</th>
+        <th class="country-h">🇬🇷 Griekenland</th>
+        <th class="country-h">🇨🇾 Cyprus</th>
+        <th class="country-h">🇮🇹 Italië</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dim-cell">Setup-tijd</td>
+        <td><span class="badge signal">4-6 mnd</span></td>
+        <td><span class="badge attend">2-3 mnd</span></td>
+        <td><span class="badge attend">3-4 mnd</span></td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Setup-kosten</td>
+        <td><span class="badge attend">€8-15k</span></td>
+        <td><span class="badge">€4-8k</span></td>
+        <td><span class="badge attend">€6-12k</span></td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Doorlopende admin</td>
+        <td><span class="badge signal">Hoog</span></td>
+        <td><span class="badge">Laag</span></td>
+        <td><span class="badge attend">Middel</span></td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Regime-stabiliteit</td>
+        <td><span class="badge attend">Middel</span></td>
+        <td><span class="badge">Hoog, 17 jaar</span></td>
+        <td><span class="badge signal">Laag</span></td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Taal · cultuur</td>
+        <td><span class="badge attend">Grieks vereist</span></td>
+        <td><span class="badge">EN dominant</span></td>
+        <td><span class="badge attend">IT vereist</span></td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Exit-complexiteit</td>
+        <td><span class="badge attend">Middel</span></td>
+        <td><span class="badge">Laag</span></td>
+        <td><span class="badge signal">Hoog</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top: 6mm; padding: 4mm 6mm; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; font-size: 8.5pt; color: var(--ink-mute);">
+    <strong style="color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; font-family: 'Inter Tight'; font-size: 7.5pt;">Legenda</strong><br>
+    <span style="margin-right: 5mm;"><span class="badge" style="margin-right: 3px;">Licht</span> baseline, weinig impact</span>
+    <span style="margin-right: 5mm;"><span class="badge attend" style="margin-right: 3px;">Let op</span> reëel, te beheersen</span>
+    <span><span class="badge signal" style="margin-right: 3px;">Signaal</span> aandacht vereist</span>
+  </div>
+
+  <div class="callout">
+    <div class="label">Wat dit voor jou betekent</div>
+    <p>Cyprus wint op netto-per-jaar-van-setup (€563k voordeel over 20 jr ÷ 2-3 mnd setup is gunstig). Griekenland wint op netto-totaal als je 7+ jaar in 5C blijft (extra €36k delta na jaar 7 als alle aannames kloppen). Italië scoort op beide assen lager dan de top 2: kies Italië alleen als de lifestyle/regio reden zwaarder weegt dan de cijfers.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 03, TRADE-OFF MATRIX                         -->
+<!-- =================================================== -->
+<section id="page-6" class="page">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">06</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">04</div>
+    <div class="heading">
+      <h2>Trade-off matrix per land</h2>
+      <div class="sub">Tien landen op zes dimensies · gecondenseerd</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">Alle tien doorgerekende landen tegenover Nederland. Geen scores op "goed" en "fout", wel waar elk land sterk en zwak is voor jouw scenario.</p>
+
+  <table class="matrix-bar" style="margin-top: 8mm;">
+    <thead>
+      <tr>
+        <th class="col-land">Land</th>
+        <th class="col-netto">Netto 20jr</th>
+        <th class="col-dim">Setup</th>
+        <th class="col-dim">Pensioen</th>
+        <th class="col-dim">Vastgoed</th>
+        <th class="col-dim">Crypto</th>
+        <th class="col-dim">Exit-risico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="cell-land"><span class="flag">🇳🇱</span>Nederland</td>
+        <td class="cell-netto baseline">Baseline</td>
+        <td class="cell s-light">Geen</td>
+        <td class="cell s-light">3 pijlers</td>
+        <td class="cell s-attend">Box 1+3</td>
+        <td class="cell s-signal">Box 3</td>
+        <td class="cell s-light">N.v.t.</td>
+      </tr>
+      <tr>
+        <td class="cell-land"><span class="flag">🇬🇷</span>Griekenland</td>
+        <td class="cell-netto">+€612k</td>
+        <td class="cell s-signal">Zwaar</td>
+        <td class="cell s-attend">Verdrag '81</td>
+        <td class="cell s-gain">Vrij gunstig</td>
+        <td class="cell s-attend">15% flat</td>
+        <td class="cell s-attend">Regime-risk</td>
+      </tr>
+      <tr>
+        <td class="cell-land"><span class="flag">🇨🇾</span>Cyprus</td>
+        <td class="cell-netto">+€563k</td>
+        <td class="cell s-attend">Middel</td>
+        <td class="cell s-light">Verdrag NL</td>
+        <td class="cell s-gain">Geen Box 3</td>
+        <td class="cell s-gain">0% non-dom</td>
+        <td class="cell s-signal">Cliff jr 18</td>
+      </tr>
+      <tr>
+        <td class="cell-land"><span class="flag">🇵🇹</span>Portugal</td>
+        <td class="cell-netto">+€419k</td>
+        <td class="cell s-attend">Middel</td>
+        <td class="cell s-attend">Beperkt</td>
+        <td class="cell s-gain">IMI laag</td>
+        <td class="cell s-attend">28% &gt;1jr</td>
+        <td class="cell s-attend">IFICI eindigt</td>
+      </tr>
+      <tr>
+        <td class="cell-land"><span class="flag">🇪🇸</span>Spanje</td>
+        <td class="cell-netto">+€187k</td>
+        <td class="cell s-attend">Middel</td>
+        <td class="cell s-attend">Beperkt</td>
+        <td class="cell s-signal">Beckham</td>
+        <td class="cell s-signal">19-26%</td>
+        <td class="cell s-attend">Beckham 6jr</td>
+      </tr>
+      <tr>
+        <td class="cell-land"><span class="flag">🇮🇹</span>Italië</td>
+        <td class="cell-netto">+€243k</td>
+        <td class="cell s-attend">Middel</td>
+        <td class="cell s-signal">Lumpsum dekt</td>
+        <td class="cell s-attend">IMU</td>
+        <td class="cell s-signal">Lumpsum-cap</td>
+        <td class="cell s-signal">Politiek</td>
+      </tr>
+      <tr>
+        <td class="cell-land"><span class="flag">🇦🇪</span>UAE</td>
+        <td class="cell-netto">+€891k</td>
+        <td class="cell s-signal">Zwaar</td>
+        <td class="cell s-signal">Geen verdrag NL</td>
+        <td class="cell s-gain">0% prop tax</td>
+        <td class="cell s-gain">0%</td>
+        <td class="cell s-signal">Geen pensioen</td>
+      </tr>
+      <tr>
+        <td class="cell-land"><span class="flag">🇧🇬</span>Bulgarije</td>
+        <td class="cell-netto">+€328k</td>
+        <td class="cell s-light">Licht</td>
+        <td class="cell s-attend">Verdrag NL</td>
+        <td class="cell s-gain">Zeer laag</td>
+        <td class="cell s-gain">10% flat</td>
+        <td class="cell s-light">Stabiel EU</td>
+      </tr>
+      <tr>
+        <td class="cell-land"><span class="flag">🇭🇺</span>Hongarije</td>
+        <td class="cell-netto">+€295k</td>
+        <td class="cell s-light">Licht</td>
+        <td class="cell s-attend">Verdrag NL</td>
+        <td class="cell s-gain">Laag</td>
+        <td class="cell s-gain">15% flat</td>
+        <td class="cell s-attend">EU-friction</td>
+      </tr>
+      <tr>
+        <td class="cell-land"><span class="flag">🇲🇹</span>Malta</td>
+        <td class="cell-netto">+€267k</td>
+        <td class="cell s-attend">Middel</td>
+        <td class="cell s-attend">Remittance</td>
+        <td class="cell s-gain">Vrij</td>
+        <td class="cell s-attend">Remittance</td>
+        <td class="cell s-attend">Reg. wijziging</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="bar-legend">
+    <span class="item"><span class="sw light"></span><span>Baseline</span></span>
+    <span class="item"><span class="sw attend"></span><span>Let op, beheersbaar</span></span>
+    <span class="item"><span class="sw signal"></span><span>Signaal, aandacht vereist</span></span>
+    <span class="item"><span class="sw gain"></span><span>Voordeel ten opzichte van NL</span></span>
+  </div>
+
+  <div class="footnotes">
+    Een voordeel-markering betekent niet automatisch dat dit land voor jou werkt. Lees per dimensie wat de uitkomst betekent in combinatie met de andere kolommen. Een land kan op vier dimensies voordeel scoren en alsnog niet bij jou passen.
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 04, KOSTEN VAN UITVOERING                    -->
+<!-- =================================================== -->
+<section id="page-7" class="page">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">07</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">05</div>
+    <div class="heading">
+      <h2>Wat de uitvoering kost</h2>
+      <div class="sub">Setup · doorlopend · 20-jaar totaal · netto-voordeel na kosten</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">Het netto-voordeel in sectie 02 is bruto. Voordat je dat ziet betaal je voor de structuur, lokale begeleiding, NL-conserverende-aanslag-administratie en doorlopende verplichtingen. Hieronder per top-3 land: wat het kost om het plan jaar na jaar uit te voeren.</p>
+
+  <table class="matrix" style="margin-top: 8mm;">
+    <thead>
+      <tr>
+        <th>Kostenpost</th>
+        <th class="country-h">🇬🇷 Griekenland</th>
+        <th class="country-h">🇨🇾 Cyprus</th>
+        <th class="country-h">🇵🇹 Portugal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background: rgba(241, 236, 226, 0.5);">
+        <td class="dim-cell" colspan="4" style="font-family: 'Inter Tight'; font-size: 8.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--terracotta); padding: 4mm 3mm 2mm;">Setup · eenmalig in jaar 1</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Notaris · structuur-oprichting</td>
+        <td class="cell-val">€1.180</td>
+        <td class="cell-val">€2.240</td>
+        <td class="cell-val">€120</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Lokaal advocaat · regime-aanvraag</td>
+        <td class="cell-val">€4.500</td>
+        <td class="cell-val">€620</td>
+        <td class="cell-val">€1.840</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Lokale boekhouder · onboarding</td>
+        <td class="cell-val">€830</td>
+        <td class="cell-val">€1.150</td>
+        <td class="cell-val">€640</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Sociaal stelsel · aanmelding</td>
+        <td class="cell-val">€340</td>
+        <td class="cell-val">€0</td>
+        <td class="cell-val">€0</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">NL-fiscalist · conserverende aanslag &amp; M-formulier</td>
+        <td class="cell-val">€2.870</td>
+        <td class="cell-val">€2.870</td>
+        <td class="cell-val">€2.870</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Vertaal- &amp; legalisatiekosten</td>
+        <td class="cell-val">€470</td>
+        <td class="cell-val">€280</td>
+        <td class="cell-val">€190</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">BRP &amp; verhuiskosten</td>
+        <td class="cell-val">€1.230</td>
+        <td class="cell-val">€1.420</td>
+        <td class="cell-val">€1.380</td>
+      </tr>
+      <tr style="background: rgba(186, 82, 41, 0.06);">
+        <td class="dim-cell" style="font-weight: 700;">Totaal setup jaar 1</td>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">€11.420</td>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">€8.580</td>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">€7.040</td>
+      </tr>
+      <tr style="background: rgba(241, 236, 226, 0.5);">
+        <td class="dim-cell" colspan="4" style="font-family: 'Inter Tight'; font-size: 8.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--terracotta); padding: 4mm 3mm 2mm;">Doorlopend per jaar</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Lokaal boekhouder · jaaraangiften</td>
+        <td class="cell-val">€2.380</td>
+        <td class="cell-val">€3.240</td>
+        <td class="cell-val">€1.820</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Audit · jaarrekening</td>
+        <td class="cell-val">€0</td>
+        <td class="cell-val">€1.180</td>
+        <td class="cell-val">€0</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Sociaal stelsel · minimum bijdrage (2 pp)</td>
+        <td class="cell-val">€5.280</td>
+        <td class="cell-val">€530</td>
+        <td class="cell-val">€2.640</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Legal / secretarial · jaarcheck</td>
+        <td class="cell-val">€640</td>
+        <td class="cell-val">€720</td>
+        <td class="cell-val">€340</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">NL-fiscalist · conserverende aanslag opvolging</td>
+        <td class="cell-val">€480</td>
+        <td class="cell-val">€480</td>
+        <td class="cell-val">€480</td>
+      </tr>
+      <tr style="background: rgba(186, 82, 41, 0.06);">
+        <td class="dim-cell" style="font-weight: 700;">Totaal doorlopend /jr</td>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">€8.780</td>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">€6.150</td>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">€5.280</td>
+      </tr>
+      <tr style="background: rgba(186, 82, 41, 0.08); border-top: 2px solid var(--ink);">
+        <td class="dim-cell" style="font-weight: 700; font-size: 10.5pt;">20-jaar uitvoeringskosten cumulatief</td>
+        <td class="cell-val" style="font-weight: 700; font-size: 13pt; color: var(--terracotta); font-family: 'Fraunces';">€187.020</td>
+        <td class="cell-val" style="font-weight: 700; font-size: 13pt; color: var(--terracotta); font-family: 'Fraunces';">€131.580</td>
+        <td class="cell-val" style="font-weight: 700; font-size: 13pt; color: var(--terracotta); font-family: 'Fraunces';">€112.640</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top: 12mm;">Netto-voordeel na uitvoeringskosten</h3>
+  <table class="matrix" style="margin-top: 3mm;">
+    <thead>
+      <tr>
+        <th>Land</th>
+        <th class="country-h">Bruto voordeel 20jr</th>
+        <th class="country-h">Uitvoeringskosten</th>
+        <th class="country-h">Netto voordeel</th>
+        <th class="country-h">Erosie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dim-cell">🇬🇷 Griekenland</td>
+        <td class="cell-val">+€598.847</td>
+        <td class="cell-val">−€187.020</td>
+        <td class="cell-val" style="color: var(--olive); font-weight: 700;">+€411.827</td>
+        <td class="cell-note" style="color: var(--ink);">31% erosie</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">🇨🇾 Cyprus</td>
+        <td class="cell-val">+€546.125</td>
+        <td class="cell-val">−€131.580</td>
+        <td class="cell-val" style="color: var(--olive); font-weight: 700;">+€414.545</td>
+        <td class="cell-note" style="color: var(--ink);">24% erosie</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">🇵🇹 Portugal</td>
+        <td class="cell-val">+€411.960</td>
+        <td class="cell-val">−€112.640</td>
+        <td class="cell-val" style="color: var(--olive); font-weight: 700;">+€299.320</td>
+        <td class="cell-note" style="color: var(--ink);">27% erosie</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="label">Lees dit goed</div>
+    <p>Na aftrek van uitvoeringskosten kantelt de ranking. Cyprus levert nu €414.545 netto voordeel over 20 jaar tegenover Griekenland €411.827. Het verschil is €2.718, of €136 per jaar. Voor dat verschil neem je in Griekenland 4-6 maanden zwaardere setup en hoger doorlopend admin-risico. Op cijfers alleen is Cyprus daarmee de aantrekkelijker top-1, mits je jaar-18 cliff kunt opvangen.</p>
+  </div>
+
+  <div class="footnotes">
+    Uitvoeringskosten zijn schattingen op basis van marktindicaties 2026. Vraag bij intake-gesprek met lokale fiscalist om vaste offerte. Inflatie op kostprijs is meegerekend in 20-jaar cumulatief (2,1%/jr).
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 04, AOW & PENSIOEN                           -->
+<!-- =================================================== -->
+<section id="page-8" class="page page--warm">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">08</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">06</div>
+    <div class="heading">
+      <h2>AOW en pensioen samenvatting</h2>
+      <div class="sub">Wat je opbouwt · wat je verliest · wat je moet aanvullen</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">Emigreren bevriest je AOW-opbouw vanaf het moment dat je je in BRP uitschrijft. Wat je hebt blijf je houden. Wat je niet hebt, krijg je ook niet meer.</p>
+
+  <div class="stat-grid-3">
+    <div class="stat-card">
+      <div class="num accent">68<span class="unit">%</span></div>
+      <div class="caption">AOW-opbouw op moment van emigratie (Kevin · 34 opbouwjaren)</div>
+    </div>
+    <div class="stat-card">
+      <div class="num accent">€11.387</div>
+      <div class="caption">Geprojecteerde AOW per jaar vanaf 67 (gehuwd · 68% opbouw · indexatie 2%)</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">€4.937</div>
+      <div class="caption">Equalisatie-inleg per jaar om NL-niveau te halen (Pijler 3, 12 jr tot 67, na Pijler 4)</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 10mm;">Pijlerverdeling, Kevin · in voorkeurscenario Griekenland IKE</h3>
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th>Pijler</th>
+        <th class="country-h">Status bij emigratie</th>
+        <th class="country-h">Geprojecteerd op 67</th>
+        <th class="country-h">Behandeling in nieuw land</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dim-cell">Pijler 1 · AOW (NL)</td>
+        <td>68% opbouw, bevroren</td>
+        <td class="cell-val">€11.387/jr</td>
+        <td class="cell-note">GR: art. 23 verdrag · belast in GR · 50% vrijstelling 5C</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Pijler 2 · Werkgever (NL)</td>
+        <td>ABP pot €213.847</td>
+        <td class="cell-val">€8.612/jr</td>
+        <td class="cell-note">GR: art. 20 verdrag · belast in NL bron · niet bij GR-residentie</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Pijler 3 · Privé (NL)</td>
+        <td>Lijfrente €67.940</td>
+        <td class="cell-val">€3.144/jr</td>
+        <td class="cell-note">GR: art. 19 · belast in GR · IRPEF tarief</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Pijler 4 · EFKA <span style="font-family: 'Inter Tight'; font-size: 7.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-mute); background: var(--paper-warm); padding: 0.5mm 2mm; border-radius: 2px; margin-left: 2mm;">schatting</span></td>
+        <td>12 jr EFKA-bijdrage · min-base €220/mnd</td>
+        <td class="cell-val">€2.840/jr</td>
+        <td class="cell-note">GR: bron-belast door GR · 5C niet van toepassing op pensioenuitkering uit GR-bron</td>
+      </tr>
+      <tr style="background: rgba(186, 82, 41, 0.06);">
+        <td class="dim-cell" style="font-weight: 700;">Totaal bruto/jr</td>
+        <td></td>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">€25.983</td>
+        <td class="cell-note">Equivalent NL-scenario: €31.847/jr · gat €5.864</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top: 4mm; padding: 3mm 5mm; background: var(--paper); border: 1px solid var(--line); font-size: 9pt; color: var(--ink-soft);">
+    <strong style="font-family: 'Inter Tight'; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink);">Toelichting Pijler 4</strong><br>
+    <span style="font-family: 'Inter Tight'; line-height: 1.5;">EFKA-uitkering is een schatting op basis van 12 jaar minimum-base bijdragen (€220/mnd) onder GR-pensioenformule (0,77% per verzekerd jaar over pensioensalaris). Werkelijke uitkering hangt af van feitelijke inkomensbasis en aantal volledige verzekerde jaren. Engine v2 berekent dit exact op basis van jouw scenario-input. Voor IT-INPS en CY-SIF gelden vergelijkbare lokale stelsels die in v2 worden toegevoegd.</span>
+  </div>
+
+  <div class="callout" style="margin-top: 8mm;">
+    <div class="label">Wat dit betekent</div>
+    <p>Inclusief Pijler 4 (EFKA-uitkering) is het pensioen-gat op je 67e €5.864 bruto per jaar. Zonder Pijler 4 was het €8.704. EFKA dekt dus circa 33% van het gat. Het restant kun je via Pijler 3 in NL aanvullen vóór emigratie: €4.937 extra inleg per jaar gedurende 12 jaar tot je 67e, uitgaande van 7,5% nominaal rendement. Lager dan eerder geschat omdat het lokale staatspensioen meetelt.</p>
+  </div>
+
+  <div class="redflag">
+    <div class="label">Aandachtspunt 1</div>
+    <h4>NL-pensioenpot meenemen heeft fiscale gevolgen</h4>
+    <p>Een afkoop of waardeoverdracht van je ABP-pot vóór 67 wordt in Nederland als loon belast, mogelijk tegen het hoogste tarief plus 20% revisierente. Wachten op pensioendatum is fiscaal meestal beter, maar bindt je aan NL-uitkering en het verdrag. Bespreek dit als eerste met je fiscalist (sectie 09, algemene vraag 2).</p>
+  </div>
+
+  <div class="redflag">
+    <div class="label">Aandachtspunt 2</div>
+    <h4>NL is ook een bewegend doel</h4>
+    <p>De NL-baseline waar je tegen vergelijkt is niet statisch. Box 3 wijzigt naar werkelijk-rendement vermoedelijk 2028. AOW-leeftijd schuift door (67 jr 2026, 67 jr 3 mnd 2027, doorlopend gekoppeld aan levensverwachting). Het 'NL blijven'-scenario is dus ook niet wat het vandaag is. De tool rekent dit nog niet door op alle posten.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 05, VERMOGENSIMPACT BOX 3                    -->
+<!-- =================================================== -->
+<section id="page-9" class="page">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">09</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">07</div>
+    <div class="heading">
+      <h2>Vermogensimpact · Box 3 vs nieuw land</h2>
+      <div class="sub">Wat je elk jaar betaalt over hetzelfde vermogen</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">Op een vermogen van €1.247.392 (gezamenlijk Kevin en Muriel, exclusief eigen woning, peildatum 2026-01-01) betaal je in Nederland forfaitair vermogensbelasting via Box 3. In andere landen werkt het anders. Soms gunstiger, soms duurder.</p>
+
+  <div class="stat-grid-3">
+    <div class="stat-card">
+      <div class="num">€18.347</div>
+      <div class="caption">🇳🇱 Box 3 belasting jaar 1 · forfaitair · 2026-tarieven</div>
+    </div>
+    <div class="stat-card">
+      <div class="num accent">€0</div>
+      <div class="caption">🇨🇾 Geen vermogensbelasting · 17 jr non-dom</div>
+    </div>
+    <div class="stat-card">
+      <div class="num accent">€2.143</div>
+      <div class="caption">🇬🇷 ENFIA op vastgoed plus 15% op dividenden</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 10mm;">Wat elk land doet met €1,25M vermogen, 20-jaar pad</h3>
+  <p style="font-size: 9.5pt; color: var(--ink-mute); margin-top: -2mm; margin-bottom: 4mm;">Gesorteerd op gunstigheid: laagste belasting eerst.</p>
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th style="width: 8mm;">#</th>
+        <th>Land</th>
+        <th class="country-h">Mechanisme</th>
+        <th class="country-h">Jaar 1</th>
+        <th class="country-h">20-jr cumulatief</th>
+        <th class="country-h">Verschil vs NL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">1</td>
+        <td class="dim-cell">🇨🇾 Cyprus</td>
+        <td class="cell-note">Geen vermogensbelasting tot jaar 17 · daarna GHS 2,65% op vermogensrendement</td>
+        <td class="cell-val">€0</td>
+        <td class="cell-val">€47.624</td>
+        <td><span class="badge gain">−€419.559</span></td>
+      </tr>
+      <tr>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">2</td>
+        <td class="dim-cell">🇬🇷 Griekenland</td>
+        <td class="cell-note">ENFIA vastgoed plus 15% flat dividend · groeit met vermogen</td>
+        <td class="cell-val">€2.143</td>
+        <td class="cell-val">€70.842</td>
+        <td><span class="badge gain">−€396.341</span></td>
+      </tr>
+      <tr>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">3</td>
+        <td class="dim-cell">🇵🇹 Portugal</td>
+        <td class="cell-note">IMI vastgoed plus IFICI cap op dividend · 10 jr regime</td>
+        <td class="cell-val">€3.864</td>
+        <td class="cell-val">€124.218</td>
+        <td><span class="badge gain">−€342.965</span></td>
+      </tr>
+      <tr>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">4</td>
+        <td class="dim-cell">🇪🇸 Spanje</td>
+        <td class="cell-note">Patrimonio plus Beckham-cap · 6 jr regime</td>
+        <td class="cell-val">€11.184</td>
+        <td class="cell-val">€311.726</td>
+        <td><span class="badge attend">−€155.457</span></td>
+      </tr>
+      <tr style="background: rgba(241, 236, 226, 0.5);">
+        <td class="cell-val" style="font-weight: 700; color: var(--ink-mute);">5</td>
+        <td class="dim-cell">🇳🇱 Nederland</td>
+        <td class="cell-note">Forfaitair · 36% over 5,88% fictief rendement · groeit met vermogen</td>
+        <td class="cell-val">€18.347</td>
+        <td class="cell-val">€467.183</td>
+        <td><span class="badge">Baseline</span></td>
+      </tr>
+      <tr>
+        <td class="cell-val" style="font-weight: 700; color: var(--terracotta);">6</td>
+        <td class="dim-cell">🇮🇹 Italië</td>
+        <td class="cell-note">Lumpsum €300k/jr · niet-vermogensschalend · inflatie-geïndexeerd</td>
+        <td class="cell-val">€300.000</td>
+        <td class="cell-val">€7.349.281</td>
+        <td><span class="badge signal">+€6.882.098</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="label">Hoe deze cijfers berekend zijn</div>
+    <p>Alle landen gebruiken dezelfde rekenmethode: vermogen groeit jaarlijks met 7,5% nominaal (S&amp;P-aanname), belasting wordt toegepast op het groeiende vermogen, inflatie 2,1% op vaste bedragen (zoals Italiaanse lumpsum). NL en GR/CY/PT/ES schalen mee met vermogen. Italië-lumpsum is een vast bedrag dat door inflatie groeit van €300k naar €455k in jaar 20. Dat verklaart waarom Italië cumulatief €7,3M wordt en niet €6M (€300k × 20).</p>
+  </div>
+
+  <div class="callout">
+    <div class="label">Italië-uitzondering</div>
+    <p>Het Italiaanse lumpsum-bedrag schaalt niet met vermogen. Op €1,25M is het gigantisch, op €25M wordt het pas concurrerend met andere regimes. De tool toont alleen wat het kost voor jouw vermogen, niet of het rationeel is in absolute zin.</p>
+  </div>
+
+  <div class="footnotes">
+    Box 3 forfaitair tarief 2026: 36% op fictief rendement 5,88% (aandelen/overig). Heffingsvrij vermogen €59.357 per persoon. Werkelijk-rendement-stelsel verwacht 2028, niet meegerekend in 20-jaar pad. Toekomstige NL-wetwijziging kan deze rij significant beïnvloeden (zie sectie 06 aandachtspunt 2).
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 06, PARTNER VIEW                             -->
+<!-- =================================================== -->
+<section id="page-10" class="page page--warm">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">10</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">08</div>
+    <div class="heading">
+      <h2>Partner-view</h2>
+      <div class="sub">Kevin en Muriel · netto per persoon · top-1 land Griekenland IKE</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">Emigratie raakt twee mensen ongelijk. Hieronder zie je hoe de uitkomst voor jullie individueel verschilt in het voorkeurscenario Griekenland IKE.</p>
+
+  <div style="margin: 4mm 0 6mm; padding: 3mm 5mm; background: var(--paper-warm); border-left: 2px solid var(--ink); font-size: 9.5pt; color: var(--ink-soft); max-width: 150mm;">
+    <strong style="color: var(--ink); font-family: 'Inter Tight'; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.08em;">Symmetrie-aanname</strong><br>
+    <span style="font-family: 'Inter Tight'; line-height: 1.5;">Inkomen en belasting zijn symmetrisch omdat het scenario uitgaat van 50/50 IKE-aandelenverdeling met gelijke bestuursrol. Bij ongelijke verdeling zouden bruto-inkomen en belasting per persoon verschuiven (zie vraag 3 bij Griekenland in sectie 09). AOW en Pijler 2/3 verschillen wel: per persoon opgebouwd in NL voor emigratie.</span>
+  </div>
+
+  <div class="partner-view">
+    <div class="col">
+      <div class="name">Kevin</div>
+      <div class="role">Geboren 1968 · DGA IKE 50%</div>
+      <div class="num-line"><span class="lbl">Bruto inkomen per jaar (gem.)</span><span class="val">€86.347</span></div>
+      <div class="num-line"><span class="lbl">Belasting plus sociaal (gem.)</span><span class="val">€18.402</span></div>
+      <div class="num-line"><span class="lbl">Netto per jaar (gem.)</span><span class="val">€67.945</span></div>
+      <div class="num-line"><span class="lbl">AOW vanaf 67</span><span class="val">€11.387</span></div>
+      <div class="num-line"><span class="lbl">Pijler 2/3 vanaf 67</span><span class="val">€11.756</span></div>
+      <div class="num-line"><span class="lbl">Cumulatief 20jr (netto pp)</span><span class="val" style="color: var(--terracotta);">€1.521.483</span></div>
+    </div>
+    <div class="col">
+      <div class="name">Muriel</div>
+      <div class="role">Geboren 1969 · DGA IKE 50%</div>
+      <div class="num-line"><span class="lbl">Bruto inkomen per jaar (gem.)</span><span class="val">€86.347</span></div>
+      <div class="num-line"><span class="lbl">Belasting plus sociaal (gem.)</span><span class="val">€18.402</span></div>
+      <div class="num-line"><span class="lbl">Netto per jaar (gem.)</span><span class="val">€67.945</span></div>
+      <div class="num-line"><span class="lbl">AOW vanaf 67</span><span class="val">€10.836</span></div>
+      <div class="num-line"><span class="lbl">Pijler 2/3 vanaf 67</span><span class="val">€9.847</span></div>
+      <div class="num-line"><span class="lbl">Cumulatief 20jr (netto pp)</span><span class="val" style="color: var(--terracotta);">€1.476.219</span></div>
+    </div>
+  </div>
+
+  <div style="margin-top: 4mm; padding: 3mm 5mm; background: var(--paper); border: 1px solid var(--line); font-size: 9pt; color: var(--ink-soft);">
+    <strong style="font-family: 'Inter Tight'; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink);">Reconciliatie met sectie 02</strong><br>
+    <span style="font-family: 'Inter Tight'; line-height: 1.5;">Som van persoonlijk netto Kevin + Muriel: €2.997.702. Sectie 02 toont €2.834.215 cumulatief vrij besteedbaar. Verschil €163.487 = gedeelde huishoudelijke vaste lasten over 20 jaar die in sectie 02 zijn afgetrokken maar hier nog inbegrepen. Sectie 02 = household-level na huishoudlasten. Deze sectie = individual-level vóór huishoudlasten.</span>
+  </div>
+
+  <h3 style="margin-top: 10mm;">Asymmetrie en aandachtspunten</h3>
+  <ul class="dashes">
+    <li><strong>Pensioen-opbouw verschilt.</strong> Muriel heeft door eerdere parttime-perioden een lager Pijler 2-saldo (€189.421 vs Kevin's €213.847). Compensatie via Pijler 3 vóór emigratie is fiscaal aftrekbaar in NL. Erna niet.</li>
+    <li><strong>AOW-opbouw is per persoon.</strong> Kevin (34 jr) heeft 68%, Muriel (32 jr) heeft 64%. Beide kunnen vrijwillig blijven inbouwen vanuit buitenland. Kosten zijn ongeveer €560 per maand per persoon voor maximale opbouw. Break-even leeftijd circa 81 jaar (zie sectie 09, algemene vraag 6).</li>
+    <li><strong>IKE-aandelen verdeling.</strong> Bij gelijke aandelenverdeling worden dividenden 50/50 belast. Bij ongelijke verdeling kun je inkomen verschuiven naar de partner met de laagste effectieve schijf. Dat verstoort eventuele scheiding-aanspraken later.</li>
+    <li><strong>Overlijdens-scenario.</strong> Bij overlijden van een partner in Griekenland geldt Grieks erfrecht op Griekse activa, NL-erfrecht op NL-activa. Testament-opt-in voor NL-recht via Brussel IV-keuze is essentieel (zie sectie 09, algemene vraag 7).</li>
+  </ul>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 07, VRAGEN VOOR JE FISCALIST (page 1 of 2)   -->
+<!-- =================================================== -->
+<section id="page-11" class="page">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">11</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">09</div>
+    <div class="heading">
+      <h2>Vragen voor je fiscalist</h2>
+      <div class="sub">Algemeen · Griekenland · Cyprus · Portugal</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">Deze vragen zijn afgeleid uit jouw scenario. Print de twee pagina's los uit, neem ze mee, en kruis aan wat besproken is. Doel: voorkomen dat je een tweede sessie nodig hebt voor wat in de eerste had gemoeten.</p>
+
+  <h3 style="margin-top: 8mm;">Algemeen, geldt voor alle drie de landen</h3>
+  <div class="checklist">
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Op welke exacte datum word ik fiscaal niet-inwoner van Nederland, welke documenten heb ik nodig om dat te bewijzen, en welke bewijslast komt eventueel weer terug bij een latere controle?</div>
+        <div class="why">Art. 4 AWR weegt feitelijke omstandigheden, niet alleen BRP-uitschrijving. Bewijslast kan vragen om huurcontract buitenland, energierekeningen, school inschrijvingen kinderen, verkoop of verhuur NL woning, sociale leven buitenland. Controle door Belastingdienst tot 12 jaar terug mogelijk.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Welke conserverende aanslagen krijg ik bij emigratie precies, hoe hoog vallen die uit voor mijn AB-belang en pensioenpot, en welke gebeurtenissen triggeren inning binnen de 10-jaarstermijn?</div>
+        <div class="why">AB-belang: 26,9% conserverend over fictieve overdracht aan emigratiedatum. Pensioen: revisierente plus IB. Inning triggers: vervreemding AB, dividenduitkering uit holding, afkoop pensioen, overlijden binnen 10 jr (afhankelijk verdragsland).</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Hoe wordt mijn NL-koophuis behandeld na uitschrijving, en hoe interacteert NL-Box 3 met eventuele woonland-heffing op buitenlands vastgoed van een Grieks/Cypriotisch belastingplichtige?</div>
+        <div class="why">NL-woning na emigratie wordt Box 3 in NL (geen eigenwoningregeling). Verdrag bepaalt wie primair heft. Bij verhuur ook NL bron-IB op huurinkomsten. Doorrekenen of vooraf verkopen fiscaal voordeliger is.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Wat is de exacte werking van de M-formulier eindjaar-aangifte, welke posten worden vaak vergeten, en hoe maak ik die aangifte revisie-bestendig?</div>
+        <div class="why">M-formulier is verplicht in het emigratiejaar. Posten die fout gaan: tijdsevenredige verdeling inkomstenbox 1, woonlandbeginsel hypotheekrente, te late aanmelding box 3 peildatum-emigratie.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Wat is mijn peildatum-vermogen voor de laatste Box 3 NL en hoe minimaliseer ik die wettelijk op een verdedigbare manier?</div>
+        <div class="why">Peildatum is 1 januari van het emigratiejaar bij vol jaar NL-resident, anders moment-emigratie pro rata. Verdedigbare optimalisaties: timing dividenduitkering, overhevelen naar buitenlandse rekening na peildatum, voorfinanciering grote uitgaven.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Kan ik AOW vrijwillig blijven opbouwen vanuit het buitenland, wat zijn de exacte premies in 2026, en hoe verhoudt dat zich tot de uiteindelijke uitkering ten opzichte van niet-verzekeren?</div>
+        <div class="why">SVB regeling vrijwillige verzekering. Premie ~€560/mnd p.p. voor maximale opbouw. Per jaar 2% AOW-recht. Break-even leeftijd berekenen vóór emigratie. Optie kan binnen 10 jaar na emigratie geactiveerd worden.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Wat doen jullie standaard bij erfrecht en testament-update bij Nederlanders die naar EU-land emigreren, specifiek de Brussel IV-keuze voor NL-recht?</div>
+        <div class="why">EU Verordening 650/2012 (Brussel IV) maakt het mogelijk om NL-erfrecht op nalatenschap te leggen ondanks woonland. Vereist expliciete keuze in testament. Zonder keuze geldt erfrecht woonland, wat in GR/CY/PT andere gevolgen heeft voor langstlevende.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Heb ik jullie als NL-fiscalist nog nodig na emigratie, en zo ja: welke jaarlijkse posten verzorgen jullie versus de lokale fiscalist in het doelland?</div>
+        <div class="why">NL houdt bron-heffingsrecht op pensioen, NL-vastgoed, NL-AB-dividend. NL-fiscalist blijft betrokken bij conserverende aanslag, M-formulier opvolging, eventuele dispuutkwesties. Lokaal fiscalist primair voor woonland-aangiften.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 07 page 2 of 2                               -->
+<!-- =================================================== -->
+<section id="page-12" class="page">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">12</span>
+  </div>
+
+  <div class="eyebrow">Vragen voor je fiscalist · vervolg</div>
+
+  <h3 style="margin-top: 6mm;">🇬🇷 Specifiek voor Griekenland</h3>
+  <div class="checklist">
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Welke documentatie heeft de Griekse autoriteit als bewijslast voor 'aandacht-trekkende werkzaamheden' onder artikel 5C in eerdere casussen geaccepteerd, en wat heeft tot afwijzing geleid?</div>
+        <div class="why">5C vereist substance. Bewijslast ligt bij belastingplichtige. Vraag naar precedent in praktijk van fiscalist, niet de wettekst. Veelvoorkomende afwijzing: onvoldoende substance, geen lokale activiteit, te beperkte commitment-periode.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Wat is jullie advies over de structuurvorm: IKE versus EE versus OE, gegeven onze inkomenmix en de planhorizon van 20 jaar?</div>
+        <div class="why">IKE (private limited): lichtste, meest gebruikt door buitenlanders. EE (algemene vennootschap): meer flexibiliteit met meer admin. OE (publieke onderneming): zelden relevant. Keuze hangt af van substance-vereisten, aandeelhouders, uittreedopties.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Welke aandelenverhouding tussen mij en mijn partner in de IKE is fiscaal optimaal én civielrechtelijk verdedigbaar bij echtscheiding of overlijden?</div>
+        <div class="why">Fiscaal: 50/50 binnen 5C optimum, ongelijke verhouding kan inkomen verschuiven naar laagste schijf maar verstoort eigendomsverhouding. Civielrechtelijk: GR-erfrecht splitst aandelen anders dan NL bij overlijden zonder testament.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Hoe werken de EFKA-bijdragen voor mij als IKE-DGA in 2026 en hoe behandelt het verdrag NL-GR mijn AOW als ik tegelijk EFKA-pensioen opbouw?</div>
+        <div class="why">EFKA: verplicht voor DGA. Minimum-base ongeveer €220/mnd p.p. in 2026. AOW vanuit NL belast in GR (art. 23 verdrag), maar 50% vrijstelling onder 5C. Cumulatie AOW + EFKA-uitkering bij pensionering, geen aftrek van een van beide.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Welke btw-verplichting heeft mijn IKE als ik diensten lever aan NL-klanten, en hoe zit dat met de OSS-regeling?</div>
+        <div class="why">B2B-diensten naar NL onder reverse charge (geen GR-btw). B2C-diensten naar NL kunnen onder OSS vallen of GR-btw vereisen. GR-btw is 24% standaard. Administratieve last via Griekse boekhouder ~€150-€300 per maand.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Wat gebeurt fiscaal als ik de IKE na 7 jaar wil ontbinden, verhuizen naar een ander land, of overdragen aan kinderen?</div>
+        <div class="why">Ontbinding: liquidatie-uitkering belast als dividend onder 5C (50% vrij). Verhuizing GR-resident naar derde land: exit-tax mogelijk. Overdracht aan kinderen: GR-schenkbelasting (1-40% afhankelijk van bedrag en relatie).</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Welke lokale GR-fiscalist of advocaat raden jullie aan voor de praktische uitvoering, en welke werkverdeling tussen jullie en de lokale partij is gebruikelijk?</div>
+        <div class="why">NL-fiscalist kent verdrag en NL-zijde. GR-zijde vraagt lokale specialist voor 5C-aanvraag, EFKA-aanmelding, IKE-oprichting (notaris), jaarlijkse aangiften. Vraag naar partner-fiscalisten in jullie netwerk, niet zelf zoeken.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 6mm;">🇨🇾 Specifiek voor Cyprus</h3>
+  <div class="checklist">
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Welke variant van CY-residency adviseren jullie voor mijn situatie: 60-dagen of 183-dagen, en wat zijn de exacte substance-eisen die de Cypriotische autoriteit oplegt?</div>
+        <div class="why">60-dagen route: 60 dagen fysiek in CY, geen andere fiscale residentie, eigen onderkomen, business of werk in CY. 183-dagen route: simpeler maar vraagt meer aanwezigheid. 60-dagen route wordt vaker afgewezen bij dunne substance.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Wat is de exacte impact van de jaar-18 overgang op mijn vermogen en inkomen, en welke strategieën hebben jullie zien werken om die te mitigeren?</div>
+        <div class="why">Jaar 18: GHS 2,65% gaat op al het inkomen werken, CY-IB progressief op salaris. Mitigatie-paden in praktijk: tweede emigratie naar lager-belast land, vermogensoverdracht aan kinderen, herstructurering CY-Ltd naar trust of foundation.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Hoe behandelt het verdrag NL-CY (1979, herzien) mijn ABP-pijler-2-pensioen, mijn AOW en mijn lijfrente-uitkeringen vanaf 67?</div>
+        <div class="why">Verdrag 1979 met protocol 2009. ABP (publieke dienst, art. 19 lid 2): NL belast tenzij CY-onderdaan EN CY-resident. AOW (art. 19 lid 1): NL belast. Lijfrente (art. 19 lid 1): NL belast. Geen 50% vrijstelling zoals GR.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Hoe werkt deemed dividend distribution in CY, en wat gebeurt er als ik winst in de CY Ltd laat zitten in plaats van uitkeren?</div>
+        <div class="why">CY Ltd moet 70% van na-belasting-winst binnen 2 jaar uitkeren, anders fictieve uitkering. Voor non-dom: deemed dividend valt onder 0% IB maar 17% defence-tax. Tenzij non-dom statuut. Concrete kennis bij fiscalist nodig.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Is de Cypriotische IP-box voor mij relevant gezien mijn werkzaamheden, en wat is de praktische administratieve last om die toe te passen?</div>
+        <div class="why">CY IP-box: effectief 2,5% op kwalificerend IP-inkomen. Smalle definitie: software, patenten, R&D. Substance-eisen streng. Voor adviesdiensten meestal niet toepasbaar. Bij twijfel: doorrekenen wat de admin-overhead kost vs het belastingvoordeel.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Welke lokale CY-firma raden jullie aan voor de praktische uitvoering, en wat is de standaard jaarlijkse kostprijs voor een CY Ltd met non-dom-individu?</div>
+        <div class="why">CY Ltd jaarlijks: audit verplicht (€800-€1500), corporate filings (€500-€800), boekhouding (€2000-€4000), legal/secretarial (€500-€800). Plus aanmaak-kosten eerste jaar ~€2500-€4000. Vooraf doorrekenen vs Grieks IKE-model.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 6mm;">🇵🇹 Specifiek voor Portugal</h3>
+  <div class="checklist">
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Kwalificeer ik voor IFICI op basis van mijn activiteitenprofiel, welke specifieke beroepscodes (CIRS) gelden, en hoe groot is het risico op afwijzing achteraf?</div>
+        <div class="why">IFICI: smaller dan NHR. Toegankelijk voor hoogwaardige R&D, specifieke tech-rollen, ondernemen in startup-sector. Lijst beroepscodes is jaarlijks aangepast. Afwijzing achteraf mogelijk tot 4 jaar na aanvraag, met retroactieve heffing.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Geldt voor mij eventueel nog NHR-grandfathering, en zo niet, wat is dan precies de meerwaarde van IFICI versus reguliere PT-IB voor mijn inkomensprofiel?</div>
+        <div class="why">NHR afgeschaft per oktober 2023, grandfathering voor wie aanvraag had ingediend of bewijsbaar voornemen kon aantonen. IFICI tarief 20% flat op kwalificerend inkomen. Reguliere PT-IB progressief tot 48%. Berekening per inkomensschijf nodig.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Is Madeira of Azoren als alternatieve PT-residentie relevant voor mij, gezien de lagere IB-tarieven daar?</div>
+        <div class="why">Madeira en Azoren: regionale IB-korting tot 30% op het PT-tarief. Substance-eisen strikt: fysiek wonen, kinderen op school lokaal, primair leven daar. Voor pure tax-mitigatie zonder lifestyle-fit zelden de moeite waard.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Wat zijn de kwartaal-IRS-verplichtingen en hoe interacteert dat met mijn NL-bron-inkomen in jaar 1?</div>
+        <div class="why">PT IRS: kwartaal pagamentos por conta (voorschot) voor zelfstandigen. Jaar 1 lastig omdat NL-bron inkomen tijdsevenredig wordt verdeeld, voorschot wordt vaak te hoog ingeschat. Werkkapitaalimpact in eerste jaar.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div>
+        <div class="question">Welke PT-fiscalist raden jullie aan voor de praktische uitvoering, en welke werkverdeling tussen jullie en de lokale partij is gebruikelijk?</div>
+        <div class="why">PT-fiscalist primair voor NIF-aanvraag, IFICI-aanmelding, jaarlijkse IRS-aangiften, AT (Autoridade Tributária) communicatie. NL-fiscalist blijft betrokken bij verdrag, conserverende aanslag, M-formulier.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 08, AANDACHTSPUNTEN PER LAND                 -->
+<!-- =================================================== -->
+<section id="page-13" class="page page--warm">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">13</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">10</div>
+    <div class="heading">
+      <h2>Aandachtspunten per voorkeurland</h2>
+      <div class="sub">Wat de tool niet rekent maar wel je beslissing raakt</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">De cijfers gaan ervan uit dat regelgeving stabiel blijft, dat je de structuur correct opzet, en dat je residency-eisen haalt. Drie aannames die voor elk land kunnen breken. Elk aandachtspunt verwijst naar de bijbehorende vraag in sectie 09.</p>
+
+  <div class="redflag" style="margin-top: 8mm;">
+    <div class="label">🇬🇷 Griekenland · aandachtspunt 1 · zie sectie 09 vraag GR-1</div>
+    <h4>Artikel 5C is politiek volatiel</h4>
+    <p>Het regime is in 2020 ingevoerd en kan met enkelvoudige wetswijziging worden ingetrokken of versmald. Eerdere regimes (5A, 5B) bestaan nog, maar de voorwaarden zijn herhaaldelijk aangepast. Reken op een werkende structuur die in jaar 8 tot 10 herzien kan moeten worden.</p>
+  </div>
+
+  <div class="redflag">
+    <div class="label">🇬🇷 Griekenland · aandachtspunt 2 · zie sectie 09 vraag GR-4</div>
+    <h4>EFKA-administratie is zwaar en taal-afhankelijk</h4>
+    <p>Het Griekse sociaal verzekeringsstelsel werkt op papier, in het Grieks, met fysieke afhandeling. Zonder lokale boekhouder of advocaat is dit een continue belasting. Reken op €2.500 tot €4.500 per jaar voor lokale begeleiding.</p>
+  </div>
+
+  <div class="redflag">
+    <div class="label">🇨🇾 Cyprus · aandachtspunt · zie sectie 09 vraag CY-2</div>
+    <h4>Harde grens in jaar 18</h4>
+    <p>Non-dom is wettelijk gewaarborgd voor 17 jaar. Op de eerste dag van jaar 18 vervalt het volledig. GHS 2,65% gaat op al je inkomen werken en CY-IB op je salaris-tranche. Voor wie 20 jaar of langer plant: tweede emigratie of structuur-omzetting is onvermijdelijk.</p>
+  </div>
+
+  <div class="redflag">
+    <div class="label">🇵🇹 Portugal · aandachtspunt · zie sectie 09 vraag PT-1</div>
+    <h4>IFICI-kwalificatie is smaller dan NHR</h4>
+    <p>IFICI vervangt NHR sinds 2024 en is alleen toegankelijk voor specifieke beroepsgroepen (R&D, hoogwaardige tech, specifieke ondernemerschap). Pure passieve-investeerders of generieke ZZP-profielen vallen er meestal niet onder. Verifieer kwalificatie vóór commitment.</p>
+  </div>
+
+  <div class="redflag">
+    <div class="label">🇮🇹 Italië · aandachtspunt</div>
+    <h4>Lumpsum-regime kan herzien worden</h4>
+    <p>De Italiaanse lumpsum is al twee keer verhoogd sinds invoering (€100k naar €200k naar €300k vanaf 2024). De trend is opwaarts. Bij volgende herziening kan het regime onaantrekkelijk worden voor wie er nog niet inzit.</p>
+  </div>
+
+  <div class="redflag">
+    <div class="label">🇦🇪 UAE · aandachtspunt</div>
+    <h4>Geen pensioenverdrag met Nederland</h4>
+    <p>Voor wie ABP- of pensioenfondsuitkering verwacht: zonder verdrag valt de uitkering bij NL-bron en wordt vol belast als loon. De netto-uitkomst die de tool toont over inkomstenbelasting houdt niet altijd stand voor pensioen-fase. Vooraf valideren.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 11, NETTO-NETTO BOTTOMLINE                   -->
+<!-- =================================================== -->
+<section id="page-14" class="page">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">14</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">11</div>
+    <div class="heading">
+      <h2>Netto-netto bottomline</h2>
+      <div class="sub">Alle posten · alle bedragen · op één pagina</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">Alle cijfers uit dit document samengevat per top-3 land, in P&amp;L-formaat. Plus- of minteken vanuit perspectief van het buitenland ten opzichte van Nederland. Een positief getal is gunstig voor jou, een negatief getal is een kost. Bottomline onderaan: wat houd je netto over 20 jaar.</p>
+
+  <table class="matrix" style="margin-top: 8mm; font-size: 9.5pt;">
+    <thead>
+      <tr>
+        <th>Post</th>
+        <th class="country-h">🇬🇷 Griekenland</th>
+        <th class="country-h">🇨🇾 Cyprus</th>
+        <th class="country-h">🇵🇹 Portugal</th>
+        <th class="country-h">Bron</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background: rgba(241, 236, 226, 0.5);">
+        <td class="dim-cell" colspan="5" style="font-family: 'Inter Tight'; font-size: 8.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--terracotta); padding: 4mm 3mm 2mm;">Inkomstenvoordeel (over 20 jaar, vóór andere kosten)</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Bruto netto-inkomensvoordeel vs NL</td>
+        <td class="cell-val" style="color: var(--olive);">+€598.847</td>
+        <td class="cell-val" style="color: var(--olive);">+€546.125</td>
+        <td class="cell-val" style="color: var(--olive);">+€411.960</td>
+        <td class="cell-note">Sectie 02</td>
+      </tr>
+      <tr style="background: rgba(241, 236, 226, 0.5);">
+        <td class="dim-cell" colspan="5" style="font-family: 'Inter Tight'; font-size: 8.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--terracotta); padding: 4mm 3mm 2mm;">Vermogensbelasting-voordeel (over 20 jaar)</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Vermogensbelasting voordeel vs NL Box 3</td>
+        <td class="cell-val" style="color: var(--olive);">+€396.341</td>
+        <td class="cell-val" style="color: var(--olive);">+€419.559</td>
+        <td class="cell-val" style="color: var(--olive);">+€342.965</td>
+        <td class="cell-note">Sectie 08</td>
+      </tr>
+      <tr style="background: rgba(241, 236, 226, 0.5);">
+        <td class="dim-cell" colspan="5" style="font-family: 'Inter Tight'; font-size: 8.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--terracotta); padding: 4mm 3mm 2mm;">Kosten van uitvoering (over 20 jaar)</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Setup-kosten jaar 1</td>
+        <td class="cell-val" style="color: var(--terracotta);">−€11.420</td>
+        <td class="cell-val" style="color: var(--terracotta);">−€8.580</td>
+        <td class="cell-val" style="color: var(--terracotta);">−€7.040</td>
+        <td class="cell-note">Sectie 06</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Doorlopende uitvoeringskosten 20 jr</td>
+        <td class="cell-val" style="color: var(--terracotta);">−€175.600</td>
+        <td class="cell-val" style="color: var(--terracotta);">−€123.000</td>
+        <td class="cell-val" style="color: var(--terracotta);">−€105.600</td>
+        <td class="cell-note">Sectie 06</td>
+      </tr>
+      <tr style="background: rgba(241, 236, 226, 0.5);">
+        <td class="dim-cell" colspan="5" style="font-family: 'Inter Tight'; font-size: 8.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--terracotta); padding: 4mm 3mm 2mm;">Pensioen-impact (cumulatief over 20 jaar)</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Pensioen-gap inleg (12 jr Pijler 3)</td>
+        <td class="cell-val" style="color: var(--terracotta);">−€59.244</td>
+        <td class="cell-val" style="color: var(--terracotta);">−€88.560</td>
+        <td class="cell-val" style="color: var(--terracotta);">−€72.180</td>
+        <td class="cell-note">Sectie 07</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Vrijwillige AOW-bijbouw (12 jr, 2pp)</td>
+        <td class="cell-val" style="color: var(--ink-mute);">−€0</td>
+        <td class="cell-val" style="color: var(--ink-mute);">−€0</td>
+        <td class="cell-val" style="color: var(--ink-mute);">−€0</td>
+        <td class="cell-note">Optioneel, niet in basis-scenario</td>
+      </tr>
+      <tr style="background: rgba(241, 236, 226, 0.5);">
+        <td class="dim-cell" colspan="5" style="font-family: 'Inter Tight'; font-size: 8.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--terracotta); padding: 4mm 3mm 2mm;">Subtotalen</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Totaal voordeel (bruto)</td>
+        <td class="cell-val" style="color: var(--olive); font-weight: 700;">+€995.188</td>
+        <td class="cell-val" style="color: var(--olive); font-weight: 700;">+€965.684</td>
+        <td class="cell-val" style="color: var(--olive); font-weight: 700;">+€754.925</td>
+        <td class="cell-note">Som inkomen + vermogen</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Totaal kosten (alle posten)</td>
+        <td class="cell-val" style="color: var(--terracotta); font-weight: 700;">−€246.264</td>
+        <td class="cell-val" style="color: var(--terracotta); font-weight: 700;">−€220.140</td>
+        <td class="cell-val" style="color: var(--terracotta); font-weight: 700;">−€184.820</td>
+        <td class="cell-note">Setup + doorlopend + pensioen</td>
+      </tr>
+      <tr style="background: var(--ink); color: var(--paper); border-top: 2px solid var(--ink);">
+        <td class="dim-cell" style="color: var(--paper); font-weight: 700; font-size: 11pt; padding: 6mm 3mm;">NETTO-NETTO over 20 jaar</td>
+        <td class="cell-val" style="color: var(--paper); font-weight: 700; font-size: 14pt; font-family: 'Fraunces'; padding: 6mm 3mm;">+€748.924</td>
+        <td class="cell-val" style="color: var(--paper); font-weight: 700; font-size: 14pt; font-family: 'Fraunces'; padding: 6mm 3mm;">+€745.544</td>
+        <td class="cell-val" style="color: var(--paper); font-weight: 700; font-size: 14pt; font-family: 'Fraunces'; padding: 6mm 3mm;">+€570.105</td>
+        <td class="cell-note" style="color: rgba(246,245,242,0.78);">Bruto voordeel min alle kosten</td>
+      </tr>
+      <tr style="background: rgba(241, 236, 226, 0.7);">
+        <td class="dim-cell" style="font-weight: 600;">Per jaar gemiddeld</td>
+        <td class="cell-val">+€37.446</td>
+        <td class="cell-val">+€37.277</td>
+        <td class="cell-val">+€28.505</td>
+        <td class="cell-note">20-jr bottomline ÷ 20</td>
+      </tr>
+      <tr>
+        <td class="dim-cell">Erosie-percentage (kosten ÷ bruto voordeel)</td>
+        <td class="cell-val">24,7%</td>
+        <td class="cell-val">22,8%</td>
+        <td class="cell-val">24,5%</td>
+        <td class="cell-note">Hoeveel van het brutovoordeel naar kosten gaat</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin-top: 8mm;">
+    <div class="label">Wat dit betekent</div>
+    <p>Griekenland en Cyprus liggen netto-netto bijna gelijk: €748.924 versus €745.544. Het verschil is €3.380 over 20 jaar, ofwel €169 per jaar. Op cijfers alleen valt hier geen winnaar te wijzen. De keuze zit in de zachte factoren: regime-bestendigheid (CY heeft een harde cliff in jaar 18, GR heeft politiek risico op 5C in elk jaar), uitvoeringsgemak (CY makkelijker setup, GR meer admin), lifestyle en locatie. Portugal blijft ruim €175.000 achter en is op cijfers alleen geen serieuze kandidaat.</p>
+  </div>
+
+  <div class="footnotes">
+    Alle bedragen in euro's, nominaal, niet voor inflatie gecorrigeerd. Bottomline gaat uit van basis-scenario: geen huiskoop in doelland, geen NL-woning verkoop, geen vrijwillige AOW-bijbouw. Toevoeging van vrijwillige AOW kost circa €134.000 per persoon over 12 jaar maar verhoogt levensduur-pensioen. Engine berekent dit toggle-baar in v2.
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SECTION 12, EERSTE 30 DAGEN (was 11)                 -->
+<!-- =================================================== -->
+<section id="page-15" class="page">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">15</span>
+  </div>
+
+  <div class="section-opener">
+    <div class="number">12</div>
+    <div class="heading">
+      <h2>Eerste 30 dagen</h2>
+      <div class="sub">Concrete acties · in volgorde · vanaf vandaag</div>
+    </div>
+  </div>
+
+  <p style="max-width: 150mm;">Je hebt veertien pagina's cijfers gelezen. Dit is wat je vanaf morgen doet. Volgorde is bewust: elk vorig item ontgrendelt het volgende. Spring niet vooruit.</p>
+
+  <h3 style="margin-top: 8mm;">Week 1, dag 1-7</h3>
+  <ol class="numbered">
+    <li><strong>Print pagina 11 en 12 (vragen voor je fiscalist) los uit.</strong> Print ook pagina 07 (uitvoeringskosten) en pagina 08 (AOW pensioen). Houd ze samen in een fysieke map of in een digitale folder.</li>
+    <li><strong>Plan een gesprek met je huidige NL-fiscalist of zoek er één met emigratie-ervaring.</strong> Vraag specifiek naar 5C/IKE (Griekenland), non-dom (Cyprus), IFICI (Portugal) ervaring in de afgelopen 3 jaar. Wie geen recente cases heeft is niet de juiste fiscalist voor dit traject.</li>
+    <li><strong>Stuur de volledige Beslisgids vooraf naar de fiscalist.</strong> Niet als bijlage in een lange mail. Eén regel: "Hier is mijn doorrekening. Welke aannames wijken af van wat jij in praktijk ziet?" Maakt het gesprek scherper en kort.</li>
+  </ol>
+
+  <h3 style="margin-top: 8mm;">Week 2, dag 8-14</h3>
+  <ol class="numbered">
+    <li><strong>Voer het fiscalist-gesprek.</strong> 90 minuten. Werk alle 26 vragen van sectie 09 af. Vraag aan einde: "wat heb ik niet gevraagd dat ik wel had moeten vragen?" Vraag om schriftelijke samenvatting binnen 5 werkdagen.</li>
+    <li><strong>Vraag de fiscalist om lokale partners.</strong> Welke advocaat in GR, welk audit-kantoor in CY, welke fiscalist in PT. Geen eigen LinkedIn-zoektocht. Lokale partner-keuze is hoog-risico zonder verwijzing.</li>
+    <li><strong>Inventariseer NL-vermogen en peildatum-mogelijkheden.</strong> Welke posten staan op naam Kevin, welke op naam Muriel, wat staat joint. Wat is fiscaal verschoven of geoptimaliseerd vóór peildatum (1 januari emigratiejaar)?</li>
+  </ol>
+
+  <h3 style="margin-top: 8mm;">Week 3, dag 15-21</h3>
+  <ol class="numbered">
+    <li><strong>Bouw kostencomparator voor lokale uitvoering.</strong> Vraag 2-3 offerte aan lokale advocaat/boekhouder per top-land. Vergelijk met de schattingen in sectie 05 (pagina 07) van deze gids. Wijking groter dan 25%: vraag waarom.</li>
+    <li><strong>Beslis: één of twee landen serieus uitwerken.</strong> Eén land is sneller, twee landen kost extra fiscalist-tijd maar geeft echte vergelijking. Voor netto-voordeel onder €300k: één land. Voor netto-voordeel boven €500k: twee landen is de moeite waard.</li>
+  </ol>
+
+  <h3 style="margin-top: 8mm;">Week 4, dag 22-30</h3>
+  <ol class="numbered">
+    <li><strong>Praat met lokale partner in voorkeurland.</strong> Initieel 30 min videogesprek. Toets: kunnen ze jouw scenario? Hebben ze recente cases? Wat duurt de setup feitelijk?</li>
+    <li><strong>Bepaal de tijdslijn.</strong> Zes maanden setup minimum voor GR. Drie maanden voor CY. Vier maanden voor PT. Reken minstens 8-12 maanden tussen "ik weet wat ik wil" en "ik woon daar fiscaal". Plan ook persoonlijk: verhuizing, school kinderen, huurcontract NL-woning.</li>
+    <li><strong>Bepaal kantelpunten.</strong> Wat moet er gebeuren voordat je definitief stopt of doorzet? Concreet: "ik stop met dit traject als regeling X verandert" of "als lokale kosten boven Y uitkomen". Schrijf dit op. Stop op het kantelpunt is even waardevol als doorzetten.</li>
+  </ol>
+
+  <div class="callout">
+    <div class="label">Wat je deze 30 dagen niet doet</div>
+    <p>Geen huis kopen in het doelland. Geen koophuis in NL verkopen. Geen IKE/Ltd oprichten. Geen BRP-uitschrijving. Deze stappen komen pas na maand 2-3, met fiscalist-akkoord op timing en volgorde. Wie hier vooruit grijpt verliest fiscale optimalisatie-vensters die je niet meer terug krijgt.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- DECISION BANNER + APPENDIX                           -->
+<!-- =================================================== -->
+<section id="page-16" class="page">
+  <div class="page-header">
+    <span class="brand">Emigratieplan · Beslisgids</span>
+    <span class="pgnum">16</span>
+  </div>
+
+  <div class="eyebrow">Samenvatting</div>
+  <h2>Wat de cijfers nu zeggen</h2>
+
+  <div class="decision-banner">
+    <div class="label">Voor jouw scenario, op cijfers alleen</div>
+    <h3>Na aftrek van alle uitvoerings- en pensioenkosten levert Griekenland €748.924 netto over 20 jaar. Cyprus €745.544. Het verschil is €3.380.</h3>
+    <p>Op cijfers zijn Griekenland en Cyprus statistisch gelijk: €169 per jaar verschil over 20 jaar. De keuze zit niet in het rendement maar in de regime-bestendigheid. Cyprus heeft een harde cliff in jaar 18 (non-dom eindigt). Griekenland heeft politiek risico op 5C in elk jaar maar geen einddatum. Welke je kiest hangt af van of je 17 jaar zekerheid plus exit-strategie prefereert (CY), of continue regime-risico over 20+ jaar accepteert (GR). Portugal blijft €175.000 achter en valt af op cijfers.</p>
+  </div>
+
+  <p style="max-width: 150mm; margin-top: 8mm;">Dit document is een geordend beeld van wat jij hebt ingevoerd. Geen aanbeveling. De cijfers zijn zo goed als jouw aannames.</p>
+
+  <h3 style="margin-top: 10mm;">Hoe je dit document gebruikt</h3>
+  <p style="max-width: 150mm; margin-top: 3mm;">Sectie 12 (pagina 15) toont de concrete acties voor je eerste 30 dagen, in volgorde. Begin daar. Spring niet vooruit naar maand 2-3 totdat je fiscalist heeft bevestigd dat de aannames in deze gids matchen met zijn praktijk.</p>
+
+  <h3 style="margin-top: 10mm;">Wat dit document <em style="font-family: 'Fraunces'; color: var(--terracotta);">niet</em> is</h3>
+  <ul class="dashes">
+    <li>Geen fiscaal advies. Emigratieplan is een rekentool, geen WFT-gereglementeerde adviseur.</li>
+    <li>Geen garantie op uitkomst. Wetgeving verandert. Verdragen worden herzien. Reken op een check-up elke 2 tot 3 jaar.</li>
+    <li>Geen vervanging voor lokale specialisten. Een NL-fiscalist dekt NL-zijde van het verdrag, conserverende aanslag, M-formulier en bron-heffingen. Een lokale fiscalist dekt regime-aanvraag, lokale aangiften, en sociale verzekering. Beide nodig.</li>
+  </ul>
+
+  <div class="callout" style="margin-top: 10mm;">
+    <div class="label">Volgende stap</div>
+    <p>Sla deze gids op. Print pagina 07 (uitvoeringskosten), pagina 08 (AOW pensioen), pagina 11-12 (fiscalist-vragen) en pagina 15 (eerste 30 dagen). Mail jouw fiscalist. Boek de sessie. Kom terug naar de tool als de uitkomst van die sessie reden geeft je scenario aan te passen.</p>
+  </div>
+
+  <div class="footnotes" style="margin-top: 16mm;">
+    <strong>Versie:</strong> Beslisgids v1 · 2026-05-13<br>
+    <strong>Scenario hash:</strong> kvg-mvg-gr-ike-50-50-2026-q2<br>
+    <strong>Tool-versie:</strong> FTP v6.3.1<br>
+    Document opgesteld op basis van jouw input in de tool. Bij wijziging van scenario kan een nieuwe Beslisgids worden gegenereerd. <br>
+    Vragen? <strong style="color: var(--ink);">kevin@emigratieplan.nl</strong>
+  </div>
+
+  <div class="page-footer">
+    <span>v1 · 2026-05-13</span>
+    <span>emigratieplan.nl</span>
+  </div>
+</section>
+
+</div>
+
+</body>
+</html>
