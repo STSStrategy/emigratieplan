@@ -1175,6 +1175,8 @@ tr:nth-last-child(-n+5) .ep-info::before {
   /* Vergelijking-sectie verborgen tot toggle */
   #vergelijking { display: none; }
   #vergelijking.is-mobile-shown { display: block; }
+  /* R7: link naar de op mobiel verborgen vergelijkingssectie ook verbergen, zodat de klik niet als kapot leest */
+  .ep-hide-mobile-vergelijking { display: none !important; }
   .ep-compare { overflow-x: visible; }
   .ep-compare__table { min-width: 0; font-size: 12px; }
   .ep-compare__sticky th { padding: 12px 6px; font-size: 13px; }
