@@ -1052,28 +1052,28 @@
       <div class="ep-brief-grid">
         <a class="ep-brief-tile" href="files/beslisgids-voorbeeld.html#page-1" target="_blank" rel="noopener" aria-label="Cover en scoreoverzicht openen">
           <div class="ep-brief-tile__frame">
-            <iframe src="files/beslisgids-voorbeeld.html#page-1" loading="lazy" title="Beslisgids pagina 1, cover" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe src="files/beslisgids-voorbeeld.html" data-page="page-1" loading="lazy" title="Beslisgids pagina 1, cover" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <figcaption>Pagina 1 · Cover en scoreoverzicht</figcaption>
         </a>
 
         <a class="ep-brief-tile" href="files/beslisgids-voorbeeld.html#page-4" target="_blank" rel="noopener" aria-label="Top 3 op netto uitkomst openen">
           <div class="ep-brief-tile__frame">
-            <iframe src="files/beslisgids-voorbeeld.html#page-4" loading="lazy" title="Beslisgids pagina 4, top 3 netto" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe src="files/beslisgids-voorbeeld.html" data-page="page-4" loading="lazy" title="Beslisgids pagina 4, top 3 netto" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <figcaption>Pagina 4 · Top 3 op netto uitkomst</figcaption>
         </a>
 
         <a class="ep-brief-tile" href="files/beslisgids-voorbeeld.html#page-6" target="_blank" rel="noopener" aria-label="Trade-off matrix per land openen">
           <div class="ep-brief-tile__frame">
-            <iframe src="files/beslisgids-voorbeeld.html#page-6" loading="lazy" title="Beslisgids pagina 6, trade-off matrix" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe src="files/beslisgids-voorbeeld.html" data-page="page-6" loading="lazy" title="Beslisgids pagina 6, trade-off matrix" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <figcaption>Pagina 6 · Trade-off matrix per land</figcaption>
         </a>
 
         <a class="ep-brief-tile" href="files/beslisgids-voorbeeld.html#page-11" target="_blank" rel="noopener" aria-label="Vragen voor je fiscalist openen">
           <div class="ep-brief-tile__frame">
-            <iframe src="files/beslisgids-voorbeeld.html#page-11" loading="lazy" title="Beslisgids pagina 11, vragen fiscalist" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe src="files/beslisgids-voorbeeld.html" data-page="page-11" loading="lazy" title="Beslisgids pagina 11, vragen fiscalist" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <figcaption>Pagina 11 · Vragen voor je fiscalist</figcaption>
         </a>
@@ -1442,6 +1442,33 @@
 
 <script>
 (function () {
+
+  // R3: voorkom dat de pagina mid-page opent.
+  // Oorzaak: de Beslisgids-preview-iframes laadden met een #page-fragment,
+  // waardoor de browser de parent naar het iframe scrolde. We laden nu zonder
+  // fragment en scrollen alleen het iframe zelf, na load.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+  function scrollBriefFrames() {
+    document.querySelectorAll('.ep-brief-tile__frame iframe[data-page]').forEach(function (f) {
+      function go() {
+        try {
+          var id = f.getAttribute('data-page');
+          var doc = f.contentDocument;
+          var el = doc && doc.getElementById(id);
+          if (el && f.contentWindow) f.contentWindow.scrollTo(0, el.offsetTop);
+        } catch (e) { /* cross-doc of nog niet geladen, negeer */ }
+      }
+      f.addEventListener('load', go);
+      if (f.contentDocument && f.contentDocument.readyState === 'complete') go();
+    });
+  }
+  scrollBriefFrames();
+
+  // Vangnet: bij een verse load zonder hash bovenaan beginnen.
+  window.addEventListener('load', function () {
+    if (!location.hash) window.scrollTo(0, 0);
+  });
 
   // Scroll progress
   var bar = document.getElementById('ep-scroll-progress');
