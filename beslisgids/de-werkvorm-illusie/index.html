@@ -1,0 +1,2787 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>De werkvorm-illusie &mdash; Beslisgids | Emigratieplan.nl</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,350;9..144,400;9..144,500;9..144,600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   DESIGN TOKENS
+   ================================================================= */
+:root {
+  /* Brand colors */
+  --c-ink:        #2d2420;
+  --c-ink-deep:   #181311;
+  --c-ink-soft:   #4a3f38;
+  --c-accent:     #c04a2a;
+  --c-accent-dk:  #9a3a20;
+  --c-sand:       #c8a882;
+  --c-cream:      #f7f1ea;
+  --c-cream-2:    #efe6da;
+  --c-cream-3:    #e8dccb;
+  --c-mute:       #6b6560;
+  --c-line:       #d8c9b6;
+  --c-line-soft:  #e8dccb;
+
+  /* Typography
+     STS hierarchy: serif for display only, sans for everything else */
+  --f-display: "Fraunces", Charter, Georgia, serif;
+  --f-body:    "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Spacing */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 11px;
+  --s-4: 14px;
+  --s-5: 20px;
+  --s-6: 28px;
+  --s-7: 40px;
+  --s-8: 56px;
+
+  /* Page */
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --page-pad-x: 22mm;
+  --page-pad-top: 18mm;
+  --page-pad-bot: 26mm;
+}
+
+/* =================================================================
+   RESET
+   ================================================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  background: #d8ccba;
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--c-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga";
+  padding: 24px 0;
+}
+
+/* =================================================================
+   PAGE FRAME
+   ================================================================= */
+.page {
+  width: var(--page-w);
+  height: var(--page-h);
+  min-height: var(--page-h);
+  max-height: var(--page-h);
+  background: var(--c-cream);
+  margin: 0 auto 24px;
+  padding: var(--page-pad-top) var(--page-pad-x) var(--page-pad-bot);
+  position: relative;
+  box-shadow: 0 4px 28px rgba(24, 19, 17, 0.08);
+  display: flex;
+  flex-direction: column;
+  page-break-after: always;
+  break-after: page;
+  overflow: hidden;
+}
+.page--dark {
+  background: var(--c-ink-deep);
+  color: var(--c-cream);
+}
+
+/* =================================================================
+   RUNNERS
+   ================================================================= */
+.runner {
+  position: absolute;
+  left: var(--page-pad-x);
+  right: var(--page-pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+  font-weight: 500;
+}
+.runner--top { top: 9mm; }
+.runner--bot { bottom: 9mm; }
+.runner .brand-mark {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: 11pt;
+  letter-spacing: -0.005em;
+  text-transform: none;
+  color: var(--c-ink);
+}
+.runner .brand-mark::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--c-accent);
+  margin-right: 8px;
+  vertical-align: 2px;
+}
+.page--dark .runner { color: var(--c-sand); }
+.page--dark .runner .brand-mark { color: var(--c-cream); }
+
+/* =================================================================
+   TYPOGRAPHY
+   Display: Fraunces (serif). Body & UI: Inter Tight (sans).
+   ================================================================= */
+h1, h2, h3 {
+  font-family: var(--f-display);
+  color: var(--c-ink);
+  letter-spacing: -0.018em;
+  font-feature-settings: "kern", "liga", "ss01";
+}
+
+h1 {
+  font-size: 42pt;
+  font-weight: 350;
+  line-height: 1.0;
+}
+h2 {
+  font-size: 24pt;
+  font-weight: 400;
+  line-height: 1.1;
+}
+h3 {
+  font-size: 17pt;
+  font-weight: 450;
+  line-height: 1.2;
+}
+h4 {
+  font-family: var(--f-body);
+  font-size: 11pt;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--c-ink);
+  letter-spacing: -0.005em;
+}
+
+p { margin-bottom: var(--s-4); }
+
+.lead {
+  font-family: var(--f-body);
+  font-size: 11pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  font-weight: 400;
+}
+
+/* Labels, eyebrows, micro-text — all Inter Tight, all uppercase */
+.eyebrow {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.caption {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  letter-spacing: 0.02em;
+  color: var(--c-mute);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+strong { font-weight: 600; color: var(--c-ink); }
+em { font-style: italic; }
+
+/* =================================================================
+   PAGE HEAD — fixed alignment
+   The "01 · HET UITGANGSPUNT · IDEE·INZICHT·ACTIE" pattern.
+   Using grid with explicit baseline alignment.
+   ================================================================= */
+.page-head {
+  margin-top: 6mm;
+  margin-bottom: var(--s-5);
+}
+.page-head .meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--s-4);
+  align-items: end;
+  margin-bottom: var(--s-5);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--c-line);
+}
+.page-head .num {
+  font-family: var(--f-display);
+  font-size: 32pt;
+  font-weight: 350;
+  color: var(--c-accent);
+  line-height: 1;
+  font-feature-settings: "lnum", "tnum";
+  letter-spacing: -0.02em;
+  /* Pull the number's optical baseline down so it visually rests
+     on the same line as the bottom of the section-stage label */
+  margin-bottom: -6px;
+  display: block;
+}
+.page-head .meta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.page-head .section-name {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  line-height: 1;
+}
+.page-head .section-stage {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  line-height: 1;
+}
+.page-head h2 {
+  margin-bottom: var(--s-3);
+  max-width: 38ch;
+}
+.page-head .lead { }
+
+/* =================================================================
+   STATEMENT BLOCK
+   ================================================================= */
+.statement {
+  margin: var(--s-3) 0 var(--s-4);
+  padding: var(--s-3) 0 var(--s-3) var(--s-5);
+  border-left: 3px solid var(--c-accent);
+  break-inside: avoid;
+}
+.statement .big {
+  font-family: var(--f-display);
+  font-size: 19pt;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--c-ink);
+  margin-bottom: var(--s-3);
+  letter-spacing: -0.018em;
+  max-width: 32ch;
+}
+.statement .big em {
+  font-style: italic;
+  color: var(--c-accent);
+}
+.statement .small {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  color: var(--c-ink-soft);
+  line-height: 1.55;
+  max-width: 60ch;
+  margin-bottom: 0;
+}
+
+/* =================================================================
+   QUOTE / CALLOUT
+   ================================================================= */
+.quote-card {
+  background: var(--c-cream-2);
+  padding: var(--s-5) var(--s-6);
+  margin: var(--s-5) 0;
+  position: relative;
+  break-inside: avoid;
+  border-left: 3px solid var(--c-accent);
+}
+.quote-card .mark {
+  font-family: var(--f-display);
+  font-size: 48pt;
+  line-height: 0.5;
+  color: var(--c-accent);
+  position: absolute;
+  top: 30px;
+  left: 22px;
+  font-weight: 400;
+}
+.quote-card p {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  line-height: 1.4;
+  color: var(--c-ink);
+  margin-bottom: 0;
+  padding-left: 30px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  max-width: 52ch;
+}
+
+/* =================================================================
+   ILLUSTRATION (two-column scenario comparison)
+   ================================================================= */
+.illustration {
+  margin: var(--s-5) 0 var(--s-4);
+  border-top: 1px solid var(--c-line);
+  padding-top: var(--s-4);
+  break-inside: avoid;
+}
+.illustration .ill-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--s-3);
+}
+.illustration .ill-eyebrow {
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.illustration .ill-title {
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 450;
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+}
+.illustration .ill-stamp {
+  font-family: var(--f-body);
+  font-size: 8pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+  font-weight: 500;
+}
+.illustration .ill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-5);
+}
+.illustration .ill-col {
+  padding: var(--s-3) var(--s-4);
+  background: var(--c-cream-2);
+  border-left: 2px solid var(--c-sand);
+}
+.illustration .ill-col h5 {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: var(--c-ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.005em;
+}
+.illustration .ill-col p {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  margin-bottom: 0;
+}
+
+/* =================================================================
+   CAUTION
+   ================================================================= */
+.caution {
+  background: rgba(192, 74, 42, 0.06);
+  border-top: 1px solid rgba(192, 74, 42, 0.3);
+  border-bottom: 1px solid rgba(192, 74, 42, 0.3);
+  padding: var(--s-5);
+  margin: var(--s-5) 0;
+  display: flex;
+  gap: var(--s-4);
+  align-items: flex-start;
+  break-inside: avoid;
+}
+.caution .icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+}
+.caution p {
+  font-family: var(--f-body);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  margin-bottom: 0;
+  color: var(--c-ink);
+}
+.caution .label {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--c-accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* =================================================================
+   ROUTES (Page 2) — v2 SVG + v1 block layout
+   ================================================================= */
+.routes {
+  margin: 0 0 var(--s-3);
+  break-inside: avoid;
+}
+.routes-svg-wrap {
+  width: 100%;
+  margin-bottom: var(--s-4);
+}
+.routes-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.routes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-4);
+}
+.route-block {
+  padding: var(--s-4) var(--s-5);
+}
+.route-block--bad {
+  background: var(--c-cream-2);
+}
+.route-block--good {
+  background: var(--c-ink);
+  color: var(--c-cream);
+}
+.route-block .lbl {
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+  font-weight: 600;
+  margin-bottom: var(--s-3);
+}
+.route-block--good .lbl { color: var(--c-accent); }
+.route-block h4 {
+  font-family: var(--f-display);
+  font-size: 15pt;
+  font-weight: 500;
+  margin-bottom: var(--s-4);
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  line-height: 1.2;
+}
+.route-block--good h4 { color: var(--c-cream); }
+.route-block .step {
+  display: flex;
+  gap: var(--s-3);
+  align-items: baseline;
+  padding: var(--s-3) 0;
+  border-top: 1px solid var(--c-line-soft);
+  font-family: var(--f-body);
+  font-size: 10.5pt;
+  line-height: 1.5;
+}
+.route-block--good .step { border-top-color: rgba(247, 241, 234, 0.15); }
+.route-block .step:first-of-type { border-top: 1px solid var(--c-line); }
+.route-block--good .step:first-of-type { border-top-color: rgba(247, 241, 234, 0.25); }
+.route-block .step .num {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  color: var(--c-accent);
+  font-weight: 500;
+  width: 22px;
+  flex-shrink: 0;
+}
+
+/* =================================================================
+   VARIABLES GRID (Page 3)
+   ================================================================= */
+.var-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(168px, auto);
+  margin: var(--s-4) 0;
+  border-top: 1px solid var(--c-line);
+  border-left: 1px solid var(--c-line);
+}
+.var-cell {
+  padding: var(--s-4);
+  border-right: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  row-gap: var(--s-2);
+  break-inside: avoid;
+  background: var(--c-cream);
+  min-height: 168px;
+}
+.var-cell--span2 {
+  grid-column: span 2;
+}
+.var-cell--span3 {
+  grid-column: span 3;
+}
+.var-cell--wide {
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 60px 1fr;
+  grid-column-gap: var(--s-4);
+  align-items: start;
+  min-height: 0;
+  padding: var(--s-3) var(--s-4);
+}
+.var-cell--wide .num {
+  grid-row: 1 / 3;
+  grid-column: 1;
+  align-self: start;
+}
+.var-cell--wide h4 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.var-cell--wide p {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 6px;
+  max-width: 80ch;
+}
+.var-cell--wide .ask {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  margin-top: var(--s-3);
+}
+.var-cell .num {
+  font-family: var(--f-display);
+  font-size: 24pt;
+  font-weight: 350;
+  color: var(--c-accent);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-feature-settings: "lnum", "tnum";
+  margin: 0 0 var(--s-2);
+}
+.var-cell h4 {
+  font-family: var(--f-display);
+  font-size: 13pt;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  margin: 0;
+  line-height: 1.2;
+}
+.var-cell p {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  margin: var(--s-3) 0 0;
+  align-self: start;
+}
+.var-cell .ask {
+  margin-top: var(--s-3);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--c-line-soft);
+  align-self: end;
+}
+.var-cell .ask::before {
+  content: "Toets";
+  display: block;
+  font-family: var(--f-body);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: 5px;
+}
+.var-cell .ask-text {
+  font-family: var(--f-display);
+  font-size: 9.5pt;
+  line-height: 1.45;
+  color: var(--c-ink);
+  font-style: italic;
+  margin: 0;
+}
+
+/* =================================================================
+   DEEPDIVE PAGE COMPONENTS
+   ================================================================= */
+.deepdive-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--s-6);
+  margin: var(--s-4) 0;
+  align-items: start;
+}
+.deepdive-grid--reverse {
+  grid-template-columns: 1fr 1.2fr;
+}
+.deepdive-body p {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--c-ink-soft);
+  margin-bottom: var(--s-3);
+  max-width: 56ch;
+}
+.deepdive-body p strong { color: var(--c-ink); }
+.deepdive-body h3 {
+  font-family: var(--f-display);
+  font-size: 13pt;
+  font-weight: 500;
+  margin: var(--s-4) 0 var(--s-2);
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+}
+.deepdive-body h3:first-child { margin-top: 0; }
+
+.fact-card {
+  background: var(--c-cream-2);
+  border-left: 3px solid var(--c-accent);
+  padding: var(--s-5);
+  break-inside: avoid;
+}
+.fact-card .label {
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: var(--s-3);
+  display: block;
+}
+.fact-card .big-number {
+  font-family: var(--f-display);
+  font-size: 42pt;
+  font-weight: 350;
+  color: var(--c-ink);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--s-3);
+  font-feature-settings: "lnum", "tnum";
+}
+.fact-card .big-number .unit {
+  font-size: 18pt;
+  color: var(--c-accent);
+  font-weight: 400;
+  margin-left: 4px;
+}
+.fact-card p {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  margin-bottom: 0;
+}
+
+/* Mini-table for deepdive sub-data */
+.mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--s-3) 0 var(--s-4);
+  font-family: var(--f-body);
+}
+.mini-table th {
+  text-align: left;
+  padding: var(--s-2) var(--s-3);
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.mini-table th:first-child { background: var(--c-accent); }
+.mini-table td {
+  padding: var(--s-2) var(--s-3);
+  border-bottom: 1px solid var(--c-line-soft);
+  font-size: 9.5pt;
+  color: var(--c-ink);
+  line-height: 1.45;
+  vertical-align: top;
+}
+.mini-table td:first-child {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: 10.5pt;
+  width: 28%;
+}
+.mini-table tr:last-child td { border-bottom: none; }
+
+.layer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  margin: var(--s-4) 0;
+}
+.layer {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--s-4);
+  align-items: start;
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--c-line-soft);
+  break-inside: avoid;
+}
+.layer:last-child { border-bottom: none; padding-bottom: 0; }
+.layer .layer-label {
+  font-family: var(--f-body);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  padding-top: 4px;
+}
+.layer .layer-body h4 {
+  font-family: var(--f-display);
+  font-size: 13pt;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+}
+.layer .layer-body p {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  line-height: 1.55;
+  color: var(--c-ink-soft);
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* =================================================================
+   COMPARE TABLE (Page 4) — dark header restored
+   ================================================================= */
+.cmp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--s-4) 0;
+}
+.cmp-table thead th {
+  text-align: left;
+  padding: var(--s-3) var(--s-3);
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+.cmp-table thead th:first-child {
+  background: var(--c-accent);
+  width: 18%;
+}
+.cmp-table tbody td {
+  padding: var(--s-3) var(--s-3);
+  border-bottom: 1px solid var(--c-line-soft);
+  vertical-align: top;
+  line-height: 1.45;
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  color: var(--c-ink);
+}
+.cmp-table tbody td:first-child {
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 500;
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+}
+.cmp-table tbody td.muted {
+  color: var(--c-mute);
+  font-style: italic;
+}
+.cmp-table tbody tr:last-child td { border-bottom: none; }
+
+/* =================================================================
+   HOOKS DIAGRAM (Page 5)
+   ================================================================= */
+.hooks-section {
+  margin: var(--s-5) 0;
+  break-inside: avoid;
+}
+.hooks-svg-wrap {
+  width: 100%;
+  margin: 0 -8mm var(--s-4);
+  width: calc(100% + 16mm);
+}
+.hooks-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hooks-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-3) var(--s-6);
+  margin-top: var(--s-4);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--c-line);
+}
+.hook-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  column-gap: var(--s-3);
+  align-items: baseline;
+  padding: 4px 0;
+}
+.hook-item .hk-num {
+  font-family: var(--f-display);
+  font-size: 13pt;
+  font-weight: 400;
+  color: var(--c-accent);
+  line-height: 1;
+  font-feature-settings: "lnum", "tnum";
+  letter-spacing: -0.02em;
+}
+.hook-item .hk-body h4 {
+  font-family: var(--f-display);
+  font-size: 11pt;
+  font-weight: 500;
+  margin-bottom: 1px;
+  letter-spacing: -0.005em;
+  color: var(--c-ink);
+  line-height: 1.2;
+}
+.hook-item .hk-body p {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  line-height: 1.4;
+  color: var(--c-ink-soft);
+  margin-bottom: 0;
+  max-width: 38ch;
+}
+
+/* =================================================================
+   SCENARIO CARDS (Page 6)
+   ================================================================= */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--c-line);
+  margin: var(--s-4) 0;
+  border: 1px solid var(--c-line);
+}
+.scenario {
+  background: var(--c-cream);
+  padding: var(--s-3) var(--s-4);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  break-inside: avoid;
+}
+.scenario .letter {
+  font-family: var(--f-display);
+  font-size: 32pt;
+  color: var(--c-cream-3);
+  line-height: 0.85;
+  font-weight: 350;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  letter-spacing: -0.04em;
+  z-index: 0;
+}
+.scenario .scenario-content { position: relative; z-index: 1; }
+.scenario h4 {
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 500;
+  margin-bottom: var(--s-3);
+  margin-right: 44px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  min-height: 2.4em;
+}
+.scenario .row {
+  display: flex;
+  gap: var(--s-3);
+  font-family: var(--f-body);
+  font-size: 9pt;
+  padding: 6px 0;
+  border-top: 1px solid var(--c-line-soft);
+  line-height: 1.4;
+  align-items: flex-start;
+}
+.scenario .row:first-of-type { border-top: 1px solid var(--c-line); }
+.scenario .row .lbl {
+  font-family: var(--f-body);
+  font-weight: 600;
+  color: var(--c-accent);
+  width: 64px;
+  min-width: 64px;
+  flex-shrink: 0;
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+.scenario .row .val {
+  color: var(--c-ink);
+  max-width: 36ch;
+  min-height: 2.4em;  /* always reserves 2 lines so cells align uniformly */
+}
+
+.scenario--dark {
+  background: var(--c-ink);
+  color: var(--c-cream);
+}
+.scenario--dark h4 { color: var(--c-cream); }
+.scenario--dark .letter { color: rgba(247, 241, 234, 0.08); }
+.scenario--dark p {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--c-sand);
+  margin-bottom: var(--s-3);
+}
+.scenario--dark p:last-child { margin-bottom: 0; }
+
+/* =================================================================
+   DECISION MATRIX (Page 7) — bars + dark header restored
+   ================================================================= */
+.matrix-wrap {
+  margin: var(--s-5) -8mm 0;  /* extends slightly outside page padding */
+}
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.matrix thead th {
+  padding: 10px 4px;
+  text-align: center;
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-family: var(--f-body);
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+.matrix thead th:first-child {
+  text-align: center;
+  background: var(--c-accent);
+  padding-left: 6px;
+  width: 16%;
+}
+.matrix tbody td {
+  padding: var(--s-3) 4px;
+  text-align: center;
+  border-bottom: 1px solid var(--c-line-soft);
+  vertical-align: middle;
+}
+.matrix tbody td:first-child {
+  text-align: center;
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding-left: 6px;
+  color: var(--c-ink);
+  width: 16%;
+}
+.matrix tbody tr:last-child td { border-bottom: none; }
+
+.bar {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: transparent;
+  /* Force print rendering */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.bar--3 { background-color: #c04a2a; }
+.bar--2 { background-color: #c8a882; }
+.bar--1 { background-color: #e8dccb; border: 1px solid #d8c9b6; }
+.bar--0 {
+  background-color: transparent;
+  border: 1px dashed #d8c9b6;
+}
+
+/* Dot-cluster variant: 1/2/3 dots per cell */
+.dots {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+.dots .d {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #c04a2a;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.dots .d.empty {
+  background: transparent;
+  border: 1px solid #d8c9b6;
+}
+.dots-na {
+  font-family: var(--f-display);
+  color: #b5a890;
+  font-size: 13pt;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.legend {
+  display: flex;
+  gap: var(--s-6);
+  margin-top: var(--s-4);
+  font-family: var(--f-body);
+  font-size: 9pt;
+  color: var(--c-mute);
+  flex-wrap: wrap;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+.legend .item { display: flex; align-items: center; gap: 8px; }
+.legend .swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.legend .sw--3 { background-color: #c04a2a; }
+.legend .sw--2 { background-color: #c8a882; }
+.legend .sw--1 { background-color: #e8dccb; border: 1px solid #d8c9b6; }
+.legend .sw--0 {
+  background-color: transparent;
+  border: 1px dashed #d8c9b6;
+}
+
+/* =================================================================
+   PRE-MOVE CHECKLIST (Page 8)
+   ================================================================= */
+.checklist {
+  margin: var(--s-4) 0 var(--s-5);
+}
+.check-item {
+  display: grid;
+  grid-template-columns: 70px 1fr 28px;
+  gap: var(--s-4);
+  align-items: start;
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--c-line-soft);
+  break-inside: avoid;
+}
+.check-item:first-child { padding-top: 0; }
+.check-item:last-child { border-bottom: none; padding-bottom: var(--s-3); }
+.check-item .num {
+  font-family: var(--f-display);
+  font-size: 40pt;
+  line-height: 0.85;
+  color: var(--c-accent);
+  font-weight: 300;
+  font-feature-settings: "lnum", "tnum";
+  letter-spacing: -0.04em;
+}
+.check-item .body h4 {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  font-weight: 450;
+  margin-bottom: 6px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  max-width: 36ch;
+  color: var(--c-ink);
+}
+.check-item .body p {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  margin-bottom: 0;
+  max-width: 60ch;
+}
+.check-item .box {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #d8c9b6;
+  background: transparent;
+  margin-top: 10px;
+  justify-self: end;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* =================================================================
+   CTA BLOCK (Page 9)
+   ================================================================= */
+.cta-card {
+  background: var(--c-ink-deep);
+  color: var(--c-cream);
+  padding: var(--s-6) var(--s-6) var(--s-6);
+  margin: var(--s-4) 0;
+  position: relative;
+  overflow: hidden;
+  break-inside: avoid;
+}
+.cta-card .corner-mark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+  border-top: 1px solid var(--c-accent);
+  border-right: 1px solid var(--c-accent);
+}
+.cta-card .eyebrow {
+  color: var(--c-accent);
+  margin-bottom: var(--s-3);
+  display: block;
+}
+.cta-card h3 {
+  font-family: var(--f-display);
+  font-size: 22pt;
+  font-weight: 350;
+  line-height: 1.1;
+  color: var(--c-cream);
+  margin-bottom: var(--s-4);
+  max-width: 22ch;
+  letter-spacing: -0.02em;
+}
+.cta-card .cta-body {
+  font-family: var(--f-body);
+  color: var(--c-sand);
+  max-width: 56ch;
+  margin-bottom: var(--s-5);
+  font-size: 10pt;
+  line-height: 1.55;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-4);
+  background: var(--c-accent);
+  color: var(--c-cream);
+  padding: 12px 20px;
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 10pt;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+.cta-button:hover { background: var(--c-accent-dk); }
+.cta-button .arrow { width: 18px; height: 12px; }
+
+.cta-bullets {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--s-4);
+  margin-top: var(--s-5);
+  padding-top: var(--s-4);
+  padding-bottom: var(--s-2);
+  border-top: 1px solid rgba(199, 168, 130, 0.18);
+}
+.cta-bullets .item {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--c-cream);
+}
+.cta-bullets .item .lbl {
+  display: block;
+  font-family: var(--f-body);
+  color: var(--c-accent);
+  font-size: 8.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* =================================================================
+   SOURCES PAGE (Page 10)
+   ================================================================= */
+.disclaimer {
+  background: var(--c-cream-2);
+  padding: var(--s-5) var(--s-6);
+  margin-bottom: var(--s-6);
+  border-left: 3px solid var(--c-accent);
+}
+.disclaimer p {
+  font-family: var(--f-body);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  margin-bottom: 0;
+  color: var(--c-ink);
+}
+.disclaimer p strong {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.source-block { margin-bottom: var(--s-5); }
+.source-block h4 {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  font-weight: 600;
+  margin-bottom: var(--s-3);
+  padding-bottom: var(--s-2);
+  border-bottom: 1px solid var(--c-line);
+}
+.source-block ol {
+  list-style: none;
+  counter-reset: srcounter;
+}
+.source-block li {
+  counter-increment: srcounter;
+  padding: var(--s-3) 0;
+  padding-left: 40px;
+  position: relative;
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--c-ink-soft);
+  border-bottom: 1px dotted var(--c-line-soft);
+}
+.source-block li:last-child { border-bottom: none; }
+.source-block li::before {
+  content: counter(srcounter, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 12px;
+  font-family: var(--f-display);
+  color: var(--c-accent);
+  font-weight: 500;
+  font-size: 11pt;
+  font-feature-settings: "lnum", "tnum";
+}
+
+.colophon {
+  margin-top: var(--s-7);
+  padding-top: var(--s-5);
+  border-top: 2px solid var(--c-accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.colophon .left {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  color: var(--c-mute);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+.colophon .left .brand-line {
+  font-family: var(--f-display);
+  font-size: 16pt;
+  color: var(--c-ink);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.colophon .right {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  color: var(--c-mute);
+  letter-spacing: 0.04em;
+  text-align: right;
+  line-height: 1.6;
+}
+.colophon .right strong { color: var(--c-ink); font-weight: 500; }
+
+/* =================================================================
+   COVER PAGE (kept from v2)
+   ================================================================= */
+.cover {
+  justify-content: space-between;
+  background: var(--c-ink-deep);
+  color: var(--c-cream);
+  padding: 24mm 22mm;
+  height: 297mm;
+  min-height: 297mm;
+  max-height: 297mm;
+  overflow: hidden;
+}
+.cover-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+.cover .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+  position: relative;
+}
+.cover .label-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 8px 16px;
+  border: 1px solid var(--c-accent);
+  color: var(--c-accent);
+  font-family: var(--f-body);
+  font-size: 9pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.cover .label-pill::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--c-accent);
+}
+.cover .imprint {
+  text-align: right;
+  font-family: var(--f-body);
+  font-size: 9pt;
+  letter-spacing: 0.06em;
+  color: var(--c-sand);
+  line-height: 1.7;
+}
+.cover .imprint .brand {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  color: var(--c-cream);
+  letter-spacing: -0.005em;
+  display: block;
+  margin-bottom: 4px;
+  text-transform: none;
+  font-weight: 500;
+}
+.cover .title-block {
+  z-index: 2;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: var(--s-8);
+}
+.cover .accent-rule {
+  width: 64px;
+  height: 2px;
+  background: var(--c-accent);
+  margin-bottom: var(--s-6);
+}
+.cover h1 {
+  color: var(--c-cream);
+  font-size: 46pt;
+  line-height: 1.0;
+  font-weight: 350;
+  letter-spacing: -0.025em;
+  max-width: 14ch;
+  margin-bottom: var(--s-6);
+}
+.cover h1 .em {
+  color: var(--c-accent);
+  font-style: italic;
+  font-weight: 350;
+}
+.cover .subtitle {
+  font-family: var(--f-body);
+  font-size: 13pt;
+  line-height: 1.5;
+  color: var(--c-sand);
+  font-weight: 400;
+  max-width: 56ch;
+  margin-bottom: var(--s-6);
+  letter-spacing: -0.005em;
+}
+.cover .context {
+  font-family: var(--f-body);
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  font-size: 8.5pt;
+  color: var(--c-cream);
+  text-transform: uppercase;
+  padding-top: var(--s-4);
+  border-top: 1px solid rgba(199, 168, 130, 0.25);
+}
+.cover .bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
+  position: relative;
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-sand);
+}
+.cover .bottom-row .meta { line-height: 1.7; }
+.cover .bottom-row .meta strong { color: var(--c-cream); font-weight: 500; }
+
+/* =================================================================
+   PRINT
+   ================================================================= */
+@media print {
+  body { background: white; padding: 0; margin: 0; }
+  .page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+    break-after: page;
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    overflow: hidden;
+  }
+  .page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  @page { size: A4 portrait; margin: 0; }
+  .no-print { display: none !important; }
+
+  /* Force background colors and exact rendering */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Component break protection */
+  .var-cell, .scenario, .check-item, .quote-card, .statement,
+  .caution, .cta-card, .hooks-section, .routes,
+  .cmp-table tr, .matrix tr, .source-block li, .hook-item,
+  .fact-card, .layer, .deepdive-grid, .mini-table tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure inline-block dots/boxes render in print */
+  .bar, .legend .swatch, .check-item .box {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+.toc-helper {
+  max-width: var(--page-w);
+  margin: 0 auto 16px;
+  padding: 12px 22px;
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-family: var(--f-body);
+  font-size: 10pt;
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toc-helper .brand {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  font-weight: 500;
+}
+.toc-helper button {
+  background: var(--c-accent);
+  color: var(--c-cream);
+  border: none;
+  padding: 9px 16px;
+  font-family: var(--f-body);
+  font-size: 10pt;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+</style>
+
+<meta name="description" content="Waarom 'ik werk online' niet betekent dat je werkvorm geen land kiest.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://emigratieplan.nl/beslisgids/de-werkvorm-illusie/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="De werkvorm-illusie &mdash; Beslisgids Emigratieplan.nl">
+<meta property="og:description" content="Waarom 'ik werk online' niet betekent dat je werkvorm geen land kiest.">
+<meta property="og:url" content="https://emigratieplan.nl/beslisgids/de-werkvorm-illusie/">
+<meta property="og:locale" content="nl_NL">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://emigratieplan.nl/beslisgids/de-werkvorm-illusie/#article",
+      "headline": "De werkvorm-illusie",
+      "description": "Waarom 'ik werk online' niet betekent dat je werkvorm geen land kiest.",
+      "inLanguage": "nl-NL",
+      "mainEntityOfPage": "https://emigratieplan.nl/beslisgids/de-werkvorm-illusie/",
+      "isPartOf": {
+        "@id": "https://emigratieplan.nl/#website"
+      },
+      "about": {
+        "@id": "https://emigratieplan.nl/#organization"
+      },
+      "author": {
+        "@id": "https://emigratieplan.nl/#kevin"
+      },
+      "publisher": {
+        "@id": "https://emigratieplan.nl/#organization"
+      },
+      "datePublished": "2026-05-11",
+      "dateModified": "2026-06-12"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://emigratieplan.nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Beslisgidsen",
+          "item": "https://emigratieplan.nl/beslisgids/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "De werkvorm-illusie",
+          "item": "https://emigratieplan.nl/beslisgids/de-werkvorm-illusie/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://emigratieplan.nl/#kevin",
+      "name": "Kevin van Grondelle",
+      "jobTitle": "Oprichter",
+      "sameAs": [
+        "https://www.linkedin.com/in/kevin-van-grondelle"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://emigratieplan.nl/#organization",
+      "name": "Emigratieplan.nl",
+      "url": "https://emigratieplan.nl/",
+      "logo": "https://emigratieplan.nl/apple-touch-icon.png"
+    }
+  ]
+}
+</script>
+<style id="ep-web-mode">
+@media screen {
+  html, body { background: var(--c-cream, #f6f5f2) !important; height:auto !important; }
+  body { margin:0 !important; }
+  .page {
+    width:100% !important; max-width:880px !important;
+    height:auto !important; min-height:0 !important; max-height:none !important;
+    overflow:visible !important;
+    margin:0 auto 22px !important;
+    padding:clamp(28px,5vw,56px) clamp(20px,6vw,60px) clamp(32px,5vw,56px) !important;
+    box-shadow:0 2px 18px rgba(24,19,17,0.06) !important;
+    page-break-after:auto !important; break-after:auto !important;
+  }
+  .cover { min-height:62vh !important; justify-content:space-between !important; }
+  .toc-helper { display:none !important; }
+  .ep-bar { display:flex; justify-content:space-between; align-items:center; max-width:880px; margin:0 auto; padding:18px 16px; }
+  .ep-bar__brand { font-family:var(--f-display,Georgia,serif); font-weight:600; font-size:1.05rem; color:var(--c-ink,#2d2420); text-decoration:none; }
+  .ep-bar__brand span { color:var(--c-accent,#c04a2a); }
+  .ep-bar__back { font-size:.85rem; color:var(--c-mute,#6b6560); text-decoration:none; }
+  .ep-bar__back:hover { color:var(--c-accent,#c04a2a); }
+  .ep-cta { max-width:880px; margin:8px auto 26px; padding:28px clamp(20px,5vw,40px); background:var(--c-cream-2,#efe6da); border:1px solid var(--c-line,#d8c9b6); border-radius:6px; }
+  .ep-cta h2 { font-family:var(--f-display,Georgia,serif); color:var(--c-ink,#2d2420); margin:0 0 8px; font-size:1.4rem; line-height:1.2; }
+  .ep-cta p { color:var(--c-ink-soft,#4a3f38); margin:0 0 16px; font-size:1rem; line-height:1.55; }
+  .ep-cta__row { display:flex; flex-wrap:wrap; gap:10px; }
+  .ep-btn { display:inline-block; background:var(--c-accent,#c04a2a); color:#fff; text-decoration:none; font-weight:600; font-size:.9rem; padding:12px 20px; border-radius:4px; }
+  .ep-btn:hover { background:var(--c-accent-dk,#9a3a20); }
+  .ep-btn--ghost { background:transparent; color:var(--c-accent,#c04a2a); border:1px solid var(--c-accent,#c04a2a); }
+  .ep-btn--ghost:hover { background:#fff; }
+  .ep-foot { max-width:880px; margin:0 auto; padding:20px 16px 48px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:.8rem; color:var(--c-mute,#6b6560); border-top:1px solid var(--c-line,#d8c9b6); }
+  .ep-foot a { color:var(--c-mute,#6b6560); text-decoration:none; margin-right:12px; }
+  .ep-foot a:hover { color:var(--c-accent,#c04a2a); }
+  .page img, .page svg { max-width:100% !important; }
+  .page table { max-width:100%; }
+}
+@media screen and (max-width:760px){
+  .page table { display:block; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+}
+</style>
+</head>
+
+<body>
+<header class="ep-bar no-print"><a class="ep-bar__brand" href="/">Emigratieplan<span>.</span>nl</a><a class="ep-bar__back" href="/beslisgids/">&larr; Alle Beslisgidsen</a></header>
+<div class="toc-helper no-print">
+  <span class="brand">Emigratieplan · Beslisgids · Editie 05</span>
+  <button onclick="window.print()">Print / Opslaan als PDF</button>
+</div>
+
+<style>
+  /* P3: var-grid rows shrink to content, wide cell #07 lives outside the grid
+     as a standalone element so it doesn't get stretched by grid-auto-rows. */
+  .var-grid { 
+    margin: var(--s-3) 0 0;
+    grid-auto-rows: auto;
+  }
+  .var-cell {
+    min-height: 0;
+    padding: var(--s-2) var(--s-4);
+  }
+  .var-cell .ask { min-height: 3em; }
+  .standalone-wide {
+    background: var(--c-cream);
+    border: 1px solid var(--c-line);
+    border-top: none;
+    margin-top: 0;
+    padding: var(--s-1) var(--s-4) var(--s-2);
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-column-gap: var(--s-4);
+    align-items: start;
+  }
+  .standalone-wide .num {
+    grid-row: 1 / 3;
+    grid-column: 1;
+    align-self: start;
+    font-family: var(--f-display);
+    font-size: 24pt;
+    font-weight: 350;
+    color: var(--c-accent);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .standalone-wide h4 {
+    grid-column: 2;
+    font-family: var(--f-display);
+    font-size: 13pt;
+    font-weight: 500;
+    margin: 0;
+  }
+  .standalone-wide p {
+    grid-column: 2;
+    font-family: var(--f-body);
+    font-size: 9.5pt;
+    line-height: 1.5;
+    color: var(--c-ink-soft);
+    margin: 6px 0 0;
+  }
+  .standalone-wide .ask {
+    grid-column: 1 / 3;
+    margin-top: var(--s-2);
+    padding-top: var(--s-2);
+    border-top: 1px solid var(--c-line-soft);
+  }
+  .standalone-wide .ask::before {
+    content: "Toets";
+    display: block;
+    font-family: var(--f-body);
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-accent);
+    margin-bottom: 5px;
+  }
+  .standalone-wide .ask-text {
+    font-family: var(--f-display);
+    font-size: 9.5pt;
+    line-height: 1.45;
+    color: var(--c-ink);
+    font-style: italic;
+    margin: 0;
+  }
+</style>
+
+<!-- =================================================================
+     PAGE 1 — COVER
+     ================================================================= -->
+<section class="page page--dark cover">
+
+  <svg class="cover-art" viewBox="0 0 210 297" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dotgrid" width="5" height="5" patternUnits="userSpaceOnUse">
+        <circle cx="0.6" cy="0.6" r="0.4" fill="#c8a882" opacity="0.10"/>
+      </pattern>
+    </defs>
+    <rect width="210" height="297" fill="url(#dotgrid)" />
+
+    <!-- Werkvorm-illusie thema: één centrale node ("waar je feitelijk werkt
+         en welke werkvorm je hebt") met crossed paths naar scattered locaties
+         (de "online overal" illusie). Allemaal boven y=145 zodat het
+         title-block onderaan vrij blijft. -->
+
+    <!-- Top NL anchor + short dashed line -->
+    <circle cx="105" cy="18" r="2.6" fill="#c04a2a" opacity="0.7" />
+    <g stroke="#c04a2a" stroke-width="0.5" fill="none" opacity="0.6">
+      <line x1="105" y1="21" x2="105" y2="68" stroke-dasharray="2 2" />
+    </g>
+
+    <!-- Faint crossed paths from central node to scattered dots -->
+    <g stroke="#c8a882" stroke-width="0.3" fill="none" opacity="0.45">
+      <line x1="105" y1="88" x2="32" y2="68" />
+      <line x1="105" y1="88" x2="178" y2="68" />
+      <line x1="105" y1="88" x2="22" y2="100" />
+      <line x1="105" y1="88" x2="186" y2="105" />
+      <line x1="105" y1="88" x2="48" y2="142" />
+      <line x1="105" y1="88" x2="162" y2="138" />
+      <path d="M 32 68 Q 105 80 178 68" stroke-dasharray="2 2" />
+      <path d="M 22 100 Q 105 130 186 105" stroke-dasharray="2 2" />
+    </g>
+
+    <!-- Scattered destinations (the "online overal" illusion) -->
+    <g fill="#c8a882" opacity="0.55">
+      <circle cx="32" cy="68" r="1.6" />
+      <circle cx="178" cy="68" r="1.6" />
+      <circle cx="22" cy="100" r="1.6" />
+      <circle cx="186" cy="105" r="1.6" />
+      <circle cx="48" cy="142" r="1.4" />
+      <circle cx="162" cy="138" r="1.4" />
+    </g>
+
+    <!-- Location labels (the illusion of "anywhere") -->
+    <g font-family="Inter Tight, Arial, sans-serif" font-size="3.5" fill="#c8a882" opacity="0.55" letter-spacing="0.5">
+      <text x="6" y="72">CLIENT</text>
+      <text x="182" y="72">CLIENT</text>
+      <text x="0" y="104">SERVER</text>
+      <text x="190" y="109">CLIENT</text>
+      <text x="20" y="146">EMAIL</text>
+      <text x="166" y="142">SLACK</text>
+    </g>
+
+    <!-- Central node: "waar je feitelijk werkt" - the real fiscale anchor -->
+    <g stroke="#c04a2a" stroke-width="0.7" fill="none" opacity="0.85">
+      <circle cx="105" cy="88" r="11" />
+      <circle cx="105" cy="88" r="18" stroke-width="0.4" opacity="0.5" />
+      <circle cx="105" cy="88" r="26" stroke-width="0.25" opacity="0.3" />
+    </g>
+
+    <!-- Inner central marker -->
+    <circle cx="105" cy="88" r="2.8" fill="#c04a2a" />
+
+    <!-- Center label, italic -->
+    <g font-family="Fraunces, Georgia, serif" font-size="4.2" fill="#c8a882" font-style="italic" opacity="0.6">
+      <text x="91" y="108">jij, hier</text>
+    </g>
+  </svg>
+
+  <div class="top-row">
+    <div class="label-pill">Beslisgids · 05</div>
+    <div class="imprint">
+      <span class="brand">Emigratieplan</span>
+      Door STS Strategy<br>
+      Editie 05 — 2026
+    </div>
+  </div>
+
+  <div class="title-block">
+    <div class="accent-rule"></div>
+    <h1>De <span class="em">werkvorm-</span><br>illusie</h1>
+    <p class="subtitle">Waarom "ik werk online" niet betekent dat je werkvorm geen land kiest.</p>
+    <p class="context">Voor werknemers, zzp'ers, DGA's en beleggers die hun werkvorm willen toetsen op de landenkeuze.</p>
+  </div>
+
+  <div class="bottom-row">
+    <div class="meta">
+      <strong>14 pagina's</strong><br>
+      Werkvorm vóór land
+    </div>
+    <div class="meta" style="text-align: right;">
+      <strong>emigratieplan.nl</strong><br>
+      Niet wegdenken. Doorrekenen.
+    </div>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 2 — Het uitgangspunt
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>01 — Het uitgangspunt</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">01</span>
+      <div class="meta-text">
+        <span class="section-name">Het uitgangspunt</span>
+        <span class="section-stage">Idee · Inzicht · Actie</span>
+      </div>
+    </div>
+    <h2>Online werken is fiscaal sterk locatiegebonden</h2>
+    <p class="lead">In 2025 bood 80 procent van de Nederlandse bedrijven met tien of meer werknemers werken op afstand aan; 52 procent van alle werkenden werkte in 2023 soms of meestal thuis, het hoogste aandeel in Europa. Dat maakt remote werken normaal. Het maakt het niet fiscaal neutraal.</p>
+  </div>
+
+  <div class="statement">
+    <p class="big">De meesten vragen: <em>welk land past bij ons?</em><br>De betere vraag is: welke werkvorm past bij welk land?</p>
+    <p class="small">Belastingstelsels kijken naar waar je woont, waar de arbeid fysiek wordt verricht, via welke entiteit je werkt en waar managementbeslissingen genomen worden. Dezelfde bestemming kan voor een werknemer prima zijn en voor een DGA met BV onwerkbaar.</p>
+  </div>
+
+  <div class="routes">
+    <div class="routes-svg-wrap">
+      <svg viewBox="0 0 600 145" xmlns="http://www.w3.org/2000/svg">
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9" letter-spacing="2" fill="#6b6560" font-weight="600">
+          <text x="0" y="14">ROUTE 1</text>
+        </g>
+        <g stroke="#c8a882" stroke-width="1" fill="none">
+          <line x1="0" y1="35" x2="540" y2="35" stroke-dasharray="4 4" />
+        </g>
+        <g fill="#c8a882">
+          <circle cx="0" cy="35" r="4" />
+          <circle cx="135" cy="35" r="3" />
+          <circle cx="270" cy="35" r="3" />
+          <circle cx="405" cy="35" r="3" />
+        </g>
+        <g stroke="#6b6560" stroke-width="1.2" fill="none">
+          <line x1="535" y1="28" x2="545" y2="42" />
+          <line x1="535" y1="42" x2="545" y2="28" />
+        </g>
+        <g font-family="Fraunces, Georgia, serif" font-size="9" fill="#6b6560" font-style="italic">
+          <text x="556" y="38">aanslag</text>
+        </g>
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9.5" fill="#2d2420" font-weight="500">
+          <text x="0" y="58">Land kiezen</text>
+          <text x="135" y="58">"Ik werk online"</text>
+          <text x="270" y="58">Verhuizen</text>
+          <text x="405" y="58">Lokale + NL-vragen tegelijk</text>
+        </g>
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9" letter-spacing="2" fill="#c04a2a" font-weight="600">
+          <text x="0" y="92">ROUTE 2</text>
+        </g>
+        <g stroke="#c04a2a" stroke-width="1.2" fill="none">
+          <line x1="0" y1="113" x2="540" y2="113" />
+        </g>
+        <g fill="#c04a2a">
+          <circle cx="0" cy="113" r="4" />
+          <circle cx="135" cy="113" r="3" />
+          <circle cx="270" cy="113" r="3" />
+          <circle cx="405" cy="113" r="3" />
+        </g>
+        <g fill="#c04a2a">
+          <polygon points="540,108 552,113 540,118" />
+        </g>
+        <g font-family="Fraunces, Georgia, serif" font-size="9" fill="#c04a2a" font-style="italic">
+          <text x="558" y="116">passend</text>
+        </g>
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9.5" fill="#2d2420" font-weight="500">
+          <text x="0" y="130">Werkvorm vastpinnen</text>
+          <text x="135" y="130">Dagen per land plannen</text>
+          <text x="270" y="130">Sociale zekerheid en zorg</text>
+          <text x="405" y="130">Pas dán land matchen</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="routes-grid">
+      <div class="route-block route-block--good">
+        <div class="lbl">Wat veel mensen doen</div>
+        <h4>Eerst land, dan online verder</h4>
+        <div class="step"><span class="num">1</span><span>Land kiezen op klimaat of belasting</span></div>
+        <div class="step"><span class="num">2</span><span>Aannemen dat online werken volstaat</span></div>
+        <div class="step"><span class="num">3</span><span>Vertrekken zonder werkvormcheck</span></div>
+        <div class="step"><span class="num">4</span><span>Lokale registratie of dubbele heffing</span></div>
+      </div>
+      <div class="route-block route-block--bad">
+        <div class="lbl">Het stappenplan</div>
+        <h4>Eerst werkvorm, dan land</h4>
+        <div class="step"><span class="num">1</span><span>Werkvorm vooraf expliciet kiezen</span></div>
+        <div class="step"><span class="num">2</span><span>Dagen per land en werkplek vastleggen</span></div>
+        <div class="step"><span class="num">3</span><span>Sociale zekerheid en zorg checken</span></div>
+        <div class="step"><span class="num">4</span><span>Pas dán bestemming kiezen</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 02</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 3 — De zeven haakjes
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>02 — De haakjes</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">02</span>
+      <div class="meta-text">
+        <span class="section-name">De haakjes</span>
+        <span class="section-stage">Wat de fiscus echt telt</span>
+      </div>
+    </div>
+    <h2>Zeven haakjes aan elke werkvorm</h2>
+    <p class="lead">Geen lijst van landen. Een lijst van schakelaars die per persoon en per werkvorm anders staan. Drie van de zeven raken vrijwel iedereen. De andere vier maken het verschil tussen werkbaar en onwerkbaar.</p>
+  </div>
+
+  <div class="var-grid">
+
+    <div class="var-cell">
+      <span class="num">01</span>
+      <h4>Fiscale woonplaats</h4>
+      <p>Geen formaliteit, maar een feitencomplex. Tijd, partner, gezin, woning, werk, dokter, school — niet één factor beslist.</p>
+      <div class="ask"><p class="ask-text">Kan ik mijn woonplaats bewijzen?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">02</span>
+      <h4>Werkland</h4>
+      <p>Niet waar je werkgever zit, maar waar de arbeid fysiek wordt verricht. Bij grensoverschrijdend loon kijkt de fiscus daar eerst.</p>
+      <div class="ask"><p class="ask-text">Vanuit welk land werk ik straks?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">03</span>
+      <h4>EU 25-procent-regel</h4>
+      <p>Bij 25 procent of meer activiteit in je woonland kantelt de sociale zekerheid daarheen. Drie werkdagen per week kan al genoeg zijn.</p>
+      <div class="ask"><p class="ask-text">Heb ik een A1 of een toegekende uitzondering?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">04</span>
+      <h4>183-dagenregeling</h4>
+      <p>Het werkland mag loon belasten, tenzij aan alle drie de voorwaarden van de 183-dagenregeling is voldaan. Drie, niet één.</p>
+      <div class="ask"><p class="ask-text">Vervul ik alle drie de voorwaarden?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">05</span>
+      <h4>Werkgeversrisico</h4>
+      <p>Werken vanuit een ander EU-land kan voor je werkgever leiden tot lokale registratie en bijdrageverplichtingen. Niet alleen jouw probleem.</p>
+      <div class="ask"><p class="ask-text">Weet mijn werkgever wat dit betekent?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">06</span>
+      <h4>Vaste inrichting (PE)</h4>
+      <p>Een home office buiten Nederland kan een vaste inrichting van je BV of opdrachtgever worden. Geen automatisme.</p>
+      <div class="ask"><p class="ask-text">Wat doe ik vanuit huis?</p></div>
+    </div>
+
+  </div>
+
+  <div class="standalone-wide">
+    <span class="num">07</span>
+    <h4>Werkvorm voor land, niet andersom</h4>
+    <p>Werknemer, zzp'er, DGA en passieve belegger volgen verschillende regels. Dezelfde bestemming kan voor één werkvorm prima zijn en voor een ander onwerkbaar. De werkvorm bepaalt welke landen kunnen passen, niet andersom.</p>
+    <div class="ask"><p class="ask-text">Welke werkvorm hoort bij mijn werkelijke werkpatroon?</p></div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 03</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 4 — Diepte: Fiscale woonplaats vs BRP
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>03 — De diepte · Woonplaats</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">03</span>
+      <div class="meta-text">
+        <span class="section-name">Fiscale woonplaats</span>
+        <span class="section-stage">Het feitencomplex</span>
+      </div>
+    </div>
+    <h2>Uitschrijven is administratie. Niet fiscale exit.</h2>
+    <p class="lead">Wie meer dan acht maanden per jaar in het buitenland verblijft, moet zich uitschrijven uit de BRP. Die uitschrijving verandert je registratiestatus. Fiscale woonplaats blijft daarna een aparte feitenvraag. De Belastingdienst kijkt naar het volledige feitencomplex.</p>
+  </div>
+
+  <div class="deepdive-grid">
+    <div class="deepdive-body">
+      <h3>Wat meetelt in het feitencomplex</h3>
+      <p>Waar je de meeste tijd doorbrengt. Waar je partner en gezin wonen. Waar je werkt. Waar je verzekerd bent. Waar je huisarts zit. Bij welke verenigingen je hoort. Waar je kinderen naar school gaan. Geen enkele factor wint alleen. De optelsom telt.</p>
+
+      <h3>Dubbele woonplaats is reëel, geen randzaak</h3>
+      <p>Iemand kan nationaalrechtelijk nog Nederlands inwoner zijn, terwijl een verdrag hem voor verdragsdoeleinden aan het andere land toewijst. Dat raakt waar belasting wordt geheven, maar ook hoe aangifte en voorkoming van dubbele belasting moet worden ingericht. Verdrag lost niet alles op; nationaalrechtelijke status en aangifteplichten kunnen blijven bestaan.</p>
+
+      <h3>De fout</h3>
+      <p><em>"Ik ben minder dan 183 dagen in Nederland, dus ik ben geen Nederlands inwoner meer."</em> Die 183-dagengrens hoort in verdragen meestal bij loon, niet bij het nationale woonplaatsbegrip. Wie zo redeneert, mengt twee aparte begrippen.</p>
+    </div>
+
+    <div>
+      <div class="fact-card">
+        <span class="label">Bewijslast</span>
+        <p style="margin-bottom: var(--s-3);">Verzamel vóór vertrek:</p>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Huur- of koopcontract buitenland</li>
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Lokale registratie en zorgverzekering</li>
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Lokale bankrekening en abonnementen</li>
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Bewijs van verblijfsdagen per land</li>
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Beëindiging of verhuur NL-woning</li>
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Woonplaatsverklaring nieuwe woonland</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-card" style="margin-top: var(--s-5);">
+    <span class="mark">"</span>
+    <p>Je fiscale woonplaats volgt niet uit een lifestyle-keuze, maar uit het totaal van je feitelijke banden.</p>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 04</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 5 — Diepte: Werknemer (183-dagen + 25%-regel)
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>03 — De diepte · Werknemer</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">04</span>
+      <div class="meta-text">
+        <span class="section-name">Werknemer</span>
+        <span class="section-stage">Loonheffing volgt de werkplek</span>
+      </div>
+    </div>
+    <h2>Loon volgt de werkplek, niet de werkgever</h2>
+    <p class="lead">In de meeste verdragen heeft het werkland heffingsrecht over loon dat daar wordt verdiend. Alleen als alle drie voorwaarden van de 183-dagenregeling zijn vervuld, mag het woonland exclusief heffen. Daarnaast kantelt sociale zekerheid bij 25 procent werk in het woonland.</p>
+  </div>
+
+  <table class="cmp-table">
+    <thead>
+      <tr>
+        <th>Route</th>
+        <th>Wat mensen denken</th>
+        <th>Wat je toetst</th>
+        <th>Grootste risico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Detachering met A1</td>
+        <td class="muted">"Ik blijf NL-verzekerd"</td>
+        <td>Tijdelijke posting, A1-verklaring, dezelfde NL-werkgever, terugkeerintentie.</td>
+        <td>De duur of het werkpatroon klopt niet met de A1.</td>
+      </tr>
+      <tr>
+        <td>25%+ telewerk woonland</td>
+        <td class="muted">"Ik werk gewoon Nederlands"</td>
+        <td>Werktijdverdeling, kaderovereenkomst-uitzondering, zorgverzekering.</td>
+        <td>Stelsel is al gekanteld voordat je het regelde.</td>
+      </tr>
+      <tr>
+        <td>Lokale loondienst woonland</td>
+        <td class="muted">"Mijn werkgever regelt het"</td>
+        <td>Lokale werkgeversregistratie, payroll, sociale lasten in woonland.</td>
+        <td>Werkgever wist niet wat dit voor hem betekent.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="deepdive-body" style="margin-top: var(--s-4);">
+    <h3>De 183-dagenregeling is geen tellingsspel</h3>
+    <p>Drie voorwaarden, niet één: verblijf onder 183 dagen, loon niet ten laste van een werkgever in het werkland, loon niet ten laste van een vaste inrichting daar. Eén missen betekent dat het werkland mag heffen.</p>
+
+    <h3>De kaderovereenkomst telewerk</h3>
+    <p>Voor telewerk tussen 25 en 50 procent kan een uitzondering worden aangevraagd via de Europese kaderovereenkomst (in werking sinds 1 juli 2023). Vooraf aanvragen, niet aannemen. Buiten EU, EER en Zwitserland werkt deze route niet.</p>
+
+    <h3>Werkgeversrisico is geen detail</h3>
+    <p>Werken vanuit een ander EU-land kan voor je werkgever lokale registratie, sociale-zekerheidsafdrachten en arbeidsrechtelijke verplichtingen meebrengen, tenzij een geldige A1-posting bestaat. Jouw verhuizing raakt zijn payroll en risicoprofiel.</p>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 05</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 6 — Diepte: Zzp'er - nieuwe compliance-landschap
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>03 — De diepte · Zzp'er</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">05</span>
+      <div class="meta-text">
+        <span class="section-name">Zzp'er</span>
+        <span class="section-stage">Nieuw compliance-landschap</span>
+      </div>
+    </div>
+    <h2>Emigreren als zzp'er is geen factuur-verhuizing</h2>
+    <p class="lead">Veel zzp'ers verwachten dat hun Nederlandse eenmanszaak na vertrek gewoon bruikbaar blijft als neutrale factuurmachine. Dat klopt zelden. Winstheffing verschuift vaak richting woonland, lokale ondernemingsregistratie kan nodig worden, en btw, KvK, woonadres en bewijsstukken kunnen uit elkaar gaan lopen.</p>
+  </div>
+
+  <div class="deepdive-grid deepdive-grid--reverse">
+    <div>
+      <div class="fact-card">
+        <span class="label">KvK-voorbeeld</span>
+        <p style="margin-bottom: var(--s-3);">De KvK noemt expliciet: een adviseur die naar Zweden verhuist en vanuit Zweden Nederlandse klanten blijft adviseren, schrijft zich in Nederland uit het Handelsregister uit en start een nieuw bedrijf in het woonland.</p>
+        <p style="font-style: italic; color: var(--c-ink-soft); font-size: 9.5pt; margin-bottom: 0;">Nederlandse klanten zijn niet hetzelfde als een Nederlandse ondernemingsrealiteit. De feitelijke werkplek bepaalt waar de onderneming zit, niet de klantenlocatie.</p>
+      </div>
+    </div>
+
+    <div class="layer-list">
+      <div class="layer">
+        <div class="layer-label">Laag 1</div>
+        <div class="layer-body">
+          <h4>KvK en Handelsregister</h4>
+          <p>De Nederlandse eenmanszaak past niet bij iemand die feitelijk in een ander land woont en werkt. Vaak is uitschrijving nodig, of een omzetting naar een lokale rechtsvorm. Behoud kan, maar alleen bij echte Nederlandse activiteiten of een geldige Nederlandse vestiging.</p>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-label">Laag 2</div>
+        <div class="layer-body">
+          <h4>Btw en facturatie</h4>
+          <p>Btw volgt eigen regels per dienst en klantland. Bij verhuizing kan registratie in het woonland nodig zijn, en kan de plaats-van-dienst-regel anders uitpakken. Btw-flow vooraf in kaart brengen, niet bij de eerste factuur ontdekken.</p>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-label">Laag 3</div>
+        <div class="layer-body">
+          <h4>Sociale zekerheid en zorg</h4>
+          <p>Voor zzp'ers verschuift sociale zekerheid binnen de EU mee met woonland en centrum van belangen, tenzij feiten anders uitwijzen. Nederlandse zorgplicht volgt niet automatisch mee. De verzekeringspositie moet opnieuw worden bepaald.</p>
+          <p style="margin-top: var(--s-3); font-style: italic; color: var(--c-ink);">"Mijn klanten zijn Nederlands, dus ik blijf in Nederland belast." De feitelijke werkplek telt zwaarder dan de klantlocatie.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 06</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 7 — Diepte: DGA
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>03 — De diepte · DGA</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">06</span>
+      <div class="meta-text">
+        <span class="section-name">DGA</span>
+        <span class="section-stage">BV blijft NL, jij niet</span>
+      </div>
+    </div>
+    <h2>De BV ligt niet stil zodra jij vertrekt</h2>
+    <p class="lead">Voor de DGA is "ik verhuis privé, de BV blijft in Nederland" zelden een compleet plan. Bij emigratie met aanmerkelijk belang activeert box 2. Het gebruikelijk loon blijft spelen. En een naar Nederlands recht opgerichte BV blijft civiel Nederlands, terwijl het woonland tegelijk kan kijken naar feitelijke leiding en vaste inrichting.</p>
+  </div>
+
+  <div class="deepdive-grid">
+    <div>
+      <div class="fact-card">
+        <span class="label">Gebruikelijk loon 2026</span>
+        <div class="big-number">58<span class="unit">k €</span></div>
+        <p style="margin-bottom: 0;">wettelijk minimum gebruikelijk loon, tenzij een lager bedrag aannemelijk kan worden gemaakt. Geldt zolang de DGA arbeid voor de BV verricht. Vertrek heft die regel niet automatisch op.</p>
+      </div>
+    </div>
+
+    <div class="deepdive-body">
+      <h3>Drie posten die meteen op tafel liggen</h3>
+      <p>De Nederlandse box 2-claim, het DGA-loon, en de vraag waar de BV feitelijk wordt geleid. Geen volgordevraag, ze spelen tegelijk. Wie er één onderschat, riskeert een dossier dat in twee landen tegelijk wordt opgepakt.</p>
+      <table class="mini-table">
+        <thead>
+          <tr><th>Onderwerp</th><th>Wat in beeld komt</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Box 2</td><td>Conserverende aanslag, in beginsel onbeperkt geldig.</td></tr>
+          <tr><td>DGA-loon</td><td>Gebruikelijk loon blijft spelen; minimum € 58.000 in 2026.</td></tr>
+          <tr><td>Dividend</td><td>Verdragsreductie mogelijk, niet automatisch nul.</td></tr>
+          <tr><td>Feitelijke leiding</td><td>Plaats van besluitvorming, hoofdkantoor, bestuur.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="deepdive-grid" style="margin-top: var(--s-4); align-items: start;">
+    <div class="deepdive-body">
+      <h3>De BV verhuist niet zomaar mee</h3>
+      <p>Een BV opgericht naar Nederlands recht blijft civiel Nederlands, ook als jij verhuist. Voor de vennootschapsbelasting kijkt de Belastingdienst daarnaast naar plaats van leiding, hoofdkantoor en aandeelhoudersvergadering. Civiel-Nederlands is niet hetzelfde als alleen-Nederlands belast.</p>
+    </div>
+    <div class="deepdive-body">
+      <h3>Vaste inrichting (PE) in het woonland</h3>
+      <p>Vaste inrichting (Engels: <em>Permanent Establishment</em>, afgekort PE) is de drempel waarbij een buitenlandse onderneming in een ander land belastingplichtig wordt. Een home office buiten Nederland is niet automatisch een PE, en niet automatisch géén — de feiten beslissen.</p>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 07</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 8 — Diepte: Buitenlandse entiteit & free zone
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>03 — De diepte · Buitenlandse entiteit</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">07</span>
+      <div class="meta-text">
+        <span class="section-name">Buitenlandse entiteit</span>
+        <span class="section-stage">Geen automatische oplossing</span>
+      </div>
+    </div>
+    <h2>Een buitenlands bedrijf verandert je woonplaats niet</h2>
+    <p class="lead">"Ik factureer via een buitenlandse entiteit" lost zelden de echte vragen op: waar woon je, waar werk je, waar vallen de beslissingen, en heeft de gekozen entiteit op die plek ook substance en lokale legitimiteit. Een buitenlandse onderneming die feitelijk in Nederland wordt geleid, kan in Nederland binnenlands belastingplichtig zijn.</p>
+  </div>
+
+  <div class="deepdive-grid deepdive-grid--reverse" style="align-items: stretch;">
+    <div style="display: flex; flex-direction: column;">
+      <div class="fact-card" style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+        <span class="label">UAE Free Zone</span>
+        <div class="big-number">0<span class="unit">%</span></div>
+        <p style="margin-bottom: var(--s-3);">vennootschapsbelasting geldt alleen voor bedrijven die voldoen aan strikte voorwaarden, op specifieke inkomensstromen.</p>
+        <p style="margin-bottom: var(--s-3);">Voldoe je daar niet aan, of ontstaat er een vaste inrichting binnen of buiten de free zone, dan geldt 9 procent. Voor natuurlijke personen geldt vennootschapsbelasting pas vanaf 1 miljoen AED jaaromzet uit zakelijke activiteit; salaris valt daar niet onder.</p>
+        <p style="font-style: italic; color: var(--c-ink-soft); font-size: 9.5pt; margin-top: auto;">De UAE staat niet op de SVB-lijst van verdragslanden voor sociale zekerheid. Voor Nederlanders betekent dat: geen automatische coördinatie.</p>
+      </div>
+    </div>
+
+    <div class="deepdive-body">
+      <h3>Substance is geen formaliteit</h3>
+      <p>Free zone status, kwalificerende activiteiten, lokale werknemers, fysieke vestiging, lokaal management. Wie de substance niet bouwt, kan een entiteit hebben zonder dat de verwachte fiscale uitkomst werkt. "Free zone" en "0 procent" zijn voorwaardelijke labels, geen automatische uitkomsten.</p>
+
+      <h3>Malta nomadregime: niet voor Nederlanders</h3>
+      <p>Het Maltese nomad-taxregime geeft 10 procent op authorized work van een geldige nomad permit-houder, met automatische fiscale registratie. Maar de Nomad Residence Permit policy zegt expliciet dat het beleid niet geldt voor EU-, EER- of Zwitserse burgers. Voor Nederlandse remote workers is Malta dus juist een illustratie van een populair label dat in de praktijk niet openstaat.</p>
+
+      <h3>De fout</h3>
+      <p><em>"Met een buitenlands bedrijf ben ik fiscaal weg uit Nederland."</em> De entiteit volgt jouw woonplaats, werkplek, beslissingen en substance. Niet andersom.</p>
+    </div>
+  </div>
+
+  <div class="deepdive-body" style="margin-top: var(--s-5);">
+    <h3>Inbound-regimes lossen niet alles op</h3>
+    <p>Spanje heeft een impatriateregime sinds 2023 voor wie vijf jaar voorafgaand niet-resident was. Griekenland kent artikel 5C met 50 procent vrijstelling op Grieks inkomen gedurende zeven jaar. Cyprus kent non-dom-vrijstelling op dividend en interest onder de 60- of 183-dagenresidentie. Allemaal regimes met voorwaarden, geen algemene regels.</p>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 08</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 9 — Vijf profielen
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>04 — De profielen</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">08</span>
+      <div class="meta-text">
+        <span class="section-name">De profielen</span>
+        <span class="section-stage">Werkvorm bepaalt het pad</span>
+      </div>
+    </div>
+    <h2>Vijf profielen, vijf compliance-landschappen</h2>
+    <p class="lead">Hetzelfde land geeft niet hetzelfde resultaat. Een werknemer met juiste A1 in Spanje rekent anders dan een DGA met BV die naar Dubai verhuist. Werkvorm staat vóór land, ook in deze profielen.</p>
+  </div>
+
+  <div class="scenario-grid">
+
+    <div class="scenario">
+      <span class="letter">A</span>
+      <div class="scenario-content">
+        <h4>Werknemer<br>halfjaar in Spanje</h4>
+        <div class="row"><span class="lbl">Haak</span><span class="val">Werkland-loonheffing, 25%-regel sociale zekerheid.</span></div>
+        <div class="row"><span class="lbl">Ook</span><span class="val">Zorg via woonland, A1 of kaderovereenkomst.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Werkgever niet geregistreerd in werkland.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">B</span>
+      <div class="scenario-content">
+        <h4>Zzp-consultant<br>Portugal, NL-klanten</h4>
+        <div class="row"><span class="lbl">Haak</span><span class="val">KvK, btw, woonplaats, lokale ondernemerschap.</span></div>
+        <div class="row"><span class="lbl">Ook</span><span class="val">IFICI is smal, oude NHR achterhaald.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Eenmanszaak houden zonder echte NL-activiteit.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">C</span>
+      <div class="scenario-content">
+        <h4>DGA Dubai<br>met Nederlandse BV</h4>
+        <div class="row"><span class="lbl">Haak</span><span class="val">Box 2-claim, gebruikelijk loon, feitelijke leiding.</span></div>
+        <div class="row"><span class="lbl">Ook</span><span class="val">Geen EU-coördinatie sociale zekerheid, PE-vraag.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Adres verhuizen zonder governance herontwerp.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">D</span>
+      <div class="scenario-content">
+        <h4>Founder Griekenland<br>buitenlandse entiteit</h4>
+        <div class="row"><span class="lbl">Haak</span><span class="val">Article 5C, Grieks-sourced income, lokaal management.</span></div>
+        <div class="row"><span class="lbl">Ook</span><span class="val">Substance entiteit, fee flows, salary versus dividend.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Lege entiteit zonder lokaal kantoor of personeel wordt fiscaal niet erkend.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">E</span>
+      <div class="scenario-content">
+        <h4>Reizend stel<br>zonder vaste woonstaat</h4>
+        <div class="row"><span class="lbl">Haak</span><span class="val">Bewijsprobleem nieuwe verdragswoonstaat.</span></div>
+        <div class="row"><span class="lbl">Ook</span><span class="val">Sociale zekerheid en zorgstatus onduidelijk.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">NL blijft kijken naar duurzame persoonlijke band.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario scenario--dark">
+      <div class="scenario-content">
+        <h4>Hoe verder?</h4>
+        <p>Bepaal je werkvorm eerst. Loop voor jouw situatie de zeven haakjes na, per persoon en per land. Pas dán matchen op woonland en bestaande structuur.</p>
+        <p style="color: var(--c-accent); font-family: var(--f-display); font-size: 13pt; font-style: italic; margin-top: var(--s-4);">Eerst je werkvorm vastpinnen. Dan pas je land kiezen.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 09</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 10 — Matrix
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>05 — De matrix</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">09</span>
+      <div class="meta-text">
+        <span class="section-name">De matrix</span>
+        <span class="section-stage">Welke schakelaars per profiel</span>
+      </div>
+    </div>
+    <h2>De werkvormmatrix</h2>
+    <p class="lead">Welke risico's hangen aan jouw werkvorm? Geen lijst van regels, een lijst van schakelaars per profiel. De werknemer met juiste A1 ziet er anders uit dan de DGA met BV en Dubai-adres.</p>
+  </div>
+
+  <div class="matrix-wrap">
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th>Profiel</th>
+        <th>Woon-<br>plaats</th>
+        <th>Werk-<br>land</th>
+        <th>Sociale<br>zekerheid</th>
+        <th>Zorg</th>
+        <th>Werkgevers-<br>risico</th>
+        <th>BV / PE-<br>risico</th>
+        <th>Lokale<br>registratie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Werknemer Spanje</td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots-na">—</span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+      </tr>
+      <tr>
+        <td>Zzp Portugal</td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots-na">—</span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+      </tr>
+      <tr>
+        <td>DGA Dubai</td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots-na">—</span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+      </tr>
+      <tr>
+        <td>Founder Griekenland</td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+      </tr>
+      <tr>
+        <td>Reizend stel</td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="dots" style="margin-right:4px;"><span class="d"></span><span class="d"></span><span class="d"></span></span>Sterk doorrekenen</span>
+    <span class="item"><span class="dots" style="margin-right:4px;"><span class="d"></span><span class="d"></span><span class="d empty"></span></span>Doorrekenen</span>
+    <span class="item"><span class="dots" style="margin-right:4px;"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span>Soms relevant</span>
+    <span class="item"><span class="dots-na" style="margin-right:4px;">—</span>Niet van toepassing</span>
+  </div>
+
+  <p class="caption" style="margin-top: var(--s-5); font-style: italic;">Indicatief beeld op basis van een doorsnee profiel. De werknemer met juiste A1 leidt het lichtst. De DGA met BV en de founder met buitenlandse entiteit dragen het zwaarst. Het reizende stel zonder verdragswoonstaat krijgt vooral een bewijsprobleem.</p>
+
+  <div class="illustration">
+    <div class="ill-head">
+      <div>
+        <span class="ill-eyebrow">Zelfde stoel · andere werkvorm</span><br>
+        <span class="ill-title">Twee profielen, beiden werkend vanuit Lissabon</span>
+      </div>
+      <span class="ill-stamp">Illustratief — 2026</span>
+    </div>
+    <div class="ill-grid">
+      <div class="ill-col">
+        <h5>Werknemer met geldige A1</h5>
+        <p>Loonheffing volgt 183-dagenanalyse. Sociale zekerheid blijft NL bij geldige A1 of via kaderovereenkomst. Werkgever moet weten van werkland-aanwezigheid en eventuele lokale registratie. Zorgverzekering volgt het sociale-zekerheidsstelsel.</p>
+      </div>
+      <div class="ill-col">
+        <h5>Zzp'er met Nederlandse eenmanszaak</h5>
+        <p>Winstheffing schuift richting Portugal als feitelijke werkplek daar ligt. KvK-uitschrijving en lokale registratie vaak nodig. IFICI is smal, geen automatisch voordeel voor generieke remote consultancy. Zorg en sociale zekerheid volgen het woonland.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 10</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 11 — Pre-move check
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>06 — Pre-move check</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">10</span>
+      <div class="meta-text">
+        <span class="section-name">Pre-move check</span>
+        <span class="section-stage">Vóór je vertrekt</span>
+      </div>
+    </div>
+    <h2>Vijf vragen vóór vertrek</h2>
+    <p class="lead">Beantwoord deze per persoon en per werkvorm, niet per huishouden of per landenwens. Drie van de vijf moeten harde antwoorden hebben voordat je een fiscalist of payrollspecialist belt.</p>
+  </div>
+
+  <div class="checklist">
+    <div class="check-item">
+      <span class="num">01</span>
+      <div class="body">
+        <h4>Hoeveel dagen werk ik straks vanuit welk land?</h4>
+        <p>Concreet plannen, niet schatten. Werkdagen, vakantiedagen, reisdagen apart. De verdragsanalyse en sociale-zekerheidstoets steunen op dit overzicht. Houd het bij vanaf dag één.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">02</span>
+      <div class="body">
+        <h4>Welke werkvorm hoort bij mijn werkelijke werkpatroon?</h4>
+        <p>Werknemer met buitenlandse werklocatie, lokale loondienst, zzp'er met lokale onderneming, DGA met of zonder NL-BV, founder via buitenlandse entiteit. Niet retroactief vaststellen, vooraf kiezen.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">03</span>
+      <div class="body">
+        <h4>In welk socialezekerheidsstelsel zit ik straks?</h4>
+        <p>EU-coördinatie of buiten-EU. A1-detachering, kaderovereenkomst, kantelende 25-procent-regel. Eén stelsel per persoon, niet per huishouden. Aanvragen vóór vertrek, niet erna.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">04</span>
+      <div class="body">
+        <h4>Wat verandert dit voor mijn werkgever of opdrachtgever?</h4>
+        <p>Bij werknemers in een ander EU-land kan de werkgever lokale registratie, payroll, sociale lasten en arbeidsrechtelijke verplichtingen krijgen. Bij zzp'ers kan de Nederlandse opdrachtgever bewijslast nodig hebben. Bespreek dit voordat je vertrekt, niet als voldongen feit.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">05</span>
+      <div class="body">
+        <h4>Hoe zien feitelijke leiding en substance van mijn entiteit eruit?</h4>
+        <p>Voor BV's en buitenlandse entiteiten geldt: plaats van leiding, hoofdkantoor, aandeelhoudersvergadering, lokale werknemers, fysieke vestiging. Free zone, IFICI, Article 5C en non-dom regimes hebben elk hun eigen substance-eisen. Vooraf bouwen, niet improviseren.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 11</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 12 — CTA
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>07 — Volgende stap</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">11</span>
+      <div class="meta-text">
+        <span class="section-name">Volgende stap</span>
+        <span class="section-stage">Wat je nu doet</span>
+      </div>
+    </div>
+    <h2>Werkvorm vóór land, niet andersom</h2>
+    <p class="lead">Een fiscalist, payrollspecialist of socialezekerheidsadviseur beantwoordt jouw vraag scherper als jij met de juiste werkvormcheck binnenkomt. Niet met een landenvoorkeur, maar met dagen, werkvorm, structuur en sociale-zekerheidsstatus.</p>
+  </div>
+
+  <div class="cta-card">
+    <span class="corner-mark"></span>
+    <span class="eyebrow">Scenario-tool</span>
+    <h3>Toets mijn werkvorm vóór ik land kies</h3>
+    <p class="cta-body">Emigratieplan rekent verschillende werkvormen door in verschillende landen, zodat je geïnformeerd stappen kunt zetten richting een fiscalist of socialezekerheidsadviseur. Geen vervanging van specialistisch advies, wel een scherper vertrekpunt voor dat gesprek.</p>
+
+    <a href="https://emigratieplan.nl" class="cta-button">
+      Toets mijn werkvorm
+      <svg class="arrow" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 6 H16 M11 1 L16 6 L11 11" stroke="#f7f1ea" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+      </svg>
+    </a>
+
+    <div class="cta-bullets">
+      <div class="item">
+        <span class="lbl">Output</span>
+        Werkvormcheck per persoon, met sociale-zekerheid-, zorg- en vaste-inrichtingsvlaggen.
+      </div>
+      <div class="item">
+        <span class="lbl">Voorbereiding</span>
+        Een scherpe basis voor het gesprek met fiscalist, payrollspecialist of socialezekerheidsadviseur.
+      </div>
+      <div class="item">
+        <span class="lbl">Volgende stap</span>
+        Scenario-export die je meeneemt naar een specialist voor toetsing en uitvoering.
+      </div>
+    </div>
+  </div>
+
+  <div class="colophon">
+    <div class="left">
+      <span class="brand-line">Emigratieplan.nl</span>
+      Door STS Strategy · Amsterdam
+    </div>
+    <div class="right">
+      emigratieplan.nl<br>
+      <strong>kevin@emigratieplan.nl</strong>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 12</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 13 — Bronnen
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>08 — Bronnen &amp; verantwoording</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">12</span>
+      <div class="meta-text">
+        <span class="section-name">Bronnen &amp; verantwoording</span>
+        <span class="section-stage">Status en wet- en regelgeving</span>
+      </div>
+    </div>
+    <h2>Bronnen</h2>
+  </div>
+
+  <div class="disclaimer">
+    <p><strong>Status</strong>Deze beslisgids is informatief en vormt geen individueel fiscaal, juridisch, sociale-zekerheids- of arbeidsrechtelijk advies. De inhoud helpt Nederlanders die emigratie of grensoverschrijdend werken overwegen scherper denken voordat ze specialistisch advies inkopen. De exacte uitkomst hangt altijd af van persoonlijke situatie, actuele wetgeving, belastingverdragen, werkland, werkvorm, structuur en feitelijke werkplek.</p>
+  </div>
+
+  <div class="source-block">
+    <h4>Wet- en regelgeving · Instanties</h4>
+    <ol>
+      <li>Algemene wet inzake rijksbelastingen art. 4 — fiscale woonplaats wordt naar omstandigheden beoordeeld.</li>
+      <li>Wet inkomstenbelasting 2001 en Wet vennootschapsbelasting 1969 — buitenlandse belastingplicht, aanmerkelijk belang, conserverende aanslag, vestigingsplaats lichamen naar Nederlands recht en feitelijke leiding.</li>
+      <li>Wet op de loonbelasting 1964 — gebruikelijk loon DGA; minimum 2026 € 58.000.</li>
+      <li>Verordening (EG) 883/2004 en uitvoeringsverordening 987/2009 — Europese coördinatie sociale zekerheid, A1-verklaring, één wetgeving tegelijk. Kaderovereenkomst telewerken (1 juli 2023) als uitzondering op de 25-procent-regel.</li>
+      <li>OECD Model Tax Convention art. 4, 5 en 15 — woonplaats, vaste inrichting en arbeidsartikel. Bijgewerkt commentaar 2025 voor moderne werkvormen.</li>
+      <li>Belastingdienst, SVB, CAK, KvK, UWV en Nederland Wereldwijd — publicaties over emigratie, woonplaats, sociale zekerheid, zorgverzekering en buitenlandse ondernemers.</li>
+      <li>Buitenlandse belastingdiensten en regeringen — Spaans impatriateregime (2023), Portugees IFICI, Grieks Article 5C, Cypriotisch non-dom, Italiaans impatriati, UAE Federal Tax Authority en Maltees nomadregime.</li>
+    </ol>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 13</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 14 — Claimnotities
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>08 — Bronnen &amp; verantwoording</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">13</span>
+      <div class="meta-text">
+        <span class="section-name">Bronnen &amp; verantwoording</span>
+        <span class="section-stage">Vervolg · Claimnotities</span>
+      </div>
+    </div>
+    <h2>Claimnotities</h2>
+  </div>
+
+  <div class="source-block">
+    <h4>Notities bij de inhoud</h4>
+    <ol>
+      <li>Uitschrijven uit de BRP betekent niet automatisch dat iemand fiscaal geen Nederlands inwoner meer is. Fiscale woonplaats wordt naar feiten en omstandigheden beoordeeld.</li>
+      <li>De 183-dagenregeling vereist dat aan alle drie voorwaarden is voldaan: verblijf onder 183 dagen, loon niet ten laste van een werkgever in het werkland, en loon niet ten laste van een vaste inrichting daar. Eén missen kan al heffingsrecht voor het werkland triggeren.</li>
+      <li>De 25-procent-drempel voor sociale zekerheid is een hoofdregel binnen EU, EER en Zwitserland. Voor telewerk tussen 25 en 50 procent kan onder voorwaarden via de kaderovereenkomst een uitzondering worden aangevraagd. Buiten de EU werkt deze route niet automatisch.</li>
+      <li>Het gebruikelijk loon voor DGA's heeft in 2026 een wettelijk minimum van € 58.000, tenzij een lager bedrag aannemelijk kan worden gemaakt. De regeling blijft spelen zolang de DGA arbeid voor de vennootschap verricht.</li>
+      <li>Een naar Nederlands recht opgerichte BV blijft civiel Nederlands gevestigd. De fiscale vestigingsplaats hangt óók af van plaats van leiding en hoofdkantoor. Conserverende aanslagen op aanmerkelijk belang zijn in beginsel onbeperkt geldig.</li>
+      <li>UAE Free Zone: 0 procent vennootschapsbelasting geldt alleen voor bedrijven die voldoen aan strikte voorwaarden, op specifieke inkomensstromen, met substance-eisen. Anders 9 procent. Voor natuurlijke personen geldt vennootschapsbelasting pas vanaf 1 miljoen AED jaaromzet uit zakelijke activiteit. Het Maltese nomadregime geldt niet voor EU-/EER-burgers. Inbound-regimes zoals Spaans impatriate, Portugees IFICI, Grieks Article 5C en Cypriotisch non-dom hebben elk eigen voorwaarden.</li>
+      <li>De werkvormmatrix op pagina 10 is indicatief. Emigratieplan helpt scenario's structureren en is geen vervanging van specialistisch advies van een fiscalist, payrollspecialist, socialezekerheidsadviseur of arbeidsrechtjurist.</li>
+    </ol>
+  </div>
+
+  <div class="colophon">
+    <div class="left">
+      <span class="brand-line">Emigratieplan.nl</span>
+      Door STS Strategy · Amsterdam · 2026<br>
+      Beslisgids · Editie 05
+    </div>
+    <div class="right">
+      emigratieplan.nl<br>
+      <strong>kevin@emigratieplan.nl</strong>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De werkvorm-illusie</span>
+    <span>Pagina 14</span>
+  </div>
+</section>
+
+<section class="ep-cta no-print"><h2>Reken jouw situatie door</h2><p>Deze gids laat zien hoe de afweging werkt. De rekentool doet het met jouw cijfers, over twintig jaar, voor Nederland en negen emigratiebestemmingen.</p><div class="ep-cta__row"><a class="ep-btn" href="/">Zet me op de lijst &middot; &euro;50 early-bird</a><a class="ep-btn ep-btn--ghost" href="/downloads/de-werkvorm-illusie/">Download deze gids als PDF</a></div></section><footer class="ep-foot no-print"><span>&copy; 2026 Emigratieplan.nl, onderdeel van STS Strategy</span><span><a href="/">Home</a><a href="/over/">Over</a><a href="/beslisgids/">Beslisgidsen</a><a href="/legal/privacy/">Privacy</a></span></footer>
+</body>
+</html>

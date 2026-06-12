@@ -1,0 +1,2368 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Het verkeerde land kiezen &mdash; Beslisgids | Emigratieplan.nl</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,350;9..144,400;9..144,500;9..144,600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   DESIGN TOKENS
+   ================================================================= */
+:root {
+  /* Brand colors */
+  --c-ink:        #2d2420;
+  --c-ink-deep:   #181311;
+  --c-ink-soft:   #4a3f38;
+  --c-accent:     #c04a2a;
+  --c-accent-dk:  #9a3a20;
+  --c-sand:       #c8a882;
+  --c-cream:      #f7f1ea;
+  --c-cream-2:    #efe6da;
+  --c-cream-3:    #e8dccb;
+  --c-mute:       #6b6560;
+  --c-line:       #d8c9b6;
+  --c-line-soft:  #e8dccb;
+
+  /* Typography
+     STS hierarchy: serif for display only, sans for everything else */
+  --f-display: "Fraunces", Charter, Georgia, serif;
+  --f-body:    "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Spacing */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 11px;
+  --s-4: 14px;
+  --s-5: 20px;
+  --s-6: 28px;
+  --s-7: 40px;
+  --s-8: 56px;
+
+  /* Page */
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --page-pad-x: 22mm;
+  --page-pad-top: 18mm;
+  --page-pad-bot: 26mm;
+}
+
+/* =================================================================
+   RESET
+   ================================================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  background: #d8ccba;
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--c-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga";
+  padding: 24px 0;
+}
+
+/* =================================================================
+   PAGE FRAME
+   ================================================================= */
+.page {
+  width: var(--page-w);
+  height: var(--page-h);
+  min-height: var(--page-h);
+  max-height: var(--page-h);
+  background: var(--c-cream);
+  margin: 0 auto 24px;
+  padding: var(--page-pad-top) var(--page-pad-x) var(--page-pad-bot);
+  position: relative;
+  box-shadow: 0 4px 28px rgba(24, 19, 17, 0.08);
+  display: flex;
+  flex-direction: column;
+  page-break-after: always;
+  break-after: page;
+  overflow: hidden;
+}
+.page--dark {
+  background: var(--c-ink-deep);
+  color: var(--c-cream);
+}
+
+/* =================================================================
+   RUNNERS
+   ================================================================= */
+.runner {
+  position: absolute;
+  left: var(--page-pad-x);
+  right: var(--page-pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+  font-weight: 500;
+}
+.runner--top { top: 9mm; }
+.runner--bot { bottom: 9mm; }
+.runner .brand-mark {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: 11pt;
+  letter-spacing: -0.005em;
+  text-transform: none;
+  color: var(--c-ink);
+}
+.runner .brand-mark::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--c-accent);
+  margin-right: 8px;
+  vertical-align: 2px;
+}
+.page--dark .runner { color: var(--c-sand); }
+.page--dark .runner .brand-mark { color: var(--c-cream); }
+
+/* =================================================================
+   TYPOGRAPHY
+   Display: Fraunces (serif). Body & UI: Inter Tight (sans).
+   ================================================================= */
+h1, h2, h3 {
+  font-family: var(--f-display);
+  color: var(--c-ink);
+  letter-spacing: -0.018em;
+  font-feature-settings: "kern", "liga", "ss01";
+}
+
+h1 {
+  font-size: 42pt;
+  font-weight: 350;
+  line-height: 1.0;
+}
+h2 {
+  font-size: 24pt;
+  font-weight: 400;
+  line-height: 1.1;
+}
+h3 {
+  font-size: 17pt;
+  font-weight: 450;
+  line-height: 1.2;
+}
+h4 {
+  font-family: var(--f-body);
+  font-size: 11pt;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--c-ink);
+  letter-spacing: -0.005em;
+}
+
+p { margin-bottom: var(--s-4); }
+
+.lead {
+  font-family: var(--f-body);
+  font-size: 11pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  font-weight: 400;
+}
+
+/* Labels, eyebrows, micro-text — all Inter Tight, all uppercase */
+.eyebrow {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.caption {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  letter-spacing: 0.02em;
+  color: var(--c-mute);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+strong { font-weight: 600; color: var(--c-ink); }
+em { font-style: italic; }
+
+/* =================================================================
+   PAGE HEAD — fixed alignment
+   The "01 · HET UITGANGSPUNT · IDEE·INZICHT·ACTIE" pattern.
+   Using grid with explicit baseline alignment.
+   ================================================================= */
+.page-head {
+  margin-top: 6mm;
+  margin-bottom: var(--s-5);
+}
+.page-head .meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--s-4);
+  align-items: end;
+  margin-bottom: var(--s-5);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--c-line);
+}
+.page-head .num {
+  font-family: var(--f-display);
+  font-size: 32pt;
+  font-weight: 350;
+  color: var(--c-accent);
+  line-height: 1;
+  font-feature-settings: "lnum", "tnum";
+  letter-spacing: -0.02em;
+  /* Pull the number's optical baseline down so it visually rests
+     on the same line as the bottom of the section-stage label */
+  margin-bottom: -6px;
+  display: block;
+}
+.page-head .meta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.page-head .section-name {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  line-height: 1;
+}
+.page-head .section-stage {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  line-height: 1;
+}
+.page-head h2 {
+  margin-bottom: var(--s-3);
+  max-width: 38ch;
+}
+.page-head .lead { }
+
+/* =================================================================
+   STATEMENT BLOCK
+   ================================================================= */
+.statement {
+  margin: var(--s-4) 0 var(--s-5);
+  padding: var(--s-3) 0 var(--s-3) var(--s-5);
+  border-left: 3px solid var(--c-accent);
+  break-inside: avoid;
+}
+.statement .big {
+  font-family: var(--f-display);
+  font-size: 19pt;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--c-ink);
+  margin-bottom: var(--s-3);
+  letter-spacing: -0.018em;
+  max-width: 32ch;
+}
+.statement .big em {
+  font-style: italic;
+  color: var(--c-accent);
+}
+.statement .small {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  color: var(--c-ink-soft);
+  line-height: 1.55;
+  max-width: 60ch;
+  margin-bottom: 0;
+}
+
+/* =================================================================
+   QUOTE / CALLOUT
+   ================================================================= */
+.quote-card {
+  background: var(--c-cream-2);
+  padding: var(--s-5) var(--s-6);
+  margin: var(--s-5) 0;
+  position: relative;
+  break-inside: avoid;
+  border-left: 3px solid var(--c-accent);
+}
+.quote-card .mark {
+  font-family: var(--f-display);
+  font-size: 48pt;
+  line-height: 0.5;
+  color: var(--c-accent);
+  position: absolute;
+  top: 30px;
+  left: 22px;
+  font-weight: 400;
+}
+.quote-card p {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  line-height: 1.4;
+  color: var(--c-ink);
+  margin-bottom: 0;
+  padding-left: 30px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  max-width: 52ch;
+}
+
+/* =================================================================
+   ILLUSTRATION (two-column scenario comparison)
+   ================================================================= */
+.illustration {
+  margin: var(--s-5) 0 var(--s-4);
+  border-top: 1px solid var(--c-line);
+  padding-top: var(--s-4);
+  break-inside: avoid;
+}
+.illustration .ill-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--s-3);
+}
+.illustration .ill-eyebrow {
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.illustration .ill-title {
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 450;
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+}
+.illustration .ill-stamp {
+  font-family: var(--f-body);
+  font-size: 8pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+  font-weight: 500;
+}
+.illustration .ill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-5);
+}
+.illustration .ill-col {
+  padding: var(--s-3) var(--s-4);
+  background: var(--c-cream-2);
+  border-left: 2px solid var(--c-sand);
+}
+.illustration .ill-col h5 {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: var(--c-ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.005em;
+}
+.illustration .ill-col p {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  margin-bottom: 0;
+}
+
+/* =================================================================
+   CAUTION
+   ================================================================= */
+.caution {
+  background: rgba(192, 74, 42, 0.06);
+  border-top: 1px solid rgba(192, 74, 42, 0.3);
+  border-bottom: 1px solid rgba(192, 74, 42, 0.3);
+  padding: var(--s-5);
+  margin: var(--s-5) 0;
+  display: flex;
+  gap: var(--s-4);
+  align-items: flex-start;
+  break-inside: avoid;
+}
+.caution .icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+}
+.caution p {
+  font-family: var(--f-body);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  margin-bottom: 0;
+  color: var(--c-ink);
+}
+.caution .label {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--c-accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* =================================================================
+   ROUTES (Page 2) — v2 SVG + v1 block layout
+   ================================================================= */
+.routes {
+  margin: 0 0 var(--s-5);
+  break-inside: avoid;
+}
+.routes-svg-wrap {
+  width: 100%;
+  margin-bottom: var(--s-6);
+}
+.routes-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.routes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-5);
+}
+.route-block {
+  padding: var(--s-5) var(--s-5);
+}
+.route-block--bad {
+  background: var(--c-cream-2);
+}
+.route-block--good {
+  background: var(--c-ink);
+  color: var(--c-cream);
+}
+.route-block .lbl {
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+  font-weight: 600;
+  margin-bottom: var(--s-3);
+}
+.route-block--good .lbl { color: var(--c-accent); }
+.route-block h4 {
+  font-family: var(--f-display);
+  font-size: 15pt;
+  font-weight: 500;
+  margin-bottom: var(--s-4);
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  line-height: 1.2;
+}
+.route-block--good h4 { color: var(--c-cream); }
+.route-block .step {
+  display: flex;
+  gap: var(--s-3);
+  align-items: baseline;
+  padding: var(--s-3) 0;
+  border-top: 1px solid var(--c-line-soft);
+  font-family: var(--f-body);
+  font-size: 10.5pt;
+  line-height: 1.5;
+}
+.route-block--good .step { border-top-color: rgba(247, 241, 234, 0.15); }
+.route-block .step:first-of-type { border-top: 1px solid var(--c-line); }
+.route-block--good .step:first-of-type { border-top-color: rgba(247, 241, 234, 0.25); }
+.route-block .step .num {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  color: var(--c-accent);
+  font-weight: 500;
+  width: 22px;
+  flex-shrink: 0;
+}
+
+/* =================================================================
+   VARIABLES GRID (Page 3)
+   ================================================================= */
+.var-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(210px, auto);
+  margin: var(--s-4) 0;
+  border-top: 1px solid var(--c-line);
+  border-left: 1px solid var(--c-line);
+}
+.var-cell {
+  padding: var(--s-4);
+  border-right: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  display: grid;
+  grid-template-rows: 44px 28px 1fr auto;
+  break-inside: avoid;
+  background: var(--c-cream);
+}
+.var-cell .num {
+  font-family: var(--f-display);
+  font-size: 28pt;
+  font-weight: 350;
+  color: var(--c-accent);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-feature-settings: "lnum", "tnum";
+  margin: 0;
+}
+.var-cell h4 {
+  font-family: var(--f-display);
+  font-size: 13pt;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  margin: 0;
+}
+.var-cell p {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  margin: var(--s-3) 0 0;
+  align-self: start;
+}
+.var-cell .ask {
+  margin-top: var(--s-3);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--c-line-soft);
+  align-self: end;
+}
+.var-cell .ask::before {
+  content: "Vraag";
+  display: block;
+  font-family: var(--f-body);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: 5px;
+}
+.var-cell .ask-text {
+  font-family: var(--f-display);
+  font-size: 9.5pt;
+  line-height: 1.45;
+  color: var(--c-ink);
+  font-style: italic;
+  margin: 0;
+}
+
+/* =================================================================
+   COMPARE TABLE (Page 4) — dark header restored
+   ================================================================= */
+.cmp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--s-4) 0;
+}
+.cmp-table thead th {
+  text-align: left;
+  padding: var(--s-3) var(--s-3);
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+.cmp-table thead th:first-child {
+  background: var(--c-accent);
+  width: 18%;
+}
+.cmp-table tbody td {
+  padding: var(--s-3) var(--s-3);
+  border-bottom: 1px solid var(--c-line-soft);
+  vertical-align: top;
+  line-height: 1.45;
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  color: var(--c-ink);
+}
+.cmp-table tbody td:first-child {
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 500;
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+}
+.cmp-table tbody td.muted {
+  color: var(--c-mute);
+  font-style: italic;
+}
+.cmp-table tbody tr:last-child td { border-bottom: none; }
+
+/* =================================================================
+   HOOKS DIAGRAM (Page 5)
+   ================================================================= */
+.hooks-section {
+  margin: var(--s-5) 0;
+  break-inside: avoid;
+}
+.hooks-svg-wrap {
+  width: 100%;
+  margin: 0 -8mm var(--s-4);
+  width: calc(100% + 16mm);
+}
+.hooks-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hooks-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-3) var(--s-6);
+  margin-top: var(--s-4);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--c-line);
+}
+.hook-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  column-gap: var(--s-3);
+  align-items: baseline;
+  padding: 4px 0;
+}
+.hook-item .hk-num {
+  font-family: var(--f-display);
+  font-size: 13pt;
+  font-weight: 400;
+  color: var(--c-accent);
+  line-height: 1;
+  font-feature-settings: "lnum", "tnum";
+  letter-spacing: -0.02em;
+}
+.hook-item .hk-body h4 {
+  font-family: var(--f-display);
+  font-size: 11pt;
+  font-weight: 500;
+  margin-bottom: 1px;
+  letter-spacing: -0.005em;
+  color: var(--c-ink);
+  line-height: 1.2;
+}
+.hook-item .hk-body p {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  line-height: 1.4;
+  color: var(--c-ink-soft);
+  margin-bottom: 0;
+  max-width: 38ch;
+}
+
+/* =================================================================
+   SCENARIO CARDS (Page 6)
+   ================================================================= */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--c-line);
+  margin: var(--s-4) 0;
+  border: 1px solid var(--c-line);
+}
+.scenario {
+  background: var(--c-cream);
+  padding: var(--s-3) var(--s-4);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  break-inside: avoid;
+}
+.scenario .letter {
+  font-family: var(--f-display);
+  font-size: 32pt;
+  color: var(--c-cream-3);
+  line-height: 0.85;
+  font-weight: 350;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  letter-spacing: -0.04em;
+  z-index: 0;
+}
+.scenario .scenario-content { position: relative; z-index: 1; }
+.scenario h4 {
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 500;
+  margin-bottom: var(--s-3);
+  margin-right: 44px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  min-height: 2.4em;
+}
+.scenario .row {
+  display: flex;
+  gap: var(--s-3);
+  font-family: var(--f-body);
+  font-size: 9pt;
+  padding: 6px 0;
+  border-top: 1px solid var(--c-line-soft);
+  line-height: 1.4;
+  align-items: flex-start;
+}
+.scenario .row:first-of-type { border-top: 1px solid var(--c-line); }
+.scenario .row .lbl {
+  font-family: var(--f-body);
+  font-weight: 600;
+  color: var(--c-accent);
+  width: 64px;
+  flex-shrink: 0;
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+.scenario .row .val {
+  color: var(--c-ink);
+  max-width: 36ch;
+  min-height: 2.4em;  /* always reserves 2 lines so cells align uniformly */
+}
+
+.scenario--dark {
+  background: var(--c-ink);
+  color: var(--c-cream);
+}
+.scenario--dark h4 { color: var(--c-cream); }
+.scenario--dark .letter { color: rgba(247, 241, 234, 0.08); }
+.scenario--dark p {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--c-sand);
+  margin-bottom: var(--s-3);
+}
+.scenario--dark p:last-child { margin-bottom: 0; }
+
+/* =================================================================
+   DECISION MATRIX (Page 7) — bars + dark header restored
+   ================================================================= */
+.matrix-wrap {
+  margin: var(--s-5) -8mm 0;  /* extends slightly outside page padding */
+}
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.matrix thead th {
+  padding: 10px 4px;
+  text-align: center;
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-family: var(--f-body);
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+.matrix thead th:first-child {
+  text-align: center;
+  background: var(--c-accent);
+  padding-left: 6px;
+  width: 16%;
+}
+.matrix tbody td {
+  padding: var(--s-3) 4px;
+  text-align: center;
+  border-bottom: 1px solid var(--c-line-soft);
+  vertical-align: middle;
+}
+.matrix tbody td:first-child {
+  text-align: center;
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding-left: 6px;
+  color: var(--c-ink);
+  width: 16%;
+}
+.matrix tbody tr:last-child td { border-bottom: none; }
+
+.bar {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: transparent;
+  /* Force print rendering */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.bar--3 { background-color: #c04a2a; }
+.bar--2 { background-color: #c8a882; }
+.bar--1 { background-color: #e8dccb; border: 1px solid #d8c9b6; }
+.bar--0 {
+  background-color: transparent;
+  border: 1px dashed #d8c9b6;
+}
+
+.legend {
+  display: flex;
+  gap: var(--s-6);
+  margin-top: var(--s-4);
+  font-family: var(--f-body);
+  font-size: 9pt;
+  color: var(--c-mute);
+  flex-wrap: wrap;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+.legend .item { display: flex; align-items: center; gap: 8px; }
+.legend .swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.legend .sw--3 { background-color: #c04a2a; }
+.legend .sw--2 { background-color: #c8a882; }
+.legend .sw--1 { background-color: #e8dccb; border: 1px solid #d8c9b6; }
+.legend .sw--0 {
+  background-color: transparent;
+  border: 1px dashed #d8c9b6;
+}
+
+/* =================================================================
+   PRE-MOVE CHECKLIST (Page 8)
+   ================================================================= */
+.checklist {
+  margin: var(--s-4) 0 var(--s-5);
+}
+.check-item {
+  display: grid;
+  grid-template-columns: 70px 1fr 28px;
+  gap: var(--s-4);
+  align-items: start;
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--c-line-soft);
+  break-inside: avoid;
+}
+.check-item:first-child { padding-top: 0; }
+.check-item:last-child { border-bottom: none; padding-bottom: var(--s-3); }
+.check-item .num {
+  font-family: var(--f-display);
+  font-size: 40pt;
+  line-height: 0.85;
+  color: var(--c-accent);
+  font-weight: 300;
+  font-feature-settings: "lnum", "tnum";
+  letter-spacing: -0.04em;
+}
+.check-item .body h4 {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  font-weight: 450;
+  margin-bottom: 6px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  max-width: 36ch;
+  color: var(--c-ink);
+}
+.check-item .body p {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  margin-bottom: 0;
+  max-width: 60ch;
+}
+.check-item .box {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #d8c9b6;
+  background: transparent;
+  margin-top: 10px;
+  justify-self: end;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* =================================================================
+   CTA BLOCK (Page 9)
+   ================================================================= */
+.cta-card {
+  background: var(--c-ink-deep);
+  color: var(--c-cream);
+  padding: var(--s-6) var(--s-6) var(--s-6);
+  margin: var(--s-4) 0;
+  position: relative;
+  overflow: hidden;
+  break-inside: avoid;
+}
+.cta-card .corner-mark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+  border-top: 1px solid var(--c-accent);
+  border-right: 1px solid var(--c-accent);
+}
+.cta-card .eyebrow {
+  color: var(--c-accent);
+  margin-bottom: var(--s-3);
+  display: block;
+}
+.cta-card h3 {
+  font-family: var(--f-display);
+  font-size: 22pt;
+  font-weight: 350;
+  line-height: 1.1;
+  color: var(--c-cream);
+  margin-bottom: var(--s-4);
+  max-width: 22ch;
+  letter-spacing: -0.02em;
+}
+.cta-card .cta-body {
+  font-family: var(--f-body);
+  color: var(--c-sand);
+  max-width: 56ch;
+  margin-bottom: var(--s-5);
+  font-size: 10pt;
+  line-height: 1.55;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-4);
+  background: var(--c-accent);
+  color: var(--c-cream);
+  padding: 12px 20px;
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 10pt;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+.cta-button:hover { background: var(--c-accent-dk); }
+.cta-button .arrow { width: 18px; height: 12px; }
+
+.cta-bullets {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--s-4);
+  margin-top: var(--s-5);
+  padding-top: var(--s-4);
+  padding-bottom: var(--s-2);
+  border-top: 1px solid rgba(199, 168, 130, 0.18);
+}
+.cta-bullets .item {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--c-cream);
+}
+.cta-bullets .item .lbl {
+  display: block;
+  font-family: var(--f-body);
+  color: var(--c-accent);
+  font-size: 8.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* =================================================================
+   SOURCES PAGE (Page 10)
+   ================================================================= */
+.disclaimer {
+  background: var(--c-cream-2);
+  padding: var(--s-5) var(--s-6);
+  margin-bottom: var(--s-6);
+  border-left: 3px solid var(--c-accent);
+}
+.disclaimer p {
+  font-family: var(--f-body);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  margin-bottom: 0;
+  color: var(--c-ink);
+}
+.disclaimer p strong {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.source-block { margin-bottom: var(--s-5); }
+.source-block h4 {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  font-weight: 600;
+  margin-bottom: var(--s-3);
+  padding-bottom: var(--s-2);
+  border-bottom: 1px solid var(--c-line);
+}
+.source-block ol {
+  list-style: none;
+  counter-reset: srcounter;
+}
+.source-block li {
+  counter-increment: srcounter;
+  padding: var(--s-3) 0;
+  padding-left: 40px;
+  position: relative;
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--c-ink-soft);
+  border-bottom: 1px dotted var(--c-line-soft);
+}
+.source-block li:last-child { border-bottom: none; }
+.source-block li::before {
+  content: counter(srcounter, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 12px;
+  font-family: var(--f-display);
+  color: var(--c-accent);
+  font-weight: 500;
+  font-size: 11pt;
+  font-feature-settings: "lnum", "tnum";
+}
+
+.colophon {
+  margin-top: var(--s-7);
+  padding-top: var(--s-5);
+  border-top: 2px solid var(--c-accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.colophon .left {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  color: var(--c-mute);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+.colophon .left .brand-line {
+  font-family: var(--f-display);
+  font-size: 16pt;
+  color: var(--c-ink);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.colophon .right {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  color: var(--c-mute);
+  letter-spacing: 0.04em;
+  text-align: right;
+  line-height: 1.6;
+}
+.colophon .right strong { color: var(--c-ink); font-weight: 500; }
+
+/* =================================================================
+   COVER PAGE (kept from v2)
+   ================================================================= */
+.cover {
+  justify-content: space-between;
+  background: var(--c-ink-deep);
+  color: var(--c-cream);
+  padding: 24mm 22mm;
+  height: 297mm;
+  min-height: 297mm;
+  max-height: 297mm;
+  overflow: hidden;
+}
+.cover-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+.cover .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+  position: relative;
+}
+.cover .label-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 8px 16px;
+  border: 1px solid var(--c-accent);
+  color: var(--c-accent);
+  font-family: var(--f-body);
+  font-size: 9pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.cover .label-pill::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--c-accent);
+}
+.cover .imprint {
+  text-align: right;
+  font-family: var(--f-body);
+  font-size: 9pt;
+  letter-spacing: 0.06em;
+  color: var(--c-sand);
+  line-height: 1.7;
+}
+.cover .imprint .brand {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  color: var(--c-cream);
+  letter-spacing: -0.005em;
+  display: block;
+  margin-bottom: 4px;
+  text-transform: none;
+  font-weight: 500;
+}
+.cover .title-block {
+  z-index: 2;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: var(--s-8);
+}
+.cover .accent-rule {
+  width: 64px;
+  height: 2px;
+  background: var(--c-accent);
+  margin-bottom: var(--s-6);
+}
+.cover h1 {
+  color: var(--c-cream);
+  font-size: 46pt;
+  line-height: 1.0;
+  font-weight: 350;
+  letter-spacing: -0.025em;
+  max-width: 14ch;
+  margin-bottom: var(--s-6);
+}
+.cover h1 .em {
+  color: var(--c-accent);
+  font-style: italic;
+  font-weight: 350;
+}
+.cover .subtitle {
+  font-family: var(--f-body);
+  font-size: 13pt;
+  line-height: 1.5;
+  color: var(--c-sand);
+  font-weight: 400;
+  max-width: 56ch;
+  margin-bottom: var(--s-6);
+  letter-spacing: -0.005em;
+}
+.cover .context {
+  font-family: var(--f-body);
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  font-size: 8.5pt;
+  color: var(--c-cream);
+  text-transform: uppercase;
+  padding-top: var(--s-4);
+  border-top: 1px solid rgba(199, 168, 130, 0.25);
+}
+.cover .bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
+  position: relative;
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-sand);
+}
+.cover .bottom-row .meta { line-height: 1.7; }
+.cover .bottom-row .meta strong { color: var(--c-cream); font-weight: 500; }
+
+/* =================================================================
+   PRINT
+   ================================================================= */
+@media print {
+  body { background: white; padding: 0; margin: 0; }
+  .page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+    break-after: page;
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    overflow: hidden;
+  }
+  .page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  @page { size: A4 portrait; margin: 0; }
+  .no-print { display: none !important; }
+
+  /* Force background colors and exact rendering */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Component break protection */
+  .var-cell, .scenario, .check-item, .quote-card, .statement,
+  .caution, .cta-card, .hooks-section, .routes,
+  .cmp-table tr, .matrix tr, .source-block li, .hook-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure inline-block dots/boxes render in print */
+  .bar, .legend .swatch, .check-item .box {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+.toc-helper {
+  max-width: var(--page-w);
+  margin: 0 auto 16px;
+  padding: 12px 22px;
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-family: var(--f-body);
+  font-size: 10pt;
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toc-helper .brand {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  font-weight: 500;
+}
+.toc-helper button {
+  background: var(--c-accent);
+  color: var(--c-cream);
+  border: none;
+  padding: 9px 16px;
+  font-family: var(--f-body);
+  font-size: 10pt;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+</style>
+
+<meta name="description" content="Waarom emigreren niet begint met het kiezen van een land. Eerst scenario's, dan landen.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://emigratieplan.nl/beslisgids/het-verkeerde-land/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Het verkeerde land kiezen &mdash; Beslisgids Emigratieplan.nl">
+<meta property="og:description" content="Waarom emigreren niet begint met het kiezen van een land. Eerst scenario's, dan landen.">
+<meta property="og:url" content="https://emigratieplan.nl/beslisgids/het-verkeerde-land/">
+<meta property="og:locale" content="nl_NL">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://emigratieplan.nl/beslisgids/het-verkeerde-land/#article",
+      "headline": "Het verkeerde land kiezen",
+      "description": "Waarom emigreren niet begint met het kiezen van een land. Eerst scenario's, dan landen.",
+      "inLanguage": "nl-NL",
+      "mainEntityOfPage": "https://emigratieplan.nl/beslisgids/het-verkeerde-land/",
+      "isPartOf": {
+        "@id": "https://emigratieplan.nl/#website"
+      },
+      "about": {
+        "@id": "https://emigratieplan.nl/#organization"
+      },
+      "author": {
+        "@id": "https://emigratieplan.nl/#kevin"
+      },
+      "publisher": {
+        "@id": "https://emigratieplan.nl/#organization"
+      },
+      "datePublished": "2026-05-11",
+      "dateModified": "2026-06-12"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://emigratieplan.nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Beslisgidsen",
+          "item": "https://emigratieplan.nl/beslisgids/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Het verkeerde land kiezen",
+          "item": "https://emigratieplan.nl/beslisgids/het-verkeerde-land/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://emigratieplan.nl/#kevin",
+      "name": "Kevin van Grondelle",
+      "jobTitle": "Oprichter",
+      "sameAs": [
+        "https://www.linkedin.com/in/kevin-van-grondelle"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://emigratieplan.nl/#organization",
+      "name": "Emigratieplan.nl",
+      "url": "https://emigratieplan.nl/",
+      "logo": "https://emigratieplan.nl/apple-touch-icon.png"
+    }
+  ]
+}
+</script>
+<style id="ep-web-mode">
+@media screen {
+  html, body { background: var(--c-cream, #f6f5f2) !important; height:auto !important; }
+  body { margin:0 !important; }
+  .page {
+    width:100% !important; max-width:880px !important;
+    height:auto !important; min-height:0 !important; max-height:none !important;
+    overflow:visible !important;
+    margin:0 auto 22px !important;
+    padding:clamp(28px,5vw,56px) clamp(20px,6vw,60px) clamp(32px,5vw,56px) !important;
+    box-shadow:0 2px 18px rgba(24,19,17,0.06) !important;
+    page-break-after:auto !important; break-after:auto !important;
+  }
+  .cover { min-height:62vh !important; justify-content:space-between !important; }
+  .toc-helper { display:none !important; }
+  .ep-bar { display:flex; justify-content:space-between; align-items:center; max-width:880px; margin:0 auto; padding:18px 16px; }
+  .ep-bar__brand { font-family:var(--f-display,Georgia,serif); font-weight:600; font-size:1.05rem; color:var(--c-ink,#2d2420); text-decoration:none; }
+  .ep-bar__brand span { color:var(--c-accent,#c04a2a); }
+  .ep-bar__back { font-size:.85rem; color:var(--c-mute,#6b6560); text-decoration:none; }
+  .ep-bar__back:hover { color:var(--c-accent,#c04a2a); }
+  .ep-cta { max-width:880px; margin:8px auto 26px; padding:28px clamp(20px,5vw,40px); background:var(--c-cream-2,#efe6da); border:1px solid var(--c-line,#d8c9b6); border-radius:6px; }
+  .ep-cta h2 { font-family:var(--f-display,Georgia,serif); color:var(--c-ink,#2d2420); margin:0 0 8px; font-size:1.4rem; line-height:1.2; }
+  .ep-cta p { color:var(--c-ink-soft,#4a3f38); margin:0 0 16px; font-size:1rem; line-height:1.55; }
+  .ep-cta__row { display:flex; flex-wrap:wrap; gap:10px; }
+  .ep-btn { display:inline-block; background:var(--c-accent,#c04a2a); color:#fff; text-decoration:none; font-weight:600; font-size:.9rem; padding:12px 20px; border-radius:4px; }
+  .ep-btn:hover { background:var(--c-accent-dk,#9a3a20); }
+  .ep-btn--ghost { background:transparent; color:var(--c-accent,#c04a2a); border:1px solid var(--c-accent,#c04a2a); }
+  .ep-btn--ghost:hover { background:#fff; }
+  .ep-foot { max-width:880px; margin:0 auto; padding:20px 16px 48px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:.8rem; color:var(--c-mute,#6b6560); border-top:1px solid var(--c-line,#d8c9b6); }
+  .ep-foot a { color:var(--c-mute,#6b6560); text-decoration:none; margin-right:12px; }
+  .ep-foot a:hover { color:var(--c-accent,#c04a2a); }
+  .page img, .page svg { max-width:100% !important; }
+  .page table { max-width:100%; }
+}
+@media screen and (max-width:760px){
+  .page table { display:block; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+}
+</style>
+</head>
+<body>
+<header class="ep-bar no-print"><a class="ep-bar__brand" href="/">Emigratieplan<span>.</span>nl</a><a class="ep-bar__back" href="/beslisgids/">&larr; Alle Beslisgidsen</a></header>
+
+<div class="toc-helper no-print">
+  <span class="brand">Emigratieplan · Beslisgids · Editie 01</span>
+  <button onclick="window.print()">Print / Opslaan als PDF</button>
+</div>
+
+<!-- =================================================================
+     PAGE 1 — COVER
+     ================================================================= -->
+<section class="page page--dark cover">
+
+  <svg class="cover-art" viewBox="0 0 210 297" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dotgrid" width="5" height="5" patternUnits="userSpaceOnUse">
+        <circle cx="0.6" cy="0.6" r="0.4" fill="#c8a882" opacity="0.10"/>
+      </pattern>
+    </defs>
+    <rect width="210" height="297" fill="url(#dotgrid)" />
+    <g stroke="#c8a882" stroke-width="0.25" fill="none" opacity="0.4">
+      <path d="M 105 297 Q 105 240 50 130 T 20 50" />
+      <path d="M 105 297 Q 105 240 75 130 T 60 40" />
+      <path d="M 105 297 Q 105 240 105 130 T 105 30" />
+      <path d="M 105 297 Q 105 240 135 130 T 150 40" />
+      <path d="M 105 297 Q 105 240 160 130 T 190 50" />
+    </g>
+    <g stroke="#c04a2a" stroke-width="0.6" fill="none" opacity="0.85">
+      <path d="M 105 297 Q 105 240 105 200" />
+    </g>
+    <g fill="#c8a882" opacity="0.5">
+      <circle cx="20" cy="50" r="1.0" />
+      <circle cx="60" cy="40" r="1.0" />
+      <circle cx="105" cy="30" r="1.4" />
+      <circle cx="150" cy="40" r="1.0" />
+      <circle cx="190" cy="50" r="1.0" />
+    </g>
+    <!-- Accent dot at end of central path — brand identity element -->
+    <circle cx="105" cy="200" r="2.4" fill="#c04a2a" />
+    <circle cx="105" cy="200" r="5" fill="none" stroke="#c04a2a" stroke-width="0.3" opacity="0.4" />
+    <circle cx="105" cy="297" r="3" fill="#c04a2a" opacity="0.5" />
+  </svg>
+
+  <div class="top-row">
+    <div class="label-pill">Beslisgids · 01</div>
+    <div class="imprint">
+      <span class="brand">Emigratieplan</span>
+      Door STS Strategy<br>
+      Editie 01 — 2026
+    </div>
+  </div>
+
+  <div class="title-block">
+    <div class="accent-rule"></div>
+    <h1>Het verkeerde<br>land kiezen</h1>
+    <p class="subtitle">Waarom emigreren niet begint met het kiezen van een land.</p>
+    <p class="context">Voor Nederlanders die emigratie serieus willen doorrekenen.</p>
+  </div>
+
+  <div class="bottom-row">
+    <div class="meta">
+      <strong>11 pagina's</strong><br>
+      Scenario-analyse
+    </div>
+    <div class="meta" style="text-align: right;">
+      <strong>emigratieplan.nl</strong><br>
+      Eerst scenario's. Dan landen.
+    </div>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 2 — De verkeerde eerste vraag
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>01 — Het uitgangspunt</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">01</span>
+      <div class="meta-text">
+        <span class="section-name">Het uitgangspunt</span>
+        <span class="section-stage">Idee · Inzicht · Actie</span>
+      </div>
+    </div>
+    <h2>De verkeerde eerste vraag</h2>
+    <p class="lead">De meeste emigratieplannen ontsporen niet door jouw landenkeuze, maar door onduidelijke uitgangspunten.</p>
+  </div>
+
+  <div class="statement">
+    <p class="big">De meesten vragen: <em>welk land is financieel het beste?</em><br>De betere vraag is: welk scenario klopt voor mijn situatie?</p>
+    <p class="small">Een land is geen strategie. Hetzelfde land kan slim zijn in scenario A en verkeerd in scenario C. Wie eerst landen vergelijkt en daarna zijn eigen situatie invoert, koopt advies op verkeerde uitgangspunten.</p>
+  </div>
+
+  <div class="routes">
+    <div class="routes-svg-wrap">
+      <svg viewBox="0 0 600 145" xmlns="http://www.w3.org/2000/svg">
+        <!-- Route 1: dead-end -->
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9" letter-spacing="2" fill="#6b6560" font-weight="600">
+          <text x="0" y="14">ROUTE 1</text>
+        </g>
+        <g stroke="#c8a882" stroke-width="1" fill="none">
+          <line x1="0" y1="35" x2="540" y2="35" stroke-dasharray="4 4" />
+        </g>
+        <g fill="#c8a882">
+          <circle cx="0" cy="35" r="4" />
+          <circle cx="135" cy="35" r="3" />
+          <circle cx="270" cy="35" r="3" />
+          <circle cx="405" cy="35" r="3" />
+        </g>
+        <g stroke="#6b6560" stroke-width="1.2" fill="none">
+          <line x1="535" y1="28" x2="545" y2="42" />
+          <line x1="535" y1="42" x2="545" y2="28" />
+        </g>
+        <g font-family="Fraunces, Georgia, serif" font-size="9" fill="#6b6560" font-style="italic">
+          <text x="556" y="38">terug</text>
+        </g>
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9.5" fill="#2d2420" font-weight="500">
+          <text x="0" y="58">Land kiezen</text>
+          <text x="135" y="58">Losse aannames</text>
+          <text x="270" y="58">Duur advies</text>
+          <text x="405" y="58">Twijfel, herstart</text>
+        </g>
+
+        <!-- Route 2: continuing -->
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9" letter-spacing="2" fill="#c04a2a" font-weight="600">
+          <text x="0" y="92">ROUTE 2</text>
+        </g>
+        <g stroke="#c04a2a" stroke-width="1.2" fill="none">
+          <line x1="0" y1="113" x2="540" y2="113" />
+        </g>
+        <g fill="#c04a2a">
+          <circle cx="0" cy="113" r="4" />
+          <circle cx="135" cy="113" r="3" />
+          <circle cx="270" cy="113" r="3" />
+          <circle cx="405" cy="113" r="3" />
+        </g>
+        <g fill="#c04a2a">
+          <polygon points="540,108 552,113 540,118" />
+        </g>
+        <g font-family="Fraunces, Georgia, serif" font-size="9" fill="#c04a2a" font-style="italic">
+          <text x="558" y="116">verder</text>
+        </g>
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9.5" fill="#2d2420" font-weight="500">
+          <text x="0" y="130">Situatie invoeren</text>
+          <text x="135" y="130">Scenario's vergelijken</text>
+          <text x="270" y="130">Shortlist landen</text>
+          <text x="405" y="130">Gericht advies</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="routes-grid">
+      <div class="route-block route-block--good">
+        <div class="lbl">Wat veel mensen doen</div>
+        <h4>Land kiezen, daarna pas rekenen</h4>
+        <div class="step"><span class="num">1</span><span>Land kiezen op gevoel of artikel</span></div>
+        <div class="step"><span class="num">2</span><span>Losse aannames stapelen</span></div>
+        <div class="step"><span class="num">3</span><span>Duur specialistisch advies inkopen</span></div>
+        <div class="step"><span class="num">4</span><span>Twijfel, herkalibratie, opnieuw beginnen</span></div>
+      </div>
+      <div class="route-block route-block--bad">
+        <div class="lbl">Het stappenplan</div>
+        <h4>Eerst scenario's, dan landen</h4>
+        <div class="step"><span class="num">1</span><span>Persoonlijke situatie invoeren</span></div>
+        <div class="step"><span class="num">2</span><span>Twee tot drie scenario's vergelijken</span></div>
+        <div class="step"><span class="num">3</span><span>Shortlist van landen die in jouw scenario kloppen</span></div>
+        <div class="step"><span class="num">4</span><span>Gericht specialistisch advies inkopen</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · Het verkeerde land kiezen</span>
+    <span>Pagina 02</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 3 — De zes variabelen
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>02 — Het raamwerk</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">02</span>
+      <div class="meta-text">
+        <span class="section-name">Het raamwerk</span>
+        <span class="section-stage">Wat je moet weten over jezelf</span>
+      </div>
+    </div>
+    <h2>Zes variabelen vóór landenkeuze</h2>
+    <p class="lead">Voordat een land relevant is, moet je op zes vlakken keuzes maken. Sla je er één over, dan vergelijk je appels met peren.</p>
+  </div>
+
+  <div class="var-grid">
+    <div class="var-cell">
+      <span class="num">01</span>
+      <h4>Inkomen</h4>
+      <p>Loondienst, ZZP, BV-salaris, dividend, vermogensopbrengst of een mix. Elk type wordt anders belast bij vertrek.</p>
+      <div class="ask"><p class="ask-text">Welk type inkomen verdien je in welk scenario?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">02</span>
+      <h4>Vermogen</h4>
+      <p>Effecten, crypto, BV-belang, vastgoed, edelmetalen. Box 2 en box 3 gedragen zich anders na emigratie.</p>
+      <div class="ask"><p class="ask-text">Wat is de samenstelling, niet alleen het totaal?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">03</span>
+      <h4>Woning</h4>
+      <p>Renteaftrek, eigenwoningreserve en Box 3-status verschuiven elk anders bij verkoop, verhuur of aanhouden.</p>
+      <div class="ask"><p class="ask-text">Verkopen, verhuren of aanhouden?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">04</span>
+      <h4>Werkvorm</h4>
+      <p>ZZP, DGA, dienstverband bij een Nederlandse of buitenlandse werkgever, of remote werk over de grens.</p>
+      <div class="ask"><p class="ask-text">Verandert de werkvorm bij emigratie?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">05</span>
+      <h4>Pensioen &amp; AOW</h4>
+      <p>AOW-opbouw, pensioenpotten, lijfrentes, zorgverzekering. Een gat van vijf jaar telt zwaar over twintig jaar.</p>
+      <div class="ask"><p class="ask-text">Welk gat ontstaat er over 20 jaar?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">06</span>
+      <h4>Verblijfsrealiteit</h4>
+      <p>Waar slaap je, waar staat je gezin, waar betaal je huur. Dat bepaalt fiscale woonplaats, niet je inschrijving.</p>
+      <div class="ask"><p class="ask-text">Kun je je nieuwe woonplaats bewijzen?</p></div>
+    </div>
+  </div>
+
+  <div class="caution">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2 L22 20 L2 20 Z" stroke="#c04a2a" stroke-width="1.8" stroke-linejoin="round"/>
+      <line x1="12" y1="9" x2="12" y2="14" stroke="#c04a2a" stroke-width="1.8"/>
+      <circle cx="12" cy="17" r="1" fill="#c04a2a"/>
+    </svg>
+    <p><span class="label">Wat je nu anders doet</span>Uitschrijven is administratie. Fiscaal vertrekken is bewijsvoering. Wie alleen de BRP-uitschrijving regelt en de feiten niet meeverhuist, blijft fiscaal Nederlands inwoner.</p>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · Het verkeerde land kiezen</span>
+    <span>Pagina 03</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 4 — Waarom 'laag belastingland' te simpel is
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>03 — De nuance</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">03</span>
+      <div class="meta-text">
+        <span class="section-name">De nuance</span>
+        <span class="section-stage">Waarom tarieven misleiden</span>
+      </div>
+    </div>
+    <h2>"Laag belastingland" is te simpel</h2>
+    <p class="lead">Een tarief op de eerste pagina van een vergelijkingssite zegt niets over jouw eindresultaat. Het zegt iets over een gemiddelde, een aanname en een momentopname.</p>
+  </div>
+
+  <div class="quote-card">
+    <span class="mark">"</span>
+    <p>Een laag tarief zegt weinig als je niet weet welk inkomen, welk vermogen en welke heffingsrechten in het spel zijn.</p>
+  </div>
+
+  <table class="cmp-table">
+    <thead>
+      <tr>
+        <th>Land</th>
+        <th>Populair beeld</th>
+        <th>Vergeten nuance</th>
+        <th>Wat je eerst test</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Portugal</td>
+        <td class="muted">"NHR maakt alles belastingvrij"</td>
+        <td>Regimes verschuiven en gelden niet automatisch voor elk inkomenstype.</td>
+        <td>Welk regime is feitelijk beschikbaar in jouw scenario, en hoe lang?</td>
+      </tr>
+      <tr>
+        <td>Spanje</td>
+        <td class="muted">"Beckham Law lost alles op"</td>
+        <td>Regionale verschillen, vermogensbelasting en exit-taxes raken het totaalplaatje.</td>
+        <td>Hoe gedraagt jouw vermogen zich in de regio waar je wilt wonen?</td>
+      </tr>
+      <tr>
+        <td>Dubai</td>
+        <td class="muted">"Geen inkomstenbelasting, klaar"</td>
+        <td>Verblijfsrealiteit, substance en Nederlandse heffingsrechten lopen door op specifieke posten.</td>
+        <td>Kun je daadwerkelijk en aantoonbaar wonen, niet alleen ingeschreven staan?</td>
+      </tr>
+      <tr>
+        <td>Griekenland</td>
+        <td class="muted">"Forfait van een paar duizend euro"</td>
+        <td>Aparte regimes voor pensionado's, hoogvermogenden en nieuwe werkende inwoners — niet één regime voor iedereen.</td>
+        <td>Past het regime bij jouw inkomensmix en vermogensstructuur?</td>
+      </tr>
+      <tr>
+        <td>Italië</td>
+        <td class="muted">"Flat tax voor nieuwe inwoners"</td>
+        <td>Geldt alleen voor nieuwe inwoners die ervoor kiezen, en interacteert met Nederlandse box 2 en restheffing.</td>
+        <td>Is jouw werkvorm verenigbaar met het regime dat je voor ogen hebt?</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="caption" style="margin-top: var(--s-5); font-style: italic;">Deze tabel illustreert het type nuance dat je per land moet uitzoeken. Geen landenadvies. Welk regime werkelijk geldt voor jou, hoort thuis in scenarioberekening en specialistisch advies.</p>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · Het verkeerde land kiezen</span>
+    <span>Pagina 04</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 5 — De Nederlandse fiscale navelstreng
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>04 — De navelstreng</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">04</span>
+      <div class="meta-text">
+        <span class="section-name">De navelstreng</span>
+        <span class="section-stage">Wat blijft hangen na vertrek</span>
+      </div>
+    </div>
+    <h2>Wat blijft hangen na vertrek</h2>
+    <p class="lead">Nederland laat je niet zomaar gaan. Wie woning, BV, pensioen of erfenis heeft lopen, houdt haakjes open. Niet allemaal, niet altijd, maar bijna nooit nul.</p>
+  </div>
+
+  <div class="hooks-section">
+    <div class="hooks-svg-wrap">
+      <svg viewBox="-50 0 700 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <!-- Central node: jouw scenario -->
+        <circle cx="300" cy="140" r="52" fill="#c04a2a" stroke="#c04a2a" stroke-width="1"/>
+        <text x="300" y="135" text-anchor="middle" dominant-baseline="middle" fill="#f7f1ea" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" font-style="italic" letter-spacing="-0.3">jouw</text>
+        <text x="300" y="156" text-anchor="middle" dominant-baseline="middle" fill="#f7f1ea" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" font-style="italic" letter-spacing="-0.3">scenario</text>
+
+        <!-- 7 radial hooks: lines + endpoint dots + labels -->
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="10" fill="#2d2420" font-weight="500">
+
+          <!-- Top center: Conserverende aanslag -->
+          <line x1="300" y1="88" x2="300" y2="40" stroke="#2d2420" stroke-width="0.8"/>
+          <circle cx="300" cy="34" r="5" fill="#2d2420"/>
+          <text x="300" y="22" text-anchor="middle" font-weight="600">Conserverende aanslag</text>
+
+          <!-- Top right: BV / box 2 -->
+          <line x1="338" y1="106" x2="450" y2="50" stroke="#2d2420" stroke-width="0.8"/>
+          <circle cx="455" cy="46" r="5" fill="#2d2420"/>
+          <text x="468" y="42" font-weight="600">BV / box 2</text>
+          <text x="468" y="56" fill="#6b6560" font-size="9">aanmerkelijk belang</text>
+
+          <!-- Right: Dividendbelasting -->
+          <line x1="352" y1="140" x2="500" y2="140" stroke="#2d2420" stroke-width="0.8"/>
+          <circle cx="505" cy="140" r="5" fill="#2d2420"/>
+          <text x="518" y="136" font-weight="600">Dividendbelasting</text>
+
+          <!-- Bottom right: Pensioen & lijfrente -->
+          <line x1="338" y1="174" x2="450" y2="230" stroke="#2d2420" stroke-width="0.8"/>
+          <circle cx="455" cy="234" r="5" fill="#2d2420"/>
+          <text x="468" y="231" font-weight="600">Pensioen &amp; lijfrente</text>
+
+          <!-- Bottom: Schenk- & erfbelasting -->
+          <line x1="300" y1="192" x2="300" y2="244" stroke="#2d2420" stroke-width="0.8"/>
+          <circle cx="300" cy="250" r="5" fill="#2d2420"/>
+          <text x="300" y="270" text-anchor="middle" font-weight="600">Schenk- &amp; erfbelasting</text>
+
+          <!-- Bottom left: AOW & zorg -->
+          <line x1="262" y1="174" x2="150" y2="230" stroke="#2d2420" stroke-width="0.8"/>
+          <circle cx="145" cy="234" r="5" fill="#2d2420"/>
+          <text x="132" y="231" text-anchor="end" font-weight="600">AOW &amp; zorg</text>
+
+          <!-- Left: Nederlandse woning (highlighted) -->
+          <line x1="248" y1="140" x2="100" y2="140" stroke="#c04a2a" stroke-width="1.2"/>
+          <circle cx="95" cy="140" r="5" fill="#c04a2a"/>
+          <text x="82" y="136" text-anchor="end" font-weight="600" fill="#c04a2a">Nederlandse woning</text>
+          <text x="82" y="150" text-anchor="end" fill="#6b6560" font-size="9">&amp; hypotheek</text>
+        </g>
+      </svg>
+    </div>
+
+    <p class="caption" style="text-align: center; margin: 0 auto var(--s-5); font-style: italic;">Niet elk haakje speelt in elke situatie. Precies daarom moet je scenario's vergelijken in plaats van algemene landenscores te lezen.</p>
+
+    <div class="hooks-list">
+      <div class="hook-item">
+        <span class="hk-num">01</span>
+        <div class="hk-body">
+          <h4>Conserverende aanslag</h4>
+          <p>Latente claim op aanmerkelijk belang die meegaat over de grens.</p>
+        </div>
+      </div>
+      <div class="hook-item">
+        <span class="hk-num">02</span>
+        <div class="hk-body">
+          <h4>BV en box 2</h4>
+          <p>Substance en bestuur bepalen waar de BV belast wordt. Box 2 raakt jou persoonlijk via dividend en aanmerkelijk belang.</p>
+        </div>
+      </div>
+      <div class="hook-item">
+        <span class="hk-num">03</span>
+        <div class="hk-body">
+          <h4>Dividendbelasting</h4>
+          <p>Verdragstarieven en heffingsrechten verschillen per land en per inkomenstype.</p>
+        </div>
+      </div>
+      <div class="hook-item">
+        <span class="hk-num">04</span>
+        <div class="hk-body">
+          <h4>Nederlandse woning</h4>
+          <p>Verkopen, verhuren of aanhouden raken alle drie de fiscale behandeling.</p>
+        </div>
+      </div>
+      <div class="hook-item">
+        <span class="hk-num">05</span>
+        <div class="hk-body">
+          <h4>Pensioen en lijfrente</h4>
+          <p>Afkoop, doorlopen of overdracht hebben elk eigen fiscale gevolgen.</p>
+        </div>
+      </div>
+      <div class="hook-item">
+        <span class="hk-num">06</span>
+        <div class="hk-body">
+          <h4>AOW en zorg</h4>
+          <p>Opbouw stopt bij vertrek, internationale dekking is een aparte calculatie.</p>
+        </div>
+      </div>
+      <div class="hook-item">
+        <span class="hk-num">07</span>
+        <div class="hk-body">
+          <h4>Schenk- en erfbelasting</h4>
+          <p>Voor Nederlanders blijft de woonplaatsfictie tien jaar lang doorlopen na vertrek.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · Het verkeerde land kiezen</span>
+    <span>Pagina 05</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 6 — Scenario's
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>05 — De methode</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">05</span>
+      <div class="meta-text">
+        <span class="section-name">De methode</span>
+        <span class="section-stage">Scenario's, niet landen</span>
+      </div>
+    </div>
+    <h2>Vijf scenario's dekken de meeste gevallen</h2>
+    <p class="lead">Niet "Welk land?" maar "Wat doe ik met inkomen, woning, vermogen en werkvorm?". Bijna iedereen herkent zichzelf in twee scenario's.</p>
+  </div>
+
+  <div class="scenario-grid">
+
+    <div class="scenario">
+      <span class="letter">A</span>
+      <div class="scenario-content">
+        <h4>Woning verkopen<br>+ remote inkomen</h4>
+        <div class="row"><span class="lbl">Voor wie</span><span class="val">Loondienst of ZZP, geen vastgoedbinding aan NL.</span></div>
+        <div class="row"><span class="lbl">Testen</span><span class="val">Belastingverdrag, fiscale woonplaats, restheffing op inkomen.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Werkgever weigert contract vanuit het buitenland.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">B</span>
+      <div class="scenario-content">
+        <h4>Woning verhuren<br>+ vermogen in Nederland</h4>
+        <div class="row"><span class="lbl">Voor wie</span><span class="val">Wie aanhoudt voor terugkeer of waardestijging.</span></div>
+        <div class="row"><span class="lbl">Testen</span><span class="val">Box 3-behandeling, verhuurfiscaliteit, hypotheekstatus.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Dubbele heffing en verlies eigenwoningvoordelen.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">C</span>
+      <div class="scenario-content">
+        <h4>BV behouden<br>+ salaris en dividend</h4>
+        <div class="row"><span class="lbl">Voor wie</span><span class="val">DGA's met substantieel BV-vermogen.</span></div>
+        <div class="row"><span class="lbl">Testen</span><span class="val">Conserverende aanslag, gebruikelijk loon, dividendheffing.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Substance-eisen en dubbele belastingplicht.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">D</span>
+      <div class="scenario-content">
+        <h4>Leven van vermogen<br>+ dividend</h4>
+        <div class="row"><span class="lbl">Voor wie</span><span class="val">Geen actief inkomen meer, leven uit vermogen.</span></div>
+        <div class="row"><span class="lbl">Testen</span><span class="val">Behandeling vermogensgroei en dividend per land.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Onverwachte vermogensbelasting in bestemmingsland.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">E</span>
+      <div class="scenario-content">
+        <h4>Semi-emigratie<br>zonder vast centrum</h4>
+        <div class="row"><span class="lbl">Voor wie</span><span class="val">Geen duidelijk centrum van leven.</span></div>
+        <div class="row"><span class="lbl">Testen</span><span class="val">183-dagenregels, fiscale woonplaats, bewijslast.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Nergens fiscaal inwoner op papier, overal belast.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario scenario--dark">
+      <div class="scenario-content">
+        <h4>Hoe verder?</h4>
+        <p>Reken twee scenario's door. Kies welk scenario beter past bij jouw doelen. Vergelijk pas dáárna landen.</p>
+        <p style="color: var(--c-accent); font-family: var(--f-display); font-size: 13pt; font-style: italic; margin-top: var(--s-4);">Niet minder advies. Beter voorbereid advies.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · Het verkeerde land kiezen</span>
+    <span>Pagina 06</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 7 — Beslismatrix
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>06 — De matrix</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">06</span>
+      <div class="meta-text">
+        <span class="section-name">De matrix</span>
+        <span class="section-stage">Hoe je landen wél vergelijkt</span>
+      </div>
+    </div>
+    <h2>Beslismatrix per scenario</h2>
+    <p class="lead">Pas als je scenario staat, vergelijk je landen langs assen die er voor jou toe doen. Niet langs het tarief op de homepage.</p>
+  </div>
+
+  <div class="matrix-wrap">
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th>Land</th>
+        <th>Actief<br>inkomen</th>
+        <th>Vermogen</th>
+        <th>NL rest-<br>heffing</th>
+        <th>Woning-<br>effect</th>
+        <th>AOW<br>&amp; zorg</th>
+        <th>Verblijfs-<br>realiteit</th>
+        <th>Uitvoer-<br>baarheid</th>
+        <th>Totaal-<br>beeld</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Portugal</td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+      </tr>
+      <tr>
+        <td>Spanje</td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+      </tr>
+      <tr>
+        <td>Dubai</td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+      </tr>
+      <tr>
+        <td>Griekenland</td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+      </tr>
+      <tr>
+        <td>Italië</td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+        <td><span class="bar bar--0"></span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="swatch sw--3"></span>Sterk in jouw scenario</span>
+    <span class="item"><span class="swatch sw--2"></span>Scenario-afhankelijk</span>
+    <span class="item"><span class="swatch sw--1"></span>Aandacht nodig</span>
+    <span class="item"><span class="swatch sw--0"></span>Niet van toepassing</span>
+  </div>
+
+  <p class="caption" style="margin-top: var(--s-5); font-style: italic;">Deze matrix is bewust leeg. Voor scenario A scoren Portugal en Spanje vaak sterker dan Dubai. Voor scenario C is Dubai vaak alleen sterk als de BV-structuur meeverhuist. Dezelfde rij Portugal kan goed scoren in scenario A en slecht in scenario C.</p>
+
+  <div class="illustration">
+    <div class="ill-head">
+      <div>
+        <span class="ill-eyebrow">Zelfde land · andere uitkomst</span><br>
+        <span class="ill-title">Twee profielen, beiden naar Portugal</span>
+      </div>
+      <span class="ill-stamp">Illustratief — 2026</span>
+    </div>
+    <div class="ill-grid">
+      <div class="ill-col">
+        <h5>DGA met BV en €1M box 2-belang</h5>
+        <p>Conserverende aanslag op aanmerkelijk belang blijft staan. Nederlandse dividendbelasting kan relevant blijven bij uitkering. Voor Nederlanders loopt de schenk- en erfbelastingfictie 10 jaar door.</p>
+      </div>
+      <div class="ill-col">
+        <h5>ZZP met €80k arbeidsinkomen</h5>
+        <p>Geen conserverende aanslag, geen box 2-staart. Het Portugese IFICI-regime kan gunstig zijn als de activiteit binnen de omschreven categorieën valt. Anders gelden de reguliere Portugese tarieven.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · Het verkeerde land kiezen</span>
+    <span>Pagina 07</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 8 — Pre-move check
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>07 — Pre-move check</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">07</span>
+      <div class="meta-text">
+        <span class="section-name">Pre-move check</span>
+        <span class="section-stage">Vóór je een land kiest</span>
+      </div>
+    </div>
+    <h2>Vijf vragen vóór landenkeuze</h2>
+    <p class="lead">Doorloop deze vragen voor elk scenario dat je serieus overweegt. Heb je geen helder antwoord op één van de vijf, dan kies je nog geen land.</p>
+  </div>
+
+  <div class="checklist">
+    <div class="check-item">
+      <span class="num">01</span>
+      <div class="body">
+        <h4>Waar wordt mijn inkomen belast na vertrek?</h4>
+        <p>Per inkomenstype kan het antwoord verschillen. Loondienst, ZZP, BV-salaris, dividend en vermogensopbrengst volgen elk hun eigen regels in het belastingverdrag.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">02</span>
+      <div class="body">
+        <h4>Welke Nederlandse haakjes blijven bestaan?</h4>
+        <p>BV, pensioen, lijfrente, woning, schenk- en erfbelasting. Kruis aan welke jou raken, niet welke "in het algemeen" relevant zijn.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">03</span>
+      <div class="body">
+        <h4>Wat gebeurt er met mijn woning, hypotheek en overwaarde?</h4>
+        <p>Verkopen, verhuren of aanhouden zijn drie verschillende fiscale routes. Reken niet alleen het rendement, ook de uitstap- en herinstapkosten.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">04</span>
+      <div class="body">
+        <h4>Wat kost emigratie mij later via AOW, pensioen en zorg?</h4>
+        <p>Elk jaar zonder AOW-opbouw kost in beginsel 2 procent. Over twintig of dertig jaar weegt dat zwaar. Internationale zorgdekking is een aparte calculatie.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">05</span>
+      <div class="body">
+        <h4>Kan ik mijn woonplaats en realiteit bewijzen?</h4>
+        <p>Inschrijven is administratie. Fiscale woonplaats is bewijs: huurcontract, school, dokter, sociale leven, dagen aanwezig. Wie het niet kan bewijzen, blijft Nederlands inwoner.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · Het verkeerde land kiezen</span>
+    <span>Pagina 08</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 9 — CTA
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>08 — Volgende stap</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">08</span>
+      <div class="meta-text">
+        <span class="section-name">Volgende stap</span>
+        <span class="section-stage">Wat je nu doet</span>
+      </div>
+    </div>
+    <h2>Ga niet blanco naar een fiscalist</h2>
+    <p class="lead">Ga met twee of drie onderbouwde scenario's. Dat scheelt je tijd, geld en de kans op advies dat antwoord geeft op de verkeerde vraag.</p>
+  </div>
+
+  <div class="cta-card">
+    <span class="corner-mark"></span>
+    <span class="eyebrow">Decision tool</span>
+    <h3>Vergelijk mijn emigratiescenario's</h3>
+    <p class="cta-body">Emigratieplan helpt je om eerst je persoonlijke scenario's naast elkaar te zetten. Op basis van jouw inkomen, woning, vermogen, pensioen en landkeuze. Zo kun je gerichter beslissen en beter voorbereid specialistisch advies inwinnen.</p>
+
+    <a href="https://emigratieplan.nl" class="cta-button">
+      Vergelijk mijn scenario's
+      <svg class="arrow" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 6 H16 M11 1 L16 6 L11 11" stroke="#f7f1ea" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+      </svg>
+    </a>
+
+    <div class="cta-bullets">
+      <div class="item">
+        <span class="lbl">Output</span>
+        Belastingdruk, AOW-impact, restheffing en totaalbeeld per land.
+      </div>
+      <div class="item">
+        <span class="lbl">Voorbereid</span>
+        Eerst zelf scenario's doorgronden, dan pas dure adviestijd inkopen.
+      </div>
+      <div class="item">
+        <span class="lbl">Volgende stap</span>
+        Scenario-export voor je fiscalist of belastingadviseur.
+      </div>
+    </div>
+  </div>
+
+  <div class="colophon">
+    <div class="left">
+      <span class="brand-line">Emigratieplan.nl</span>
+      Door STS Strategy · Amsterdam
+    </div>
+    <div class="right">
+      emigratieplan.nl<br>
+      <strong>kevin@emigratieplan.nl</strong>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · Het verkeerde land kiezen</span>
+    <span>Pagina 09</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 10 — Bronnen & claimnotities (deel 1)
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>09 — Bronnen &amp; verantwoording</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">09</span>
+      <div class="meta-text">
+        <span class="section-name">Bronnen &amp; verantwoording</span>
+        <span class="section-stage">Status en claimnotities</span>
+      </div>
+    </div>
+    <h2>Bronnen en claimnotities</h2>
+  </div>
+
+  <div class="disclaimer">
+    <p><strong>Status</strong>Deze beslisgids is informatief en vormt geen individueel fiscaal, juridisch of financieel advies. De inhoud is bedoeld om Nederlanders die emigratie overwegen te helpen scherper denken voordat ze specialistisch advies inkopen. Toepassing van een regime, behandeling van een vermogenscomponent en interactie tussen Nederlandse en buitenlandse heffingsrechten zijn altijd situatie-afhankelijk.</p>
+  </div>
+
+  <div class="source-block">
+    <h4>Wet- en regelgeving</h4>
+    <ol>
+      <li>Wet IB 2001 — bepalingen over fiscaal inwonerschap, aanmerkelijk belang (box 2) en exitheffing bij emigratie.</li>
+      <li>Wet op de loonbelasting 1964 — heffingsrechten bij grensoverschrijdende dienstbetrekking en salary split.</li>
+      <li>Algemene Ouderdomswet (AOW) — opbouw bij wonen of werken in het buitenland; jaarlijkse korting van 2 procent buiten de verzekering.</li>
+      <li>Successiewet 1956 — woonplaatsfictie van tien jaar voor Nederlanders bij schenk- en erfbelasting na emigratie.</li>
+      <li>OECD Model Tax Convention art. 4 en commentary — tie-breaker regels bij dubbele fiscale woonplaats. Belastingverdragen NL met Portugal, Spanje, VAE, Griekenland en Italië.</li>
+    </ol>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · Het verkeerde land kiezen</span>
+    <span>Pagina 10</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 11 — Bronnen & claimnotities (deel 2)
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>09 — Bronnen &amp; verantwoording</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head" style="margin-top: 14mm; margin-bottom: var(--s-5);">
+    <div class="meta">
+      <span class="num">09</span>
+      <div class="meta-text">
+        <span class="section-name">Bronnen &amp; verantwoording</span>
+        <span class="section-stage">Vervolg</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="source-block">
+    <h4>Instanties en publicaties</h4>
+    <ol>
+      <li>Belastingdienst — emigratie, buitenlands belastingplichtigen, conserverende aanslag en dividendbelasting (belastingdienst.nl).</li>
+      <li>SVB — gevolgen voor AOW- en Anw-opbouw bij wonen in het buitenland; voorwaarden voor vrijwillige verzekering (svb.nl).</li>
+      <li>CAK — verdragsbijdrage zorgverzekering voor pensionado's in verdragslanden (hetcak.nl).</li>
+      <li>CBS — emigratiestatistieken; in Nederland geboren emigranten en voornaamste bestemmingslanden (cbs.nl).</li>
+    </ol>
+  </div>
+
+  <div class="source-block">
+    <h4>Claimnotities</h4>
+    <ol>
+      <li>Concrete tarieven, regimes en drempels veranderen. Datum van laatste verificatie staat per editie in de colofon.</li>
+      <li>Voorbeelden van landen zijn illustratief en geven geen oordeel over geschiktheid voor een individuele situatie.</li>
+      <li>Scenario A tot en met E zijn modelmatige vereenvoudigingen. Werkelijke scenario's combineren of overlappen elementen.</li>
+      <li>Het mini-voorbeeld op pagina vier is illustratief en geen advies; de uitkomst hangt af van het feitencomplex en de actuele regimevoorwaarden.</li>
+      <li>De beslismatrix op pagina zeven is bewust leeg. Hij krijgt pas waarde als hij wordt ingevuld voor een concreet scenario via emigratieplan.nl.</li>
+    </ol>
+  </div>
+
+  <div class="colophon">
+    <div class="left">
+      <span class="brand-line">Emigratieplan.nl</span>
+      Door STS Strategy · Amsterdam · 2026<br>
+      Beslisgids · Editie 01
+    </div>
+    <div class="right">
+      emigratieplan.nl<br>
+      <strong>kevin@emigratieplan.nl</strong>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · Het verkeerde land kiezen</span>
+    <span>Pagina 11</span>
+  </div>
+</section>
+
+<section class="ep-cta no-print"><h2>Reken jouw situatie door</h2><p>Deze gids laat zien hoe de afweging werkt. De rekentool doet het met jouw cijfers, over twintig jaar, voor Nederland en negen emigratiebestemmingen.</p><div class="ep-cta__row"><a class="ep-btn" href="/">Zet me op de lijst &middot; &euro;50 early-bird</a><a class="ep-btn ep-btn--ghost" href="/downloads/het-verkeerde-land/">Download deze gids als PDF</a></div></section><footer class="ep-foot no-print"><span>&copy; 2026 Emigratieplan.nl, onderdeel van STS Strategy</span><span><a href="/">Home</a><a href="/over/">Over</a><a href="/beslisgids/">Beslisgidsen</a><a href="/legal/privacy/">Privacy</a></span></footer>
+</body>
+</html>

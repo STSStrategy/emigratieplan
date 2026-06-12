@@ -1,0 +1,2708 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>De fiscale navelstreng &mdash; Beslisgids | Emigratieplan.nl</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,350;9..144,400;9..144,500;9..144,600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   DESIGN TOKENS
+   ================================================================= */
+:root {
+  /* Brand colors */
+  --c-ink:        #2d2420;
+  --c-ink-deep:   #181311;
+  --c-ink-soft:   #4a3f38;
+  --c-accent:     #c04a2a;
+  --c-accent-dk:  #9a3a20;
+  --c-sand:       #c8a882;
+  --c-cream:      #f7f1ea;
+  --c-cream-2:    #efe6da;
+  --c-cream-3:    #e8dccb;
+  --c-mute:       #6b6560;
+  --c-line:       #d8c9b6;
+  --c-line-soft:  #e8dccb;
+
+  /* Typography
+     STS hierarchy: serif for display only, sans for everything else */
+  --f-display: "Fraunces", Charter, Georgia, serif;
+  --f-body:    "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Spacing */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 11px;
+  --s-4: 14px;
+  --s-5: 20px;
+  --s-6: 28px;
+  --s-7: 40px;
+  --s-8: 56px;
+
+  /* Page */
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --page-pad-x: 22mm;
+  --page-pad-top: 18mm;
+  --page-pad-bot: 26mm;
+}
+
+/* =================================================================
+   RESET
+   ================================================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  background: #d8ccba;
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--c-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga";
+  padding: 24px 0;
+}
+
+/* =================================================================
+   PAGE FRAME
+   ================================================================= */
+.page {
+  width: var(--page-w);
+  height: var(--page-h);
+  min-height: var(--page-h);
+  max-height: var(--page-h);
+  background: var(--c-cream);
+  margin: 0 auto 24px;
+  padding: var(--page-pad-top) var(--page-pad-x) var(--page-pad-bot);
+  position: relative;
+  box-shadow: 0 4px 28px rgba(24, 19, 17, 0.08);
+  display: flex;
+  flex-direction: column;
+  page-break-after: always;
+  break-after: page;
+  overflow: hidden;
+}
+.page--dark {
+  background: var(--c-ink-deep);
+  color: var(--c-cream);
+}
+
+/* =================================================================
+   RUNNERS
+   ================================================================= */
+.runner {
+  position: absolute;
+  left: var(--page-pad-x);
+  right: var(--page-pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+  font-weight: 500;
+}
+.runner--top { top: 9mm; }
+.runner--bot { bottom: 9mm; }
+.runner .brand-mark {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: 11pt;
+  letter-spacing: -0.005em;
+  text-transform: none;
+  color: var(--c-ink);
+}
+.runner .brand-mark::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--c-accent);
+  margin-right: 8px;
+  vertical-align: 2px;
+}
+.page--dark .runner { color: var(--c-sand); }
+.page--dark .runner .brand-mark { color: var(--c-cream); }
+
+/* =================================================================
+   TYPOGRAPHY
+   Display: Fraunces (serif). Body & UI: Inter Tight (sans).
+   ================================================================= */
+h1, h2, h3 {
+  font-family: var(--f-display);
+  color: var(--c-ink);
+  letter-spacing: -0.018em;
+  font-feature-settings: "kern", "liga", "ss01";
+}
+
+h1 {
+  font-size: 42pt;
+  font-weight: 350;
+  line-height: 1.0;
+}
+h2 {
+  font-size: 24pt;
+  font-weight: 400;
+  line-height: 1.1;
+}
+h3 {
+  font-size: 17pt;
+  font-weight: 450;
+  line-height: 1.2;
+}
+h4 {
+  font-family: var(--f-body);
+  font-size: 11pt;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--c-ink);
+  letter-spacing: -0.005em;
+}
+
+p { margin-bottom: var(--s-4); }
+
+.lead {
+  font-family: var(--f-body);
+  font-size: 11pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  font-weight: 400;
+}
+
+/* Labels, eyebrows, micro-text — all Inter Tight, all uppercase */
+.eyebrow {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.caption {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  letter-spacing: 0.02em;
+  color: var(--c-mute);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+strong { font-weight: 600; color: var(--c-ink); }
+em { font-style: italic; }
+
+/* =================================================================
+   PAGE HEAD — fixed alignment
+   The "01 · HET UITGANGSPUNT · IDEE·INZICHT·ACTIE" pattern.
+   Using grid with explicit baseline alignment.
+   ================================================================= */
+.page-head {
+  margin-top: 6mm;
+  margin-bottom: var(--s-5);
+}
+.page-head .meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--s-4);
+  align-items: end;
+  margin-bottom: var(--s-5);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--c-line);
+}
+.page-head .num {
+  font-family: var(--f-display);
+  font-size: 32pt;
+  font-weight: 350;
+  color: var(--c-accent);
+  line-height: 1;
+  font-feature-settings: "lnum", "tnum";
+  letter-spacing: -0.02em;
+  /* Pull the number's optical baseline down so it visually rests
+     on the same line as the bottom of the section-stage label */
+  margin-bottom: -6px;
+  display: block;
+}
+.page-head .meta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.page-head .section-name {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  line-height: 1;
+}
+.page-head .section-stage {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  line-height: 1;
+}
+.page-head h2 {
+  margin-bottom: var(--s-3);
+  max-width: 38ch;
+}
+.page-head .lead { }
+
+/* =================================================================
+   STATEMENT BLOCK
+   ================================================================= */
+.statement {
+  margin: var(--s-3) 0 var(--s-4);
+  padding: var(--s-3) 0 var(--s-3) var(--s-5);
+  border-left: 3px solid var(--c-accent);
+  break-inside: avoid;
+}
+.statement .big {
+  font-family: var(--f-display);
+  font-size: 19pt;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--c-ink);
+  margin-bottom: var(--s-3);
+  letter-spacing: -0.018em;
+  max-width: 32ch;
+}
+.statement .big em {
+  font-style: italic;
+  color: var(--c-accent);
+}
+.statement .small {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  color: var(--c-ink-soft);
+  line-height: 1.55;
+  max-width: 60ch;
+  margin-bottom: 0;
+}
+
+/* =================================================================
+   QUOTE / CALLOUT
+   ================================================================= */
+.quote-card {
+  background: var(--c-cream-2);
+  padding: var(--s-5) var(--s-6);
+  margin: var(--s-5) 0;
+  position: relative;
+  break-inside: avoid;
+  border-left: 3px solid var(--c-accent);
+}
+.quote-card .mark {
+  font-family: var(--f-display);
+  font-size: 48pt;
+  line-height: 0.5;
+  color: var(--c-accent);
+  position: absolute;
+  top: 30px;
+  left: 22px;
+  font-weight: 400;
+}
+.quote-card p {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  line-height: 1.4;
+  color: var(--c-ink);
+  margin-bottom: 0;
+  padding-left: 30px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  max-width: 52ch;
+}
+
+/* =================================================================
+   ILLUSTRATION (two-column scenario comparison)
+   ================================================================= */
+.illustration {
+  margin: var(--s-5) 0 var(--s-4);
+  border-top: 1px solid var(--c-line);
+  padding-top: var(--s-4);
+  break-inside: avoid;
+}
+.illustration .ill-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--s-3);
+}
+.illustration .ill-eyebrow {
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.illustration .ill-title {
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 450;
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+}
+.illustration .ill-stamp {
+  font-family: var(--f-body);
+  font-size: 8pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+  font-weight: 500;
+}
+.illustration .ill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-5);
+}
+.illustration .ill-col {
+  padding: var(--s-3) var(--s-4);
+  background: var(--c-cream-2);
+  border-left: 2px solid var(--c-sand);
+}
+.illustration .ill-col h5 {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: var(--c-ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.005em;
+}
+.illustration .ill-col p {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  margin-bottom: 0;
+}
+
+/* =================================================================
+   CAUTION
+   ================================================================= */
+.caution {
+  background: rgba(192, 74, 42, 0.06);
+  border-top: 1px solid rgba(192, 74, 42, 0.3);
+  border-bottom: 1px solid rgba(192, 74, 42, 0.3);
+  padding: var(--s-5);
+  margin: var(--s-5) 0;
+  display: flex;
+  gap: var(--s-4);
+  align-items: flex-start;
+  break-inside: avoid;
+}
+.caution .icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+}
+.caution p {
+  font-family: var(--f-body);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  margin-bottom: 0;
+  color: var(--c-ink);
+}
+.caution .label {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--c-accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* =================================================================
+   ROUTES (Page 2) — v2 SVG + v1 block layout
+   ================================================================= */
+.routes {
+  margin: 0 0 var(--s-3);
+  break-inside: avoid;
+}
+.routes-svg-wrap {
+  width: 100%;
+  margin-bottom: var(--s-4);
+}
+.routes-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.routes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-4);
+}
+.route-block {
+  padding: var(--s-4) var(--s-5);
+}
+.route-block--bad {
+  background: var(--c-cream-2);
+}
+.route-block--good {
+  background: var(--c-ink);
+  color: var(--c-cream);
+}
+.route-block .lbl {
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+  font-weight: 600;
+  margin-bottom: var(--s-3);
+}
+.route-block--good .lbl { color: var(--c-accent); }
+.route-block h4 {
+  font-family: var(--f-display);
+  font-size: 15pt;
+  font-weight: 500;
+  margin-bottom: var(--s-4);
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  line-height: 1.2;
+}
+.route-block--good h4 { color: var(--c-cream); }
+.route-block .step {
+  display: flex;
+  gap: var(--s-3);
+  align-items: baseline;
+  padding: var(--s-3) 0;
+  border-top: 1px solid var(--c-line-soft);
+  font-family: var(--f-body);
+  font-size: 10.5pt;
+  line-height: 1.5;
+}
+.route-block--good .step { border-top-color: rgba(247, 241, 234, 0.15); }
+.route-block .step:first-of-type { border-top: 1px solid var(--c-line); }
+.route-block--good .step:first-of-type { border-top-color: rgba(247, 241, 234, 0.25); }
+.route-block .step .num {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  color: var(--c-accent);
+  font-weight: 500;
+  width: 22px;
+  flex-shrink: 0;
+}
+
+/* =================================================================
+   VARIABLES GRID (Page 3)
+   ================================================================= */
+.var-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(168px, auto);
+  margin: var(--s-4) 0;
+  border-top: 1px solid var(--c-line);
+  border-left: 1px solid var(--c-line);
+}
+.var-cell {
+  padding: var(--s-4);
+  border-right: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  row-gap: var(--s-2);
+  break-inside: avoid;
+  background: var(--c-cream);
+  min-height: 168px;
+}
+.var-cell--span2 {
+  grid-column: span 2;
+}
+.var-cell--span3 {
+  grid-column: span 3;
+}
+.var-cell--wide {
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 60px 1fr;
+  grid-column-gap: var(--s-4);
+  align-items: start;
+  min-height: 0;
+  padding: var(--s-3) var(--s-4);
+}
+.var-cell--wide .num {
+  grid-row: 1 / 3;
+  grid-column: 1;
+  align-self: start;
+}
+.var-cell--wide h4 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.var-cell--wide p {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 6px;
+  max-width: 80ch;
+}
+.var-cell--wide .ask {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  margin-top: var(--s-3);
+}
+.var-cell .num {
+  font-family: var(--f-display);
+  font-size: 24pt;
+  font-weight: 350;
+  color: var(--c-accent);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-feature-settings: "lnum", "tnum";
+  margin: 0 0 var(--s-2);
+}
+.var-cell h4 {
+  font-family: var(--f-display);
+  font-size: 13pt;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  margin: 0;
+  line-height: 1.2;
+}
+.var-cell p {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  margin: var(--s-3) 0 0;
+  align-self: start;
+}
+.var-cell .ask {
+  margin-top: var(--s-3);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--c-line-soft);
+  align-self: end;
+}
+.var-cell .ask::before {
+  content: "Toets";
+  display: block;
+  font-family: var(--f-body);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: 5px;
+}
+.var-cell .ask-text {
+  font-family: var(--f-display);
+  font-size: 9.5pt;
+  line-height: 1.45;
+  color: var(--c-ink);
+  font-style: italic;
+  margin: 0;
+}
+
+/* =================================================================
+   DEEPDIVE PAGE COMPONENTS
+   ================================================================= */
+.deepdive-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--s-6);
+  margin: var(--s-4) 0;
+  align-items: start;
+}
+.deepdive-grid--reverse {
+  grid-template-columns: 1fr 1.2fr;
+}
+.deepdive-body p {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--c-ink-soft);
+  margin-bottom: var(--s-3);
+  max-width: 56ch;
+}
+.deepdive-body p strong { color: var(--c-ink); }
+.deepdive-body h3 {
+  font-family: var(--f-display);
+  font-size: 13pt;
+  font-weight: 500;
+  margin: var(--s-4) 0 var(--s-2);
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+}
+.deepdive-body h3:first-child { margin-top: 0; }
+
+.fact-card {
+  background: var(--c-cream-2);
+  border-left: 3px solid var(--c-accent);
+  padding: var(--s-5);
+  break-inside: avoid;
+}
+.fact-card .label {
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: var(--s-3);
+  display: block;
+}
+.fact-card .big-number {
+  font-family: var(--f-display);
+  font-size: 42pt;
+  font-weight: 350;
+  color: var(--c-ink);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--s-3);
+  font-feature-settings: "lnum", "tnum";
+}
+.fact-card .big-number .unit {
+  font-size: 18pt;
+  color: var(--c-accent);
+  font-weight: 400;
+  margin-left: 4px;
+}
+.fact-card p {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  margin-bottom: 0;
+}
+
+/* Mini-table for deepdive sub-data */
+.mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--s-3) 0 var(--s-4);
+  font-family: var(--f-body);
+}
+.mini-table th {
+  text-align: left;
+  padding: var(--s-2) var(--s-3);
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.mini-table th:first-child { background: var(--c-accent); }
+.mini-table td {
+  padding: var(--s-2) var(--s-3);
+  border-bottom: 1px solid var(--c-line-soft);
+  font-size: 9.5pt;
+  color: var(--c-ink);
+  line-height: 1.45;
+  vertical-align: top;
+}
+.mini-table td:first-child {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: 10.5pt;
+  width: 28%;
+}
+.mini-table tr:last-child td { border-bottom: none; }
+
+.layer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  margin: var(--s-4) 0;
+}
+.layer {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--s-4);
+  align-items: start;
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--c-line-soft);
+  break-inside: avoid;
+}
+.layer:last-child { border-bottom: none; padding-bottom: 0; }
+.layer .layer-label {
+  font-family: var(--f-body);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  padding-top: 4px;
+}
+.layer .layer-body h4 {
+  font-family: var(--f-display);
+  font-size: 13pt;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+}
+.layer .layer-body p {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  line-height: 1.55;
+  color: var(--c-ink-soft);
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* =================================================================
+   COMPARE TABLE (Page 4) — dark header restored
+   ================================================================= */
+.cmp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--s-4) 0;
+}
+.cmp-table thead th {
+  text-align: left;
+  padding: var(--s-3) var(--s-3);
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+.cmp-table thead th:first-child {
+  background: var(--c-accent);
+  width: 18%;
+}
+.cmp-table tbody td {
+  padding: var(--s-3) var(--s-3);
+  border-bottom: 1px solid var(--c-line-soft);
+  vertical-align: top;
+  line-height: 1.45;
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  color: var(--c-ink);
+}
+.cmp-table tbody td:first-child {
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 500;
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+}
+.cmp-table tbody td.muted {
+  color: var(--c-mute);
+  font-style: italic;
+}
+.cmp-table tbody tr:last-child td { border-bottom: none; }
+
+/* =================================================================
+   HOOKS DIAGRAM (Page 5)
+   ================================================================= */
+.hooks-section {
+  margin: var(--s-5) 0;
+  break-inside: avoid;
+}
+.hooks-svg-wrap {
+  width: 100%;
+  margin: 0 -8mm var(--s-4);
+  width: calc(100% + 16mm);
+}
+.hooks-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hooks-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-3) var(--s-6);
+  margin-top: var(--s-4);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--c-line);
+}
+.hook-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  column-gap: var(--s-3);
+  align-items: baseline;
+  padding: 4px 0;
+}
+.hook-item .hk-num {
+  font-family: var(--f-display);
+  font-size: 13pt;
+  font-weight: 400;
+  color: var(--c-accent);
+  line-height: 1;
+  font-feature-settings: "lnum", "tnum";
+  letter-spacing: -0.02em;
+}
+.hook-item .hk-body h4 {
+  font-family: var(--f-display);
+  font-size: 11pt;
+  font-weight: 500;
+  margin-bottom: 1px;
+  letter-spacing: -0.005em;
+  color: var(--c-ink);
+  line-height: 1.2;
+}
+.hook-item .hk-body p {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  line-height: 1.4;
+  color: var(--c-ink-soft);
+  margin-bottom: 0;
+  max-width: 38ch;
+}
+
+/* =================================================================
+   SCENARIO CARDS (Page 6)
+   ================================================================= */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--c-line);
+  margin: var(--s-4) 0;
+  border: 1px solid var(--c-line);
+}
+.scenario {
+  background: var(--c-cream);
+  padding: var(--s-3) var(--s-4);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  break-inside: avoid;
+}
+.scenario .letter {
+  font-family: var(--f-display);
+  font-size: 32pt;
+  color: var(--c-cream-3);
+  line-height: 0.85;
+  font-weight: 350;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  letter-spacing: -0.04em;
+  z-index: 0;
+}
+.scenario .scenario-content { position: relative; z-index: 1; }
+.scenario h4 {
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 500;
+  margin-bottom: var(--s-3);
+  margin-right: 44px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  min-height: 2.4em;
+}
+.scenario .row {
+  display: flex;
+  gap: var(--s-3);
+  font-family: var(--f-body);
+  font-size: 9pt;
+  padding: 6px 0;
+  border-top: 1px solid var(--c-line-soft);
+  line-height: 1.4;
+  align-items: flex-start;
+}
+.scenario .row:first-of-type { border-top: 1px solid var(--c-line); }
+.scenario .row .lbl {
+  font-family: var(--f-body);
+  font-weight: 600;
+  color: var(--c-accent);
+  width: 64px;
+  min-width: 64px;
+  flex-shrink: 0;
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+.scenario .row .val {
+  color: var(--c-ink);
+  max-width: 36ch;
+  min-height: 2.4em;  /* always reserves 2 lines so cells align uniformly */
+}
+
+.scenario--dark {
+  background: var(--c-ink);
+  color: var(--c-cream);
+}
+.scenario--dark h4 { color: var(--c-cream); }
+.scenario--dark .letter { color: rgba(247, 241, 234, 0.08); }
+.scenario--dark p {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--c-sand);
+  margin-bottom: var(--s-3);
+}
+.scenario--dark p:last-child { margin-bottom: 0; }
+
+/* =================================================================
+   DECISION MATRIX (Page 7) — bars + dark header restored
+   ================================================================= */
+.matrix-wrap {
+  margin: var(--s-5) -8mm 0;  /* extends slightly outside page padding */
+}
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.matrix thead th {
+  padding: 10px 4px;
+  text-align: center;
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-family: var(--f-body);
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+.matrix thead th:first-child {
+  text-align: center;
+  background: var(--c-accent);
+  padding-left: 6px;
+  width: 16%;
+}
+.matrix tbody td {
+  padding: var(--s-3) 4px;
+  text-align: center;
+  border-bottom: 1px solid var(--c-line-soft);
+  vertical-align: middle;
+}
+.matrix tbody td:first-child {
+  text-align: center;
+  font-family: var(--f-display);
+  font-size: 12pt;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding-left: 6px;
+  color: var(--c-ink);
+  width: 16%;
+}
+.matrix tbody tr:last-child td { border-bottom: none; }
+
+.bar {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: transparent;
+  /* Force print rendering */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.bar--3 { background-color: #c04a2a; }
+.bar--2 { background-color: #c8a882; }
+.bar--1 { background-color: #e8dccb; border: 1px solid #d8c9b6; }
+.bar--0 {
+  background-color: transparent;
+  border: 1px dashed #d8c9b6;
+}
+
+/* Dot-cluster variant: 1/2/3 dots per cell */
+.dots {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+.dots .d {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #c04a2a;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.dots .d.empty {
+  background: transparent;
+  border: 1px solid #d8c9b6;
+}
+.dots-na {
+  font-family: var(--f-display);
+  color: #b5a890;
+  font-size: 13pt;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.legend {
+  display: flex;
+  gap: var(--s-6);
+  margin-top: var(--s-4);
+  font-family: var(--f-body);
+  font-size: 9pt;
+  color: var(--c-mute);
+  flex-wrap: wrap;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+.legend .item { display: flex; align-items: center; gap: 8px; }
+.legend .swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.legend .sw--3 { background-color: #c04a2a; }
+.legend .sw--2 { background-color: #c8a882; }
+.legend .sw--1 { background-color: #e8dccb; border: 1px solid #d8c9b6; }
+.legend .sw--0 {
+  background-color: transparent;
+  border: 1px dashed #d8c9b6;
+}
+
+/* =================================================================
+   PRE-MOVE CHECKLIST (Page 8)
+   ================================================================= */
+.checklist {
+  margin: var(--s-4) 0 var(--s-5);
+}
+.check-item {
+  display: grid;
+  grid-template-columns: 70px 1fr 28px;
+  gap: var(--s-4);
+  align-items: start;
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--c-line-soft);
+  break-inside: avoid;
+}
+.check-item:first-child { padding-top: 0; }
+.check-item:last-child { border-bottom: none; padding-bottom: var(--s-3); }
+.check-item .num {
+  font-family: var(--f-display);
+  font-size: 40pt;
+  line-height: 0.85;
+  color: var(--c-accent);
+  font-weight: 300;
+  font-feature-settings: "lnum", "tnum";
+  letter-spacing: -0.04em;
+}
+.check-item .body h4 {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  font-weight: 450;
+  margin-bottom: 6px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  max-width: 36ch;
+  color: var(--c-ink);
+}
+.check-item .body p {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+  margin-bottom: 0;
+  max-width: 60ch;
+}
+.check-item .box {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #d8c9b6;
+  background: transparent;
+  margin-top: 10px;
+  justify-self: end;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* =================================================================
+   CTA BLOCK (Page 9)
+   ================================================================= */
+.cta-card {
+  background: var(--c-ink-deep);
+  color: var(--c-cream);
+  padding: var(--s-6) var(--s-6) var(--s-6);
+  margin: var(--s-4) 0;
+  position: relative;
+  overflow: hidden;
+  break-inside: avoid;
+}
+.cta-card .corner-mark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+  border-top: 1px solid var(--c-accent);
+  border-right: 1px solid var(--c-accent);
+}
+.cta-card .eyebrow {
+  color: var(--c-accent);
+  margin-bottom: var(--s-3);
+  display: block;
+}
+.cta-card h3 {
+  font-family: var(--f-display);
+  font-size: 22pt;
+  font-weight: 350;
+  line-height: 1.1;
+  color: var(--c-cream);
+  margin-bottom: var(--s-4);
+  max-width: 22ch;
+  letter-spacing: -0.02em;
+}
+.cta-card .cta-body {
+  font-family: var(--f-body);
+  color: var(--c-sand);
+  max-width: 56ch;
+  margin-bottom: var(--s-5);
+  font-size: 10pt;
+  line-height: 1.55;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-4);
+  background: var(--c-accent);
+  color: var(--c-cream);
+  padding: 12px 20px;
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 10pt;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+.cta-button:hover { background: var(--c-accent-dk); }
+.cta-button .arrow { width: 18px; height: 12px; }
+
+.cta-bullets {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--s-4);
+  margin-top: var(--s-5);
+  padding-top: var(--s-4);
+  padding-bottom: var(--s-2);
+  border-top: 1px solid rgba(199, 168, 130, 0.18);
+}
+.cta-bullets .item {
+  font-family: var(--f-body);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--c-cream);
+}
+.cta-bullets .item .lbl {
+  display: block;
+  font-family: var(--f-body);
+  color: var(--c-accent);
+  font-size: 8.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* =================================================================
+   SOURCES PAGE (Page 10)
+   ================================================================= */
+.disclaimer {
+  background: var(--c-cream-2);
+  padding: var(--s-5) var(--s-6);
+  margin-bottom: var(--s-6);
+  border-left: 3px solid var(--c-accent);
+}
+.disclaimer p {
+  font-family: var(--f-body);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  margin-bottom: 0;
+  color: var(--c-ink);
+}
+.disclaimer p strong {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.source-block { margin-bottom: var(--s-5); }
+.source-block h4 {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  font-weight: 600;
+  margin-bottom: var(--s-3);
+  padding-bottom: var(--s-2);
+  border-bottom: 1px solid var(--c-line);
+}
+.source-block ol {
+  list-style: none;
+  counter-reset: srcounter;
+}
+.source-block li {
+  counter-increment: srcounter;
+  padding: var(--s-3) 0;
+  padding-left: 40px;
+  position: relative;
+  font-family: var(--f-body);
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--c-ink-soft);
+  border-bottom: 1px dotted var(--c-line-soft);
+}
+.source-block li:last-child { border-bottom: none; }
+.source-block li::before {
+  content: counter(srcounter, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 12px;
+  font-family: var(--f-display);
+  color: var(--c-accent);
+  font-weight: 500;
+  font-size: 11pt;
+  font-feature-settings: "lnum", "tnum";
+}
+
+.colophon {
+  margin-top: var(--s-7);
+  padding-top: var(--s-5);
+  border-top: 2px solid var(--c-accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.colophon .left {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  color: var(--c-mute);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+.colophon .left .brand-line {
+  font-family: var(--f-display);
+  font-size: 16pt;
+  color: var(--c-ink);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.colophon .right {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  color: var(--c-mute);
+  letter-spacing: 0.04em;
+  text-align: right;
+  line-height: 1.6;
+}
+.colophon .right strong { color: var(--c-ink); font-weight: 500; }
+
+/* =================================================================
+   COVER PAGE (kept from v2)
+   ================================================================= */
+.cover {
+  justify-content: space-between;
+  background: var(--c-ink-deep);
+  color: var(--c-cream);
+  padding: 24mm 22mm;
+  height: 297mm;
+  min-height: 297mm;
+  max-height: 297mm;
+  overflow: hidden;
+}
+.cover-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+.cover .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+  position: relative;
+}
+.cover .label-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 8px 16px;
+  border: 1px solid var(--c-accent);
+  color: var(--c-accent);
+  font-family: var(--f-body);
+  font-size: 9pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.cover .label-pill::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--c-accent);
+}
+.cover .imprint {
+  text-align: right;
+  font-family: var(--f-body);
+  font-size: 9pt;
+  letter-spacing: 0.06em;
+  color: var(--c-sand);
+  line-height: 1.7;
+}
+.cover .imprint .brand {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  color: var(--c-cream);
+  letter-spacing: -0.005em;
+  display: block;
+  margin-bottom: 4px;
+  text-transform: none;
+  font-weight: 500;
+}
+.cover .title-block {
+  z-index: 2;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: var(--s-8);
+}
+.cover .accent-rule {
+  width: 64px;
+  height: 2px;
+  background: var(--c-accent);
+  margin-bottom: var(--s-6);
+}
+.cover h1 {
+  color: var(--c-cream);
+  font-size: 46pt;
+  line-height: 1.0;
+  font-weight: 350;
+  letter-spacing: -0.025em;
+  max-width: 14ch;
+  margin-bottom: var(--s-6);
+}
+.cover h1 .em {
+  color: var(--c-accent);
+  font-style: italic;
+  font-weight: 350;
+}
+.cover .subtitle {
+  font-family: var(--f-body);
+  font-size: 13pt;
+  line-height: 1.5;
+  color: var(--c-sand);
+  font-weight: 400;
+  max-width: 56ch;
+  margin-bottom: var(--s-6);
+  letter-spacing: -0.005em;
+}
+.cover .context {
+  font-family: var(--f-body);
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  font-size: 8.5pt;
+  color: var(--c-cream);
+  text-transform: uppercase;
+  padding-top: var(--s-4);
+  border-top: 1px solid rgba(199, 168, 130, 0.25);
+}
+.cover .bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
+  position: relative;
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-sand);
+}
+.cover .bottom-row .meta { line-height: 1.7; }
+.cover .bottom-row .meta strong { color: var(--c-cream); font-weight: 500; }
+
+/* =================================================================
+   PRINT
+   ================================================================= */
+@media print {
+  body { background: white; padding: 0; margin: 0; }
+  .page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+    break-after: page;
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    overflow: hidden;
+  }
+  .page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  @page { size: A4 portrait; margin: 0; }
+  .no-print { display: none !important; }
+
+  /* Force background colors and exact rendering */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Component break protection */
+  .var-cell, .scenario, .check-item, .quote-card, .statement,
+  .caution, .cta-card, .hooks-section, .routes,
+  .cmp-table tr, .matrix tr, .source-block li, .hook-item,
+  .fact-card, .layer, .deepdive-grid, .mini-table tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure inline-block dots/boxes render in print */
+  .bar, .legend .swatch, .check-item .box {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+.toc-helper {
+  max-width: var(--page-w);
+  margin: 0 auto 16px;
+  padding: 12px 22px;
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-family: var(--f-body);
+  font-size: 10pt;
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toc-helper .brand {
+  font-family: var(--f-display);
+  font-size: 14pt;
+  font-weight: 500;
+}
+.toc-helper button {
+  background: var(--c-accent);
+  color: var(--c-cream);
+  border: none;
+  padding: 9px 16px;
+  font-family: var(--f-body);
+  font-size: 10pt;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+</style>
+
+<meta name="description" content="Zeven manieren waarop Nederland na emigratie fiscaal toch nog aan je vastzit.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://emigratieplan.nl/beslisgids/de-fiscale-navelstreng/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="De fiscale navelstreng &mdash; Beslisgids Emigratieplan.nl">
+<meta property="og:description" content="Zeven manieren waarop Nederland na emigratie fiscaal toch nog aan je vastzit.">
+<meta property="og:url" content="https://emigratieplan.nl/beslisgids/de-fiscale-navelstreng/">
+<meta property="og:locale" content="nl_NL">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://emigratieplan.nl/beslisgids/de-fiscale-navelstreng/#article",
+      "headline": "De fiscale navelstreng",
+      "description": "Zeven manieren waarop Nederland na emigratie fiscaal toch nog aan je vastzit.",
+      "inLanguage": "nl-NL",
+      "mainEntityOfPage": "https://emigratieplan.nl/beslisgids/de-fiscale-navelstreng/",
+      "isPartOf": {
+        "@id": "https://emigratieplan.nl/#website"
+      },
+      "about": {
+        "@id": "https://emigratieplan.nl/#organization"
+      },
+      "author": {
+        "@id": "https://emigratieplan.nl/#kevin"
+      },
+      "publisher": {
+        "@id": "https://emigratieplan.nl/#organization"
+      },
+      "datePublished": "2026-05-11",
+      "dateModified": "2026-06-12"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://emigratieplan.nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Beslisgidsen",
+          "item": "https://emigratieplan.nl/beslisgids/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "De fiscale navelstreng",
+          "item": "https://emigratieplan.nl/beslisgids/de-fiscale-navelstreng/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://emigratieplan.nl/#kevin",
+      "name": "Kevin van Grondelle",
+      "jobTitle": "Oprichter",
+      "sameAs": [
+        "https://www.linkedin.com/in/kevin-van-grondelle"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://emigratieplan.nl/#organization",
+      "name": "Emigratieplan.nl",
+      "url": "https://emigratieplan.nl/",
+      "logo": "https://emigratieplan.nl/apple-touch-icon.png"
+    }
+  ]
+}
+</script>
+<style id="ep-web-mode">
+@media screen {
+  html, body { background: var(--c-cream, #f6f5f2) !important; height:auto !important; }
+  body { margin:0 !important; }
+  .page {
+    width:100% !important; max-width:880px !important;
+    height:auto !important; min-height:0 !important; max-height:none !important;
+    overflow:visible !important;
+    margin:0 auto 22px !important;
+    padding:clamp(28px,5vw,56px) clamp(20px,6vw,60px) clamp(32px,5vw,56px) !important;
+    box-shadow:0 2px 18px rgba(24,19,17,0.06) !important;
+    page-break-after:auto !important; break-after:auto !important;
+  }
+  .cover { min-height:62vh !important; justify-content:space-between !important; }
+  .toc-helper { display:none !important; }
+  .ep-bar { display:flex; justify-content:space-between; align-items:center; max-width:880px; margin:0 auto; padding:18px 16px; }
+  .ep-bar__brand { font-family:var(--f-display,Georgia,serif); font-weight:600; font-size:1.05rem; color:var(--c-ink,#2d2420); text-decoration:none; }
+  .ep-bar__brand span { color:var(--c-accent,#c04a2a); }
+  .ep-bar__back { font-size:.85rem; color:var(--c-mute,#6b6560); text-decoration:none; }
+  .ep-bar__back:hover { color:var(--c-accent,#c04a2a); }
+  .ep-cta { max-width:880px; margin:8px auto 26px; padding:28px clamp(20px,5vw,40px); background:var(--c-cream-2,#efe6da); border:1px solid var(--c-line,#d8c9b6); border-radius:6px; }
+  .ep-cta h2 { font-family:var(--f-display,Georgia,serif); color:var(--c-ink,#2d2420); margin:0 0 8px; font-size:1.4rem; line-height:1.2; }
+  .ep-cta p { color:var(--c-ink-soft,#4a3f38); margin:0 0 16px; font-size:1rem; line-height:1.55; }
+  .ep-cta__row { display:flex; flex-wrap:wrap; gap:10px; }
+  .ep-btn { display:inline-block; background:var(--c-accent,#c04a2a); color:#fff; text-decoration:none; font-weight:600; font-size:.9rem; padding:12px 20px; border-radius:4px; }
+  .ep-btn:hover { background:var(--c-accent-dk,#9a3a20); }
+  .ep-btn--ghost { background:transparent; color:var(--c-accent,#c04a2a); border:1px solid var(--c-accent,#c04a2a); }
+  .ep-btn--ghost:hover { background:#fff; }
+  .ep-foot { max-width:880px; margin:0 auto; padding:20px 16px 48px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:.8rem; color:var(--c-mute,#6b6560); border-top:1px solid var(--c-line,#d8c9b6); }
+  .ep-foot a { color:var(--c-mute,#6b6560); text-decoration:none; margin-right:12px; }
+  .ep-foot a:hover { color:var(--c-accent,#c04a2a); }
+  .page img, .page svg { max-width:100% !important; }
+  .page table { max-width:100%; }
+}
+@media screen and (max-width:760px){
+  .page table { display:block; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+}
+</style>
+</head>
+<body>
+<header class="ep-bar no-print"><a class="ep-bar__brand" href="/">Emigratieplan<span>.</span>nl</a><a class="ep-bar__back" href="/beslisgids/">&larr; Alle Beslisgidsen</a></header>
+
+<div class="toc-helper no-print">
+  <span class="brand">Emigratieplan · Beslisgids · Editie 02</span>
+  <button onclick="window.print()">Print / Opslaan als PDF</button>
+</div>
+
+<!-- =================================================================
+     PAGE 1 — COVER
+     ================================================================= -->
+<section class="page page--dark cover">
+
+  <svg class="cover-art" viewBox="0 0 210 297" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dotgrid" width="5" height="5" patternUnits="userSpaceOnUse">
+        <circle cx="0.6" cy="0.6" r="0.4" fill="#c8a882" opacity="0.10"/>
+      </pattern>
+    </defs>
+    <rect width="210" height="297" fill="url(#dotgrid)" />
+
+    <!-- The umbilical cord: one central path from NL (top) descending to emigrant (bottom),
+         curving like a real navelstreng. Side-hooks branch off at intervals. -->
+
+    <!-- Faint side-hook paths in sand -->
+    <g stroke="#c8a882" stroke-width="0.3" fill="none" opacity="0.45">
+      <!-- Hook 1: Fiscale woonplaats (top right) -->
+      <path d="M 105 60 Q 140 55 175 45" />
+      <!-- Hook 2: Woning (left) -->
+      <path d="M 100 100 Q 70 105 35 100" />
+      <!-- Hook 3: BV / box 2 (right) -->
+      <path d="M 110 140 Q 145 142 180 135" />
+      <!-- Hook 4: Pensioen (left) -->
+      <path d="M 100 180 Q 65 185 30 180" />
+      <!-- Hook 5: Schenken & erven (right) -->
+      <path d="M 110 220 Q 145 222 175 218" />
+    </g>
+
+    <!-- Main central cord, slightly serpentine -->
+    <g stroke="#c04a2a" stroke-width="0.7" fill="none" opacity="0.85">
+      <path d="M 105 0 Q 95 40 105 80 Q 115 120 100 160 Q 90 200 105 240" />
+    </g>
+
+    <!-- Top NL anchor (large dark dot) -->
+    <circle cx="105" cy="0" r="4" fill="#c04a2a" opacity="0.7" />
+
+    <!-- Side-hook endpoints in muted sand -->
+    <g fill="#c8a882" opacity="0.55">
+      <circle cx="175" cy="45" r="1.4" />
+      <circle cx="35" cy="100" r="1.4" />
+      <circle cx="180" cy="135" r="1.4" />
+      <circle cx="30" cy="180" r="1.4" />
+      <circle cx="175" cy="218" r="1.4" />
+    </g>
+
+    <!-- Junction dots on the central cord (where hooks branch off) -->
+    <g fill="#c04a2a" opacity="0.7">
+      <circle cx="105" cy="60" r="1.6" />
+      <circle cx="100" cy="100" r="1.6" />
+      <circle cx="110" cy="140" r="1.6" />
+      <circle cx="100" cy="180" r="1.6" />
+      <circle cx="110" cy="220" r="1.6" />
+    </g>
+
+    <!-- The main brand-dot: end of cord, larger and ringed -->
+    <circle cx="105" cy="240" r="3.5" fill="#c04a2a" />
+    <circle cx="105" cy="240" r="7" fill="none" stroke="#c04a2a" stroke-width="0.4" opacity="0.5" />
+    <circle cx="105" cy="240" r="11" fill="none" stroke="#c04a2a" stroke-width="0.25" opacity="0.3" />
+  </svg>
+
+  <div class="top-row">
+    <div class="label-pill">Beslisgids · 02</div>
+    <div class="imprint">
+      <span class="brand">Emigratieplan</span>
+      Door STS Strategy<br>
+      Editie 02 — 2026
+    </div>
+  </div>
+
+  <div class="title-block">
+    <div class="accent-rule"></div>
+    <h1>De fiscale<br>navelstreng</h1>
+    <p class="subtitle">Zeven manieren waarop Nederland na emigratie toch nog aan je vastzit.</p>
+    <p class="context">Voor Nederlanders die hun haakjes willen kennen vóór ze vertrekken.</p>
+  </div>
+
+  <div class="bottom-row">
+    <div class="meta">
+      <strong>14 pagina's</strong><br>
+      Scenario-analyse
+    </div>
+    <div class="meta" style="text-align: right;">
+      <strong>emigratieplan.nl</strong><br>
+      Niet wegdenken. Doorrekenen.
+    </div>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 2 — Vertrekken is niet hetzelfde als loskomen
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>01 — Het uitgangspunt</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">01</span>
+      <div class="meta-text">
+        <span class="section-name">Het uitgangspunt</span>
+        <span class="section-stage">Idee · Inzicht · Actie</span>
+      </div>
+    </div>
+    <h2>Vertrekken is niet hetzelfde als loskomen</h2>
+    <p class="lead">Veel emigratieplannen rekenen alsof Nederland na vertrek geen rol meer speelt. Dat is bijna nooit zo.</p>
+  </div>
+
+  <div class="statement">
+    <p class="big">De meesten vragen: <em>ben ik straks weg uit Nederland?</em><br>De betere vraag is: wat blijft er na vertrek nog aan Nederland vastzitten?</p>
+    <p class="small">Je schrijft je uit. Je verhuist. Je betaalt ergens anders belasting. Maar Nederland verdwijnt niet automatisch uit beeld. Niet als je nog een woning hebt. Niet als je een BV hebt. Niet als er pensioen, lijfrente, dividend of familievermogen in het spel is.</p>
+  </div>
+
+  <div class="routes">
+    <div class="routes-svg-wrap">
+      <svg viewBox="0 0 600 145" xmlns="http://www.w3.org/2000/svg">
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9" letter-spacing="2" fill="#6b6560" font-weight="600">
+          <text x="0" y="14">ROUTE 1</text>
+        </g>
+        <g stroke="#c8a882" stroke-width="1" fill="none">
+          <line x1="0" y1="35" x2="540" y2="35" stroke-dasharray="4 4" />
+        </g>
+        <g fill="#c8a882">
+          <circle cx="0" cy="35" r="4" />
+          <circle cx="135" cy="35" r="3" />
+          <circle cx="270" cy="35" r="3" />
+          <circle cx="405" cy="35" r="3" />
+        </g>
+        <g stroke="#6b6560" stroke-width="1.2" fill="none">
+          <line x1="535" y1="28" x2="545" y2="42" />
+          <line x1="535" y1="42" x2="545" y2="28" />
+        </g>
+        <g font-family="Fraunces, Georgia, serif" font-size="9" fill="#6b6560" font-style="italic">
+          <text x="556" y="38">verrast</text>
+        </g>
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9.5" fill="#2d2420" font-weight="500">
+          <text x="0" y="58">Uitschrijven</text>
+          <text x="135" y="58">Land kiezen</text>
+          <text x="270" y="58">Lokaal regelen</text>
+          <text x="405" y="58">NL-haakjes te laat</text>
+        </g>
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9" letter-spacing="2" fill="#c04a2a" font-weight="600">
+          <text x="0" y="92">ROUTE 2</text>
+        </g>
+        <g stroke="#c04a2a" stroke-width="1.2" fill="none">
+          <line x1="0" y1="113" x2="540" y2="113" />
+        </g>
+        <g fill="#c04a2a">
+          <circle cx="0" cy="113" r="4" />
+          <circle cx="135" cy="113" r="3" />
+          <circle cx="270" cy="113" r="3" />
+          <circle cx="405" cy="113" r="3" />
+        </g>
+        <g fill="#c04a2a">
+          <polygon points="540,108 552,113 540,118" />
+        </g>
+        <g font-family="Fraunces, Georgia, serif" font-size="9" fill="#c04a2a" font-style="italic">
+          <text x="558" y="116">verder</text>
+        </g>
+        <g font-family="Inter Tight, Arial, sans-serif" font-size="9.5" fill="#2d2420" font-weight="500">
+          <text x="0" y="130">Haakjes in kaart</text>
+          <text x="135" y="130">Scenario’s doorrekenen</text>
+          <text x="270" y="130">Landen vergelijken</text>
+          <text x="405" y="130">Specialist toetst</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="routes-grid">
+      <div class="route-block route-block--good">
+        <div class="lbl">Wat veel mensen doen</div>
+        <h4>Eerst land, dan rekenen</h4>
+        <div class="step"><span class="num">1</span><span>Uitschrijven en land kiezen</span></div>
+        <div class="step"><span class="num">2</span><span>Aannemen dat lokaal recht alles bepaalt</span></div>
+        <div class="step"><span class="num">3</span><span>Nederlandse posten pas later uitzoeken</span></div>
+        <div class="step"><span class="num">4</span><span>Verrast worden door BV, pensioen of woning</span></div>
+      </div>
+      <div class="route-block route-block--bad">
+        <div class="lbl">Het stappenplan</div>
+        <h4>Eerst haakjes, dan landen</h4>
+        <div class="step"><span class="num">1</span><span>Nederlandse restposten in kaart</span></div>
+        <div class="step"><span class="num">2</span><span>Per scenario doorrekenen wat blijft doorlopen</span></div>
+        <div class="step"><span class="num">3</span><span>Pas dán landen vergelijken</span></div>
+        <div class="step"><span class="num">4</span><span>Kansrijke route specialistisch laten toetsen</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 02</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 3 — De zeven haakjes (var-grid 3x3, laatste cel = donker actieblok)
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>02 — De haakjes</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">02</span>
+      <div class="meta-text">
+        <span class="section-name">De haakjes</span>
+        <span class="section-stage">Wat blijft hangen na vertrek</span>
+      </div>
+    </div>
+    <h2>Zeven haakjes die kunnen blijven hangen</h2>
+    <p class="lead">Sommige mensen hebben er één. Sommige vijf. Sommige denken nul, totdat hun BV of pensioen op tafel komt. De vraag is niet hoeveel haakjes bestaan. De vraag is welke aan jou vastzitten.</p>
+  </div>
+
+  <div class="var-grid">
+
+    <div class="var-cell">
+      <span class="num">01</span>
+      <h4>Fiscale woonplaats</h4>
+      <p>Niet je BRP-stempel maar de feitelijke inrichting van je leven bepaalt of Nederland je nog als inwoner ziet.</p>
+      <div class="ask"><p class="ask-text">Kan ik dit aantonen, of denk ik het?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">02</span>
+      <h4>Nederlandse woning</h4>
+      <p>Verkopen, verhuren of aanhouden geven drie verschillende fiscale routes en drie verschillende staarten.</p>
+      <div class="ask"><p class="ask-text">Houd ik alleen stenen aan, of ook een fiscale band?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">03</span>
+      <h4>BV en box 2</h4>
+      <p>Aanmerkelijk belang activeert de conserverende aanslag. Feitelijke leiding bepaalt waar de BV belast wordt.</p>
+      <div class="ask"><p class="ask-text">Wat staat op mijn naam, wat op de BV?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">04</span>
+      <h4>Dividendbelasting</h4>
+      <p>Dividend uit een Nederlandse BV is na emigratie niet automatisch buiten bereik. Verdragen verlagen, niet altijd nul.</p>
+      <div class="ask"><p class="ask-text">Wanneer en waaruit wil ik dividend uitkeren?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">05</span>
+      <h4>Pensioen en lijfrente</h4>
+      <p>Type uitkering, verdrag, woonland en eerdere premieaftrek bepalen wie mag heffen. Lijfrente is gevoeliger dan pensioen.</p>
+      <div class="ask"><p class="ask-text">Welk type heb ik, en wat zijn de voorwaarden?</p></div>
+    </div>
+
+    <div class="var-cell">
+      <span class="num">06</span>
+      <h4>Schenk- en erfbelasting</h4>
+      <p>Voor Nederlanders kijkt de Successiewet tien jaar terug. Schenken vóór vertrek is iets anders dan schenken erna.</p>
+      <div class="ask"><p class="ask-text">Wil ik binnen tien jaar schenken of overdragen?</p></div>
+    </div>
+
+    <div class="var-cell var-cell--span3 var-cell--wide">
+      <span class="num">07</span>
+      <h4>AOW en zorg</h4>
+      <p>Per niet-verzekerd jaar 2 procent minder AOW, voor de rest van je leven. Verdragszorg en CAK-bijdrage horen in het maandbudget.</p>
+      <div class="ask"><p class="ask-text">Hoe groot wordt mijn gat over 20 jaar?</p></div>
+    </div>
+
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 03</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 4 — Diepte: Fiscale woonplaats
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>03 — De diepte · Woonplaats</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">03</span>
+      <div class="meta-text">
+        <span class="section-name">Fiscale woonplaats</span>
+        <span class="section-stage">Je leven telt, niet je inschrijving</span>
+      </div>
+    </div>
+    <h2>Je staat op het gemeentehuis. Je tekent. En dan?</h2>
+    <p class="lead">Voor Nederland ben je nu uitgeschreven. Voor de Belastingdienst kan dat heel iets anders zijn. Fiscale woonplaats wordt niet bepaald door wat je administratief regelde, maar door hoe je leven feitelijk is ingericht.</p>
+  </div>
+
+  <div class="deepdive-grid">
+    <div class="deepdive-body">
+      <h3>Wat meetelt</h3>
+      <p>Waar je meestal verblijft. Waar een woning voor jou beschikbaar is. Waar je partner of gezin woont. Waar je werkt en zakelijke beslissingen neemt. Waar je vermogen, inkomen, verzekering en bank zitten. Waar je sociale leven zit. Geen enkele factor beslist alles. Het gaat om de optelsom.</p>
+
+      <h3>Waarom dit fout gaat</h3>
+      <p>Mensen denken in één harde grens. <em>Ik ben uitgeschreven. Ik ben minder dan 183 dagen in Nederland. Ik betaal lokaal belasting.</em> Dat helpt allemaal. Maar het is geen garantie dat Nederland geen discussie meer kan voeren. Zeker niet als Nederland nog steeds ziet: een beschikbare woning, veel verblijf, een achterblijvende partner, Nederlandse werkzaamheden, of een BV die je vanuit het buitenland aanstuurt.</p>
+
+      <h3>Dubbele woonplaats</h3>
+      <p>Het kan ook zijn dat twee landen je allebei als inwoner zien. Dan komt het belastingverdrag in beeld. Verdragen kijken naar duurzaam tehuis, centrum van levensbelangen, gewoonlijk verblijf, nationaliteit, en als laatste overleg tussen landen.</p>
+    </div>
+
+    <div>
+      <div class="fact-card">
+        <span class="label">Bewijslast</span>
+        <p style="margin-bottom: var(--s-3);">Verzamel vóór vertrek:</p>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Huur- of koopcontract buitenland</li>
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Lokale inschrijving en zorgregistratie</li>
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Lokale bankrekening</li>
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Werkplek of zakelijke registratie</li>
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Bewijs van verblijfsdagen</li>
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Beëindiging of verhuur NL-woning</li>
+          <li style="font-family: var(--f-body); font-size: 9.5pt; line-height: 1.6; color: var(--c-ink-soft); padding-left: 16px; position: relative;"><span style="position:absolute; left:0; top:8px; width:4px; height:4px; background:#c04a2a; border-radius:50%; display:block;"></span>Uitschrijving NL-diensten en abonnementen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-card" style="margin-top: var(--s-5);">
+    <span class="mark">"</span>
+    <p>De Belastingdienst kijkt niet naar het stempel op je formulier. Hij kijkt naar het bewijs van je leven.</p>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 04</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 5 — Diepte: Nederlandse woning
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>03 — De diepte · Woning</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">04</span>
+      <div class="meta-text">
+        <span class="section-name">Nederlandse woning</span>
+        <span class="section-stage">Meer dan stenen</span>
+      </div>
+    </div>
+    <h2>Wat is jouw grootste emigratiebeslissing?</h2>
+    <p class="lead">Voor de meeste Nederlanders is het niet Portugal, Spanje of Dubai. Het is wat er met het huis gebeurt. Omdat de woning raakt aan vermogen, hypotheek, renteaftrek, box 1, box 3, verhuur, terugkeeroptie, fiscale woonplaats, liquiditeit en schenk- en erfplanning. Een huis aanhouden kan verstandig zijn. Neutraal is het zelden.</p>
+  </div>
+
+  <table class="cmp-table">
+    <thead>
+      <tr>
+        <th>Keuze</th>
+        <th>Wat mensen denken</th>
+        <th>Wat je toetst</th>
+        <th>Grootste risico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Verkopen</td>
+        <td class="muted">"Dan ben ik vrijer"</td>
+        <td>Netto opbrengst, timing, overwaarde, buitenlandse aankoop, cashbuffer.</td>
+        <td>Je geeft een vangnet op.</td>
+      </tr>
+      <tr>
+        <td>Verhuren</td>
+        <td class="muted">"De huurder betaalt mijn hypotheek"</td>
+        <td>Toestemming bank, box 3-effect, netto rendement, onderhoud, leegstand, beheer.</td>
+        <td>Je rekent met bruto huur.</td>
+      </tr>
+      <tr>
+        <td>Aanhouden</td>
+        <td class="muted">"Dan heb ik altijd een vangnet"</td>
+        <td>Beschikbaarheid, vaste lasten, verzekering, woonplaatsrisico.</td>
+        <td>Je houdt ongemerkt een Nederlands anker vast.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="deepdive-body" style="margin-top: var(--s-4);">
+    <h3>Box 1, box 3 en timing</h3>
+    <p>Een oude eigen woning kan na vertrek tijdelijk in box 1 blijven, mits hij leegstaat en te koop staat. De Belastingdienst hanteert daarvoor het jaar van vertrek plus de drie kalenderjaren erna. Daarna verhuist de woning met de schuld naar box 3, ook als zij nog niet verkocht is. Verhuur in die periode knipt de renteaftrek af voor de verhuurmaanden.</p>
+
+    <h3>Verhuur is niet zo simpel als het klinkt</h3>
+    <p>"Ik verhuur hem gewoon" overslaat zes vragen: mag het van je hypotheekverstrekker, verandert je rente of hypotheekvorm, dekt je verzekering verhuur, wie beheert onderhoud bij leegstand, welke huurdersbescherming ontstaat, en hoe wordt de woning in NL en in je woonland belast.</p>
+
+    <h3>Het woonplaatsrisico</h3>
+    <p>Een woning die beschikbaar blijft, ingericht is en als terugvalbasis voelt, weegt mee in het totaalbeeld. Wie zijn huis in Nederland houdt, houdt vaak meer dan stenen.</p>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 05</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 6 — Diepte: BV en DGA-staart
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>03 — De diepte · DGA</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">05</span>
+      <div class="meta-text">
+        <span class="section-name">BV, box 2 en dividend</span>
+        <span class="section-stage">De DGA-staart</span>
+      </div>
+    </div>
+    <h2>Voor een DGA is het land stap twee</h2>
+    <p class="lead">De BV-staart komt eerst. Jij verhuist. Je BV, opgebouwde waarde en toekomstige uitkeringen blijven vaak fiscaal verbonden met Nederland. Dat maakt de DGA-case anders dan die van de zzp’er of werknemer.</p>
+  </div>
+
+  <div class="deepdive-grid deepdive-grid--reverse">
+    <div>
+      <div class="fact-card">
+        <span class="label">Box 2 in 2026</span>
+        <div class="big-number">24,5<span class="unit">%</span></div>
+        <p style="margin-bottom: var(--s-3);">tot € 68.843 winst per jaar</p>
+        <div class="big-number" style="font-size: 32pt;">31<span class="unit">%</span></div>
+        <p>daarboven. Dat tarief loopt mee in de conserverende aanslag bij vertrek. Voor wat je tot je vertrekdatum hebt opgebouwd, ja. Niet voor altijd, maar wel op de plank tot je het realiseert. <em>Of niet.</em></p>
+      </div>
+    </div>
+
+    <div class="layer-list">
+      <div class="layer">
+        <div class="layer-label">Laag 1</div>
+        <div class="layer-body">
+          <h4>Aanmerkelijk belang en conserverende aanslag</h4>
+          <p>Heb je een aanmerkelijk belang en emigreer je, dan kan Nederland doen alsof je je aandelen vervreemdt. Niet omdat je echt verkoopt — omdat Nederland de opgebouwde box 2-claim wil vastleggen. Uitstel van betaling is niet hetzelfde als afstel.</p>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-label">Laag 2</div>
+        <div class="layer-body">
+          <h4>De BV zelf</h4>
+          <p>Een Nederlandse BV blijft fiscaal verbonden. Discussie ontstaat over feitelijke leiding: waar worden besluiten genomen, waar zit het bestuur, waar worden contracten gesloten. Zelf vertrekken is niet hetzelfde als je BV uit Nederland halen.</p>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-label">Laag 3</div>
+        <div class="layer-body">
+          <h4>Dividend, salaris en management fee</h4>
+          <p>Hoe je geld uit de BV haalt, telt mee. Elke route wordt fiscaal anders behandeld. Dividendbelasting blijft vaak relevant — verdragen kunnen verlagen, niet automatisch nul. Dividend kan ook effect hebben op uitstel of invordering van een eerdere conserverende aanslag.</p>
+          <p style="margin-top: var(--s-3); font-style: italic; color: var(--c-ink);">"Ik verhuis naar Dubai, dus mijn BV-inkomen is belastingvrij." Lokaal gunstig, ja. Maar een Nederlandse BV en aanmerkelijk belang houden Nederland fiscaal nog jaren in beeld.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 06</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 7 — Diepte: Pensioen, lijfrente, AOW (met rekensom als hero)
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>03 — De diepte · Pensioen</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">06</span>
+      <div class="meta-text">
+        <span class="section-name">Pensioen, lijfrente en AOW</span>
+        <span class="section-stage">De trage staart</span>
+      </div>
+    </div>
+    <h2>Wat doet emigratie met je inkomen op je 70e?</h2>
+    <p class="lead">Stel je verhuist op je 50e. Tot dan leefde en werkte je in Nederland. Je bereikt je AOW-leeftijd in het buitenland en je leeft door. Tussen je 50e en je 70e ben je 20 jaar geen Nederlands ingezetene meer. Per jaar bouw je 2% AOW minder op.</p>
+  </div>
+
+  <div class="deepdive-grid">
+    <div>
+      <div class="fact-card">
+        <span class="label">Rekensom</span>
+        <div class="big-number">40<span class="unit">%</span></div>
+        <p style="margin-bottom: 0;">gemiste AOW-opbouw. Voor de rest van je leven. Geen worst-case. De basisrekensom voor 20 jaar buiten Nederland.</p>
+      </div>
+    </div>
+
+    <div class="deepdive-body">
+      <h3>AOW: 2% per jaar, levenslang</h3>
+      <p>De meeste mensen kijken naar belastingdruk volgend jaar en vergeten wat er met hun inkomen gebeurt na pensionering. Vrijwillige verzekering via de SVB kan het gat dichten, maar kost premie en moet binnen één jaar na vertrek worden geregeld.</p>
+      <table class="mini-table">
+        <thead>
+          <tr><th>Periode</th><th>Gemiste opbouw</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>5 jaar</td><td>10% van je AOW, levenslang</td></tr>
+          <tr><td>10 jaar</td><td>20% van je AOW, levenslang</td></tr>
+          <tr><td>20 jaar</td><td>40% van je AOW, levenslang</td></tr>
+          <tr><td>35 jaar</td><td>70% van je AOW, levenslang</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="deepdive-grid" style="margin-top: var(--s-4); align-items: start;">
+    <div class="deepdive-body">
+      <h3>Pensioen en lijfrente</h3>
+      <p>Nederlands pensioen verdwijnt niet omdat je verhuist. De vragen worden: gaat Nederland heffen of het woonland, privaat of overheidspensioen, is er een belastingverdrag, is er broninhouding of een vrijstellingsverklaring nodig. Lijfrente is gevoeliger — je hebt er fiscaal voordeel op gehad via premieaftrek bij opbouw. Bij emigratie kan Nederland een conserverende aanslag opleggen.</p>
+    </div>
+    <div class="deepdive-body">
+      <h3>Zorg</h3>
+      <p>Je Nederlandse zorgverzekering vervalt bij emigratie. In sommige verdragslanden blijft Nederland betrokken via verdragszorg en een CAK-bijdrage. Beide effecten horen in je maandbudget, niet in een randzaak.</p>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 07</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 8 — Diepte: Schenken, erven, vermogen
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>03 — De diepte · Vermogen</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">07</span>
+      <div class="meta-text">
+        <span class="section-name">Schenken, erven en vermogen</span>
+        <span class="section-stage">De tienjaarsstaart</span>
+      </div>
+    </div>
+    <h2>Vermogen voelt mobiel. Fiscale regels niet.</h2>
+    <p class="lead">Geld kun je overmaken. Beleggingen kun je aanhouden. Crypto kun je verplaatsen. Een woning kun je verkopen. Maar bij schenken en erven blijft Nederland soms langer in beeld dan mensen verwachten.</p>
+  </div>
+
+  <div class="deepdive-grid deepdive-grid--reverse" style="align-items: stretch;">
+    <div style="display: flex; flex-direction: column;">
+      <div class="fact-card" style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+        <span class="label">Successiewet</span>
+        <div class="big-number">10<span class="unit">jr</span></div>
+        <p>Voor Nederlanders kijkt de Successiewet tien jaar terug na vertrek. Schenkingen en erfenissen binnen die termijn worden behandeld alsof je nog in Nederland woonde.</p>
+        <p style="margin-top: var(--s-4); font-style: italic; color: var(--c-ink-soft); font-size: 9.5pt;">Tien jaar is geen detail bij groot vermogen, kinderen als erfgenamen, geplande schenkingen, BV-vermogen of vastgoed.</p>
+      </div>
+    </div>
+
+    <div class="deepdive-body">
+      <h3>De tienjaarsregel</h3>
+      <p>Voor Nederlanders geldt in de Successiewet een belangrijke fictie. Ben je Nederlander en overlijd je of doe je een schenking binnen tien jaar na emigratie, dan kan Nederland je voor schenk- en erfbelasting nog behandelen alsof je in Nederland woonde.</p>
+
+      <h3>De fout</h3>
+      <p><em>"Ik woon in het buitenland, dus ik schenk vanuit het buitenland."</em> Voor Nederlandse schenk- en erfbelasting blijven je nationaliteit en vertrekdatum lang relevant. Schenken en erven hoort vóór vertrek in het scenario, niet erna.</p>
+    </div>
+  </div>
+
+  <div class="deepdive-body" style="margin-top: var(--s-5);">
+    <h3>Box 3 na emigratie</h3>
+    <p>Voor buitenlandse belastingplichtigen wordt Nederlandse box 3 vaak smaller. Nederland belast dan niet zomaar je hele wereldvermogen. Maar bepaalde Nederlandse posten blijven relevant, vooral Nederlands vastgoed en specifieke Nederlandse vermogensrechten. Gunstig voor sommige profielen. Geen vrijbrief: box 2, pensioen, lijfrente, schenk- en erfbelasting, dividendbelasting en sociale zekerheid kunnen samen nog steeds een serieuze staart vormen.</p>
+  </div>
+
+  <div class="quote-card">
+    <span class="mark">"</span>
+    <p>Vermogen kan sneller emigreren dan de Nederlandse schenk- en erfbelasting.</p>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 08</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 9 — Vijf profielen
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>04 — De profielen</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">08</span>
+      <div class="meta-text">
+        <span class="section-name">De profielen</span>
+        <span class="section-stage">Wie heeft welke staart</span>
+      </div>
+    </div>
+    <h2>Vijf profielen, vijf staarten</h2>
+    <p class="lead">Niet "Welk land?" maar "Welke haakjes hangen aan mijn situatie?". Bijna iedereen herkent zichzelf in één van deze vijf.</p>
+  </div>
+
+  <div class="scenario-grid">
+
+    <div class="scenario">
+      <span class="letter">A</span>
+      <div class="scenario-content">
+        <h4>Werknemer<br>met loondienst</h4>
+        <div class="row"><span class="lbl">Haak</span><span class="val">Woonplaats, AOW-opbouw, zorg.</span></div>
+        <div class="row"><span class="lbl">Ook</span><span class="val">Pensioen via werkgever, soms woning.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Werkgever weigert grensoverschrijdend dienstverband.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">B</span>
+      <div class="scenario-content">
+        <h4>Zzp’er<br>met Nederlandse klanten</h4>
+        <div class="row"><span class="lbl">Haak</span><span class="val">Werkvorm, woonplaats, sociale zekerheid.</span></div>
+        <div class="row"><span class="lbl">Ook</span><span class="val">Lijfrente-opbouw, AOW, zorg.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Schijnzelfstandigheid bij grensoverschrijdend werk.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">C</span>
+      <div class="scenario-content">
+        <h4>DGA<br>met BV en aanmerkelijk belang</h4>
+        <div class="row"><span class="lbl">Haak</span><span class="val">Box 2, conserverende aanslag, dividend.</span></div>
+        <div class="row"><span class="lbl">Ook</span><span class="val">Feitelijke leiding, gebruikelijk loon, schenk- en erf.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Substance-eis en dubbele belastingplicht.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">D</span>
+      <div class="scenario-content">
+        <h4>Pensionado<br>met meerdere pensioenen</h4>
+        <div class="row"><span class="lbl">Haak</span><span class="val">Pensioen, lijfrente, zorgverdrag, schenk- en erf.</span></div>
+        <div class="row"><span class="lbl">Ook</span><span class="val">AOW-export, vermogenssamenstelling.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">CAK-bijdrage en lokale aanslag samen hoger dan verwacht.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="letter">E</span>
+      <div class="scenario-content">
+        <h4>Belegger<br>levend van vermogen</h4>
+        <div class="row"><span class="lbl">Haak</span><span class="val">Box 3-restpost, dividend, schenk- en erf.</span></div>
+        <div class="row"><span class="lbl">Ook</span><span class="val">Vermogensbelasting in woonland, NL-vastgoed.</span></div>
+        <div class="row"><span class="lbl">Risico</span><span class="val">Onverwachte vermogensbelasting in bestemmingsland.</span></div>
+      </div>
+    </div>
+
+    <div class="scenario scenario--dark">
+      <div class="scenario-content">
+        <h4>Hoe verder?</h4>
+        <p>Bepaal welk profiel jou het dichtst benadert. Loop voor jouw profiel de hoofd- en bijhaken na. Reken pas dán door wat doorloopt na vertrek.</p>
+        <p style="color: var(--c-accent); font-family: var(--f-display); font-size: 13pt; font-style: italic; margin-top: var(--s-4);">Eerst je staart kennen. Dan pas je land kiezen.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 09</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 10 — De navelstrengmatrix (1/2/3 dots)
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>05 — De matrix</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">09</span>
+      <div class="meta-text">
+        <span class="section-name">De matrix</span>
+        <span class="section-stage">Welke haakjes raken jou</span>
+      </div>
+    </div>
+    <h2>De navelstrengmatrix</h2>
+    <p class="lead">Welke haakjes raken jou? Niet welke regels bestaan. Welke regels op jouw profiel van toepassing zijn. Een werknemer zonder woning heeft een andere staart dan een DGA met vastgoed en kinderen.</p>
+  </div>
+
+  <div class="matrix-wrap">
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th>Profiel</th>
+        <th>Woon-<br>plaats</th>
+        <th>Woning</th>
+        <th>BV en<br>box 2</th>
+        <th>Dividend-<br>belasting</th>
+        <th>Pensioen<br>en lijfrente</th>
+        <th>Schenk-<br>en erf</th>
+        <th>AOW<br>en zorg</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Werknemer</td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots-na">—</span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+      </tr>
+      <tr>
+        <td>Zzp’er</td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+      </tr>
+      <tr>
+        <td>DGA</td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+      </tr>
+      <tr>
+        <td>Pensionado</td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+      </tr>
+      <tr>
+        <td>Belegger</td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d"></span></span></td>
+        <td><span class="dots"><span class="d"></span><span class="d"></span><span class="d empty"></span></span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="dots" style="margin-right:4px;"><span class="d"></span><span class="d"></span><span class="d"></span></span>Sterk toetsen</span>
+    <span class="item"><span class="dots" style="margin-right:4px;"><span class="d"></span><span class="d"></span><span class="d empty"></span></span>Toetsen</span>
+    <span class="item"><span class="dots" style="margin-right:4px;"><span class="d"></span><span class="d empty"></span><span class="d empty"></span></span>Soms relevant</span>
+    <span class="item"><span class="dots-na" style="margin-right:4px;">—</span>Niet van toepassing</span>
+  </div>
+
+  <p class="caption" style="margin-top: var(--s-5); font-style: italic;">Indicatief beeld op basis van een doorsnee profiel. De DGA en pensionado hebben de zwaarste staarten. De werknemer komt het dichtst bij fiscale loskoppeling. Bij stapeling van profielen — een DGA met woning en kinderen — stapelt ook de staart.</p>
+
+  <div class="illustration">
+    <div class="ill-head">
+      <div>
+        <span class="ill-eyebrow">Zelfde land · andere uitkomst</span><br>
+        <span class="ill-title">Twee profielen, beiden naar Dubai</span>
+      </div>
+      <span class="ill-stamp">Illustratief — 2026</span>
+    </div>
+    <div class="ill-grid">
+      <div class="ill-col">
+        <h5>DGA met BV en aanmerkelijk belang</h5>
+        <p>Conserverende aanslag op aanmerkelijk belang blijft staan. Box 2-claim van 24,5% / 31% loopt mee. Dividendbelasting kan relevant blijven. Schenk- en erfbelastingfictie loopt tien jaar door.</p>
+      </div>
+      <div class="ill-col">
+        <h5>Werknemer met loondienst</h5>
+        <p>Geen aanmerkelijk belang, geen conserverende aanslag. Hoofdstaart zit in AOW-opbouw, pensioen en zorgverdrag. Dubai biedt geen sociale zekerheid; vrijwillige verzekering en internationale dekking moeten apart geregeld worden.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 10</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 11 — Vijf vragen vóór vertrek (checklist)
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>06 — Pre-move check</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">10</span>
+      <div class="meta-text">
+        <span class="section-name">Pre-move check</span>
+        <span class="section-stage">Vóór je vertrekt</span>
+      </div>
+    </div>
+    <h2>Vijf vragen vóór vertrek</h2>
+    <p class="lead">Doorloop deze vragen voor jouw scenario. Heb je geen helder antwoord op één van de vijf, dan is je emigratieplan nog niet klaar voor een fiscalist.</p>
+  </div>
+
+  <div class="checklist">
+    <div class="check-item">
+      <span class="num">01</span>
+      <div class="body">
+        <h4>Welke Nederlandse haakjes raken mij?</h4>
+        <p>Loop de zeven haakjes na voor jouw situatie. Niet "in het algemeen", maar concreet: woning, BV, dividend, pensioen, lijfrente, schenk- en erf, AOW en zorg. Welke staan op jouw naam?</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">02</span>
+      <div class="body">
+        <h4>Kan ik mijn woonplaats bewijzen?</h4>
+        <p>Inschrijven is administratie. Fiscale woonplaats is bewijs: huurcontract, school, dokter, sociale leven, dagen aanwezig. Wie het niet kan bewijzen, blijft Nederlands inwoner.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">03</span>
+      <div class="body">
+        <h4>Wat doe ik met de woning, vóór ik vertrek?</h4>
+        <p>Verkopen, verhuren of aanhouden zijn drie verschillende fiscale routes. Reken niet alleen het rendement, ook de uitstap- en herinstapkosten en het woonplaatsrisico bij aanhouden.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">04</span>
+      <div class="body">
+        <h4>Wat is mijn schenk- en erfplan voor de komende tien jaar?</h4>
+        <p>Voor Nederlanders kijkt de Successiewet tien jaar terug na vertrek. Geplande schenkingen, erfgenamen en familievermogen horen vóór vertrek in het scenario, niet erna.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+
+    <div class="check-item">
+      <span class="num">05</span>
+      <div class="body">
+        <h4>Wat kost mij dit later via AOW, pensioen en zorg?</h4>
+        <p>Per niet-verzekerd jaar 2 procent minder AOW, voor de rest van je leven. Vrijwillige verzekering moet binnen één jaar na vertrek. Verdragszorg en CAK-bijdrage horen in het maandbudget.</p>
+      </div>
+      <span class="box"></span>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 11</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 12 — CTA
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>07 — Volgende stap</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">11</span>
+      <div class="meta-text">
+        <span class="section-name">Volgende stap</span>
+        <span class="section-stage">Wat je nu doet</span>
+      </div>
+    </div>
+    <h2>Ga niet blanco naar een fiscalist</h2>
+    <p class="lead">Ga met een lijst van jouw Nederlandse haakjes en twee onderbouwde scenario’s. Dat scheelt je tijd, geld en het risico dat de fiscalist de verkeerde vraag beantwoordt.</p>
+  </div>
+
+  <div class="cta-card">
+    <span class="corner-mark"></span>
+    <span class="eyebrow">Decision tool</span>
+    <h3>Check mijn Nederlandse haakjes</h3>
+    <p class="cta-body">Emigratieplan geeft je een eerste financieel beeld van je emigratiescenario’s. Op basis van jouw woning, inkomen, BV, vermogen, pensioen, zorg en vertrekdatum. Geen vervanging van een fiscalist; juist het startpunt om dat gesprek scherper te voeren.</p>
+
+    <a href="https://emigratieplan.nl" class="cta-button">
+      Check mijn haakjes
+      <svg class="arrow" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 6 H16 M11 1 L16 6 L11 11" stroke="#f7f1ea" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+      </svg>
+    </a>
+
+    <div class="cta-bullets">
+      <div class="item">
+        <span class="lbl">Output</span>
+        Indicatief beeld van je financiële situatie en de haakjes die in jouw scenario spelen.
+      </div>
+      <div class="item">
+        <span class="lbl">Voorbereiding</span>
+        Een scherpe basis voor het gesprek met je fiscalist of belastingadviseur.
+      </div>
+      <div class="item">
+        <span class="lbl">Volgende stap</span>
+        Scenario-export die je meeneemt naar een specialist voor toetsing en uitvoering.
+      </div>
+    </div>
+  </div>
+
+  <div class="colophon">
+    <div class="left">
+      <span class="brand-line">Emigratieplan.nl</span>
+      Door STS Strategy · Amsterdam
+    </div>
+    <div class="right">
+      emigratieplan.nl<br>
+      <strong>kevin@emigratieplan.nl</strong>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 12</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 13 — Bronnen
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>08 — Bronnen &amp; verantwoording</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">12</span>
+      <div class="meta-text">
+        <span class="section-name">Bronnen &amp; verantwoording</span>
+        <span class="section-stage">Status en wet- en regelgeving</span>
+      </div>
+    </div>
+    <h2>Bronnen</h2>
+  </div>
+
+  <div class="disclaimer">
+    <p><strong>Status</strong>Deze beslisgids is informatief en vormt geen individueel fiscaal, juridisch of financieel advies. De inhoud helpt Nederlanders die emigratie overwegen scherper denken voordat ze specialistisch advies inkopen. De exacte uitkomst hangt altijd af van persoonlijke situatie, actuele wetgeving, belastingverdragen, woonplaatsfeiten, werkvorm, vermogensstructuur en woonland.</p>
+  </div>
+
+  <div class="source-block">
+    <h4>Wet- en regelgeving · Instanties</h4>
+    <ol>
+      <li>Algemene wet inzake rijksbelastingen art. 4 — fiscale woonplaats wordt naar omstandigheden beoordeeld.</li>
+      <li>Wet inkomstenbelasting 2001 — fiscaal inwonerschap, box 1, 2 en 3, aanmerkelijk belang en conserverende aanslag bij emigratie.</li>
+      <li>Wet op de vennootschapsbelasting 1969 — Nederlandse BV’s, vestigingsplaats en binnenlandse belastingplicht.</li>
+      <li>Wet op de dividendbelasting 1965 — Nederlandse inhouding op dividend, verdragsreductie en vrijstellingen.</li>
+      <li>Successiewet 1956 — woonplaatsficties bij schenk- en erfbelasting na emigratie, waaronder de tienjaarsregel voor Nederlanders.</li>
+      <li>Algemene Ouderdomswet — AOW-opbouw bij wonen of werken in het buitenland; jaarlijkse korting van 2 procent buiten de verzekering.</li>
+      <li>OECD Model Tax Convention art. 4 en 5 — tie-breakerregels woonplaats en vaste inrichting; verdragsartikelen over loon, pensioen, dividend en bestuurdersbeloningen.</li>
+      <li>Belastingdienst, SVB, CAK, Nederland Wereldwijd — publicaties over emigratie, AOW-export, verdragszorg en CAK-bijdrage.</li>
+      <li>Belastingverdragen Nederland met Portugal, Spanje, VAE, Griekenland, Cyprus en andere woonlanden (verdragenbank.overheid.nl).</li>
+    </ol>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 13</span>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     PAGE 14 — Claimnotities
+     ================================================================= -->
+<section class="page">
+  <div class="runner runner--top">
+    <span>08 — Bronnen &amp; verantwoording</span>
+    <span class="brand-mark">Emigratieplan</span>
+  </div>
+
+  <div class="page-head">
+    <div class="meta">
+      <span class="num">13</span>
+      <div class="meta-text">
+        <span class="section-name">Bronnen &amp; verantwoording</span>
+        <span class="section-stage">Vervolg · Claimnotities</span>
+      </div>
+    </div>
+    <h2>Claimnotities</h2>
+  </div>
+
+  <div class="source-block">
+    <h4>Notities bij de inhoud</h4>
+    <ol>
+      <li>Concrete tarieven, regimes en drempels veranderen. Box 2-tarieven (24,5% / 31%) en AOW-korting (2% per jaar) zijn peildatum 2026.</li>
+      <li>Uitschrijven uit de BRP betekent niet automatisch dat je fiscaal geen inwoner van Nederland meer bent. Fiscale woonplaats wordt beoordeeld op feiten en omstandigheden.</li>
+      <li>Een conserverende aanslag legt bij emigratie een Nederlandse claim vast. Uitstel van betaling betekent niet dat de claim verdwenen is.</li>
+      <li>Voor Nederlanders kan schenk- en erfbelasting na emigratie nog tien jaar relevant blijven, onder meer door woonplaatsficties in de Successiewet.</li>
+      <li>De rekensom op pagina 7 is illustratief: een 20-jarig verblijf buiten NL leidt onder de huidige AOW-regels in beginsel tot 40% gemiste opbouw, levenslang. Werkelijke uitkomst hangt af van verzekeringsjaren, vrijwillige verzekering en verdragsbepalingen.</li>
+      <li>De navelstrengmatrix op pagina 10 is indicatief. Werkelijke staarten combineren of overlappen elementen en hangen af van persoonlijke structuur. Voorbeelden zijn illustratief en geven geen oordeel over geschiktheid.</li>
+      <li>Emigratieplan helpt scenario’s structureren en voorbereiden. Het is geen vervanging van specialistisch advies.</li>
+    </ol>
+  </div>
+
+  <div class="colophon">
+    <div class="left">
+      <span class="brand-line">Emigratieplan.nl</span>
+      Door STS Strategy · Amsterdam · 2026<br>
+      Beslisgids · Editie 02
+    </div>
+    <div class="right">
+      emigratieplan.nl<br>
+      <strong>kevin@emigratieplan.nl</strong>
+    </div>
+  </div>
+
+  <div class="runner runner--bot">
+    <span>Beslisgids · De fiscale navelstreng</span>
+    <span>Pagina 14</span>
+  </div>
+</section>
+
+
+<section class="ep-cta no-print"><h2>Reken jouw situatie door</h2><p>Deze gids laat zien hoe de afweging werkt. De rekentool doet het met jouw cijfers, over twintig jaar, voor Nederland en negen emigratiebestemmingen.</p><div class="ep-cta__row"><a class="ep-btn" href="/">Zet me op de lijst &middot; &euro;50 early-bird</a><a class="ep-btn ep-btn--ghost" href="/downloads/de-fiscale-navelstreng/">Download deze gids als PDF</a></div></section><footer class="ep-foot no-print"><span>&copy; 2026 Emigratieplan.nl, onderdeel van STS Strategy</span><span><a href="/">Home</a><a href="/over/">Over</a><a href="/beslisgids/">Beslisgidsen</a><a href="/legal/privacy/">Privacy</a></span></footer>
+</body>
+</html>
