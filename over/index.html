@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Over Emigratieplan.nl — Wat het is en voor wie</title>
+  <meta name="description" content="Emigratieplan.nl rekent jouw netto financiële uitkomst over twintig jaar door voor negen emigratiebestemmingen, naast in Nederland blijven. Voor Nederlanders met vermogen of een eigen onderneming die emigratie serieus onderzoeken." />
+  <link rel="canonical" href="https://emigratieplan.nl/over/" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Over Emigratieplan.nl — Wat het is en voor wie" />
+  <meta property="og:description" content="De rekenstap die ontbreekt voordat je emigreert. Vergelijk jouw netto-uitkomst over twintig jaar in negen landen, naast in Nederland blijven." />
+  <meta property="og:url" content="https://emigratieplan.nl/over/" />
+  <meta property="og:locale" content="nl_NL" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:  #f6f5f2;
+      --brown:  #382c27;
+      --orange: #ba5229;
+      --muted:  #7a6e69;
+      --border: #dedad4;
+    }
+
+    html, body { background:var(--cream); color:var(--brown); font-family:"Source Sans 3",sans-serif; font-size:18px; line-height:1.65; -webkit-font-smoothing:antialiased; }
+
+    .page { min-height:100vh; display:flex; flex-direction:column; }
+
+    /* Header */
+    header { padding:2rem 2rem 0; }
+    .header__inner { max-width:720px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .wordmark { font-family:"Playfair Display",serif; font-size:1.1rem; font-weight:700; letter-spacing:0.02em; color:var(--brown); text-decoration:none; }
+    .wordmark span { color:var(--orange); }
+    .back-link { font-size:0.85rem; color:var(--muted); text-decoration:none; }
+    .back-link:hover { color:var(--orange); }
+
+    /* Article */
+    .article { flex:1; padding:3.5rem 2rem 4rem; }
+    .article__inner { max-width:720px; margin:0 auto; }
+
+    .eyebrow { display:inline-block; font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange); margin-bottom:1.25rem; }
+
+    h1 { font-family:"Playfair Display",serif; font-size:clamp(2rem,4.6vw,2.9rem); font-weight:900; line-height:1.15; color:var(--brown); margin-bottom:1.5rem; }
+
+    .lead { font-size:1.15rem; color:var(--brown); margin-bottom:2.5rem; }
+    .lead strong { font-weight:600; }
+
+    h2 { font-family:"Playfair Display",serif; font-size:1.5rem; font-weight:700; color:var(--brown); margin:2.75rem 0 1rem; }
+
+    p { color:var(--muted); margin-bottom:1.1rem; }
+    p strong { color:var(--brown); font-weight:600; }
+
+    .steps p, .avoid p { color:var(--brown); }
+    .steps p strong { color:var(--orange); }
+
+    .divider { width:40px; height:2px; background:var(--orange); margin:0 0 1.5rem; }
+    .rule { width:100%; height:1px; background:var(--border); margin:3rem 0; }
+
+    /* Founder card */
+    .founder { background:#fff; border:1px solid var(--border); border-radius:3px; padding:1.75rem; margin-top:0.5rem; }
+    .founder h2 { margin-top:0; }
+    .founder p:last-child { margin-bottom:0; }
+
+    /* CTA */
+    .cta { background:#fff3ee; border:1px solid #f0c4b0; border-radius:3px; padding:1.75rem; margin-top:1rem; }
+    .cta h2 { margin-top:0; }
+    .cta__row { display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:1.25rem; }
+    .btn { display:inline-block; background:var(--orange); color:#fff; text-decoration:none; font-size:0.85rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; padding:0.8rem 1.6rem; border-radius:2px; transition:background 0.2s ease; }
+    .btn:hover { background:#a04520; }
+    .btn--ghost { background:transparent; color:var(--orange); border:1px solid #f0c4b0; }
+    .btn--ghost:hover { background:#fff; color:#a04520; }
+
+    /* FAQ */
+    .faq h3 { font-family:"Source Sans 3",sans-serif; font-size:1.05rem; font-weight:600; color:var(--brown); margin:1.5rem 0 0.4rem; }
+    .faq p { margin-bottom:0; }
+
+    /* Footer */
+    footer { padding:2rem; border-top:1px solid var(--border); }
+    .footer__inner { max-width:720px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer__copy, .footer__links { font-size:0.8rem; color:var(--muted); }
+    .footer__links a { color:var(--muted); text-decoration:none; margin-left:1rem; }
+    .footer__links a:hover { color:var(--orange); }
+
+    @media (max-width:600px) {
+      header { padding:1.5rem 1.5rem 0; }
+      .article { padding:2.5rem 1.5rem 3rem; }
+      footer { padding:1.5rem; }
+    }
+  </style>
+
+  <!-- Structured data: entity definition for search and AI engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://emigratieplan.nl/#website",
+        "url": "https://emigratieplan.nl/",
+        "name": "Emigratieplan.nl",
+        "inLanguage": "nl-NL",
+        "publisher": { "@id": "https://emigratieplan.nl/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://emigratieplan.nl/#organization",
+        "name": "Emigratieplan.nl",
+        "url": "https://emigratieplan.nl/",
+        "logo": "https://emigratieplan.nl/apple-touch-icon.png",
+        "description": "Nederlandse rekentool die jouw netto financiële uitkomst over twintig jaar vergelijkt tussen Nederland en negen emigratiebestemmingen.",
+        "founder": { "@id": "https://emigratieplan.nl/#kevin" },
+        "knowsAbout": ["emigratie", "fiscale planning", "vermogensplanning", "pensioen", "conserverende aanslag", "Box 3"],
+        "areaServed": "NL"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://emigratieplan.nl/#kevin",
+        "name": "Kevin van Grondelle",
+        "jobTitle": "Oprichter",
+        "worksFor": { "@id": "https://emigratieplan.nl/#organization" },
+        "description": "Oprichter van Emigratieplan.nl en STS Strategy. Achtergrond in commerciële strategie en systemen.",
+        "sameAs": ["https://www.linkedin.com/in/kevin-van-grondelle"]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://emigratieplan.nl/over/#webpage",
+        "url": "https://emigratieplan.nl/over/",
+        "name": "Over Emigratieplan.nl",
+        "isPartOf": { "@id": "https://emigratieplan.nl/#website" },
+        "about": { "@id": "https://emigratieplan.nl/#organization" },
+        "inLanguage": "nl-NL"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://emigratieplan.nl/over/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wat is Emigratieplan.nl?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Emigratieplan.nl is een Nederlandse rekentool die jouw financiële situatie over twintig jaar vergelijkt tussen Nederland en negen emigratiebestemmingen. Je vult eenmalig je inkomen, vermogen, pensioen, woning en gezin in, en krijgt een top drie die rekenkundig klopt voor jouw situatie, plus de exacte vragen voor je fiscalist."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Voor wie is Emigratieplan bedoeld?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Voor Nederlanders met meer dan 100.000 euro vermogen of een eigen onderneming die emigratie serieus onderzoeken en eerst willen weten of het rekenkundig kan, voordat ze duur advies inkopen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Emigratieplan een belastingadviseur?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nee. Emigratieplan is een rekentool, geen fiscalist, belastingadviseur of emigratiecoach. Het levert een onderbouwde landenvergelijking waarmee je gericht en goedkoper advies inkoopt bij een fiscalist."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welke landen vergelijkt Emigratieplan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nederland naast negen emigratiebestemmingen: Griekenland, Cyprus, Portugal, Spanje, Italië, de Verenigde Arabische Emiraten, Bulgarije, Hongarije en Malta."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wanneer is Emigratieplan beschikbaar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "De tool lanceert in de zomer van 2026. Wie zich vooraf inschrijft krijgt 50 euro early-bird korting."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <div class="header__inner">
+        <a class="wordmark" href="/">Emigratieplan<span>.</span>nl</a>
+        <a class="back-link" href="/">&larr; Terug naar home</a>
+      </div>
+    </header>
+
+    <main class="article">
+      <article class="article__inner">
+
+        <span class="eyebrow">Over Emigratieplan</span>
+        <h1>Wat is Emigratieplan.nl?</h1>
+        <div class="divider"></div>
+
+        <p class="lead">
+          Emigratieplan.nl is een Nederlandse rekentool die jouw financiële situatie over twintig jaar vergelijkt tussen Nederland en negen emigratiebestemmingen. Je vult eenmalig je inkomen, vermogen, pensioen, woning en gezin in. De tool berekent je netto-uitkomst per land en geeft je een top drie die <strong>rekenkundig klopt voor jouw situatie</strong>. Daaronder staan de exacte vragen die je aan een fiscalist moet stellen. Zo laat je niet vijf landen doorrekenen bij een adviseur, maar één. Emigratieplan is geen belastingadviseur en geen emigratiecoach. Het is de rekenstap die nu nog ontbreekt, voordat je duur advies inkoopt.
+        </p>
+
+        <h2>Het probleem</h2>
+        <p>Je overweegt emigreren. Spanje, Portugal, Griekenland, misschien Dubai. Dan begint het echte werk.</p>
+        <p>Je hebt dertig blogs gelezen. Drie YouTube-kanalen. Twee Facebook-groepen. Een fiscalist die pas vanaf 3.500 euro per land echt gaat rekenen. En je weet nog steeds niet of het klopt.</p>
+        <p>Wel of geen Nederlandse koopwoning aanhouden. AOW-impact. Conserverende aanslag. Box 3 versus een lokaal regime. Pensioenopbouw die stopt. ZZP-aftrek die wegvalt. Valuta. Vermogensgroei over twintig jaar. Welk land voor jou netto het beste uitpakt.</p>
+        <p><strong>Niemand legt dat naast elkaar. Tot nu.</strong></p>
+
+        <h2>Wat Emigratieplan voor je doet</h2>
+        <div class="steps">
+          <p><strong>Stap 1.</strong> Je vult eenmalig je situatie in. Inkomen, vermogen, pensioen, woning, gezin.</p>
+          <p><strong>Stap 2.</strong> De tool berekent je netto-uitkomst over twintig jaar in negen emigratielanden, naast in Nederland blijven.</p>
+          <p><strong>Stap 3.</strong> Je krijgt een top drie die rekenkundig klopt voor jouw situatie. Met daaronder de exacte vragen voor je fiscalist.</p>
+        </div>
+        <p>Daarna ga je naar de fiscalist. Met een onderbouwde keuze. Eén land laten doorrekenen, niet vijf.</p>
+
+        <h2>Wat je voorkomt</h2>
+        <div class="avoid">
+          <p>Achttien maanden in spreadsheets zonder uitkomst.</p>
+          <p>Een onderbuikkeuze die je, afhankelijk van je situatie, over twintig jaar tienduizenden euro's netto kan kosten.</p>
+          <p>Duizenden euro's aan fiscalisten betalen om landen te schrappen die de tool in dertig minuten al wegstreept.</p>
+        </div>
+
+        <h2>Voor wie dit werkt</h2>
+        <p>Nederlanders met meer dan 100.000 euro vermogen of een eigen onderneming. Mensen die emigratie serieus onderzoeken. Mensen die eerst willen weten of het kan, voordat ze duur advies kopen.</p>
+
+        <h2>Wat Emigratieplan wel en niet is</h2>
+        <p>Geen fiscalist. Geen belastingadviseur. Geen emigratiecoach.</p>
+        <p>Wel: een rekentool die je situatie objectief doorrekent, zodat je met een onderbouwde keuze aan tafel komt bij de adviseur die de rest doet.</p>
+
+        <div class="founder">
+          <h2>Wie hierachter zit</h2>
+          <p>Emigratieplan is gebouwd door <strong>Kevin van Grondelle</strong>, oprichter van STS Strategy. Hij is zelf al ruim achttien maanden met deze stap bezig. Zijn vrouw en hij hebben Kreta op het oog.</p>
+          <p>Hij bouwde de tool die hij zelf nodig had en ontdekte dat tienduizenden Nederlanders per jaar emigreren zonder dat deze rekenstap bestaat. Achtergrond in commerciële strategie en systemen. Daarom kan hij dit bouwen.</p>
+        </div>
+
+        <div class="cta">
+          <h2>Wat je nu kunt doen</h2>
+          <p>Schrijf je in voor de lancering en krijg 50 euro early-bird korting. We gaan live in de zomer van 2026. Of download een gratis Beslisgids en zie hoe een onderbouwde landenvergelijking eruitziet.</p>
+          <div class="cta__row">
+            <a class="btn" href="/">Zet me op de lijst</a>
+            <a class="btn btn--ghost" href="/downloads/het-verkeerde-land/">Download een Beslisgids</a>
+          </div>
+        </div>
+
+        <div class="rule"></div>
+
+        <section class="faq">
+          <h2>Veelgestelde vragen</h2>
+
+          <h3>Wat is Emigratieplan.nl?</h3>
+          <p>Een Nederlandse rekentool die jouw financiële situatie over twintig jaar vergelijkt tussen Nederland en negen emigratiebestemmingen, met een top drie die klopt voor jouw cijfers en de juiste vervolgvragen voor je fiscalist.</p>
+
+          <h3>Voor wie is Emigratieplan bedoeld?</h3>
+          <p>Voor Nederlanders met meer dan 100.000 euro vermogen of een eigen onderneming die emigratie serieus onderzoeken, en eerst willen weten of het rekenkundig kan voordat ze duur advies inkopen.</p>
+
+          <h3>Is Emigratieplan een belastingadviseur?</h3>
+          <p>Nee. Emigratieplan is een rekentool, geen fiscalist, belastingadviseur of emigratiecoach. Het levert een onderbouwde landenvergelijking waarmee je gerichter en goedkoper advies inkoopt.</p>
+
+          <h3>Welke landen vergelijkt Emigratieplan?</h3>
+          <p>Nederland naast negen emigratiebestemmingen: Griekenland, Cyprus, Portugal, Spanje, Italië, de Verenigde Arabische Emiraten, Bulgarije, Hongarije en Malta.</p>
+
+          <h3>Wanneer is Emigratieplan beschikbaar?</h3>
+          <p>De tool lanceert in de zomer van 2026. Wie zich vooraf inschrijft krijgt 50 euro early-bird korting.</p>
+        </section>
+
+      </article>
+    </main>
+
+    <footer>
+      <div class="footer__inner">
+        <span class="footer__copy">&copy; 2026 Emigratieplan.nl</span>
+        <span class="footer__links">
+          <a href="/">Home</a>
+          <a href="/legal/privacy/">Privacy</a>
+          <a href="/legal/voorwaarden/">Voorwaarden</a>
+        </span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

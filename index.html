@@ -117,6 +117,43 @@
       footer { padding:1.5rem; flex-direction:column; align-items:flex-start; }
     }
   </style>
+
+  <!-- Structured data: entiteit-definitie voor zoek- en AI-engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://emigratieplan.nl/#website",
+        "url": "https://emigratieplan.nl/",
+        "name": "Emigratieplan.nl",
+        "inLanguage": "nl-NL",
+        "publisher": { "@id": "https://emigratieplan.nl/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://emigratieplan.nl/#organization",
+        "name": "Emigratieplan.nl",
+        "url": "https://emigratieplan.nl/",
+        "logo": "https://emigratieplan.nl/apple-touch-icon.png",
+        "description": "Nederlandse rekentool die jouw netto financiële uitkomst over twintig jaar vergelijkt tussen Nederland en negen emigratiebestemmingen.",
+        "founder": { "@id": "https://emigratieplan.nl/#kevin" },
+        "knowsAbout": ["emigratie", "fiscale planning", "vermogensplanning", "pensioen", "conserverende aanslag", "Box 3"],
+        "areaServed": "NL"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://emigratieplan.nl/#kevin",
+        "name": "Kevin van Grondelle",
+        "jobTitle": "Oprichter",
+        "worksFor": { "@id": "https://emigratieplan.nl/#organization" },
+        "description": "Oprichter van Emigratieplan.nl en STS Strategy. Achtergrond in commerciële strategie en systemen.",
+        "sameAs": ["https://www.linkedin.com/in/kevin-van-grondelle"]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="page">
@@ -221,7 +258,7 @@
 
         <div class="countries-intro">
           <p class="countries-intro__heading">Beschikbare landen</p>
-          <p class="countries-intro__body">De tool vergelijkt Nederland met tien emigratiebestemmingen. Kies je landen, vul je situatie in, en zie direct wat het financieel verschil is. Staat jouw voorkeur er niet tussen? <a href="mailto:kevin@stsstrategy.com">Stuur een mail</a>, we nemen het mee voor nieuwe versies.</p>
+          <p class="countries-intro__body">De tool vergelijkt Nederland met negen emigratiebestemmingen. Kies je landen, vul je situatie in, en zie direct wat het financieel verschil is. Staat jouw voorkeur er niet tussen? <a href="mailto:kevin@stsstrategy.com">Stuur een mail</a>, we nemen het mee voor nieuwe versies.</p>
         </div>
 
         <div class="countries" style="animation-delay:0.9s;">
@@ -241,7 +278,7 @@
     </main>
 
     <footer>
-      <span class="footer__copy">&copy; 2026 Emigratieplan.nl</span>
+      <span class="footer__copy">&copy; 2026 Emigratieplan.nl &middot; <a href="/over/" style="color:var(--orange);text-decoration:none;">Over</a></span>
       <span class="footer__countries">NL &middot; GR &middot; CY &middot; PT &middot; ES &middot; IT &middot; AE &middot; BG &middot; HU &middot; MT</span>
     </footer>
 
