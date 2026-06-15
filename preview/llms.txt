@@ -62,7 +62,7 @@ kevin@emigratieplan.nl
 
 ## Distributie
 
-Via emigratieplan.nl, checkout via Lemon Squeezy (iDEAL, creditcard, SEPA). Eenmalige aankoop, lifetime toegang tot de gekochte versie. Update-abonnement voor nieuwe regelgeving en uitbreidingen naar nieuwe landen volgt later, met voorrang en korting voor bestaande pakket-houders.
+Via emigratieplan.nl, checkout via Stripe (iDEAL, creditcard). Eenmalige aankoop, lifetime toegang tot de gekochte versie. Update-abonnement voor nieuwe regelgeving en uitbreidingen naar nieuwe landen volgt later, met voorrang en korting voor bestaande pakket-houders.
 
 ## Advisory aanvulling
 

@@ -1,0 +1,92 @@
+From 8e1063d7564b08270a1e55ee343b04a1de8ab097 Mon Sep 17 00:00:00 2001
+From: Kevin van Grondelle <kevin@emigratieplan.nl>
+Date: Fri, 12 Jun 2026 08:22:29 +0000
+Subject: [PATCH 5/8] R1: screenshot-sectie screenshot-klaar gemaakt
+ (img-tegels met onload/onerror fallback, eerlijke 'screenshot volgt'-staat,
+ annotatie-callouts). PNGs nog te leveren in preview/images/
+
+---
+ preview/index.html | 44 ++++++++++++++++++++++++++++++++------------
+ preview/styles.css |  5 +++++
+ 2 files changed, 37 insertions(+), 12 deletions(-)
+
+diff --git a/preview/index.html b/preview/index.html
+index 8ab9a53..d4bc8f5 100644
+--- a/preview/index.html
++++ b/preview/index.html
+@@ -999,24 +999,44 @@
+     </p>
+ 
+     <div class="ep-screenshots">
+-      <figure class="ep-shot" data-placeholder="true">
+-        <div class="ep-shot__img"><span>Screenshot · Cashflow overzicht</span></div>
+-        <figcaption>Plaatshouder. Wordt vervangen door de cashflow-tab.</figcaption>
++      <figure class="ep-shot" data-shot="cashflow">
++        <div class="ep-shot__img">
++          <img src="images/shot-cashflow.png" alt="Cashflow-tab in Emigratieplan" loading="lazy"
++               onload="this.nextElementSibling.style.display='none';"
++               onerror="this.style.display='none';">
++          <span class="ep-shot__pending">Cashflow-tab · screenshot volgt</span>
++        </div>
++        <figcaption><strong>Cashflow per jaar.</strong> Netto inkomen en uitgaven per land, inclusief AOW-opbouw en bevriezing.</figcaption>
+       </figure>
+ 
+-      <figure class="ep-shot" data-placeholder="true">
+-        <div class="ep-shot__img"><span>Screenshot · Vergelijking landen</span></div>
+-        <figcaption>Plaatshouder. Wordt vervangen door de vergelijkingsweergave.</figcaption>
++      <figure class="ep-shot" data-shot="vergelijking">
++        <div class="ep-shot__img">
++          <img src="images/shot-vergelijking.png" alt="Vergelijkingsweergave in Emigratieplan" loading="lazy"
++               onload="this.nextElementSibling.style.display='none';"
++               onerror="this.style.display='none';">
++          <span class="ep-shot__pending">Vergelijking landen · screenshot volgt</span>
++        </div>
++        <figcaption><strong>Tien landen naast Nederland.</strong> Gerangschikt op netto uitkomst, op dezelfde aannames.</figcaption>
+       </figure>
+ 
+-      <figure class="ep-shot" data-placeholder="true">
+-        <div class="ep-shot__img"><span>Screenshot · Pensioen + AOW</span></div>
+-        <figcaption>Plaatshouder. Wordt vervangen door de pensioen-tab.</figcaption>
++      <figure class="ep-shot" data-shot="pensioen">
++        <div class="ep-shot__img">
++          <img src="images/shot-pensioen.png" alt="Pensioen- en AOW-tab in Emigratieplan" loading="lazy"
++               onload="this.nextElementSibling.style.display='none';"
++               onerror="this.style.display='none';">
++          <span class="ep-shot__pending">Pensioen + AOW · screenshot volgt</span>
++        </div>
++        <figcaption><strong>Pensioen en AOW.</strong> Opbouw en uitkering per land, met de verdragsregels die gelden.</figcaption>
+       </figure>
+ 
+-      <figure class="ep-shot" data-placeholder="true">
+-        <div class="ep-shot__img"><span>Screenshot · Vermogensontwikkeling</span></div>
+-        <figcaption>Plaatshouder. Wordt vervangen door de vermogens-tab over 30 jaar.</figcaption>
++      <figure class="ep-shot" data-shot="vermogen">
++        <div class="ep-shot__img">
++          <img src="images/shot-vermogen.png" alt="Vermogenstab over 30 jaar in Emigratieplan" loading="lazy"
++               onload="this.nextElementSibling.style.display='none';"
++               onerror="this.style.display='none';">
++          <span class="ep-shot__pending">Vermogen over 30 jaar · screenshot volgt</span>
++        </div>
++        <figcaption><strong>Vermogen over 30 jaar.</strong> Ontwikkeling na belasting, per regime doorgerekend.</figcaption>
+       </figure>
+     </div>
+ 
+diff --git a/preview/styles.css b/preview/styles.css
+index 3147436..2477992 100644
+--- a/preview/styles.css
++++ b/preview/styles.css
+@@ -956,6 +956,11 @@ tr:nth-last-child(-n+5) .ep-info::before {
+   line-height: 1.5;
+ }
+ .ep-shot figcaption a { display: block; margin-top: 4px; }
++/* Screenshot-tegels: echte afbeelding vult de tegel; pending-tekst tot de PNG bestaat */
++.ep-shot__img { position: relative; overflow: hidden; }
++.ep-shot__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
++.ep-shot__pending { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 16px; }
++.ep-shot figcaption strong { color: var(--brown); font-weight: 600; }
+ 
+ /* Testimonials */
+ .ep-testimonial-grid {
+-- 
+2.34.1
+
