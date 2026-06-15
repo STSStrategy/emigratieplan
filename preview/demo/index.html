@@ -36,6 +36,21 @@
     .app-results-v2-aandachtspunten-card p { margin: 0; font-size: var(--emp-fs-body); color: var(--emp-v2-muted); }
     .app-results-v2-aandachtspunten-card p + p { margin-top: 0.4rem; }
     .demo-note { font-size: 0.72rem; color: var(--emp-muted); font-style: italic; margin: 0.2rem 0 0; }
+
+    /* Mobiel: brede tool-tabellen horizontaal scrollbaar i.p.v. platdrukken */
+    @media (max-width: 700px) {
+      .demo-shell-wrap { padding: 0 12px; }
+      .demo-topbar { padding: 8px 12px; font-size: 0.74rem; }
+      .app-results-v2-comparison-wrap,
+      .app-results-v2-yearly-card .app-results-v2-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .app-results-v2-comparison-table,
+      .app-results-v2-yearly-card .result-table { table-layout: auto; }
+      .app-results-v2-comparison-table.cmp-wide { min-width: 640px; }
+      .app-results-v2-yearly-card .result-table { min-width: 520px; }
+    }
   </style>
 </head>
 <body>
@@ -282,7 +297,7 @@
             <div class="app-results-v2-comparison-card">
               <p class="app-section-title">Tien landen naast Nederland</p>
               <div class="app-results-v2-comparison-wrap">
-                <table class="app-results-v2-comparison-table">
+                <table class="app-results-v2-comparison-table cmp-wide">
                   <thead><tr><th data-comparison-column="metric">Maatstaf</th><th>NL</th><th>Portugal</th><th>Griekenland</th><th>Spanje</th><th>Cyprus</th><th>UAE</th></tr></thead>
                   <tbody>
                     <tr><th>Netto per maand</th><td>€ 5.180</td><td>€ 5.960</td><td>€ 5.880</td><td>€ 5.740</td><td>€ 6.420</td><td>€ 6.800</td></tr>
