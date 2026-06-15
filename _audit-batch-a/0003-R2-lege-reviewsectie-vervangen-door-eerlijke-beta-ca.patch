@@ -1,0 +1,77 @@
+From 861e56fb3429f78c7f2672ee04ccd70bb529f9d5 Mon Sep 17 00:00:00 2001
+From: Kevin van Grondelle <kevin@emigratieplan.nl>
+Date: Fri, 12 Jun 2026 08:20:36 +0000
+Subject: [PATCH 3/8] R2: lege reviewsectie vervangen door eerlijke beta-call
+ (placeholders weg, nav-label Reviews->Beta)
+
+---
+ preview/index.html | 37 ++++++++-----------------------------
+ 1 file changed, 8 insertions(+), 29 deletions(-)
+
+diff --git a/preview/index.html b/preview/index.html
+index 12792f4..8fb6693 100644
+--- a/preview/index.html
++++ b/preview/index.html
+@@ -36,7 +36,7 @@
+     <li><a href="#pakketten"><span class="dot"></span><span class="lbl">Pakketten</span></a></li>
+     <li><a href="#vergelijking"><span class="dot"></span><span class="lbl">Vergelijking</span></a></li>
+     <li><a href="#voorbeeld"><span class="dot"></span><span class="lbl">Voorbeeld</span></a></li>
+-    <li><a href="#testimonials"><span class="dot"></span><span class="lbl">Reviews</span></a></li>
++    <li><a href="#testimonials"><span class="dot"></span><span class="lbl">Beta</span></a></li>
+     <li><a href="#wat-erin-zit"><span class="dot"></span><span class="lbl">Onder de motorkap</span></a></li>
+     <li><a href="#garantie"><span class="dot"></span><span class="lbl">Garantie</span></a></li>
+     <li><a href="#faq"><span class="dot"></span><span class="lbl">FAQ</span></a></li>
+@@ -73,7 +73,7 @@
+     <a href="#pakketten" class="ep-mobile-link">Pakketten</a>
+     <a href="#vergelijking" class="ep-mobile-link">Vergelijking</a>
+     <a href="#voorbeeld" class="ep-mobile-link">Voorbeeld</a>
+-    <a href="#testimonials" class="ep-mobile-link">Reviews</a>
++    <a href="#testimonials" class="ep-mobile-link">Beta</a>
+     <a href="#wat-erin-zit" class="ep-mobile-link">Onder de motorkap</a>
+     <a href="#garantie" class="ep-mobile-link">Garantie</a>
+     <a href="#faq" class="ep-mobile-link">FAQ</a>
+@@ -1076,35 +1076,14 @@
+ <!-- ============ TESTIMONIALS ============ -->
+ <section id="testimonials" class="ep-section ep-section--alt">
+   <div class="ep-container">
+-    <p class="ep-eyebrow ep-eyebrow--center">Reviews</p>
+-    <h2 class="ep-h2 ep-h2--center">Wat beta-testers zeggen</h2>
++    <p class="ep-eyebrow ep-eyebrow--center">Beta</p>
++    <h2 class="ep-h2 ep-h2--center">Nu in beta bij de eerste gebruikers</h2>
+     <p class="ep-lead ep-lead--center ep-narrow-inline">
+-      Quotes worden toegevoegd zodra beta-feedback binnen is.
++      Emigratieplan komt net uit de bouwfase. De eerste gebruikers rekenen nu hun scenario's door. Reviews plaatsen we hier zodra hun feedback binnen is, met naam en pakket erbij.
++    </p>
++    <p class="ep-lead ep-lead--center ep-narrow-inline">
++      Wil je meedoen en meedenken? Beta-gebruikers krijgen launch-condities. Mail <a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a>.
+     </p>
+-
+-    <div class="ep-testimonial-grid">
+-      <figure class="ep-testimonial" data-placeholder="true">
+-        <blockquote><p class="ep-placeholder">Quote in afwachting van beta-tester 1</p></blockquote>
+-        <figcaption>
+-          <span class="ep-testimonial__name">— Naam, rol</span>
+-          <span class="ep-testimonial__meta">Pakket, datum</span>
+-        </figcaption>
+-      </figure>
+-      <figure class="ep-testimonial" data-placeholder="true">
+-        <blockquote><p class="ep-placeholder">Quote in afwachting van beta-tester 2</p></blockquote>
+-        <figcaption>
+-          <span class="ep-testimonial__name">— Naam, rol</span>
+-          <span class="ep-testimonial__meta">Pakket, datum</span>
+-        </figcaption>
+-      </figure>
+-      <figure class="ep-testimonial" data-placeholder="true">
+-        <blockquote><p class="ep-placeholder">Quote in afwachting van beta-tester 3</p></blockquote>
+-        <figcaption>
+-          <span class="ep-testimonial__name">— Naam, rol</span>
+-          <span class="ep-testimonial__meta">Pakket, datum</span>
+-        </figcaption>
+-      </figure>
+-    </div>
+ 
+     <div class="ep-cta-row">
+       <a href="#pakketten" class="ep-btn ep-btn--accent">Bekijk de pakketten</a>
+-- 
+2.34.1
+

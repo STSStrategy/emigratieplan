@@ -1,0 +1,49 @@
+From e0e933b20d10e4a1d3e5d3081a03ef612e8ca970 Mon Sep 17 00:00:00 2001
+From: Kevin van Grondelle <kevin@emigratieplan.nl>
+Date: Fri, 12 Jun 2026 08:23:01 +0000
+Subject: [PATCH 6/8] R7: dode 'Vergelijking'-link op mobiel verborgen
+ (mobiel-menu + footer), sectie is op <=980px display:none
+
+---
+ preview/index.html | 4 ++--
+ preview/styles.css | 2 ++
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/preview/index.html b/preview/index.html
+index d4bc8f5..b6d0133 100644
+--- a/preview/index.html
++++ b/preview/index.html
+@@ -71,7 +71,7 @@
+     <a href="#voor-wie" class="ep-mobile-link">Voor wie</a>
+     <a href="#impact-visual" class="ep-mobile-link">Acht pijlers</a>
+     <a href="#pakketten" class="ep-mobile-link">Pakketten</a>
+-    <a href="#vergelijking" class="ep-mobile-link">Vergelijking</a>
++    <a href="#vergelijking" class="ep-mobile-link ep-hide-mobile-vergelijking">Vergelijking</a>
+     <a href="#voorbeeld" class="ep-mobile-link">Voorbeeld</a>
+     <a href="#testimonials" class="ep-mobile-link">Beta</a>
+     <a href="#wat-erin-zit" class="ep-mobile-link">Onder de motorkap</a>
+@@ -1416,7 +1416,7 @@
+       <div>
+         <p class="ep-footer__col-title">Product</p>
+         <a href="#pakketten">Pakketten</a>
+-        <a href="#vergelijking">Vergelijking</a>
++        <a href="#vergelijking" class="ep-hide-mobile-vergelijking">Vergelijking</a>
+         <a href="#faq">Veelgestelde vragen</a>
+       </div>
+       <div>
+diff --git a/preview/styles.css b/preview/styles.css
+index 2477992..63c3911 100644
+--- a/preview/styles.css
++++ b/preview/styles.css
+@@ -1175,6 +1175,8 @@ tr:nth-last-child(-n+5) .ep-info::before {
+   /* Vergelijking-sectie verborgen tot toggle */
+   #vergelijking { display: none; }
+   #vergelijking.is-mobile-shown { display: block; }
++  /* R7: link naar de op mobiel verborgen vergelijkingssectie ook verbergen, zodat de klik niet als kapot leest */
++  .ep-hide-mobile-vergelijking { display: none !important; }
+   .ep-compare { overflow-x: visible; }
+   .ep-compare__table { min-width: 0; font-size: 12px; }
+   .ep-compare__sticky th { padding: 12px 6px; font-size: 13px; }
+-- 
+2.34.1
+
