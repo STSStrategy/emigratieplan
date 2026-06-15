@@ -786,8 +786,10 @@ svg, video, iframe, table { max-width: 100%; }
   opacity: 0;
   transition: opacity 0.15s ease;
 }
-.ep-pkg__features li a:hover { color: var(--orange); }
-.ep-pkg__features li a:hover::after { opacity: 1; }
+@media (hover: hover) {
+  .ep-pkg__features li a:hover { color: var(--orange); }
+  .ep-pkg__features li a:hover::after { opacity: 1; }
+}
 .ep-pkg .ep-btn { margin-top: 8px; }
 .ep-pkg__legal {
   text-align: center;
@@ -1325,16 +1327,18 @@ tr:nth-last-child(-n+5) .ep-info::before {
     padding: 4px 11px;
   }
 
-  /* Country cards mobile */
+  /* Country cards mobile: vlag + naam + chevron, toelichting links eronder */
   .ep-country summary {
     grid-template-columns: 32px 1fr 20px;
-    grid-template-areas: "flag name chev";
-    gap: 12px;
+    grid-template-areas:
+      "flag name chev"
+      "flag meta meta";
+    gap: 4px 12px;
     padding: 16px 18px;
   }
-  .ep-country__meta { display: none; }
   .ep-country__name { font-size: 19px; }
   .ep-country__flag { font-size: 24px; }
+  .ep-country__tagline { font-size: 13px; line-height: 1.4; }
   .ep-country__body { padding: 4px 18px 18px; }
 
   /* Garantie mobile */
@@ -1351,8 +1355,8 @@ tr:nth-last-child(-n+5) .ep-info::before {
   #vergelijking.is-mobile-shown { display: block; }
   /* R7: link naar de op mobiel verborgen vergelijkingssectie ook verbergen, zodat de klik niet als kapot leest */
   .ep-hide-mobile-vergelijking { display: none !important; }
-  .ep-compare { overflow-x: visible; }
-  .ep-compare__table { min-width: 0; font-size: 12px; }
+  .ep-compare { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .ep-compare__table { min-width: 0; font-size: 12px; table-layout: fixed; }
   .ep-compare__sticky th { padding: 12px 6px; font-size: 13px; }
   .ep-compare__pkg-name { font-size: 13px; }
   .ep-compare__price { font-size: 11px; }

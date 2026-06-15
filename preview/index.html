@@ -1634,6 +1634,21 @@
   }
   scrollBriefFrames();
 
+  // Schaal de Beslisgids-thumbnails exact op de tegelbreedte, op elke
+  // schermbreedte. Een vaste CSS-scale was op smalle telefoons te groot
+  // waardoor de A4-thumbnail rechts werd afgekapt.
+  function fitBriefFrames() {
+    document.querySelectorAll('.ep-brief-tile__frame').forEach(function (frame) {
+      var f = frame.querySelector('iframe');
+      if (!f) return;
+      var w = frame.clientWidth;
+      if (w > 0) f.style.transform = 'scale(' + (w / 794) + ')';
+    });
+  }
+  fitBriefFrames();
+  window.addEventListener('resize', fitBriefFrames);
+  window.addEventListener('load', fitBriefFrames);
+
   // Vangnet: bij een verse load zonder hash bovenaan beginnen.
   window.addEventListener('load', function () {
     if (!location.hash) window.scrollTo(0, 0);
