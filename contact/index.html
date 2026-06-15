@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Emigratieplan.nl</title>
+  <meta name="description" content="Een vraag over een pakket, je aankoop of de garantie? Mail Kevin direct. Hij leest en beantwoordt alles zelf, meestal binnen één werkdag." />
+  <link rel="canonical" href="https://emigratieplan.nl/contact/" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact — Emigratieplan.nl" />
+  <meta property="og:description" content="Mail Kevin direct over pakketten, je aankoop of de garantie. Eén persoon, eigen antwoord, meestal binnen één werkdag." />
+  <meta property="og:url" content="https://emigratieplan.nl/contact/" />
+  <meta property="og:locale" content="nl_NL" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:  #f6f5f2;
+      --cream-warm: #efeae0;
+      --brown:  #382c27;
+      --orange: #ba5229;
+      --orange-deep: #9a4322;
+      --muted:  #7a6e69;
+      --border: #dedad4;
+    }
+
+    html, body { background:var(--cream); color:var(--brown); font-family:"Source Sans 3",sans-serif; font-size:18px; line-height:1.65; -webkit-font-smoothing:antialiased; }
+
+    .page { min-height:100vh; display:flex; flex-direction:column; }
+
+    /* Header */
+    header { padding:2rem 2rem 0; }
+    .header__inner { max-width:760px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .wordmark { font-family:"Playfair Display",serif; font-size:1.1rem; font-weight:700; letter-spacing:0.02em; color:var(--brown); text-decoration:none; }
+    .wordmark span { color:var(--orange); }
+    .back-link { font-size:0.85rem; color:var(--muted); text-decoration:none; }
+    .back-link:hover { color:var(--orange); }
+
+    /* Article */
+    .article { flex:1; padding:3.5rem 2rem 4rem; }
+    .article__inner { max-width:760px; margin:0 auto; }
+
+    .eyebrow { display:inline-block; font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange); margin-bottom:1.25rem; }
+
+    h1 { font-family:"Playfair Display",serif; font-size:clamp(2rem,4.6vw,2.9rem); font-weight:900; line-height:1.15; color:var(--brown); margin-bottom:1.25rem; }
+
+    .lead { font-size:1.15rem; color:var(--brown); margin-bottom:1.75rem; max-width:620px; }
+
+    /* Persoonlijk: foto van Kevin */
+    .from-kevin { display:flex; align-items:center; gap:1rem; margin:0 0 2.5rem; }
+    .from-kevin__photo { width:78px; height:78px; border-radius:50%; overflow:hidden; flex-shrink:0; background:var(--brown); }
+    .from-kevin__photo img { width:100%; height:100%; object-fit:cover; display:block; transform:scale(1.75); transform-origin:50% 26%; }
+    .from-kevin__name { font-family:"Playfair Display",serif; font-weight:700; font-size:1.1rem; color:var(--brown); margin:0; }
+    .from-kevin__role { font-size:0.9rem; color:var(--muted); margin:0; }
+
+    .divider { width:40px; height:2px; background:var(--orange); margin:0 0 1.5rem; }
+
+    /* Primary email card */
+    .mail {
+      background:#fff; border:1px solid var(--border); border-left:3px solid var(--orange);
+      border-radius:0 4px 4px 0; padding:1.6rem 1.75rem; margin-bottom:2.5rem;
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;
+    }
+    .mail__label { font-size:0.78rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.35rem; }
+    .mail__addr { font-family:"Playfair Display",serif; font-size:1.5rem; font-weight:700; color:var(--brown); text-decoration:none; word-break:break-word; }
+    .mail__addr:hover { color:var(--orange); }
+    .mail__note { font-size:0.9rem; color:var(--muted); margin-top:0.35rem; }
+    .btn { display:inline-block; background:var(--orange); color:#fff; text-decoration:none; font-size:0.85rem; font-weight:600; letter-spacing:0.04em; padding:0.85rem 1.6rem; border-radius:2px; white-space:nowrap; transition:background 0.2s ease; }
+    .btn:hover { background:var(--orange-deep); }
+
+    /* Reason cards (drie opties, naast elkaar) */
+    h2.section-title { font-family:"Playfair Display",serif; font-size:1.4rem; font-weight:700; color:var(--brown); margin:0 0 1.25rem; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:2.5rem; }
+    .card { background:#fff; border:1px solid var(--border); border-top:3px solid var(--orange); border-radius:4px; padding:1.4rem 1.4rem; display:flex; flex-direction:column; }
+    .card h3 { font-family:"Source Sans 3",sans-serif; font-size:1rem; font-weight:700; color:var(--brown); margin-bottom:0.5rem; }
+    .card p { font-size:0.92rem; line-height:1.55; color:var(--muted); margin:0 0 1.1rem; }
+    .card__btn { margin-top:auto; align-self:flex-start; display:inline-block; font-size:0.8rem; font-weight:600; color:var(--orange); border:1px solid #f0c4b0; padding:0.5rem 0.9rem; border-radius:2px; text-decoration:none; transition:background 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+    .card__btn:hover { background:var(--orange); color:#fff; border-color:var(--orange); }
+
+    /* Elsewhere */
+    .elsewhere { border-top:1px solid var(--border); padding-top:1.75rem; }
+    .elsewhere p { color:var(--muted); margin-bottom:0.6rem; }
+    .elsewhere a { color:var(--orange); text-decoration:none; }
+    .elsewhere a:hover { text-decoration:underline; }
+    .elsewhere strong { color:var(--brown); font-weight:600; }
+
+    /* Footer */
+    footer { padding:2rem; border-top:1px solid var(--border); }
+    .footer__inner { max-width:760px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer__copy, .footer__links { font-size:0.8rem; color:var(--muted); }
+    .footer__links a { color:var(--muted); text-decoration:none; margin-left:1rem; }
+    .footer__links a:hover { color:var(--orange); }
+
+    @media (max-width:680px) {
+      .cards { grid-template-columns:1fr; }
+      .mail { flex-direction:column; align-items:flex-start; }
+    }
+    @media (max-width:600px) {
+      header { padding:1.5rem 1.5rem 0; }
+      .article { padding:2.5rem 1.5rem 3rem; }
+      footer { padding:1.5rem; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "https://emigratieplan.nl/contact/",
+    "name": "Contact — Emigratieplan.nl",
+    "inLanguage": "nl-NL",
+    "about": {
+      "@type": "Organization",
+      "name": "Emigratieplan.nl",
+      "url": "https://emigratieplan.nl/",
+      "email": "kevin@emigratieplan.nl",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "kevin@emigratieplan.nl",
+        "contactType": "customer support",
+        "availableLanguage": ["nl", "en"]
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <div class="header__inner">
+        <a class="wordmark" href="/">Emigratieplan<span>.</span>nl</a>
+        <a class="back-link" href="/preview/">&larr; Terug naar de pakketten</a>
+      </div>
+    </header>
+
+    <main class="article">
+      <article class="article__inner">
+
+        <span class="eyebrow">Contact</span>
+        <h1>Eén vraag, één persoon, één antwoord</h1>
+        <div class="divider"></div>
+
+        <p class="lead">
+          Een vraag over een pakket, je aankoop of de garantie? Mail me direct. Ik lees en beantwoord alles zelf, meestal binnen één werkdag.
+        </p>
+
+        <div class="from-kevin">
+          <div class="from-kevin__photo"><img src="/preview/images/kevin.jpg" alt="Kevin van Grondelle"></div>
+          <div>
+            <p class="from-kevin__name">Kevin van Grondelle</p>
+            <p class="from-kevin__role">Oprichter, Emigratieplan</p>
+          </div>
+        </div>
+
+        <div class="mail">
+          <div>
+            <p class="mail__label">E-mail</p>
+            <a class="mail__addr" href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a>
+            <p class="mail__note">Meestal binnen één werkdag antwoord. Geen ticketsysteem, geen bot.</p>
+          </div>
+          <a class="btn" href="mailto:kevin@emigratieplan.nl">Stuur een mail</a>
+        </div>
+
+        <h2 class="section-title">Waarvoor mensen mailen</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Voor je koopt</h3>
+            <p>Twijfel je welk pakket past? Stuur je situatie in twee regels, dan zeg ik welk pakket logisch is. Geen verkooppraatje.</p>
+            <a class="card__btn" href="mailto:kevin@emigratieplan.nl?subject=Vraag%20over%20een%20pakket">Mail hierover</a>
+          </div>
+          <div class="card">
+            <h3>Garantie</h3>
+            <p>Niet wat je verwacht? Eén mail binnen 30 dagen en je geld staat binnen 5 werkdagen terug. Geen vragen vooraf.</p>
+            <a class="card__btn" href="mailto:kevin@emigratieplan.nl?subject=Garantie%20en%20geld%20terug">Mail hierover</a>
+          </div>
+          <div class="card">
+            <h3>Beta en meedenken</h3>
+            <p>Beta-gebruiker worden of meedenken over een land of regime? Beta-gebruikers krijgen launch-condities.</p>
+            <a class="card__btn" href="mailto:kevin@emigratieplan.nl?subject=Beta-gebruiker%20worden">Mail hierover</a>
+          </div>
+        </div>
+
+        <div class="elsewhere">
+          <p>Liever eerst lezen? <a href="/over/">Wat Emigratieplan is en voor wie</a>, of bekijk de <a href="/preview/">pakketten</a>.</p>
+          <p>Meekijken met wat ik bouw kan op <a href="https://www.linkedin.com/in/kevin-van-grondelle" rel="noopener" target="_blank">LinkedIn</a>.</p>
+          <p><strong>Emigratieplan is een rekentool, geen fiscalist.</strong> Voor formeel advies stap je naar een belastingadviseur. De tool maakt dat gesprek wel een stuk effectiever.</p>
+        </div>
+
+      </article>
+    </main>
+
+    <footer>
+      <div class="footer__inner">
+        <span class="footer__copy">&copy; 2026 Emigratieplan.nl</span>
+        <span class="footer__links">
+          <a href="/">Home</a>
+          <a href="/over/">Over</a>
+          <a href="/legal/privacy/">Privacy</a>
+          <a href="/legal/voorwaarden/">Voorwaarden</a>
+        </span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
