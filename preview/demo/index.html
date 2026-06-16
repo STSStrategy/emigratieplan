@@ -5,434 +5,362 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <title>Emigratieplan · Interactieve demo (voorbeeld)</title>
   <meta name="description" content="Navigeerbaar voorbeeld van de Emigratieplan-rekentool. Vaste voorbeeldcasus, klik door de tabs. Alleen-lezen, geen rekenengine.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- De echte tool-stylesheet: de demo wordt door exact dezelfde CSS gerenderd als de tool. -->
+  <link rel="stylesheet" href="./app.css">
 
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --cream:#f6f5f2;--cream-warm:#efeae0;--white:#fff;
-      --brown:#382c27;--brown-soft:#5a4a42;--brown-mute:#7a6e69;
-      --orange:#ba5229;--orange-deep:#9a4322;--olive:#5a6b3e;--border:#dedad4;
-      --font-serif:'Playfair Display',Georgia,serif;
-      --font-sans:'Source Sans 3',-apple-system,BlinkMacSystemFont,sans-serif;
+    /* Demo-only chrome (zit niet in de tool). Gebruikt de tool-tokens zodat het meekleurt. */
+    body { margin: 0; }
+    .demo-topbar {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+      padding: 8px 18px; background: #2a1f1a; color: #f3ece2;
+      font-family: var(--emp-sans); font-size: 0.78rem; line-height: 1.4;
     }
-    html,body{background:var(--cream);color:var(--brown);font-family:var(--font-sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+    .demo-topbar svg { width: 15px; height: 15px; flex-shrink: 0; color: #e0935f; }
+    .demo-topbar strong { color: #fff; font-weight: 600; }
+    .demo-topbar .demo-topbar__cta { margin-left: auto; color: #fff; text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+    .demo-shell-wrap { max-width: 1280px; margin: 0 auto; padding: 0 18px; }
+    .app-shell.app-shell--v2 { min-height: auto; }
+    .demo-foot { border-top: 1px solid var(--emp-line); margin-top: 14px; padding: 26px 18px 36px; text-align: center; font-family: var(--emp-sans); }
+    .demo-foot h3 { font-size: 1.15rem; margin: 0 0 6px; color: var(--emp-ink-strong); }
+    .demo-foot p { color: var(--emp-muted); margin: 0 0 14px; font-size: 0.92rem; }
+    .demo-foot a { display: inline-flex; align-items: center; gap: 8px; background: var(--emp-accent); color: #fff; font-weight: 600; font-size: 0.92rem; padding: 10px 20px; border-radius: 8px; text-decoration: none; }
+    .demo-foot a:hover { background: var(--emp-copper-deep); }
+    .demo-foot a svg { width: 16px; height: 16px; }
+    /* Demo: alle invoer is statisch en vergrendeld. */
+    .app-shell--v2 .emp-section-header { cursor: default; }
+    .app-results-v2-aandachtspunten-card p { margin: 0; font-size: var(--emp-fs-body); color: var(--emp-v2-muted); }
+    .app-results-v2-aandachtspunten-card p + p { margin-top: 0.4rem; }
+    .demo-note { font-size: 0.72rem; color: var(--emp-muted); font-style: italic; margin: 0.2rem 0 0; }
 
-    /* Demo banner */
-    .demobar{background:var(--brown);color:var(--cream);font-size:13.5px}
-    .demobar__in{max-width:1180px;margin:0 auto;padding:9px 24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-    .demobar svg{width:16px;height:16px;flex-shrink:0;color:var(--orange)}
-    .demobar strong{font-weight:700}
-    .demobar a{margin-left:auto;color:var(--cream);border-bottom:1px solid rgba(246,245,242,.4)}
-    .demobar a:hover{color:#fff;border-color:#fff}
-
-    /* Top bar */
-    .top{background:rgba(246,245,242,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:30}
-    .top__in{display:flex;align-items:center;gap:16px;padding:12px 24px;max-width:1180px;margin:0 auto}
-    .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-serif);font-weight:700;font-size:17px}
-    .logo__mark{width:30px;height:30px;background:var(--brown);color:var(--cream);display:flex;align-items:center;justify-content:center;border-radius:2px;font-size:12px}
-    .logo__acc{color:var(--orange)}
-    .top__badge{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);border:1px solid var(--orange);border-radius:999px;padding:3px 10px}
-    .top__cta{margin-left:auto;display:inline-flex;align-items:center;gap:7px;background:var(--orange);color:#fff;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:2px}
-    .top__cta:hover{background:var(--orange-deep)}
-
-    /* Scenario header */
-    .scene{padding:26px 0 18px}
-    .scene__eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
-    .scene h1{font-family:var(--font-serif);font-weight:700;font-size:clamp(24px,3vw,34px);line-height:1.15;letter-spacing:-.01em}
-    .scene p{color:var(--brown-soft);margin-top:8px;max-width:760px;font-size:15px}
-
-    /* App layout */
-    .app{display:grid;grid-template-columns:300px 1fr;gap:24px;padding-bottom:64px;align-items:start}
-
-    /* Intake (locked) */
-    .intake{background:var(--white);border:1px solid var(--border);border-radius:6px;overflow:hidden;position:sticky;top:120px}
-    .intake__head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
-    .intake__head h2{font-family:var(--font-serif);font-weight:700;font-size:17px}
-    .lock{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--brown-mute);margin-left:auto}
-    .lock svg{width:13px;height:13px}
-    .intake__sec{padding:14px 18px;border-bottom:1px solid var(--border)}
-    .intake__sec:last-child{border-bottom:none}
-    .intake__sec h3{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brown-mute);margin-bottom:10px;display:flex;align-items:center;gap:7px}
-    .intake__sec h3 svg{width:15px;height:15px;color:var(--orange)}
-    .field{margin-bottom:9px}
-    .field:last-child{margin-bottom:0}
-    .field label{display:block;font-size:12px;color:var(--brown-mute);margin-bottom:3px}
-    .field input,.field select{width:100%;font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--border);border-radius:3px;background:var(--cream-warm);color:var(--brown);cursor:not-allowed}
-    .field .two{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-    .radioset{display:flex;gap:6px;flex-wrap:wrap}
-    .radioset span{font-size:12px;padding:5px 9px;border:1px solid var(--border);border-radius:3px;background:var(--cream-warm);color:var(--brown-mute)}
-    .radioset span.on{border-color:var(--orange);color:var(--orange);background:#fff}
-
-    /* Results */
-    .results{min-width:0}
-    .tabs{display:flex;gap:2px;border-bottom:2px solid var(--border);overflow-x:auto;scrollbar-width:thin}
-    .tab{flex-shrink:0;font:inherit;font-size:14px;font-weight:600;color:var(--brown-mute);background:none;border:none;padding:11px 16px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:color .15s ease}
-    .tab:hover{color:var(--brown)}
-    .tab.on{color:var(--orange);border-bottom-color:var(--orange)}
-    .panel{display:none;padding:24px 0}
-    .panel.on{display:block}
-    .panel h2{font-family:var(--font-serif);font-weight:700;font-size:23px;margin-bottom:4px}
-    .panel .sub{color:var(--brown-soft);font-size:14.5px;margin-bottom:20px}
-
-    /* Metric cards */
-    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
-    .metric{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:16px 18px;border-left:3px solid var(--orange)}
-    .metric__lbl{font-size:12.5px;color:var(--brown-mute);margin-bottom:6px}
-    .metric__val{font-family:var(--font-serif);font-weight:700;font-size:26px;line-height:1;color:var(--brown)}
-    .metric__delta{font-size:12px;font-weight:600;margin-top:6px;display:inline-block;padding:2px 8px;border-radius:999px}
-    .pos{background:rgba(90,107,62,.13);color:var(--olive)}
-    .neg{background:rgba(186,82,41,.12);color:var(--orange-deep)}
-    .neu{background:rgba(122,110,105,.13);color:var(--brown-mute)}
-
-    /* Compare bars */
-    .cmpcard{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:18px 20px;margin-bottom:14px}
-    .cmpcard h4{font-size:14px;font-weight:600;margin-bottom:12px}
-    .bar{display:grid;grid-template-columns:34px 1fr 92px;gap:10px;align-items:center;margin-bottom:8px}
-    .bar:last-child{margin-bottom:0}
-    .bar__lbl{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--brown-mute);text-transform:uppercase}
-    .bar__track{height:10px;background:rgba(56,44,39,.06);border-radius:5px;overflow:hidden}
-    .bar__fill{height:100%;border-radius:5px}
-    .bar__fill--nl{background:var(--brown-mute)}
-    .bar__fill--pt{background:var(--orange)}
-    .bar__val{font-size:13px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
-
-    /* Tables */
-    table.t{width:100%;border-collapse:collapse;font-size:14px;background:var(--white);border:1px solid var(--border);border-radius:6px;overflow:hidden}
-    table.t th,table.t td{padding:11px 14px;border-bottom:1px solid var(--border);text-align:right}
-    table.t th:first-child,table.t td:first-child{text-align:left}
-    table.t thead th{background:var(--cream-warm);font-weight:700;font-size:12.5px;letter-spacing:.02em}
-    table.t tbody tr:last-child td{border-bottom:none}
-    table.t tbody tr.total td{font-weight:700;background:rgba(186,82,41,.04)}
-    .pt-col{color:var(--orange-deep)}
-    .legend{display:flex;gap:18px;font-size:12.5px;color:var(--brown-mute);margin-bottom:14px}
-    .legend i{display:inline-block;width:14px;height:8px;border-radius:2px;margin-right:6px;vertical-align:middle}
-    .legend i.nl{background:var(--brown-mute)}.legend i.pt{background:var(--orange)}
-
-    /* Chart */
-    .chart{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:20px}
-    .chart svg{width:100%;height:auto;display:block}
-    .note{font-size:13px;color:var(--brown-mute);line-height:1.55;margin-top:14px;padding:14px 16px;background:var(--cream-warm);border-radius:6px;border-left:3px solid var(--border)}
-    .note strong{color:var(--brown)}
-
-    .rank{display:grid;grid-template-columns:26px 150px 1fr 96px;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--border);font-size:14px}
-    .rank:last-child{border-bottom:none}
-    .rank__pos{font-family:var(--font-serif);font-weight:700;color:var(--brown-mute)}
-    .rank__name{font-weight:600;display:flex;align-items:center;gap:8px}
-    .rank__name .flag{font-size:18px}
-    .rank__track{height:9px;background:rgba(56,44,39,.06);border-radius:5px;overflow:hidden}
-    .rank__fill{height:100%;background:var(--orange);border-radius:5px}
-    .rank.is-nl .rank__fill{background:var(--brown-mute)}
-    .rank__val{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
-
-    .foot{border-top:1px solid var(--border);padding:32px 0;text-align:center}
-    .foot h3{font-family:var(--font-serif);font-weight:700;font-size:22px;margin-bottom:6px}
-    .foot p{color:var(--brown-soft);margin-bottom:18px}
-    .foot a{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;font-weight:600;font-size:15px;padding:13px 26px;border-radius:2px}
-    .foot a:hover{background:var(--orange-deep)}
-
-    @media(max-width:900px){
-      .app{grid-template-columns:1fr}
-      .intake{position:static}
-      .metrics{grid-template-columns:1fr}
-      .rank{grid-template-columns:24px 1fr 80px;}
-      .rank__track{display:none}
+    /* Mobiel: brede tool-tabellen horizontaal scrollbaar i.p.v. platdrukken */
+    @media (max-width: 700px) {
+      .demo-shell-wrap { padding: 0 12px; }
+      .demo-topbar { padding: 8px 12px; font-size: 0.74rem; }
+      .app-results-v2-comparison-wrap,
+      .app-results-v2-yearly-card .app-results-v2-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .app-results-v2-comparison-table,
+      .app-results-v2-yearly-card .result-table { table-layout: auto; }
+      .app-results-v2-comparison-table.cmp-wide { min-width: 640px; }
+      .app-results-v2-yearly-card .result-table { min-width: 520px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="demobar">
-    <div class="demobar__in">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
-      <span><strong>Demo, alleen-lezen.</strong> Eén vaste voorbeeldcasus. Klik door de tabs, maar wijzigen kan niet. In de echte tool reken je je eigen cijfers door.</span>
-      <a href="/preview/#pakketten">Bekijk pakketten</a>
-    </div>
+  <div class="demo-topbar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+    <span><strong>Demo, alleen-lezen.</strong> Eén vaste voorbeeldcasus. Klik door de tabs, maar wijzigen kan niet. In de echte tool reken je je eigen cijfers door.</span>
+    <a class="demo-topbar__cta" href="/preview/#pakketten">Bekijk pakketten &rarr;</a>
   </div>
 
-  <header class="top">
-    <div class="top__in">
-      <a class="logo" href="/preview/"><span class="logo__mark">EP</span><span>Emigratie<span class="logo__acc">plan</span></span></a>
-      <span class="top__badge">Voorbeeld</span>
-      <a class="top__cta" href="/preview/#pakketten">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        Reken je eigen situatie door
-      </a>
-    </div>
-  </header>
+  <div class="demo-shell-wrap">
+    <main class="app-shell app-shell--v2" data-app-mode="results" data-shell-version="v2">
 
-  <div class="wrap">
-    <div class="scene">
-      <p class="scene__eyebrow">Voorbeeldcasus · Nederland naast Portugal</p>
-      <h1>Echtpaar, midden vijftig, oriënteert op Portugal</h1>
-      <p>Samen € 110.000 bruto per jaar, deels loondienst, deels ZZP. Koophuis in Nederland met € 200.000 hypotheek, € 250.000 spaargeld en beleggingen, kinderen het huis uit. Horizon 30 jaar. Dit zijn voorbeeldcijfers om de tool te laten zien, geen echte uitkomst.</p>
-    </div>
+      <!-- ===== Sidebar (echte tool-classes, statisch + vergrendeld) ===== -->
+      <aside id="app-sidebar" class="emp-sidebar" data-sidebar-state="expanded" aria-label="Emigratieplan zijbalk">
+        <header class="app-header app-brand-header">
+          <p class="app-status-label">Demo · alleen-lezen</p>
+          <p class="app-brand-eyebrow">Voorbeeld</p>
+          <h1 class="app-brand-title">Emigratieplan</h1>
+          <p class="app-brand-subtitle">Reken zelf door wat emigreren financieel betekent.</p>
+          <div class="app-language-toggle" role="group" aria-label="Taal">
+            <span class="app-language-toggle-label">Taal</span>
+            <button type="button" class="app-language-toggle-option" aria-pressed="true" disabled>NL</button>
+            <button type="button" class="app-language-toggle-option" aria-pressed="false" disabled>EN</button>
+          </div>
+        </header>
 
-    <div class="app">
+        <div class="emp-accordion-host">
+          <div class="emp-accordion">
 
-      <!-- ===== Locked intake ===== -->
-      <aside class="intake" aria-label="Ingevulde gegevens (vergrendeld)">
-        <div class="intake__head">
-          <h2>Jouw gegevens</h2>
-          <span class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>vergrendeld</span>
+            <section class="emp-accordion-section" data-section-state="expanded">
+              <div class="emp-section-header"><span class="emp-section-chevron" aria-hidden="true"></span><span class="emp-section-title">Huishouden</span><span class="emp-pill">vast</span></div>
+              <div class="emp-accordion-body">
+                <div class="form-field"><span>Personen</span><input value="2 (partners)" disabled></div>
+                <div class="form-field"><span>Geboortejaar partner 1</span><input value="1972" disabled></div>
+                <div class="form-field"><span>Geboortejaar partner 2</span><input value="1974" disabled></div>
+                <div class="form-field"><span>Thuiswonende kinderen</span><input value="0" disabled></div>
+              </div>
+            </section>
+
+            <section class="emp-accordion-section" data-section-state="expanded">
+              <div class="emp-section-header"><span class="emp-section-chevron" aria-hidden="true"></span><span class="emp-section-title">Inkomen</span><span class="emp-pill">vast</span></div>
+              <div class="emp-accordion-body">
+                <div class="form-field"><span>Partner 1 · loondienst</span><input value="€ 65.000" disabled></div>
+                <div class="form-field"><span>Partner 2 · ZZP (winst)</span><input value="€ 45.000" disabled></div>
+              </div>
+            </section>
+
+            <section class="emp-accordion-section" data-section-state="expanded">
+              <div class="emp-section-header"><span class="emp-section-chevron" aria-hidden="true"></span><span class="emp-section-title">AOW en pensioen</span><span class="emp-pill">vast</span></div>
+              <div class="emp-accordion-body">
+                <div class="form-field"><span>AOW-opbouwjaren (per persoon)</span><input value="36 jaar" disabled></div>
+                <div class="form-field"><span>Privépensioen vanaf 67</span><input value="€ 1.200 / maand" disabled></div>
+              </div>
+            </section>
+
+            <section class="emp-accordion-section" data-section-state="expanded">
+              <div class="emp-section-header"><span class="emp-section-chevron" aria-hidden="true"></span><span class="emp-section-title">Vermogen</span><span class="emp-pill">vast</span></div>
+              <div class="emp-accordion-body">
+                <div class="form-field"><span>Beleggingen en ETF's</span><input value="€ 170.000" disabled></div>
+                <div class="form-field"><span>Spaargeld</span><input value="€ 80.000" disabled></div>
+              </div>
+            </section>
+
+            <section class="emp-accordion-section" data-section-state="expanded">
+              <div class="emp-section-header"><span class="emp-section-chevron" aria-hidden="true"></span><span class="emp-section-title">Wonen</span><span class="emp-pill">vast</span></div>
+              <div class="emp-accordion-body">
+                <div class="form-field"><span>Nederland</span><input value="Koop · WOZ € 520.000" disabled></div>
+                <div class="form-field"><span>Hypotheek</span><input value="€ 200.000" disabled></div>
+                <div class="form-field"><span>Bestemming</span><input value="Huren, daarna kopen" disabled></div>
+              </div>
+            </section>
+
+            <section class="emp-accordion-section" data-section-state="expanded">
+              <div class="emp-section-header"><span class="emp-section-chevron" aria-hidden="true"></span><span class="emp-section-title">Doelland en horizon</span><span class="emp-pill">vast</span></div>
+              <div class="emp-accordion-body">
+                <div class="form-field"><span>Doelland</span><input value="Portugal · NHR-2 (IFICI)" disabled></div>
+                <div class="form-field"><span>Horizon</span><input value="30 jaar" disabled></div>
+              </div>
+            </section>
+
+          </div>
         </div>
 
-        <div class="intake__sec">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.4"/><path d="M4 19c0-2.8 2.2-5 5-5s5 2.2 5 5M14.5 14.2c2 .4 3.5 2.1 3.5 4.3"/></svg>Huishouden</h3>
-          <div class="field"><label>Personen</label><input value="2 (partners)" disabled></div>
-          <div class="field"><div class="two"><div><label>Geboortejaar 1</label><input value="1972" disabled></div><div><label>Geboortejaar 2</label><input value="1974" disabled></div></div></div>
-          <div class="field"><label>Thuiswonende kinderen</label><input value="0" disabled></div>
-        </div>
-
-        <div class="intake__sec">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v11H3z"/><path d="M3 11h18"/></svg>Inkomen</h3>
-          <div class="field"><label>Partner 1 · loondienst</label><input value="€ 65.000" disabled></div>
-          <div class="field"><label>Partner 2 · ZZP (winst)</label><input value="€ 45.000" disabled></div>
-        </div>
-
-        <div class="intake__sec">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg>Wonen</h3>
-          <div class="field"><label>Nederland</label><div class="radioset"><span class="on">Koop</span><span>Huur</span></div></div>
-          <div class="field"><div class="two"><div><label>WOZ-waarde</label><input value="€ 520.000" disabled></div><div><label>Hypotheek</label><input value="€ 200.000" disabled></div></div></div>
-          <div class="field"><label>Bestemming</label><div class="radioset"><span>Koop</span><span class="on">Huur, daarna koop</span></div></div>
-        </div>
-
-        <div class="intake__sec">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Vermogen</h3>
-          <div class="field"><label>Beleggingen en ETF's</label><input value="€ 170.000" disabled></div>
-          <div class="field"><label>Spaargeld</label><input value="€ 80.000" disabled></div>
-        </div>
-
-        <div class="intake__sec">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20v-6a8 8 0 0 1 16 0v6"/><path d="M2 20h20M12 4V2"/></svg>Pensioen en AOW</h3>
-          <div class="field"><label>AOW-opbouwjaren (per persoon)</label><input value="36 jaar" disabled></div>
-          <div class="field"><label>Privépensioen vanaf 67</label><input value="€ 1.200 / maand" disabled></div>
-        </div>
-
-        <div class="intake__sec">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg>Doelland en horizon</h3>
-          <div class="field"><label>Doelland</label><input value="🇵🇹 Portugal · NHR-2 (IFICI)" disabled></div>
-          <div class="field"><label>Horizon</label><input value="30 jaar" disabled></div>
-        </div>
+        <section class="app-actions" aria-label="Export en import">
+          <button type="button" disabled>Exporteer JSON</button>
+          <button type="button" disabled>Importeer JSON</button>
+          <button type="button" disabled>Exporteer Markdown</button>
+          <p class="demo-note">In de demo uitgeschakeld.</p>
+        </section>
       </aside>
 
-      <!-- ===== Results ===== -->
-      <main class="results">
-        <div class="tabs" role="tablist">
-          <button class="tab on" data-tab="overzicht" role="tab">Overzicht</button>
-          <button class="tab" data-tab="inkomen" role="tab">Inkomen</button>
-          <button class="tab" data-tab="belasting" role="tab">Belasting</button>
-          <button class="tab" data-tab="vermogen" role="tab">Vermogen</button>
-          <button class="tab" data-tab="pensioen" role="tab">Pensioen &amp; AOW</button>
-          <button class="tab" data-tab="wonen" role="tab">Wonen</button>
-          <button class="tab" data-tab="vergelijking" role="tab">Vergelijking</button>
-        </div>
+      <!-- ===== Main: resultaten (echte app-results-v2 structuur) ===== -->
+      <main id="app-main" class="app-main" data-app-main="true">
+        <section class="app-results-v2">
 
-        <!-- Overzicht -->
-        <section class="panel on" data-panel="overzicht">
-          <h2>Overzicht</h2>
-          <p class="sub">Nederland blijven versus emigreren naar Portugal, op dezelfde aannames.</p>
-          <div class="metrics">
-            <div class="metric"><div class="metric__lbl">Netto per maand</div><div class="metric__val">€ 5.960</div><span class="metric__delta pos">+ € 780 t.o.v. NL</span></div>
-            <div class="metric"><div class="metric__lbl">Effectieve belastingdruk</div><div class="metric__val">28%</div><span class="metric__delta pos">41% → 28%</span></div>
-            <div class="metric"><div class="metric__lbl">Vermogen na 30 jaar</div><div class="metric__val">€ 1,21 mln</div><span class="metric__delta pos">+ € 420k t.o.v. NL</span></div>
+          <div class="app-results-v2-outcome-card">
+            <div class="app-results-v2-header">
+              <p class="app-section-eyebrow">Voorbeeldcasus · Nederland naast Portugal</p>
+              <h2 class="app-section-title">Portugal levert netto meer op, maar de AOW bevriest</h2>
+              <p class="app-results-v2-meta">
+                <span class="app-results-v2-meta-item">Horizon 30 jaar</span>
+                <span class="app-results-v2-meta-item">2 personen</span>
+                <span class="app-results-v2-meta-item">Doelland Portugal · NHR-2</span>
+                <span class="app-results-v2-meta-item">Voorbeeldcijfers</span>
+              </p>
+            </div>
           </div>
-          <div class="cmpcard">
-            <h4>Acht pijlers, Nederland versus Portugal</h4>
-            <div class="legend"><span><i class="nl"></i>Nederland</span><span><i class="pt"></i>Portugal</span></div>
-            <div id="pillars"></div>
-          </div>
-          <p class="note"><strong>Voorbeeldcijfers.</strong> Deze casus illustreert hoe de tool werkt. Jouw eigen uitkomst hangt af van inkomensmix, vermogen, gezinssituatie en horizon, en wordt in de tool met jouw cijfers doorgerekend.</p>
-        </section>
 
-        <!-- Inkomen -->
-        <section class="panel" data-panel="inkomen">
-          <h2>Inkomen en cashflow</h2>
-          <p class="sub">Wat houden jullie netto over, per jaar en per maand.</p>
-          <table class="t">
-            <thead><tr><th>Per jaar</th><th>🇳🇱 Nederland</th><th>🇵🇹 Portugal</th></tr></thead>
-            <tbody>
-              <tr><td>Bruto inkomen samen</td><td>€ 110.000</td><td class="pt-col">€ 110.000</td></tr>
-              <tr><td>Inkomstenbelasting en premies</td><td>− € 45.200</td><td class="pt-col">− € 30.600</td></tr>
-              <tr><td>Vermogensbelasting</td><td>− € 2.640</td><td class="pt-col">€ 0</td></tr>
-              <tr class="total"><td>Netto besteedbaar</td><td>€ 62.160</td><td class="pt-col">€ 79.400</td></tr>
-              <tr><td>Per maand</td><td>€ 5.180</td><td class="pt-col">€ 5.960</td></tr>
-            </tbody>
-          </table>
-          <div class="cmpcard" style="margin-top:16px">
-            <h4>Netto per maand</h4>
-            <div class="bar"><span class="bar__lbl">NL</span><div class="bar__track"><div class="bar__fill bar__fill--nl" style="width:79%"></div></div><span class="bar__val">€ 5.180</span></div>
-            <div class="bar"><span class="bar__lbl">PT</span><div class="bar__track"><div class="bar__fill bar__fill--pt" style="width:91%"></div></div><span class="bar__val">€ 5.960</span></div>
+          <div class="app-results-v2-section app-results-v2-kpis-card">
+            <div class="app-results-v2-kpi-grid">
+              <div class="app-results-v2-kpi-card app-results-v2-kpi-card--positive">
+                <span class="app-results-v2-kpi-label">Netto per maand</span>
+                <span class="app-results-v2-kpi-value">€ 5.960</span>
+              </div>
+              <div class="app-results-v2-kpi-card app-results-v2-kpi-card--positive">
+                <span class="app-results-v2-kpi-label">Effectieve druk</span>
+                <span class="app-results-v2-kpi-value">28%</span>
+              </div>
+              <div class="app-results-v2-kpi-card app-results-v2-kpi-card--positive">
+                <span class="app-results-v2-kpi-label">Vermogen na 30 jaar</span>
+                <span class="app-results-v2-kpi-value">€ 1,21 mln</span>
+              </div>
+              <div class="app-results-v2-kpi-card app-results-v2-kpi-card--attention">
+                <span class="app-results-v2-kpi-label">AOW-opbouw</span>
+                <span class="app-results-v2-kpi-value">Bevriest</span>
+              </div>
+            </div>
           </div>
-          <p class="note">In Portugal valt het kwalificerende inkomen onder het NHR-2 (IFICI) regime met een vlak tarief van 20%. In Nederland telt box 3 mee over het vermogen boven de vrijstelling. <strong>Voorbeeldcijfers.</strong></p>
-        </section>
 
-        <!-- Belasting -->
-        <section class="panel" data-panel="belasting">
-          <h2>Belasting, alle lagen</h2>
-          <p class="sub">Niet één tarief, maar elke laag die jullie netto raakt.</p>
-          <table class="t">
-            <thead><tr><th>Laag</th><th>🇳🇱 Nederland</th><th>🇵🇹 Portugal</th></tr></thead>
-            <tbody>
-              <tr><td>Inkomstenbelasting (box 1 / NHR-2)</td><td>€ 34.500</td><td class="pt-col">€ 22.000</td></tr>
-              <tr><td>Sociale premies</td><td>€ 8.000</td><td class="pt-col">€ 8.100</td></tr>
-              <tr><td>Vermogensbelasting (box 3 / patrimonio)</td><td>€ 2.640</td><td class="pt-col">€ 0</td></tr>
-              <tr><td>Lokale heffing op vastgoed (OZB / IMI)</td><td>€ 700</td><td class="pt-col">€ 500</td></tr>
-              <tr class="total"><td>Totaal</td><td>€ 45.840</td><td class="pt-col">€ 30.600</td></tr>
-              <tr><td>Effectieve druk</td><td>41%</td><td class="pt-col">28%</td></tr>
-            </tbody>
-          </table>
-          <p class="note">Het NHR-2 (IFICI) regime geldt 10 jaar op kwalificerend inkomen. Daarna valt het inkomen onder het reguliere progressieve IRS. De tool rekent beide periodes binnen je horizon door. <strong>Voorbeeldcijfers.</strong></p>
-        </section>
-
-        <!-- Vermogen -->
-        <section class="panel" data-panel="vermogen">
-          <h2>Vermogensontwikkeling</h2>
-          <p class="sub">Hoe het vermogen na belasting groeit over 30 jaar, per asset doorgerekend.</p>
-          <div class="chart">
-            <div class="legend"><span><i class="nl"></i>Nederland</span><span><i class="pt"></i>Portugal</span></div>
-            <svg viewBox="0 0 620 320" role="img" aria-label="Vermogensgroei Nederland versus Portugal over 30 jaar">
-              <line x1="10" y1="300" x2="610" y2="300" stroke="#dedad4" stroke-width="1"/>
-              <line x1="10" y1="20" x2="10" y2="300" stroke="#dedad4" stroke-width="1"/>
-              <polyline fill="none" stroke="#7a6e69" stroke-width="2.5" stroke-linejoin="round" points="10,242 110,226 210,208 310,187 410,164 510,141 610,118"/>
-              <polyline fill="none" stroke="#ba5229" stroke-width="2.5" stroke-linejoin="round" points="10,242 110,217 210,185 310,148 410,106 510,65 610,21"/>
-              <circle cx="610" cy="118" r="3.5" fill="#7a6e69"/>
-              <circle cx="610" cy="21" r="3.5" fill="#ba5229"/>
-              <text x="558" y="112" font-size="13" font-weight="700" fill="#5a4a42">€ 790k</text>
-              <text x="548" y="34" font-size="13" font-weight="700" fill="#9a4322">€ 1,21 mln</text>
-              <text x="10" y="315" font-size="11" fill="#7a6e69">nu</text>
-              <text x="585" y="315" font-size="11" fill="#7a6e69">30 jaar</text>
-            </svg>
+          <div class="app-results-v2-aandachtspunten-card">
+            <p class="app-section-title">Aandachtspunten</p>
+            <p>Vanaf de emigratiedatum stopt je AOW-opbouw, tenzij je vrijwillig doorverzekert. Dat scheelt later per persoon.</p>
+            <p>Het NHR-2 (IFICI) regime geldt 10 jaar op kwalificerend inkomen. Daarna val je onder het reguliere progressieve IRS-tarief.</p>
           </div>
-          <div class="metrics" style="margin-top:16px">
-            <div class="metric"><div class="metric__lbl">Startvermogen</div><div class="metric__val">€ 250k</div></div>
-            <div class="metric"><div class="metric__lbl">Eindvermogen NL</div><div class="metric__val">€ 790k</div></div>
-            <div class="metric"><div class="metric__lbl">Eindvermogen PT</div><div class="metric__val">€ 1,21 mln</div><span class="metric__delta pos">+ € 420k</span></div>
-          </div>
-          <p class="note">Het verschil komt vooral uit de lagere belastingdruk die jaarlijks herbelegd wordt. Aandelen, ETF's, cash en vastgoed worden apart doorgerekend, na belasting. <strong>Voorbeeldcijfers.</strong></p>
-        </section>
 
-        <!-- Pensioen -->
-        <section class="panel" data-panel="pensioen">
-          <h2>Pensioen en AOW</h2>
-          <p class="sub">Wat er met de oudedagsvoorziening gebeurt bij vertrek.</p>
-          <table class="t">
-            <thead><tr><th>Onderdeel</th><th>🇳🇱 Nederland</th><th>🇵🇹 Portugal</th></tr></thead>
-            <tbody>
-              <tr><td>AOW-opbouw</td><td>loopt door</td><td class="pt-col">bevriest per emigratiedatum</td></tr>
-              <tr><td>AOW per persoon (later)</td><td>€ 1.050 / mnd</td><td class="pt-col">€ 920 / mnd</td></tr>
-              <tr><td>Privépensioen</td><td>€ 1.200 / mnd</td><td class="pt-col">€ 1.200 / mnd</td></tr>
-              <tr><td>Belasting op pensioen</td><td>NL progressief</td><td class="pt-col">verdrag NL-PT</td></tr>
-            </tbody>
-          </table>
-          <p class="note"><strong>Let op de AOW.</strong> Vanaf je emigratiedatum bouw je geen AOW meer op, tenzij je vrijwillig doorverzekert. Dat scheelt later per persoon. De tool zet de bevriezing en de indexatie voor je in de tijd. <strong>Voorbeeldcijfers.</strong></p>
-        </section>
+          <nav class="app-results-v2-tabs" role="tablist" aria-label="Resultaten">
+            <button class="app-results-v2-tab" data-result-v2-tab-active="true" aria-selected="true" data-tab="cashflow" role="tab">Cashflow</button>
+            <button class="app-results-v2-tab" aria-selected="false" data-tab="belasting" role="tab">Belasting</button>
+            <button class="app-results-v2-tab" aria-selected="false" data-tab="vermogen" role="tab">Vermogen</button>
+            <button class="app-results-v2-tab" aria-selected="false" data-tab="pensioen" role="tab">Pensioen</button>
+            <button class="app-results-v2-tab" aria-selected="false" data-tab="wonen" role="tab">Wonen</button>
+            <button class="app-results-v2-tab" aria-selected="false" data-tab="vergelijking" role="tab">Vergelijking</button>
+          </nav>
 
-        <!-- Wonen -->
-        <section class="panel" data-panel="wonen">
-          <h2>Wonen en woningwaarde</h2>
-          <p class="sub">Koop in Nederland, eerst huren en daarna kopen in Portugal.</p>
-          <table class="t">
-            <thead><tr><th></th><th>🇳🇱 Nederland (koop)</th><th>🇵🇹 Portugal</th></tr></thead>
-            <tbody>
-              <tr><td>Woonlasten per maand</td><td>€ 1.150</td><td class="pt-col">€ 1.050</td></tr>
-              <tr><td>Jaar 1</td><td>koop, hypotheek loopt</td><td class="pt-col">huur € 1.500 / mnd</td></tr>
-              <tr><td>Vanaf jaar 2</td><td>—</td><td class="pt-col">koop ± € 420.000</td></tr>
-              <tr><td>Woningwaarde</td><td>€ 520.000</td><td class="pt-col">€ 420.000</td></tr>
-            </tbody>
-          </table>
-          <div class="cmpcard" style="margin-top:16px">
-            <h4>Woonlasten per maand</h4>
-            <div class="bar"><span class="bar__lbl">NL</span><div class="bar__track"><div class="bar__fill bar__fill--nl" style="width:88%"></div></div><span class="bar__val">€ 1.150</span></div>
-            <div class="bar"><span class="bar__lbl">PT</span><div class="bar__track"><div class="bar__fill bar__fill--pt" style="width:80%"></div></div><span class="bar__val">€ 1.050</span></div>
+          <!-- Cashflow -->
+          <div data-result-v2-panel data-panel="cashflow">
+            <div class="app-results-v2-yearly-card">
+              <p class="app-section-title">Cashflow per jaar</p>
+              <div class="app-results-v2-table-wrap">
+                <table class="result-table">
+                  <thead>
+                    <tr><th>Jaar</th><th>Residentie</th><th>Inkomen</th><th>Belasting</th><th>Netto cashflow</th><th>Vermogen einde jaar</th></tr>
+                  </thead>
+                  <tbody id="yearly-rows"></tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <p class="note">Het Nederlandse huis kun je aanhouden of verkopen. De tool rekent beide scenario's door, inclusief hypotheekrenteaftrek waar die nog geldt en lokale onroerendezaakbelasting. <strong>Voorbeeldcijfers.</strong></p>
-        </section>
 
-        <!-- Vergelijking -->
-        <section class="panel" data-panel="vergelijking">
-          <h2>Tien landen naast Nederland</h2>
-          <p class="sub">Gerangschikt op netto besteedbaar inkomen per maand, op dezelfde aannames.</p>
-          <div class="cmpcard">
-            <div id="ranking"></div>
+          <!-- Belasting -->
+          <div data-result-v2-panel data-panel="belasting" hidden>
+            <div class="app-results-v2-comparison-card">
+              <p class="app-section-title">Belasting, alle lagen · Nederland naast Portugal</p>
+              <div class="app-results-v2-comparison-wrap">
+                <table class="app-results-v2-comparison-table">
+                  <thead><tr><th data-comparison-column="metric">Laag</th><th>Nederland</th><th>Portugal</th></tr></thead>
+                  <tbody>
+                    <tr><th>Inkomstenbelasting (box 1 / NHR-2)</th><td>€ 34.500</td><td>€ 22.000</td></tr>
+                    <tr><th>Sociale premies</th><td>€ 8.000</td><td>€ 8.100</td></tr>
+                    <tr><th>Vermogensbelasting (box 3 / patrimonio)</th><td>€ 2.640</td><td>€ 0</td></tr>
+                    <tr><th>Lokale heffing op vastgoed (OZB / IMI)</th><td>€ 700</td><td>€ 500</td></tr>
+                    <tr><th>Totaal</th><td>€ 45.840</td><td>€ 30.600</td></tr>
+                    <tr><th>Effectieve druk</th><td>41%</td><td>28%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <p class="note">Dezelfde casus, doorgerekend op elk land met het regime dat ertoe doet. Een hoog netto is niet automatisch de beste keuze: weeg ook pensioen, vermogen, verblijfsrecht en sociale binding. <strong>Voorbeeldcijfers.</strong></p>
+
+          <!-- Vermogen -->
+          <div data-result-v2-panel data-panel="vermogen" hidden>
+            <div class="app-results-v2-yearly-card">
+              <p class="app-section-title">Vermogensontwikkeling over 30 jaar (na belasting)</p>
+              <svg viewBox="0 0 620 300" role="img" aria-label="Vermogensgroei Nederland versus Portugal" style="width:100%;height:auto;display:block">
+                <line x1="10" y1="280" x2="610" y2="280" stroke="#e3dccf" stroke-width="1"/>
+                <line x1="10" y1="16" x2="10" y2="280" stroke="#e3dccf" stroke-width="1"/>
+                <polyline fill="none" stroke="#2f6e94" stroke-width="2.5" stroke-linejoin="round" points="10,226 110,211 210,194 310,174 410,153 510,131 610,110"/>
+                <polyline fill="none" stroke="#c2683f" stroke-width="2.5" stroke-linejoin="round" points="10,226 110,203 210,173 310,138 410,99 510,61 610,20"/>
+                <circle cx="610" cy="110" r="3.5" fill="#2f6e94"/>
+                <circle cx="610" cy="20" r="3.5" fill="#c2683f"/>
+                <text x="556" y="104" font-size="12" font-weight="600" fill="#2f6e94">€ 790k</text>
+                <text x="544" y="33" font-size="12" font-weight="600" fill="#a8542f">€ 1,21 mln</text>
+                <text x="10" y="295" font-size="10" fill="#9b8672">nu</text>
+                <text x="584" y="295" font-size="10" fill="#9b8672">30 jaar</text>
+              </svg>
+            </div>
+            <div class="app-results-v2-kpi-grid" style="margin-top:0.55rem">
+              <div class="app-results-v2-kpi-card app-results-v2-kpi-card--neutral"><span class="app-results-v2-kpi-label">Startvermogen</span><span class="app-results-v2-kpi-value">€ 250k</span></div>
+              <div class="app-results-v2-kpi-card app-results-v2-kpi-card--neutral"><span class="app-results-v2-kpi-label">Eindvermogen NL</span><span class="app-results-v2-kpi-value">€ 790k</span></div>
+              <div class="app-results-v2-kpi-card app-results-v2-kpi-card--positive"><span class="app-results-v2-kpi-label">Eindvermogen PT</span><span class="app-results-v2-kpi-value">€ 1,21 mln</span></div>
+              <div class="app-results-v2-kpi-card app-results-v2-kpi-card--positive"><span class="app-results-v2-kpi-label">Verschil</span><span class="app-results-v2-kpi-value">+ € 420k</span></div>
+            </div>
+          </div>
+
+          <!-- Pensioen -->
+          <div data-result-v2-panel data-panel="pensioen" hidden>
+            <div class="app-results-v2-comparison-card">
+              <p class="app-section-title">Pensioen en AOW · Nederland naast Portugal</p>
+              <div class="app-results-v2-comparison-wrap">
+                <table class="app-results-v2-comparison-table">
+                  <thead><tr><th data-comparison-column="metric">Onderdeel</th><th>Nederland</th><th>Portugal</th></tr></thead>
+                  <tbody>
+                    <tr><th>AOW-opbouw</th><td>loopt door</td><td>bevriest per emigratiedatum</td></tr>
+                    <tr><th>AOW per persoon (later)</th><td>€ 1.050 / mnd</td><td>€ 920 / mnd</td></tr>
+                    <tr><th>Privépensioen</th><td>€ 1.200 / mnd</td><td>€ 1.200 / mnd</td></tr>
+                    <tr><th>Belasting op pensioen</th><td>NL progressief</td><td>verdrag NL-PT</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wonen -->
+          <div data-result-v2-panel data-panel="wonen" hidden>
+            <div class="app-results-v2-comparison-card">
+              <p class="app-section-title">Wonen en woningwaarde</p>
+              <div class="app-results-v2-comparison-wrap">
+                <table class="app-results-v2-comparison-table">
+                  <thead><tr><th data-comparison-column="metric"></th><th>Nederland (koop)</th><th>Portugal</th></tr></thead>
+                  <tbody>
+                    <tr><th>Woonlasten per maand</th><td>€ 1.150</td><td>€ 1.050</td></tr>
+                    <tr><th>Jaar 1</th><td>koop, hypotheek loopt</td><td>huur € 1.500 / mnd</td></tr>
+                    <tr><th>Vanaf jaar 2</th><td>—</td><td>koop ± € 420.000</td></tr>
+                    <tr><th>Woningwaarde</th><td>€ 520.000</td><td>€ 420.000</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vergelijking -->
+          <div data-result-v2-panel data-panel="vergelijking" hidden>
+            <div class="app-results-v2-comparison-card">
+              <p class="app-section-title">Tien landen naast Nederland</p>
+              <div class="app-results-v2-comparison-wrap">
+                <table class="app-results-v2-comparison-table cmp-wide">
+                  <thead><tr><th data-comparison-column="metric">Maatstaf</th><th>NL</th><th>Portugal</th><th>Griekenland</th><th>Spanje</th><th>Cyprus</th><th>UAE</th></tr></thead>
+                  <tbody>
+                    <tr><th>Netto per maand</th><td>€ 5.180</td><td>€ 5.960</td><td>€ 5.880</td><td>€ 5.740</td><td>€ 6.420</td><td>€ 6.800</td></tr>
+                    <tr><th>Effectieve druk</th><td>41%</td><td>28%</td><td>22%</td><td>31%</td><td>19%</td><td>9%</td></tr>
+                    <tr><th>Vermogen na 30 jaar</th><td>€ 790k</td><td>€ 1,21 mln</td><td>€ 1,18 mln</td><td>€ 1,05 mln</td><td>€ 1,32 mln</td><td>€ 1,48 mln</td></tr>
+                    <tr><th>AOW-opbouw</th><td>loopt door</td><td>bevriest</td><td>bevriest</td><td>bevriest</td><td>bevriest</td><td>bevriest</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="demo-note" style="margin-top:0.6rem">Een hoog netto is niet automatisch de beste keuze: weeg ook pensioen, vermogen, verblijfsrecht en sociale binding. Voorbeeldcijfers.</p>
+            </div>
+          </div>
+
         </section>
       </main>
-    </div>
+    </main>
+  </div>
 
-    <div class="foot">
-      <h3>Dit is een vast voorbeeld</h3>
-      <p>Reken je eigen inkomen, vermogen, pensioen en woning door op tien landen.</p>
-      <a href="/preview/#pakketten">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        Bekijk de pakketten
-      </a>
-    </div>
+  <div class="demo-foot">
+    <h3>Dit is een vast voorbeeld</h3>
+    <p>Reken je eigen inkomen, vermogen, pensioen en woning door op tien landen.</p>
+    <a href="/preview/#pakketten">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      Bekijk de pakketten
+    </a>
   </div>
 
   <script>
   (function(){
-    // Tab navigation
-    var tabs=document.querySelectorAll('.tab');
-    var panels=document.querySelectorAll('.panel');
+    // Tab navigatie (echte tool-attributen)
+    var tabs=document.querySelectorAll('.app-results-v2-tab');
+    var panels=document.querySelectorAll('[data-result-v2-panel]');
     tabs.forEach(function(t){
       t.addEventListener('click',function(){
         var id=t.getAttribute('data-tab');
-        tabs.forEach(function(x){x.classList.toggle('on',x===t);});
-        panels.forEach(function(p){p.classList.toggle('on',p.getAttribute('data-panel')===id);});
-        window.scrollTo({top:document.querySelector('.tabs').offsetTop-90,behavior:'smooth'});
+        tabs.forEach(function(x){
+          var on=x===t;
+          if(on){x.setAttribute('data-result-v2-tab-active','true');}
+          else{x.removeAttribute('data-result-v2-tab-active');}
+          x.setAttribute('aria-selected',on?'true':'false');
+        });
+        panels.forEach(function(p){p.hidden=p.getAttribute('data-panel')!==id;});
       });
     });
 
-    // Pillars (overzicht)
-    var pillars=[
-      {l:'Cashflow per maand',d:'+ € 780',t:'pos',nl:58,pt:84},
-      {l:'Fiscale druk',d:'41% → 28%',t:'pos',nl:48,pt:80},
-      {l:'Vermogensgroei (30 jr)',d:'+ € 420k',t:'pos',nl:62,pt:78},
-      {l:'Pensioen + AOW',d:'AOW bevriest',t:'neg',nl:88,pt:54},
-      {l:'Woonlasten',d:'− 9%',t:'pos',nl:52,pt:62},
-      {l:'Levensonderhoud',d:'− 30%',t:'pos',nl:55,pt:78},
-      {l:'Verblijfsrecht',d:'EU, geen visum',t:'neu',nl:95,pt:90},
-      {l:'Sociale binding',d:'jaren opbouw',t:'neg',nl:90,pt:42}
-    ];
-    var ph='';
-    pillars.forEach(function(p){
-      ph+='<div style="display:grid;grid-template-columns:1fr auto;gap:8px;align-items:baseline;margin:14px 0 6px"><span style="font-weight:600;font-size:14px">'+p.l+'</span><span class="metric__delta '+p.t+'" style="margin:0">'+p.d+'</span></div>';
-      ph+='<div class="bar"><span class="bar__lbl">NL</span><div class="bar__track"><div class="bar__fill bar__fill--nl" style="width:'+p.nl+'%"></div></div><span class="bar__val">'+p.nl+'</span></div>';
-      ph+='<div class="bar"><span class="bar__lbl">PT</span><div class="bar__track"><div class="bar__fill bar__fill--pt" style="width:'+p.pt+'%"></div></div><span class="bar__val">'+p.pt+'</span></div>';
+    // Cashflow-jaartabel (voorbeeldprojectie)
+    var startVal=250000, income=110000, rows=[];
+    for(var y=0;y<10;y++){
+      var year=2027+y;
+      var pt = y>=3;                       // emigratie in jaar 3
+      var inc=Math.round(income*Math.pow(1.02,y));
+      var taxRate=pt?0.28:0.41;
+      var tax=Math.round(inc*taxRate);
+      var net=inc-tax-35000;               // levensonderhoud ~35k
+      var val=Math.round(startVal*Math.pow(pt?1.115:1.085,y+1));
+      rows.push({year:year,res:pt?'Portugal':'Nederland',inc:inc,tax:tax,net:net,val:val});
+    }
+    function eur(n){return '€ '+Math.round(n).toLocaleString('nl-NL');}
+    var html='';
+    rows.forEach(function(r){
+      html+='<tr><td>'+r.year+'</td><td>'+r.res+'</td><td>'+eur(r.inc)+'</td><td>− '+eur(r.tax)+'</td><td>'+eur(r.net)+'</td><td>'+eur(r.val)+'</td></tr>';
     });
-    document.getElementById('pillars').innerHTML=ph;
-
-    // Ranking (vergelijking)
-    var rank=[
-      {f:'🇦🇪',n:'UAE / Dubai',v:6800},
-      {f:'🇨🇾',n:'Cyprus',v:6420},
-      {f:'🇧🇬',n:'Bulgarije',v:6310},
-      {f:'🇭🇺',n:'Hongarije',v:6150},
-      {f:'🇵🇹',n:'Portugal',v:5960},
-      {f:'🇬🇷',n:'Griekenland',v:5880},
-      {f:'🇪🇸',n:'Spanje',v:5740},
-      {f:'🇲🇹',n:'Malta',v:5610},
-      {f:'🇮🇹',n:'Italië',v:5500},
-      {f:'🇳🇱',n:'Nederland',v:5180,nl:true}
-    ];
-    var max=6800,rh='';
-    rank.forEach(function(r,i){
-      rh+='<div class="rank'+(r.nl?' is-nl':'')+'"><span class="rank__pos">'+(i+1)+'</span>'+
-          '<span class="rank__name"><span class="flag">'+r.f+'</span>'+r.n+'</span>'+
-          '<div class="rank__track"><div class="rank__fill" style="width:'+Math.round(r.v/max*100)+'%"></div></div>'+
-          '<span class="rank__val">€ '+r.v.toLocaleString('nl-NL')+'</span></div>';
-    });
-    document.getElementById('ranking').innerHTML=rh;
+    document.getElementById('yearly-rows').innerHTML=html;
   })();
   </script>
 </body>
