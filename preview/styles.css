@@ -2149,3 +2149,255 @@ tr:nth-last-child(-n+5) .ep-info::before {
   .ep-pkg__body { display: none; }
   .ep-pkg.is-open .ep-pkg__body { display: flex; }
 }
+
+/* ============================================================
+   HERO REWORK — full-width band + tool dashboard visual (R26)
+   Vervangt de 3 KPI-kaarten ("In het kort").
+   ============================================================ */
+.ep-hero {
+  position: relative;
+  padding-top: 96px;
+  background:
+    radial-gradient(900px 440px at 90% 6%, rgba(186, 82, 41, 0.10), transparent 62%),
+    linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+  overflow: hidden;
+}
+.ep-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(56, 44, 39, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 72%);
+          mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 72%);
+  pointer-events: none;
+}
+.ep-hero__grid {
+  position: relative; z-index: 1;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.ep-hero__copy { max-width: 620px; }
+
+/* Tool mock */
+.ep-hero__visual { position: relative; align-self: center; }
+.ep-tool {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 26px 64px -30px rgba(56, 44, 39, 0.45), 0 2px 8px rgba(56, 44, 39, 0.06);
+  overflow: hidden;
+  font-family: var(--font-sans);
+  margin-right: -44px;
+}
+.ep-tool__bar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 14px;
+  background: var(--brown); color: var(--cream);
+}
+.ep-tool__dots { display: inline-flex; gap: 5px; }
+.ep-tool__dots i { width: 9px; height: 9px; border-radius: 50%; background: rgba(246,245,242,0.32); }
+.ep-tool__dots i:first-child { background: var(--orange); }
+.ep-tool__title { font-size: 12.5px; font-weight: 600; opacity: 0.96; }
+.ep-tool__live {
+  margin-left: auto; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #d2e7d2; display: inline-flex; align-items: center; gap: 6px;
+}
+.ep-tool__live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #82c882; box-shadow: 0 0 0 3px rgba(130,200,130,0.25); }
+.ep-tool__tabs { display: flex; gap: 2px; padding: 12px 14px 0; border-bottom: 1px solid var(--border); }
+.ep-tool__tabs span {
+  font-size: 12px; font-weight: 600; color: var(--brown-mute);
+  padding: 7px 12px; position: relative; bottom: -1px; border-bottom: 2px solid transparent;
+}
+.ep-tool__tabs .is-active { color: var(--brown); border-bottom-color: var(--orange); }
+.ep-tool__kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+.ep-tk { background: var(--cream); padding: 13px 14px; display: flex; flex-direction: column; gap: 3px; }
+.ep-tk__lbl { font-size: 11px; color: var(--brown-mute); font-weight: 600; }
+.ep-tk__val { font-family: var(--font-serif); font-weight: 700; font-size: 22px; line-height: 1; color: var(--orange-deep); letter-spacing: -0.01em; white-space: nowrap; }
+.ep-tk__sub { font-size: 10.5px; color: var(--brown-mute); }
+.ep-tool__panel { padding: 15px 16px 6px; }
+.ep-tool__panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.ep-tool__panel-title { font-size: 13px; font-weight: 700; color: var(--brown); }
+.ep-tool__legend { font-size: 11px; color: var(--brown-mute); display: inline-flex; align-items: center; gap: 5px; }
+.ep-tool__legend i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+.ep-tool__legend i.nl { background: #3a5e8c; }
+.ep-tool__legend i.pt { background: var(--orange); }
+.ep-tb { display: grid; grid-template-columns: 72px 1fr; align-items: center; gap: 10px; margin-bottom: 11px; }
+.ep-tb__name { font-size: 12px; color: var(--brown-soft); font-weight: 600; }
+.ep-tb__bars { display: flex; flex-direction: column; gap: 4px; }
+.ep-tb__bars i { height: 7px; border-radius: 4px; display: block; min-width: 8px; transform-origin: left; animation: epToolBar 900ms cubic-bezier(.2,.7,.2,1) both; }
+.ep-tb__bars i.nl { background: #3a5e8c; }
+.ep-tb__bars i.pt { background: var(--orange); }
+@keyframes epToolBar { from { transform: scaleX(0.04); opacity: 0.4; } to { transform: scaleX(1); opacity: 1; } }
+.ep-tool__foot { padding: 10px 16px 14px; font-size: 11px; color: var(--brown-mute); border-top: 1px solid var(--border); margin-top: 4px; }
+
+@media (max-width: 980px) {
+  .ep-hero { padding-top: 72px; }
+  .ep-hero__grid { grid-template-columns: 1fr; gap: 30px; }
+  .ep-hero__copy { max-width: 100%; }
+  .ep-tool { margin-right: 0; }
+  .ep-tk__val { font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ep-tb__bars i { animation: none; }
+}
+
+/* ============================================================
+   MERGED SOURCES HUB (R26) — wat we vergelijken + bronnen per land
+   ============================================================ */
+.ep-sources__intro {
+  margin: 0 0 16px;
+  color: var(--brown-soft);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 70ch;
+}
+/* Wat we vergelijken */
+.ep-compare-dims {
+  list-style: none;
+  margin: 0 0 38px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ep-compare-dims li {
+  background: var(--cream);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.ep-compare-dims li::before { content: none; }
+.ep-dim__t {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--brown);
+}
+.ep-dim__d {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--brown-mute);
+}
+/* Bronnen per land */
+.ep-srcland {
+  list-style: none;
+  margin: 0 0 38px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.ep-srcland__item {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+  align-items: start;
+  background: var(--cream-warm);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.ep-srcland__item::before { content: none; }
+.ep-srcland__flag { font-size: 22px; line-height: 1.2; }
+.ep-srcland__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ep-srcland__name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--brown);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ep-srcland__tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  background: rgba(186, 82, 41, 0.12);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+.ep-srcland__src {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--brown-mute);
+}
+@media (max-width: 720px) {
+  .ep-compare-dims { grid-template-columns: 1fr; }
+  .ep-srcland { grid-template-columns: 1fr; }
+}
+
+/* Source pills inside the merged Bronnen section (R27) */
+.ep-srcland__chips,
+.ep-src-chips-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 4px; }
+.ep-srcland__chips .ep-src-chip,
+.ep-src-chips-row .ep-src-chip {
+  font-size: 11.5px;
+  padding: 4px 11px;
+  white-space: normal;
+  background: var(--cream);
+}
+.ep-srcland__item { align-items: start; }
+
+/* ============================================================
+   REVIEWS CAROUSEL (R27)
+   ============================================================ */
+.ep-reviews { margin-top: 8px; }
+.ep-reviews__viewport { overflow: hidden; }
+.ep-reviews__track {
+  display: flex; gap: 20px; list-style: none; margin: 0; padding: 4px;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.ep-reviews__track::-webkit-scrollbar { display: none; }
+.ep-review {
+  flex: 0 0 calc((100% - 20px) / 2);
+  scroll-snap-align: start;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 26px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.ep-review::before { content: none; }
+.ep-review__stars { color: var(--orange); font-size: 15px; letter-spacing: 2px; }
+.ep-review__quote { font-size: 16px; line-height: 1.6; color: var(--brown); margin: 0; flex: 1; }
+.ep-review__person { display: flex; align-items: center; gap: 12px; }
+.ep-review__avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--brown); color: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 15px; flex: 0 0 auto;
+}
+.ep-review__id { display: flex; flex-direction: column; }
+.ep-review__name { font-weight: 700; color: var(--brown); font-size: 15px; }
+.ep-review__meta { font-size: 13px; color: var(--brown-mute); }
+.ep-reviews__controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 22px; }
+.ep-reviews__btn {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--cream);
+  color: var(--brown); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: border-color .15s, color .15s;
+}
+.ep-reviews__btn:hover { border-color: var(--orange); color: var(--orange); }
+.ep-reviews__btn[disabled] { opacity: .35; cursor: default; }
+.ep-reviews__dots { display: flex; gap: 8px; }
+.ep-reviews__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); border: none; padding: 0; cursor: pointer; }
+.ep-reviews__dot.is-active { background: var(--orange); }
+@media (max-width: 720px) {
+  .ep-review { flex-basis: 86%; }
+}
+
+/* Keep prose readable now that #wat-erin-zit is full width (R27) */
+#wat-erin-zit .ep-body-lg,
+#wat-erin-zit .ep-founder__intro,
+#wat-erin-zit .ep-founder__wft { max-width: var(--reading-width); }
