@@ -2449,13 +2449,14 @@ tr:nth-last-child(-n+5) .ep-info::before {
   border: 6px solid transparent; border-top-color: var(--brown); z-index: 30; pointer-events: none;
 }
 
-/* Language toggle */
-.ep-lang { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-sans); font-size: 13px; font-weight: 600; }
-.ep-lang__on { color: var(--brown); }
-.ep-lang__on::after { content: "/"; margin-left: 6px; color: var(--border); font-weight: 400; }
-.ep-lang a { color: var(--brown-mute); text-decoration: none; }
-.ep-lang a:hover { color: var(--orange); }
-.ep-lang--mobile { justify-content: center; padding: 10px 0 4px; font-size: 16px; }
+/* Language toggle (flags) */
+.ep-lang { display: inline-flex; align-items: center; gap: 9px; }
+.ep-lang__flag { font-size: 19px; line-height: 1; text-decoration: none; opacity: .4; transition: opacity .15s; padding-bottom: 2px; }
+.ep-lang__flag--on { opacity: 1; box-shadow: 0 2px 0 var(--orange); }
+a.ep-lang__flag:hover { opacity: .9; }
+.ep-lang--mobile { justify-content: center; padding: 10px 0 4px; gap: 16px; }
+.ep-lang--mobile .ep-lang__flag { font-size: 24px; }
+.ep-hero__note strong { color: var(--brown); font-weight: 700; }
 
 /* Tighter package feature rows */
 .ep-pkg__features li { padding: 7px 0 7px 24px; line-height: 1.4; }
