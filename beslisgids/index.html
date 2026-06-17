@@ -30,6 +30,11 @@
     .header__inner { max-width:760px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
     .wordmark { font-family:"Playfair Display",serif; font-size:1.1rem; font-weight:700; color:var(--brown); text-decoration:none; }
     .wordmark span { color:var(--orange); }
+    /* Uniform brand logo */
+    .ep-logo { display:inline-flex; align-items:center; gap:12px; font-family:"Playfair Display",serif; font-size:1.1rem; font-weight:700; color:var(--brown); text-decoration:none; }
+    .ep-logo__mark { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; background:var(--brown); color:var(--cream); font-family:"Playfair Display",serif; font-weight:700; font-size:13px; border-radius:2px; }
+    .ep-logo__wordmark { color:var(--brown); }
+    .ep-logo__accent { color:var(--orange); }
     .back-link { font-size:0.85rem; color:var(--muted); text-decoration:none; }
     .back-link:hover { color:var(--orange); }
     .wrap { flex:1; padding:3.5rem 2rem 4rem; }
@@ -98,7 +103,7 @@
 
     <header>
       <div class="header__inner">
-        <a class="wordmark" href="/">Emigratieplan<span>.</span>nl</a>
+        <a href="/" class="ep-logo"><span class="ep-logo__mark">EP</span><span class="ep-logo__wordmark">Emigratie<span class="ep-logo__accent">plan</span></span></a>
         <a class="back-link" href="/">&larr; Terug naar home</a>
       </div>
     </header>

@@ -69,10 +69,10 @@
     <nav class="ep-nav-top">
       <a href="#bronnen">Bronnen</a>
       <a href="#impact-visual">Hoe het werkt</a>
-      <a href="#pakketten">Pakketten</a>
       <a href="#voorbeeld">Voorbeeld</a>
       <a href="#testimonials">Reviews</a>
       <a href="#faq">FAQ</a>
+      <span class="ep-lang"><span class="ep-lang__on">NL</span><a href="en/" hreflang="en" aria-label="Switch to English">EN</a></span>
       <a href="#pakketten" class="ep-btn ep-btn--primary ep-btn--sm">Bekijk pakketten</a>
     </nav>
     <button id="ep-hamburger" class="ep-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="ep-mobile-drawer">
@@ -88,7 +88,7 @@
     <a href="#bronnen" class="ep-mobile-link">Bronnen</a>
     <a href="#patronen" class="ep-mobile-link">Waarom doorrekenen</a>
     <a href="#voor-wie" class="ep-mobile-link">Voor wie</a>
-    <a href="#impact-visual" class="ep-mobile-link">Acht pijlers</a>
+    <a href="#impact-visual" class="ep-mobile-link">Zes pijlers</a>
     <a href="#pakketten" class="ep-mobile-link">Pakketten</a>
     <a href="#vergelijking" class="ep-mobile-link ep-hide-mobile-vergelijking">Vergelijking</a>
     <a href="#voorbeeld" class="ep-mobile-link">Voorbeeld</a>
@@ -97,6 +97,7 @@
     <a href="#garantie" class="ep-mobile-link">Garantie</a>
     <a href="#faq" class="ep-mobile-link">FAQ</a>
     <a href="#waitlist" class="ep-mobile-link">Updates</a>
+    <span class="ep-lang ep-lang--mobile"><span class="ep-lang__on">NL</span><a href="en/" hreflang="en">EN</a></span>
     <a href="#pakketten" class="ep-btn ep-btn--accent ep-btn--full ep-mobile-cta">Bekijk pakketten</a>
   </nav>
 </div>
@@ -177,12 +178,12 @@
     <p class="ep-eyebrow">Een sterke basis om mee te rekenen</p>
     <h2 class="ep-h2">Waar de cijfers vandaan komen en wat we vergelijken</h2>
     <p class="ep-lead ep-narrow-inline">
-      Elk tarief komt van de officiële belastingdienst van het land zelf. AOW en pensioen vanuit SVB en DNB. Kosten van levensonderhoud vanuit CBS en Eurostat. Belastingverdragen vanuit het Ministerie van Financiën en de OECD. Geen blogs, geen schattingen, geen forums.
+      De cijfers komen van de bron zelf, niet van blogs of schattingen. Belastingtarieven halen we bij de belastingdienst van elk land. Voor AOW en pensioen gebruiken we de SVB (Sociale Verzekeringsbank) en DNB (De Nederlandsche Bank). Wat het leven kost komt van het CBS (Centraal Bureau voor de Statistiek) en Eurostat, het statistiekbureau van de EU. En de regels over welk land wat mag belasten staan in de belastingverdragen van het Ministerie van Financiën en de OESO.
     </p>
 
-    <p class="ep-sources__group-title">Wat we precies naast elkaar leggen</p>
+    <h3 class="ep-sources__sub">Wat we precies naast elkaar leggen</h3>
     <p class="ep-sources__intro">
-      Nederland is altijd je ijkpunt. Elk land rekenen we op dezelfde punten door, met dezelfde aannames. Zo vergelijk je appels met appels:
+      Nederland is altijd je ijkpunt. Elk land rekenen we op dezelfde zes punten door, met dezelfde aannames. Zo vergelijk je appels met appels:
     </p>
     <ul class="ep-compare-dims">
       <li>
@@ -211,132 +212,112 @@
       </li>
     </ul>
 
-    <p class="ep-sources__group-title">Bronnen per land</p>
+    <h3 class="ep-sources__sub">Bronnen per land</h3>
     <ul class="ep-srcland">
       <li class="ep-srcland__item">
         <span class="ep-srcland__flag">🇳🇱</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Nederland <span class="ep-srcland__tag">ijkpunt</span></span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Belastingdienst</span>
-            <span class="ep-src-chip">SVB</span>
-            <span class="ep-src-chip">DNB</span>
-            <span class="ep-src-chip">CBS</span>
-          </span>
-        </div>
+        <span class="ep-srcland__name">Nederland <span class="ep-srcland__tag">ijkpunt</span></span>
+        <span class="ep-srcland__chips">
+          <span class="ep-src-chip" data-tip="De Nederlandse belastingdienst. Levert de tarieven en regels voor box 1, 2 en 3.">Belastingdienst</span>
+          <span class="ep-src-chip" data-tip="Sociale Verzekeringsbank. Regelt je AOW: hoeveel je opbouwt en later ontvangt.">SVB</span>
+          <span class="ep-src-chip" data-tip="De Nederlandsche Bank. Cijfers over pensioenen en lijfrente.">DNB</span>
+          <span class="ep-src-chip" data-tip="Centraal Bureau voor de Statistiek. Cijfers over de kosten van levensonderhoud.">CBS</span>
+        </span>
       </li>
       <li class="ep-srcland__item">
         <span class="ep-srcland__flag">🇵🇹</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Portugal</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Autoridade Tributária</span>
-            <span class="ep-src-chip">NHR-2 / IFICI</span>
-            <span class="ep-src-chip">Verdrag NL-PT</span>
-          </span>
-        </div>
+        <span class="ep-srcland__name">Portugal</span>
+        <span class="ep-srcland__chips">
+          <span class="ep-src-chip" data-tip="De Portugese belastingdienst. Tarieven voor inkomsten- en winstbelasting.">Autoridade Tributária</span>
+          <span class="ep-src-chip" data-tip="Portugees gunstregime voor nieuwkomers. Lager, vast tarief op bepaald inkomen.">NHR-2 / IFICI</span>
+          <span class="ep-src-chip" data-tip="Belastingverdrag Nederland-Portugal. Bepaalt welk land welk inkomen mag belasten.">Verdrag NL-PT</span>
+        </span>
       </li>
       <li class="ep-srcland__item">
         <span class="ep-srcland__flag">🇪🇸</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Spanje</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Agencia Tributaria</span>
-            <span class="ep-src-chip">Beckham (Ley 35/2006)</span>
-            <span class="ep-src-chip">Seguridad Social</span>
-            <span class="ep-src-chip">Verdrag NL-ES</span>
-          </span>
-        </div>
+        <span class="ep-srcland__name">Spanje</span>
+        <span class="ep-srcland__chips">
+          <span class="ep-src-chip" data-tip="De Spaanse belastingdienst. Tarieven voor de inkomstenbelasting (IRPF).">Agencia Tributaria</span>
+          <span class="ep-src-chip" data-tip="Spaans gunstregime voor nieuwkomers. Vast tarief in plaats van progressief.">Beckham (Ley 35/2006)</span>
+          <span class="ep-src-chip" data-tip="Spaanse sociale zekerheid. Premies voor onder meer zelfstandigen (RETA).">Seguridad Social</span>
+          <span class="ep-src-chip" data-tip="Belastingverdrag Nederland-Spanje. Bepaalt welk land welk inkomen mag belasten.">Verdrag NL-ES</span>
+        </span>
       </li>
       <li class="ep-srcland__item">
         <span class="ep-srcland__flag">🇬🇷</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Griekenland</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">AADE (Wet 4172/2013)</span>
-            <span class="ep-src-chip">Art. 5B/5C</span>
-            <span class="ep-src-chip">e-EFKA</span>
-            <span class="ep-src-chip">Verdrag NL-GR 1981</span>
-          </span>
-        </div>
+        <span class="ep-srcland__name">Griekenland</span>
+        <span class="ep-srcland__chips">
+          <span class="ep-src-chip" data-tip="De Griekse belastingdienst (AADE) en de inkomstenbelastingwet 4172/2013.">AADE (Wet 4172/2013)</span>
+          <span class="ep-src-chip" data-tip="Griekse gunstregimes voor nieuwkomers en gepensioneerden.">Art. 5B/5C</span>
+          <span class="ep-src-chip" data-tip="Griekse sociale zekerheid. Premies voor zelfstandigen.">e-EFKA</span>
+          <span class="ep-src-chip" data-tip="Belastingverdrag Nederland-Griekenland (1981). Bepaalt wie wat mag belasten.">Verdrag NL-GR 1981</span>
+        </span>
       </li>
       <li class="ep-srcland__item">
         <span class="ep-srcland__flag">🇨🇾</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Cyprus</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Cyprus Tax Department</span>
-            <span class="ep-src-chip">Non-dom</span>
-            <span class="ep-src-chip">Social Insurance &amp; GHS</span>
-            <span class="ep-src-chip">Verdrag NL-CY</span>
-          </span>
-        </div>
+        <span class="ep-srcland__name">Cyprus</span>
+        <span class="ep-srcland__chips">
+          <span class="ep-src-chip" data-tip="De Cypriotische belastingdienst. Inkomsten- en winstbelasting.">Cyprus Tax Department</span>
+          <span class="ep-src-chip" data-tip="Cypriotisch regime: lage belasting op dividend, rente en huur.">Non-dom</span>
+          <span class="ep-src-chip" data-tip="Cypriotische sociale zekerheid en de zorgbijdrage (GHS).">Social Insurance &amp; GHS</span>
+          <span class="ep-src-chip" data-tip="Belastingverdrag Nederland-Cyprus. Bepaalt wie wat mag belasten.">Verdrag NL-CY</span>
+        </span>
       </li>
       <li class="ep-srcland__item">
         <span class="ep-srcland__flag">🇮🇹</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Italië</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Agenzia delle Entrate</span>
-            <span class="ep-src-chip">Lump-sum (D.Lgs. 209/2024)</span>
-            <span class="ep-src-chip">INPS</span>
-            <span class="ep-src-chip">Verdrag NL-IT</span>
-          </span>
-        </div>
+        <span class="ep-srcland__name">Italië</span>
+        <span class="ep-srcland__chips">
+          <span class="ep-src-chip" data-tip="De Italiaanse belastingdienst. Inkomstenbelasting (IRPEF).">Agenzia delle Entrate</span>
+          <span class="ep-src-chip" data-tip="Italiaans regime: een vast bedrag over je buitenlandse inkomen.">Lump-sum (D.Lgs. 209/2024)</span>
+          <span class="ep-src-chip" data-tip="Italiaanse sociale zekerheid. Premies voor zelfstandigen.">INPS</span>
+          <span class="ep-src-chip" data-tip="Belastingverdrag Nederland-Italië. Bepaalt wie wat mag belasten.">Verdrag NL-IT</span>
+        </span>
       </li>
       <li class="ep-srcland__item">
         <span class="ep-srcland__flag">🇦🇪</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">UAE / Dubai</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Federal Tax Authority</span>
-            <span class="ep-src-chip">9% CIT / 0% IB</span>
-            <span class="ep-src-chip">Verdrag NL-UAE</span>
-          </span>
-        </div>
+        <span class="ep-srcland__name">UAE / Dubai</span>
+        <span class="ep-srcland__chips">
+          <span class="ep-src-chip" data-tip="De belastingdienst van de UAE. Winstbelasting (CIT).">Federal Tax Authority</span>
+          <span class="ep-src-chip" data-tip="9% winstbelasting boven een drempel, 0% inkomstenbelasting voor personen.">9% CIT / 0% IB</span>
+          <span class="ep-src-chip" data-tip="Belastingverdrag Nederland-UAE. Let op: beperkte verdragsbescherming.">Verdrag NL-UAE</span>
+        </span>
       </li>
       <li class="ep-srcland__item">
         <span class="ep-srcland__flag">🇧🇬</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Bulgarije</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">НАП (NRA)</span>
-            <span class="ep-src-chip">NSSI</span>
-            <span class="ep-src-chip">Verdrag NL-BG</span>
-          </span>
-        </div>
+        <span class="ep-srcland__name">Bulgarije</span>
+        <span class="ep-srcland__chips">
+          <span class="ep-src-chip" data-tip="De Bulgaarse belastingdienst. 10% vlaktaks op inkomen en winst.">НАП (NRA)</span>
+          <span class="ep-src-chip" data-tip="Bulgaarse sociale zekerheid. Premies.">NSSI</span>
+          <span class="ep-src-chip" data-tip="Belastingverdrag Nederland-Bulgarije. Bepaalt wie wat mag belasten.">Verdrag NL-BG</span>
+        </span>
       </li>
       <li class="ep-srcland__item">
         <span class="ep-srcland__flag">🇭🇺</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Hongarije</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">NAV</span>
-            <span class="ep-src-chip">SZOCHO</span>
-            <span class="ep-src-chip">Verdrag NL-HU</span>
-          </span>
-        </div>
+        <span class="ep-srcland__name">Hongarije</span>
+        <span class="ep-srcland__chips">
+          <span class="ep-src-chip" data-tip="De Hongaarse belastingdienst. 15% vlaktaks (SZJA).">NAV</span>
+          <span class="ep-src-chip" data-tip="Hongaarse sociale bijdrage van werkgevers en zelfstandigen.">SZOCHO</span>
+          <span class="ep-src-chip" data-tip="Belastingverdrag Nederland-Hongarije. Bepaalt wie wat mag belasten.">Verdrag NL-HU</span>
+        </span>
       </li>
       <li class="ep-srcland__item">
         <span class="ep-srcland__flag">🇲🇹</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Malta</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Malta Tax &amp; Customs</span>
-            <span class="ep-src-chip">Refund-systeem</span>
-            <span class="ep-src-chip">Verdrag NL-MT 1977</span>
-          </span>
-        </div>
+        <span class="ep-srcland__name">Malta</span>
+        <span class="ep-srcland__chips">
+          <span class="ep-src-chip" data-tip="De Maltese belastingdienst. Inkomsten- en winstbelasting.">Malta Tax &amp; Customs</span>
+          <span class="ep-src-chip" data-tip="Maltees systeem: een deel van de betaalde winstbelasting wordt terugbetaald.">Refund-systeem</span>
+          <span class="ep-src-chip" data-tip="Belastingverdrag Nederland-Malta (1977). Bepaalt wie wat mag belasten.">Verdrag NL-MT 1977</span>
+        </span>
       </li>
     </ul>
 
-    <p class="ep-sources__group-title">Overkoepelende bronnen</p>
+    <h3 class="ep-sources__sub">Overkoepelende bronnen</h3>
     <div class="ep-src-chips-row">
-      <span class="ep-src-chip">OECD · Model Tax Convention, MLI</span>
-      <span class="ep-src-chip">Eurostat · prijspeil en koopkracht</span>
-      <span class="ep-src-chip">Europese Commissie · ATAD, DAC6</span>
-      <span class="ep-src-chip">Ministerie van Financiën · verdragen</span>
-      <span class="ep-src-chip">KNB · estate planning</span>
+      <span class="ep-src-chip" data-tip="Organisatie van rijke landen. Levert het modelverdrag en regels tegen dubbele belasting.">OESO (OECD)</span>
+      <span class="ep-src-chip" data-tip="Het statistiekbureau van de EU. Prijspeil en koopkracht per land.">Eurostat</span>
+      <span class="ep-src-chip" data-tip="EU-regels tegen belastingontwijking (ATAD en DAC6).">Europese Commissie</span>
+      <span class="ep-src-chip" data-tip="Beheert de Nederlandse belastingverdragen en protocollen.">Ministerie van Financiën</span>
+      <span class="ep-src-chip" data-tip="Koninklijke Notariële Beroepsorganisatie. Erfrecht en estate planning.">KNB</span>
     </div>
   </div>
 </section>
@@ -456,10 +437,10 @@
 <section id="impact-visual" class="ep-section ep-section--alt">
   <div class="ep-container">
     <p class="ep-eyebrow">Wat Emigratieplan doorrekent</p>
-    <h2 class="ep-h2">Acht pijlers, één eerlijk overzicht</h2>
+    <h2 class="ep-h2">Zes pijlers, één eerlijk overzicht</h2>
     <p class="ep-lead ep-narrow-inline">
       We begrijpen dat je wilt weten wat emigreren oplevert, of wat het kost. Het zou toch niet zo moeilijk moeten zijn om een kant-en-klaar overzicht
-      te krijgen van een paar landen?! <br><br>Emigratieplan helpt je om jouw financiële situatie op acht essentiële pijlers te vergelijken. Appels met appels. 
+      te krijgen van een paar landen?! <br><br>Emigratieplan helpt je om jouw financiële situatie op zes essentiële pijlers te vergelijken. Appels met appels. 
     </p>
 
     <div class="ep-impact-legend" aria-hidden="true">
@@ -467,7 +448,7 @@
       <span class="ep-impact-legend__item"><span class="ep-impact-legend__swatch ep-impact-legend__swatch--pt"></span>Portugal (voorbeeldcasus)</span>
     </div>
 
-    <div class="ep-impact" role="list" aria-label="Acht pijlers, Nederland versus Portugal">
+    <div class="ep-impact" role="list" aria-label="Zes pijlers, Nederland versus Portugal">
 
       <div class="ep-impact__cell" role="listitem">
         <div class="ep-impact__head">
@@ -554,22 +535,6 @@
         </div>
       </div>
 
-      <div class="ep-impact__cell" role="listitem">
-        <div class="ep-impact__head">
-          <span class="ep-impact__label">Administratiekosten &amp; visa</span>
-          <span class="ep-impact__delta ep-impact__delta--neutral">EU, geen visum</span>
-        </div>
-        <div class="ep-impact__bar">
-          <span class="ep-impact__legend">NL</span>
-          <div class="ep-impact__track"><div class="ep-impact__fill ep-impact__fill--nl" style="--w:95%"></div></div>
-          <span class="ep-impact__score">95</span>
-        </div>
-        <div class="ep-impact__bar">
-          <span class="ep-impact__legend">PT</span>
-          <div class="ep-impact__track"><div class="ep-impact__fill ep-impact__fill--pt" style="--w:90%"></div></div>
-          <span class="ep-impact__score">90</span>
-        </div>
-      </div>
 
       <div class="ep-impact__cell" role="listitem">
         <div class="ep-impact__head">
@@ -588,22 +553,6 @@
         </div>
       </div>
 
-      <div class="ep-impact__cell" role="listitem">
-        <div class="ep-impact__head">
-          <span class="ep-impact__label">Sociale binding</span>
-          <span class="ep-impact__delta ep-impact__delta--neg">jaren opbouw</span>
-        </div>
-        <div class="ep-impact__bar">
-          <span class="ep-impact__legend">NL</span>
-          <div class="ep-impact__track"><div class="ep-impact__fill ep-impact__fill--nl" style="--w:90%"></div></div>
-          <span class="ep-impact__score">90</span>
-        </div>
-        <div class="ep-impact__bar">
-          <span class="ep-impact__legend">PT</span>
-          <div class="ep-impact__track"><div class="ep-impact__fill ep-impact__fill--pt" style="--w:42%"></div></div>
-          <span class="ep-impact__score">42</span>
-        </div>
-      </div>
 
     </div>
 
@@ -1291,8 +1240,8 @@
 <!-- ============ WAT ERIN ZIT ============ -->
 <section id="wat-erin-zit" class="ep-section">
   <div class="ep-container">
-    <p class="ep-eyebrow">Onder de motorkap</p>
-    <h2 class="ep-h2">Wat er in de rekentool zit</h2>
+    <p class="ep-eyebrow ep-eyebrow--center">Onder de motorkap</p>
+    <h2 class="ep-h2 ep-h2--center">Wat er in de rekentool zit</h2>
 
     <ul class="ep-stats-strip" aria-label="Kerncijfers van Emigratieplan">
       <li>
@@ -1312,7 +1261,7 @@
       </li>
       <li>
         <span class="ep-stats-strip__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
-        <span class="ep-stats-strip__num">8</span>
+        <span class="ep-stats-strip__num">6</span>
         <span class="ep-stats-strip__lbl">pijlers per land, één eerlijk overzicht</span>
       </li>
     </ul>
@@ -1326,7 +1275,7 @@
       Eén consistente set gegevens, zichtbaar en aanpasbaar. Een nieuw land toevoegen kost weken werk, juist omdat we zeker willen weten dat het echt klopt.
     </p>
 
-    <h3 class="ep-h3">Wie dit bouwt</h3>
+    <h3 class="ep-h3 ep-h3--center">Wie dit bouwt</h3>
 
     <div class="ep-founder">
       <div class="ep-founder__head">

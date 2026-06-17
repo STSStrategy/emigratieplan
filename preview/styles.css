@@ -2401,3 +2401,66 @@ tr:nth-last-child(-n+5) .ep-info::before {
 #wat-erin-zit .ep-body-lg,
 #wat-erin-zit .ep-founder__intro,
 #wat-erin-zit .ep-founder__wft { max-width: var(--reading-width); }
+
+/* ============================================================
+   R28 — Bronnen polish, tooltips, lang toggle, spacing fixes
+   ============================================================ */
+/* Proper subheadings (were tiny uppercase eyebrows) */
+.ep-sources__sub {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(21px, 2.3vw, 27px);
+  line-height: 1.2;
+  color: var(--brown);
+  margin: 44px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.ep-sources__intro { margin-top: 0; }
+
+/* Flatter per-country sources: flag + name + pills on one row */
+.ep-srcland { grid-template-columns: 1fr 1fr; gap: 10px; }
+.ep-srcland__item {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px;
+  padding: 12px 16px;
+}
+.ep-srcland__flag { font-size: 20px; line-height: 1; }
+.ep-srcland__name {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 700; font-size: 15px; color: var(--brown);
+  flex: 0 0 auto; min-width: 120px;
+}
+.ep-srcland__chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0; flex: 1 1 200px; }
+
+/* Chip hover tooltips */
+.ep-src-chip[data-tip] { position: relative; cursor: help; }
+.ep-src-chip[data-tip]:hover, .ep-src-chip[data-tip]:focus-visible { border-color: var(--orange); }
+.ep-src-chip[data-tip]:hover::after, .ep-src-chip[data-tip]:focus-visible::after {
+  content: attr(data-tip);
+  position: absolute; left: 50%; bottom: calc(100% + 9px); transform: translateX(-50%);
+  width: max-content; max-width: 250px; text-align: left;
+  background: var(--brown); color: var(--cream);
+  font-size: 12px; font-weight: 500; letter-spacing: 0; line-height: 1.45;
+  padding: 9px 11px; border-radius: 7px; white-space: normal; z-index: 30;
+  box-shadow: 0 8px 24px rgba(56,44,39,.28); pointer-events: none;
+}
+.ep-src-chip[data-tip]:hover::before, .ep-src-chip[data-tip]:focus-visible::before {
+  content: ""; position: absolute; left: 50%; bottom: calc(100% + 3px); transform: translateX(-50%);
+  border: 6px solid transparent; border-top-color: var(--brown); z-index: 30; pointer-events: none;
+}
+
+/* Language toggle */
+.ep-lang { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-sans); font-size: 13px; font-weight: 600; }
+.ep-lang__on { color: var(--brown); }
+.ep-lang__on::after { content: "/"; margin-left: 6px; color: var(--border); font-weight: 400; }
+.ep-lang a { color: var(--brown-mute); text-decoration: none; }
+.ep-lang a:hover { color: var(--orange); }
+.ep-lang--mobile { justify-content: center; padding: 10px 0 4px; font-size: 16px; }
+
+/* Tighter package feature rows */
+.ep-pkg__features li { padding: 7px 0 7px 24px; line-height: 1.4; }
+.ep-pkg__features li::before { top: 6px; }
+
+/* Center 'Onder de motorkap' / 'Wie dit bouwt' */
+.ep-h3--center { text-align: center; }
+#wat-erin-zit .ep-body-lg { margin-left: auto; margin-right: auto; }

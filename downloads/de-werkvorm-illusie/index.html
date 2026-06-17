@@ -156,11 +156,17 @@
     .wrap { padding: 48px 24px 80px; }
     .download-card { padding: 32px 24px; }
   }
+  /* Uniform brand logo */
+  .crumb .ep-logo { display:inline-flex; align-items:center; gap:8px; vertical-align:middle; font-family:"Fraunces",Charter,Georgia,serif; font-weight:600; font-size:15px; letter-spacing:0; text-transform:none; color:#382c27; text-decoration:none; border-bottom:none; }
+  .crumb .ep-logo:hover { color:#382c27; }
+  .ep-logo__mark { display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#382c27; color:#f6f5f2; font-family:"Fraunces",Charter,Georgia,serif; font-weight:600; font-size:11px; border-radius:2px; }
+  .ep-logo__wordmark { color:#382c27; }
+  .ep-logo__accent { color:#ba5229; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="crumb"><a href="/">Emigratieplan</a> &nbsp;/&nbsp; Beslisgids 05</div>
+  <div class="crumb"><a href="/" class="ep-logo"><span class="ep-logo__mark">EP</span><span class="ep-logo__wordmark">Emigratie<span class="ep-logo__accent">plan</span></span></a> &nbsp;/&nbsp; Beslisgids 05</div>
 
   <div class="label">Beslisgids 05 van 5</div>
   <h1>De werkvorm-illusie</h1>
