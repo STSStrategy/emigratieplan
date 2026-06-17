@@ -2464,3 +2464,27 @@ tr:nth-last-child(-n+5) .ep-info::before {
 /* Center 'Onder de motorkap' / 'Wie dit bouwt' */
 .ep-h3--center { text-align: center; }
 #wat-erin-zit .ep-body-lg { margin-left: auto; margin-right: auto; }
+
+/* ============================================================
+   R29 — Center the 'Onder de motorkap' section as one block
+   (heading + founder content aligned, not centered-title/left-text)
+   ============================================================ */
+#wat-erin-zit > .ep-container { max-width: 980px; }
+#wat-erin-zit .ep-body-lg {
+  max-width: 720px; margin-left: auto; margin-right: auto; text-align: center;
+}
+#wat-erin-zit .ep-founder__head {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+#wat-erin-zit .ep-founder__id { align-items: center; }
+#wat-erin-zit .ep-founder__intro {
+  text-align: center; max-width: 660px; margin-left: auto; margin-right: auto;
+}
+#wat-erin-zit .ep-founder__wft {
+  text-align: center; max-width: 660px; margin-left: auto; margin-right: auto;
+}
+#wat-erin-zit .ep-cred { text-align: center; align-items: center; }
