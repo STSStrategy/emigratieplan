@@ -45,14 +45,14 @@
 <nav id="ep-section-nav" aria-label="Sectie-navigatie">
   <ul>
     <li><a href="#hero"><span class="dot"></span><span class="lbl">Start</span></a></li>
-    <li><a href="#bronnen"><span class="dot"></span><span class="lbl">Bronnen</span></a></li>
+    <li><a href="#landen"><span class="dot"></span><span class="lbl">Landen</span></a></li>
     <li><a href="#patronen"><span class="dot"></span><span class="lbl">Noodzaak</span></a></li>
     <li><a href="#voor-wie"><span class="dot"></span><span class="lbl">Voor wie</span></a></li>
     <li><a href="#impact-visual"><span class="dot"></span><span class="lbl">Pijlers</span></a></li>
     <li><a href="#pakketten"><span class="dot"></span><span class="lbl">Pakketten</span></a></li>
     <li><a href="#vergelijking"><span class="dot"></span><span class="lbl">Vergelijking</span></a></li>
     <li><a href="#voorbeeld"><span class="dot"></span><span class="lbl">Voorbeeld</span></a></li>
-    <li><a href="#testimonials"><span class="dot"></span><span class="lbl">Reviews</span></a></li>
+    <li><a href="#testimonials"><span class="dot"></span><span class="lbl">Beta</span></a></li>
     <li><a href="#wat-erin-zit"><span class="dot"></span><span class="lbl">Onder de motorkap</span></a></li>
     <li><a href="#garantie"><span class="dot"></span><span class="lbl">Garantie</span></a></li>
     <li><a href="#faq"><span class="dot"></span><span class="lbl">FAQ</span></a></li>
@@ -67,11 +67,11 @@
       <span class="ep-logo__wordmark">Emigratie<span class="ep-logo__accent">plan</span></span>
     </a>
     <nav class="ep-nav-top">
-      <a href="#bronnen">Bronnen</a>
+      <a href="#landen">Landen</a>
       <a href="#impact-visual">Hoe het werkt</a>
       <a href="#pakketten">Pakketten</a>
       <a href="#voorbeeld">Voorbeeld</a>
-      <a href="#testimonials">Reviews</a>
+      <a href="#wat-erin-zit">Bronnen</a>
       <a href="#faq">FAQ</a>
       <a href="#pakketten" class="ep-btn ep-btn--primary ep-btn--sm">Bekijk pakketten</a>
     </nav>
@@ -85,14 +85,14 @@
   <button id="ep-mobile-close" class="ep-mobile-close" aria-label="Sluit menu">×</button>
   <nav class="ep-mobile-nav">
     <a href="#hero" class="ep-mobile-link">Start</a>
-    <a href="#bronnen" class="ep-mobile-link">Bronnen</a>
+    <a href="#landen" class="ep-mobile-link">Landen</a>
     <a href="#patronen" class="ep-mobile-link">Waarom doorrekenen</a>
     <a href="#voor-wie" class="ep-mobile-link">Voor wie</a>
     <a href="#impact-visual" class="ep-mobile-link">Acht pijlers</a>
     <a href="#pakketten" class="ep-mobile-link">Pakketten</a>
     <a href="#vergelijking" class="ep-mobile-link ep-hide-mobile-vergelijking">Vergelijking</a>
     <a href="#voorbeeld" class="ep-mobile-link">Voorbeeld</a>
-    <a href="#testimonials" class="ep-mobile-link">Reviews</a>
+    <a href="#testimonials" class="ep-mobile-link">Beta</a>
     <a href="#wat-erin-zit" class="ep-mobile-link">Onder de motorkap</a>
     <a href="#garantie" class="ep-mobile-link">Garantie</a>
     <a href="#faq" class="ep-mobile-link">FAQ</a>
@@ -106,15 +106,15 @@
 <section id="hero" class="ep-section ep-hero">
   <div class="ep-container ep-hero__grid">
     <div class="ep-hero__copy">
-      <p class="ep-eyebrow">Voor wie emigratie serieus neemt</p>
+      <p class="ep-eyebrow">Voor wie emigratie overweegt</p>
       <h1 class="ep-h1-display">
         Je overweegt te emigreren.<br>
         Je twijfelt nog.<br>
         <em class="ep-accent">Dat is logisch.</em>
       </h1>
       <p class="ep-lead">
-        <strong>Emigratieplan
-        rekent jouw financiële situatie door voor tien landen en vergelijkt dit met Nederland.</strong> Wat blijft
+        Want je weet niet wat het financieel voor je betekent. Emigratieplan
+        rekent jouw situatie door op tien landen en vergelijkt dit met Nederland. Wat blijft
         er over per maand, hoeveel belasting betaal je, hoe groeit je vermogen,
         wat gebeurt er met je pensioen. Zodat je niet
         langer gokt, maar weet.
@@ -124,219 +124,286 @@
         <a href="#impact-visual" class="ep-btn ep-btn--ghost">Lees hoe het werkt</a>
       </div>
     </div>
-    <div class="ep-hero__visual" aria-hidden="true">
-      <div class="ep-tool">
-        <div class="ep-tool__bar">
-          <span class="ep-tool__dots"><i></i><i></i><i></i></span>
-          <span class="ep-tool__title">Emigratieplan · jouw doorrekening</span>
-          <span class="ep-tool__live">live</span>
-        </div>
-        <div class="ep-tool__tabs">
-          <span class="is-active">Cashflow</span>
-          <span>Vergelijking</span>
-          <span>Pensioen</span>
-          <span>Vermogen</span>
-        </div>
-        <div class="ep-tool__kpis">
-          <div class="ep-tk">
-            <span class="ep-tk__lbl">Netto per maand</span>
-            <span class="ep-tk__val">+€780</span>
-            <span class="ep-tk__sub">t.o.v. Nederland</span>
-          </div>
-          <div class="ep-tk">
-            <span class="ep-tk__lbl">Belastingdruk</span>
-            <span class="ep-tk__val">41&thinsp;→&thinsp;28%</span>
-            <span class="ep-tk__sub">na regime</span>
-          </div>
-          <div class="ep-tk">
-            <span class="ep-tk__lbl">Vermogen, 30 jaar</span>
-            <span class="ep-tk__val">+€420k</span>
-            <span class="ep-tk__sub">na belasting</span>
-          </div>
-        </div>
-        <div class="ep-tool__panel">
-          <div class="ep-tool__panel-head">
-            <span class="ep-tool__panel-title">Nederland vs Portugal</span>
-            <span class="ep-tool__legend"><i class="nl"></i>NL<i class="pt"></i>PT</span>
-          </div>
-          <div class="ep-tb"><span class="ep-tb__name">Cashflow</span><span class="ep-tb__bars"><i class="nl" style="width:58%"></i><i class="pt" style="width:88%"></i></span></div>
-          <div class="ep-tb"><span class="ep-tb__name">Belasting</span><span class="ep-tb__bars"><i class="nl" style="width:48%"></i><i class="pt" style="width:80%"></i></span></div>
-          <div class="ep-tb"><span class="ep-tb__name">Vermogen</span><span class="ep-tb__bars"><i class="nl" style="width:62%"></i><i class="pt" style="width:78%"></i></span></div>
-          <div class="ep-tb"><span class="ep-tb__name">Pensioen</span><span class="ep-tb__bars"><i class="nl" style="width:88%"></i><i class="pt" style="width:54%"></i></span></div>
-          <div class="ep-tb"><span class="ep-tb__name">Woonlasten</span><span class="ep-tb__bars"><i class="nl" style="width:52%"></i><i class="pt" style="width:74%"></i></span></div>
-        </div>
-        <div class="ep-tool__foot">10 landen · horizon tot 50 jaar · dezelfde aannames</div>
+    <div class="ep-hero__stats">
+      <p class="ep-hero__stats-title">In het kort</p>
+      <div class="ep-stat-row">
+        <span class="ep-stat-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg></span>
+        <span class="ep-stat-row__num">10</span>
+        <span class="ep-stat-row__cap">Landen met volledige rekenstructuur</span>
+      </div>
+      <div class="ep-stat-row">
+        <span class="ep-stat-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 1.8"/></svg></span>
+        <span class="ep-stat-row__num">50<span class="ep-stat-row__unit">jr</span></span>
+        <span class="ep-stat-row__cap">Plan tot 50 jaar vooruit, inclusief pensioen</span>
+      </div>
+      <div class="ep-stat-row">
+        <span class="ep-stat-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 13.3l-7.2 7.2a1.5 1.5 0 0 1-2.1 0l-7.9-7.9V3.5H11l9.5 9.5a0 0 0 0 1 0 .3z"/><circle cx="7.6" cy="7.6" r="1.3"/></svg></span>
+        <span class="ep-stat-row__num">€189</span>
+        <span class="ep-stat-row__cap">Vanafprijs. Eenmalige aankoop, lifetime toegang</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ LANDEN ============ -->
-<section id="bronnen" class="ep-section ep-section--alt">
+<section id="landen" class="ep-section ep-section--alt">
   <div class="ep-container">
-    <p class="ep-eyebrow">Een sterke basis om mee te rekenen</p>
-    <h2 class="ep-h2">Waar de cijfers vandaan komen en wat we vergelijken</h2>
+    <p class="ep-eyebrow">Wat je doorrekent</p>
+    <h2 class="ep-h2">Tien landen vergelijken met jouw cijfers</h2>
     <p class="ep-lead ep-narrow-inline">
-      Elk tarief komt van de officiële belastingdienst van het land zelf. AOW en pensioen vanuit SVB en DNB. Kosten van levensonderhoud vanuit CBS en Eurostat. Belastingverdragen vanuit het Ministerie van Financiën en de OECD. Geen blogs, geen schattingen, geen forums.
+      Elk land heeft een eigen rekenmodule, gebouwd op officiële bronnen.
+      Denk aan belastingen, speciale regimes, kosten voor levensonderhoud en pensioenstelsels.
+      Klik een land aan om te zien welke belangrijke zaken erin zitten.
     </p>
 
-    <p class="ep-sources__group-title">Wat we precies naast elkaar leggen</p>
-    <p class="ep-sources__intro">
-      Nederland is altijd je ijkpunt. Elk land rekenen we op dezelfde punten door, met dezelfde aannames. Zo vergelijk je appels met appels:
-    </p>
-    <ul class="ep-compare-dims">
-      <li>
-        <span class="ep-dim__t">Inkomstenbelasting</span>
-        <span class="ep-dim__d">Box 1 in Nederland tegenover de inkomstenbelasting van het andere land. Inclusief speciale regimes zoals NHR-2, Beckham of non-dom.</span>
-      </li>
-      <li>
-        <span class="ep-dim__t">Vermogen en sparen</span>
-        <span class="ep-dim__d">Box 3 in Nederland tegenover vermogensbelasting, dividend- en winstbelasting elders. Plus lokale heffingen waar die gelden.</span>
-      </li>
-      <li>
-        <span class="ep-dim__t">Pensioen en AOW</span>
-        <span class="ep-dim__d">Opbouw, uitkering en bevriezing van je AOW, plus privépensioen en lijfrente. Met de regels uit het belastingverdrag per land.</span>
-      </li>
-      <li>
-        <span class="ep-dim__t">Wonen</span>
-        <span class="ep-dim__d">Koop, huur of verhuur. Hypotheek en renteaftrek, lokale woonlasten (zoals IMI, IBI of ENFIA) en de waarde van je huis.</span>
-      </li>
-      <li>
-        <span class="ep-dim__t">Levensonderhoud</span>
-        <span class="ep-dim__d">Wat het dagelijks leven kost per land, op basis van prijspeil en koopkracht.</span>
-      </li>
-      <li>
-        <span class="ep-dim__t">Sociale premies</span>
-        <span class="ep-dim__d">Wat je betaalt aan zorg en sociale zekerheid, voor loondienst, ZZP en BV/DGA.</span>
-      </li>
-    </ul>
+    <div class="ep-country-list">
 
-    <p class="ep-sources__group-title">Bronnen per land</p>
-    <ul class="ep-srcland">
-      <li class="ep-srcland__item">
-        <span class="ep-srcland__flag">🇳🇱</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Nederland <span class="ep-srcland__tag">ijkpunt</span></span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Belastingdienst</span>
-            <span class="ep-src-chip">SVB</span>
-            <span class="ep-src-chip">DNB</span>
-            <span class="ep-src-chip">CBS</span>
+      <details class="ep-country">
+        <summary>
+          <span class="ep-country__flag">🇳🇱</span>
+          <span class="ep-country__name">Nederland</span>
+          <span class="ep-country__meta">
+            <span class="ep-country__tagline">Referentiepunt voor alle vergelijkingen</span>
+            <span class="ep-country__sources">
+              <span class="ep-src-chip">Belastingdienst</span>
+              <span class="ep-src-chip">CBS</span>
+              <span class="ep-src-chip">DNB</span>
+              <span class="ep-src-chip">SVB</span>
+            </span>
           </span>
+          <span class="ep-country__chev" aria-hidden="true"></span>
+        </summary>
+        <div class="ep-country__body">
+          <ul>
+            <li>Box 1, 2 en 3 volledig gemodelleerd</li>
+            <li>ZZP (eenmanszaak), loondienst, DGA (BV) -- ook in combinatie</li>
+            <li>MKB-vrijstelling, zelfstandigenaftrek, arbeidskorting</li>
+            <li>AOW op basis van opbouwjaren, lijfrente en privépensioen</li>
+            <li>Eigen woning met HRA, annuïtair of lineair</li>
+            <li>Box 3 met werkelijk rendement, forfaitair of niet van toepassing</li>
+          </ul>
         </div>
-      </li>
-      <li class="ep-srcland__item">
-        <span class="ep-srcland__flag">🇵🇹</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Portugal</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Autoridade Tributária</span>
-            <span class="ep-src-chip">NHR-2 / IFICI</span>
-            <span class="ep-src-chip">Verdrag NL-PT</span>
-          </span>
-        </div>
-      </li>
-      <li class="ep-srcland__item">
-        <span class="ep-srcland__flag">🇪🇸</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Spanje</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Agencia Tributaria</span>
-            <span class="ep-src-chip">Beckham (Ley 35/2006)</span>
-            <span class="ep-src-chip">Seguridad Social</span>
-            <span class="ep-src-chip">Verdrag NL-ES</span>
-          </span>
-        </div>
-      </li>
-      <li class="ep-srcland__item">
-        <span class="ep-srcland__flag">🇬🇷</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Griekenland</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">AADE (Wet 4172/2013)</span>
-            <span class="ep-src-chip">Art. 5B/5C</span>
-            <span class="ep-src-chip">e-EFKA</span>
-            <span class="ep-src-chip">Verdrag NL-GR 1981</span>
-          </span>
-        </div>
-      </li>
-      <li class="ep-srcland__item">
-        <span class="ep-srcland__flag">🇨🇾</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Cyprus</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Cyprus Tax Department</span>
-            <span class="ep-src-chip">Non-dom</span>
-            <span class="ep-src-chip">Social Insurance &amp; GHS</span>
-            <span class="ep-src-chip">Verdrag NL-CY</span>
-          </span>
-        </div>
-      </li>
-      <li class="ep-srcland__item">
-        <span class="ep-srcland__flag">🇮🇹</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Italië</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Agenzia delle Entrate</span>
-            <span class="ep-src-chip">Lump-sum (D.Lgs. 209/2024)</span>
-            <span class="ep-src-chip">INPS</span>
-            <span class="ep-src-chip">Verdrag NL-IT</span>
-          </span>
-        </div>
-      </li>
-      <li class="ep-srcland__item">
-        <span class="ep-srcland__flag">🇦🇪</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">UAE / Dubai</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Federal Tax Authority</span>
-            <span class="ep-src-chip">9% CIT / 0% IB</span>
-            <span class="ep-src-chip">Verdrag NL-UAE</span>
-          </span>
-        </div>
-      </li>
-      <li class="ep-srcland__item">
-        <span class="ep-srcland__flag">🇧🇬</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Bulgarije</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">НАП (NRA)</span>
-            <span class="ep-src-chip">NSSI</span>
-            <span class="ep-src-chip">Verdrag NL-BG</span>
-          </span>
-        </div>
-      </li>
-      <li class="ep-srcland__item">
-        <span class="ep-srcland__flag">🇭🇺</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Hongarije</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">NAV</span>
-            <span class="ep-src-chip">SZOCHO</span>
-            <span class="ep-src-chip">Verdrag NL-HU</span>
-          </span>
-        </div>
-      </li>
-      <li class="ep-srcland__item">
-        <span class="ep-srcland__flag">🇲🇹</span>
-        <div class="ep-srcland__body">
-          <span class="ep-srcland__name">Malta</span>
-          <span class="ep-srcland__chips">
-            <span class="ep-src-chip">Malta Tax &amp; Customs</span>
-            <span class="ep-src-chip">Refund-systeem</span>
-            <span class="ep-src-chip">Verdrag NL-MT 1977</span>
-          </span>
-        </div>
-      </li>
-    </ul>
+      </details>
 
-    <p class="ep-sources__group-title">Overkoepelende bronnen</p>
-    <div class="ep-src-chips-row">
-      <span class="ep-src-chip">OECD · Model Tax Convention, MLI</span>
-      <span class="ep-src-chip">Eurostat · prijspeil en koopkracht</span>
-      <span class="ep-src-chip">Europese Commissie · ATAD, DAC6</span>
-      <span class="ep-src-chip">Ministerie van Financiën · verdragen</span>
-      <span class="ep-src-chip">KNB · estate planning</span>
+      <details class="ep-country">
+        <summary>
+          <span class="ep-country__flag">🇬🇷</span>
+          <span class="ep-country__name">Griekenland</span>
+          <span class="ep-country__meta">
+            <span class="ep-country__tagline">Article 5C flat tax + IKE structuur</span>
+            <span class="ep-country__sources">
+              <span class="ep-src-chip">AADE</span>
+              <span class="ep-src-chip">Verdrag 1981</span>
+            </span>
+          </span>
+          <span class="ep-country__chev" aria-hidden="true"></span>
+        </summary>
+        <div class="ep-country__body">
+          <ul>
+            <li>Article 5B regime: gereduceerd belastingtarief voor pensionado's, 17 jaar</li>
+            <li>Article 5C non-dom regime: 50% korting op buitenlands inkomen, 7 jaar</li>
+            <li>IKE (soort BV) als ondernemingsvorm met VPB doorgerekend</li>
+            <li>EFKA sociale premies (voor ondernemers)</li>
+            <li>NL-GR pensioenverdrag met tips en waarschuwingen (Art. 18, particulier vs. ambtelijk)</li>
+            <li>ENFIA (lokale belastingregels) op vastgoed</li>
+            <li>Bronnen: AADE, NL-GR belastingverdrag 1981</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="ep-country">
+        <summary>
+          <span class="ep-country__flag">🇨🇾</span>
+          <span class="ep-country__name">Cyprus</span>
+          <span class="ep-country__meta">
+            <span class="ep-country__tagline">Non-dom regime + 15% CIT (2026)</span>
+            <span class="ep-country__sources">
+              <span class="ep-src-chip">Tax Department CY</span>
+            </span>
+          </span>
+          <span class="ep-country__chev" aria-hidden="true"></span>
+        </summary>
+        <div class="ep-country__body">
+          <ul>
+            <li>Non-dom regime: lage belasting op dividend, rente, huur (17 jaar)</li>
+            <li>15% CIT (soort VPB) vanaf 2026 (was 12,5%)</li>
+            <li>GHS (zorg) met plafond €4.770/jaar</li>
+            <li>Sociale Zekerheid (SZ) volgens lokaal tarief</li>
+            <li>Cyprus Ltd structuur (soort BV) als optie</li>
+            <li>Bronnen: Tax Department Cyprus</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="ep-country">
+        <summary>
+          <span class="ep-country__flag">🇵🇹</span>
+          <span class="ep-country__name">Portugal</span>
+          <span class="ep-country__meta">
+            <span class="ep-country__tagline">NHR-2 (IFICI) waar van toepassing</span>
+            <span class="ep-country__sources">
+              <span class="ep-src-chip">Autoridade Tributária</span>
+            </span>
+          </span>
+          <span class="ep-country__chev" aria-hidden="true"></span>
+        </summary>
+        <div class="ep-country__body">
+          <ul>
+            <li>NHR-2 / IFICI flat rate 20% op kwalificerend inkomen (10 jr)</li>
+            <li>Buiten NHR: standaard IRS progressief (stijgend obv inkomen)</li>
+            <li>AIMI (lokale belasting) op vastgoed boven drempel</li>
+            <li>IMI lokale onroerendezaakbelasting</li>
+            <li>Bronnen: Autoridade Tributária (AT)</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="ep-country">
+        <summary>
+          <span class="ep-country__flag">🇪🇸</span>
+          <span class="ep-country__name">Spanje</span>
+          <span class="ep-country__meta">
+            <span class="ep-country__tagline">Beckham Law flat rate (6 jr)</span>
+            <span class="ep-country__sources">
+              <span class="ep-src-chip">Agencia Tributaria</span>
+            </span>
+          </span>
+          <span class="ep-country__chev" aria-hidden="true"></span>
+        </summary>
+        <div class="ep-country__body">
+          <ul>
+            <li>Beckham Law: 24% flat (15% in versies tot grens), 6 jaar</li>
+            <li>Buiten Beckham: progressief IRPF (stijgend obv inkomen)</li>
+            <li>Autonome regio verschillen meegenomen voor 8 regio's (o.a. Madrid, Andalusië, Catalonië)</li>
+            <li>Patrimonio (vermogensbelasting) toegepast waar geldend</li>
+            <li>IBI lokale onroerendezaakbelasting</li>
+            <li>Bronnen: Agencia Tributaria</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="ep-country">
+        <summary>
+          <span class="ep-country__flag">🇮🇹</span>
+          <span class="ep-country__name">Italië</span>
+          <span class="ep-country__meta">
+            <span class="ep-country__tagline">Impatriate + lump-sum regime</span>
+            <span class="ep-country__sources">
+              <span class="ep-src-chip">Agenzia delle Entrate</span>
+            </span>
+          </span>
+          <span class="ep-country__chev" aria-hidden="true"></span>
+        </summary>
+        <div class="ep-country__body">
+          <ul>
+            <li>Impatriate regime: 70% korting op werkinkomen (5 jr)</li>
+            <li>Lump-sum regime: €200.000/jr flat op buitenlands inkomen</li>
+            <li>Standaard IRPEF progressief buiten regimes (stijgend obv inkomen)</li>
+            <li>IMU vastgoedbelasting</li>
+            <li>Bronnen: Agenzia delle Entrate (AGI)</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="ep-country">
+        <summary>
+          <span class="ep-country__flag">🇦🇪</span>
+          <span class="ep-country__name">UAE / Dubai</span>
+          <span class="ep-country__meta">
+            <span class="ep-country__tagline">0% IB, 9% CIT vanaf drempel</span>
+            <span class="ep-country__sources">
+              <span class="ep-src-chip">Federal Tax Authority</span>
+            </span>
+          </span>
+          <span class="ep-country__chev" aria-hidden="true"></span>
+        </summary>
+        <div class="ep-country__body">
+          <ul>
+            <li>0% inkomstenbelasting voor natuurlijke personen</li>
+            <li>9% CIT (soort VPB) vanaf AED 375.000 winst</li>
+            <li>Geen NL-UAE pensioenverdrag (let op pensioenuitkeringen)</li>
+            <li>Golden Visa-paden meegenomen in residentievereisten met meldingen en tips</li>
+            <li>VAT 5% (BTW) op consumptie meegenomen in kosten-aannames</li>
+            <li>Bronnen: Federal Tax Authority UAE</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="ep-country">
+        <summary>
+          <span class="ep-country__flag">🇧🇬</span>
+          <span class="ep-country__name">Bulgarije</span>
+          <span class="ep-country__meta">
+            <span class="ep-country__tagline">10% flat IB en CIT</span>
+            <span class="ep-country__sources">
+              <span class="ep-src-chip">НАП (NRA)</span>
+            </span>
+          </span>
+          <span class="ep-country__chev" aria-hidden="true"></span>
+        </summary>
+        <div class="ep-country__body">
+          <ul>
+            <li>10% flat tax inkomstenbelasting</li>
+            <li>10% CIT (soort VPB)</li>
+            <li>Sociale premies lokaal niveau</li>
+            <li>EU-lidstaat -- vrij verkeer van personen en kapitaal</li>
+            <li>Lage kosten van levensonderhoud meegerekend in cashflow</li>
+            <li>Bronnen: НАП (Nationale Belastingdienst Bulgarije)</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="ep-country">
+        <summary>
+          <span class="ep-country__flag">🇭🇺</span>
+          <span class="ep-country__name">Hongarije</span>
+          <span class="ep-country__meta">
+            <span class="ep-country__tagline">15% flat IB, 9% CIT</span>
+            <span class="ep-country__sources">
+              <span class="ep-src-chip">NAV</span>
+            </span>
+          </span>
+          <span class="ep-country__chev" aria-hidden="true"></span>
+        </summary>
+        <div class="ep-country__body">
+          <ul>
+            <li>15% flat inkomstenbelasting</li>
+            <li>9% CIT (soort VPB) -- laagste in EU</li>
+            <li>Sociale premies (TB) op lokaal niveau</li>
+            <li>KATA voor kleine-ondernemers waar van toepassing</li>
+            <li>EU-lidstaat</li>
+            <li>Bronnen: NAV (Hongaarse Belastingdienst)</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="ep-country">
+        <summary>
+          <span class="ep-country__flag">🇲🇹</span>
+          <span class="ep-country__name">Malta</span>
+          <span class="ep-country__meta">
+            <span class="ep-country__tagline">Standaard IB + CIT refund-systeem</span>
+            <span class="ep-country__sources">
+              <span class="ep-src-chip">Malta Inland Revenue</span>
+            </span>
+          </span>
+          <span class="ep-country__chev" aria-hidden="true"></span>
+        </summary>
+        <div class="ep-country__body">
+          <ul>
+            <li>Progressieve inkomstenbelasting tot 35%</li>
+            <li>35% CIT (soort VPB) met refund-systeem (effectief ~5% via shareholder refunds)</li>
+            <li>GRP-regime niet beschikbaar voor Nederlanders (EU-burgers)</li>
+            <li>Geen vermogensbelasting, geen kapitaalwinstbelasting op aandelen</li>
+            <li>Bronnen: Malta Inland Revenue</li>
+          </ul>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="ep-cta-row">
+      <a href="#pakketten" class="ep-btn ep-btn--accent">Bekijk de pakketten</a>
     </div>
   </div>
 </section>
@@ -345,12 +412,14 @@
 <section id="patronen" class="ep-section">
   <div class="ep-container">
     <div class="ep-narrow">
-      <h2 class="ep-h2">Wat als je het niet uitrekent?</h2>
+      <h2 class="ep-h2">Wat er gebeurt als je het niet uitrekent</h2>
       <p class="ep-body-lg">
         Je gaat door zonder de cijfers. Niet uit luiheid, maar omdat de berekening
-        te ingewikkeld is voor een zaterdagmiddag. Omdat je een rekentool voor Spanje moeilijk kunt vergelijken met die voor Griekenland.
+        te ingewikkeld is om er alleen een zaterdag aan te besteden, en omdat
+        losse rekentools losse antwoorden geven die zich niet tot één plaatje
+        laten optellen.
       </p>
-      <p class="ep-body-lg">En dan is dit wat er gebeurt:</p>
+      <p class="ep-body-lg">Waarschijnlijk herken je je in een van deze drie profielen:</p>
     </div>
 
     <div class="ep-pattern-grid">
@@ -359,10 +428,10 @@
         <h3 class="ep-pattern__title">Je stelt het uit</h3>
         <span class="ep-fold-chev" aria-hidden="true"></span>
         <p>
-          Je zegt: ik kijk er volgende maand naar. Dan komt de zomer, dan komt
+          Je zegt: ik kijk er volgend kwartaal naar. Dan komt de zomer, dan komt
           het einde van het jaar, en je zit een jaar later nog met dezelfde twijfels.
-          Het plan blijft hangen in je hoofd, maar staat niet op papier. <strong>Je leeft
-          ondertussen door in een ander leven dan je voor je zag.</strong>
+          Het plan blijft hangen in je hoofd, maar staat niet op papier. Je leeft
+          ondertussen door in een ander leven dan je voor je zag.
         </p>
       </div>
 
@@ -371,28 +440,28 @@
         <h3 class="ep-pattern__title">Je kiest op gevoel</h3>
         <span class="ep-fold-chev" aria-hidden="true"></span>
         <p>
-          Je kiest een land omdat er vrienden wonen, het klimaat zonnig
-          is, en de huizen goedkoper zijn. Je rekent op gevoel verder. <strong>Pas als je er
-          woont kom je erachter dat de fiscale situatie anders ligt dan gedacht
-          en dat je pensioen fors lager uitvalt.</strong>
+          Je hebt een land gekozen omdat je vrienden er wonen, het klimaat zonnig
+          is, en de huizen goedkoper. Je rekent op gevoel verder. Pas als je er
+          zit kom je erachter dat de fiscale situatie anders ligt dan gedacht
+          en dat je pensioen in een grijs gebied valt.
         </p>
       </div>
 
       <div class="ep-pattern-card">
         <span class="ep-pattern-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="2"/><circle cx="18" cy="8.5" r="2"/><circle cx="9.5" cy="17.5" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
-        <h3 class="ep-pattern__title">Je weet het even niet meer</h3>
+        <h3 class="ep-pattern__title">Je raakt verstrooid</h3>
         <span class="ep-fold-chev" aria-hidden="true"></span>
         <p>
-          Je hebt gerekend met drie online tools, tien artikelen gelezen,
-          en hebt nu vier verschillende cijfers in je hoofd. Maar je weet ook, geen daarvan klopt
-        voor jouw situatie.
-          <strong>De optelsom kun je niet maken, dus de weloverwogen keuze ook niet.</strong>
+          Je gebruikt drie verschillende online tools, leest tien forum-threads,
+          en hebt nu vier verschillende cijfers in je hoofd. Geen daarvan klopt
+          100% voor jouw situatie, geen daarvan kun je naast elkaar leggen.
+          De optelsom kun je niet maken, dus de weloverwogen keuze ook niet.
         </p>
       </div>
     </div>
 
     <div class="ep-cta-row">
-      <a href="#pakketten" class="ep-btn ep-btn--accent">Klaar voor een betere manier?</a>
+      <a href="#pakketten" class="ep-btn ep-btn--accent">Bekijk de pakketten</a>
     </div>
   </div>
 </section>
@@ -400,20 +469,20 @@
 <!-- ============ VOOR WIE ============ -->
 <section id="voor-wie" class="ep-section ep-section--alt">
   <div class="ep-container">
-    <p class="ep-eyebrow ep-eyebrow--center">Voor iedere oriëntatiefase</p>
-    <h2 class="ep-h2 ep-h2--center">Gebouwd voor jou</h2>
+    <p class="ep-eyebrow ep-eyebrow--center">Voor wie Emigratieplan gebouwd is</p>
+    <h2 class="ep-h2 ep-h2--center">Voor iedere oriëntatiefase</h2>
 
     <div class="ep-three-col">
       <div class="ep-pillar">
         <span class="ep-pillar__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></span>
-        <h3 class="ep-pillar__title">Je weet al welk land het wordt</h3>
+        <h3 class="ep-pillar__title">Je weet welk land het wordt</h3>
         <span class="ep-fold-chev" aria-hidden="true"></span>
         <div class="ep-pillar__body">
           <p>
-            Je hebt jouw emigratieland gekozen. Spanje, Portugal, Cyprus, of een van de
-            andere opties. Je wilt nu zien wat het écht financieel oplevert of kost t.o.v. in Nederland blijven.<br><br>
-            <a href="#pkg-compare" class="ep-pkg-link"><strong>Compare</strong></a> is voor jou het meest geschikt: één land + Nederland doorrekenen
-            voor het volledige financiële plaatje.
+            Je hebt je doelland gekozen. Spanje, Portugal, Cyprus, of een van de
+            andere opties. Je wilt nu zien wat het écht oplevert ten opzichte van in Nederland blijven.
+            <a href="#pkg-compare" class="ep-pkg-link"><strong>Compare</strong></a> is voor jou: jouw doelland en Nederland, zij
+            aan zij doorgerekend op exact dezelfde aannames.
           </p>
           <a href="#pkg-compare" class="ep-btn ep-btn--ghost ep-btn--sm">Bekijk Compare</a>
         </div>
@@ -425,9 +494,9 @@
         <span class="ep-fold-chev" aria-hidden="true"></span>
         <div class="ep-pillar__body">
           <p>
-            Je hebt drie tot vijf landen op je radar. Je wilt vergelijken vóór je teveel aan een land gehecht raakt.<br><br>
-            <a href="#pkg-explore" class="ep-pkg-link"><strong>Explore</strong></a> is voor jou het meest geschikt: selecteer vijf
-            landen + Nederland en vergelijk jouw financiële situatie met een ranking op o.a.
+            Drie tot vijf landen op je radar. Je wilt vergelijken voor er
+            tunnelvisie ontstaat. <a href="#pkg-explore" class="ep-pkg-link"><strong>Explore</strong></a> is voor jou: vijf
+            landen plus Nederland op dezelfde set aannames, met een ranking op
             cashflow, belasting, vastgoed, vermogen en pensioen.
           </p>
           <a href="#pkg-explore" class="ep-btn ep-btn--ghost ep-btn--sm">Bekijk Explore</a>
@@ -441,9 +510,10 @@
         <div class="ep-pillar__body">
           <p>
             Je wilt breed oriënteren en zeker weten dat je geen geweldige optie mist.
-            Extra tools om goede keuzes te maken kun je waarderen, bijvoorbeeld: een Beslisgids die jouw scenario's vertaalt naar
-            top 3's, praktische checklists, red flag overzichten en de juiste vragen voor je fiscalist.<br><br>
-            <a href="#pkg-decide" class="ep-pkg-link"><strong>Decide</strong></a> is voor jou: alle cijfers én handige tools om <i>zelf</i> stappen te zetten.
+            Extra tools om goede keuzes te maken kun je waarderen, bijvoorbeeld: een Beslisgids die je scenario's vertaalt naar
+            top 3's, keuze checklists, red flag overzichten en de juiste vragen voor je fiscalist.
+            <a href="#pkg-decide" class="ep-pkg-link"><strong>Decide</strong></a> is voor jou: cijfers én een leesbaar overzicht
+            om mee te nemen.
           </p>
           <a href="#pkg-decide" class="ep-btn ep-btn--ghost ep-btn--sm">Bekijk Decide</a>
         </div>
@@ -455,11 +525,10 @@
 <!-- ============ IMPACT VISUAL ============ -->
 <section id="impact-visual" class="ep-section ep-section--alt">
   <div class="ep-container">
-    <p class="ep-eyebrow">Wat Emigratieplan doorrekent</p>
+    <p class="ep-eyebrow">Wat de tool doorrekent</p>
     <h2 class="ep-h2">Acht pijlers, één eerlijk overzicht</h2>
     <p class="ep-lead ep-narrow-inline">
-      We begrijpen dat je wilt weten wat emigreren oplevert, of wat het kost. Het zou toch niet zo moeilijk moeten zijn om een kant-en-klaar overzicht
-      te krijgen van een paar landen?! <br><br>Emigratieplan helpt je om jouw financiële situatie op acht essentiële pijlers te vergelijken. Appels met appels. 
+      Wat emigreren oplevert, en wat het kost. Per pijler, doorgerekend met jouw cijfers. Geen losse tools, geen versplinterde antwoorden.
     </p>
 
     <div class="ep-impact-legend" aria-hidden="true">
@@ -488,7 +557,7 @@
 
       <div class="ep-impact__cell" role="listitem">
         <div class="ep-impact__head">
-          <span class="ep-impact__label">Belastingdruk</span>
+          <span class="ep-impact__label">Fiscale druk</span>
           <span class="ep-impact__delta ep-impact__delta--pos">41% → 28%</span>
         </div>
         <div class="ep-impact__bar">
@@ -522,7 +591,7 @@
 
       <div class="ep-impact__cell" role="listitem">
         <div class="ep-impact__head">
-          <span class="ep-impact__label">Pensioen &amp; AOW</span>
+          <span class="ep-impact__label">Pensioen + AOW</span>
           <span class="ep-impact__delta ep-impact__delta--neg">AOW bevriest</span>
         </div>
         <div class="ep-impact__bar">
@@ -556,7 +625,7 @@
 
       <div class="ep-impact__cell" role="listitem">
         <div class="ep-impact__head">
-          <span class="ep-impact__label">Administratiekosten &amp; visa</span>
+          <span class="ep-impact__label">Verblijfsrecht &amp; visa</span>
           <span class="ep-impact__delta ep-impact__delta--neutral">EU, geen visum</span>
         </div>
         <div class="ep-impact__bar">
@@ -614,24 +683,22 @@
       </summary>
       <div class="ep-impact-case__body">
         <p>
-          Denk je even in: Hans & Esther, getrouwd, allebei midden vijftig. Samen verdienen ze €110.000 bruto per jaar, deels loondienst, deels ZZP. Ze hebben een koophuis in Nederland met nog €200.000 hypotheek en €250.000 aan spaargeld en beleggingen. De kinderen zijn bijna het huis uit. Daarna willen ze naar Portugal emigreren: eerst een jaar huren, daarna kopen. Horizon 30 jaar (tot mid-80), met pensioen en AOW meegerekend.
-          <br><br>
-          Het verschil met Nederland is groot: €780/maand meer te besteden, ruim vier ton meer vermogensopbouw, maar een lagere AOW en beperkter pensioen.
+          Een echtpaar, allebei midden vijftig. Samen €110.000 bruto per jaar, deels loondienst, deels ZZP. Een koophuis in Nederland met €200.000 hypotheek die nog loopt en €250.000 aan spaargeld en beleggingen. De kinderen zijn bijna het huis uit. Ze willen naar Portugal: eerst een jaar huren, daarna kopen. Horizon 30 jaar, met pensioen en AOW meegerekend.
         </p>
         <p class="ep-impact-case__caveat">
-          Dit is een voorbeeld, geen belofte. Met de tool reken je jouw eigen situatie door.
+          Dit is een voorbeeld, geen belofte. Jouw cijfers vallen anders uit, afhankelijk van inkomen, vermogen, gezinssituatie en horizon. De tool rekent jouw eigen situatie door.
         </p>
       </div>
     </details>
 
     <div class="ep-impact-conclusion">
       <p>
-        Portugal scoort bijvoorbeeld goed op cashflow, fiscale druk en levensonderhoud. Nederland scoort beter op pensioenzekerheid en sociale binding. De juiste keuze hangt af van jouw horizon en jouw prioriteiten.
+        Portugal scoort op cashflow, fiscale druk en levensonderhoud. Nederland scoort op pensioenzekerheid en sociale binding. De juiste keuze hangt af van jouw horizon en jouw prioriteiten.
       </p>
     </div>
 
     <div class="ep-cta-row">
-      <a href="#pakketten" class="ep-btn ep-btn--accent">Ik wil zelf rekenen</a>
+      <a href="#pakketten" class="ep-btn ep-btn--accent">Bekijk de pakketten</a>
     </div>
   </div>
 </section>
@@ -643,9 +710,10 @@
       <div class="ep-garantie__badge" aria-hidden="true">30</div>
       <div class="ep-garantie__copy">
         <p class="ep-eyebrow">30 dagen geld-terug-garantie</p>
-        <h2 class="ep-h3">Niet tevreden? Geld terug.</h2>
+        <h2 class="ep-h3">Werkt het niet voor jou? Je krijgt je geld terug.</h2>
         <p>
-          Reken een week, twee weken. Vind je de tool het geld niet waard? Stuur één mail naar
+          Reken een week, twee weken, een maand. Werkt het niet voor jouw
+          situatie? Stuur één mail naar
           <a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a> en
           je krijgt je geld terug. Geen vragen, geen formulieren, geen
           telefoontjes.
@@ -659,9 +727,9 @@
 <section id="pakketten" class="ep-section">
   <div class="ep-container">
     <p class="ep-eyebrow ep-eyebrow--center">Pakketten</p>
-    <h2 class="ep-h2 ep-h2--center">Kies wat past bij jouw emigratiefase</h2>
+    <h2 class="ep-h2 ep-h2--center">Kies wat past bij jouw fase</h2>
     <p class="ep-lead ep-lead--center ep-narrow-inline">
-      Eenmalige aankoop. Levenslang toegang.
+      Eenmalige aankoop. Lifetime toegang.
     </p>
 
     <div class="ep-pkg-grid">
@@ -683,7 +751,7 @@
           <p class="ep-pkg__payoff">Jouw doelland, doorgerekend naast Nederland.</p>
           <ul class="ep-pkg__features">
             <li><a href="#cmp-landen">1 doelland naar keuze + Nederland als basis</a></li>
-            <li><a href="#cmp-rekentool">Volledige rekentool: cashflow, belasting, vermogen, pensioen, AOW &amp; woonlasten</a></li>
+            <li><a href="#cmp-rekentool">Volledige rekentool: cashflow, belasting, vermogen, pensioen, AOW, woonlasten</a></li>
             <li><a href="#cmp-opslaan">Sla je resultaten op met export &amp; import</a></li>
             <li><a href="#cmp-garantie">30 dagen geld-terug-garantie</a></li>
             <li><a href="#cmp-toegang">Lifetime toegang tot gekochte versie</a></li>
@@ -691,7 +759,7 @@
           <a href="https://buy.stripe.com/5kQ00cfP07rR3w4dIOefC01" target="_blank" rel="noopener noreferrer" class="ep-btn ep-btn--primary ep-btn--full">
             Koop Compare — €189
           </a>
-          <p class="ep-pkg__assure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>30 dagen geld-terug-garantie. Direct toegang. Betaal veilig via Stripe.</span></p>
+          <p class="ep-pkg__assure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>30 dagen geld-terug-garantie. Direct toegang, veilig via Stripe.</span></p>
         </div>
       </div>
 
@@ -709,28 +777,29 @@
           <span class="ep-pkg__chev" aria-hidden="true"></span>
         </div>
         <div class="ep-pkg__body">
-          <p class="ep-pkg__payoff">Vijf landen vergelijken in één eerlijk overzicht.</p>
+          <p class="ep-pkg__payoff">Vijf landen, één set cijfers, één eerlijk overzicht.</p>
           <ul class="ep-pkg__features">
-            <li><a href="#cmp-landen">5 doellanden naar keuze + Nederland</a></li>
-            <li><a href="#cmp-rekentool">Volledige rekentool: cashflow, belasting, vermogen, pensioen, AOW &amp; woonlasten</a></li>
+            <li><a href="#cmp-landen">5 doellanden naar keuze + Nederland als basis</a></li>
+            <li><a href="#cmp-rekentool">Volledige rekentool per land</a></li>
+            <li><a href="#cmp-ranking">Vergelijkingsoverzicht: ranking op cashflow, belasting, vermogen, pensioen</a></li>
             <li><a href="#cmp-opslaan">Sla je resultaten op met export &amp; import</a></li>
-            <li><a href="#cmp-deepdive"><strong>€100 korting</strong> op 90-min adviesgesprek</a></li>
+            <li><a href="#cmp-deepdive">€100 korting op Deep-Dive</a></li>
             <li><a href="#cmp-garantie">30 dagen geld-terug-garantie</a></li>
             <li><a href="#cmp-toegang">Lifetime toegang tot gekochte versie</a></li>
           </ul>
           <a href="https://buy.stripe.com/3cI00c1Ya3bB3w4awCefC02" target="_blank" rel="noopener noreferrer" class="ep-btn ep-btn--accent ep-btn--full">
             Koop Explore — €279
           </a>
-          <p class="ep-pkg__assure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>30 dagen geld-terug-garantie. Direct toegang. Betaal veilig via Stripe.</span></p>
+          <p class="ep-pkg__assure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>30 dagen geld-terug-garantie. Direct toegang, veilig via Stripe.</span></p>
         </div>
       </div>
 
       <div id="pkg-decide" class="ep-pkg" data-pkg="decide">
         <div class="ep-pkg__summary">
-          <span class="ep-pkg__badge ep-pkg__badge--neutral">Meest compleet</span>
+          <span class="ep-pkg__badge ep-pkg__badge--neutral">Compleet</span>
           <span class="ep-pkg__head">
             <h3 class="ep-pkg__name">Decide</h3>
-            <span class="ep-pkg__subtitle">Nederland + 10 landen + Extra tools</span>
+            <span class="ep-pkg__subtitle">Nederland + 10 landen + Beslisgids</span>
           </span>
           <span class="ep-pkg__priceblock">
             <span class="ep-pkg__price"><span class="ep-pkg__currency">€</span>449</span>
@@ -739,28 +808,29 @@
           <span class="ep-pkg__chev" aria-hidden="true"></span>
         </div>
         <div class="ep-pkg__body">
-          <p class="ep-pkg__payoff">Tien landen plus praktische tools die je helpen keuzes te maken.</p>
+          <p class="ep-pkg__payoff">Tien landen plus een Beslisgids die het werk voor je doet.</p>
           <ul class="ep-pkg__features">
-            <li><a href="#cmp-landen">10 doellanden naar keuze + Nederland</a></li>
-            <li><a href="#cmp-rekentool">Volledige rekentool: cashflow, belasting, vermogen, pensioen, AOW &amp; woonlasten</a></li>
-            <li><a href="#cmp-beslisgids"><strong>Beslisgids</strong>: 8 onderdelen o.b.v. jouw cijfers, downloadbaar als PDF</a></li>
+            <li><a href="#cmp-landen">10 doellanden naar keuze + Nederland als basis</a></li>
+            <li><a href="#cmp-rekentool">Volledige rekentool per land</a></li>
+            <li><a href="#cmp-ranking">Vergelijkingsoverzicht over alle landen</a></li>
+            <li><a href="#cmp-beslisgids"><strong>Beslisgids</strong>: 8 onderdelen obv jouw cijfers, downloadbaar als PDF</a></li>
             <li><a href="#cmp-checklist"><strong>Fiscalist Prep Checklist</strong>: 8-12 vragen op maat</a></li>
             <li><a href="#cmp-opslaan">Sla je resultaten op met export &amp; import</a></li>
-            <li><a href="#cmp-deepdive"><strong>€100 korting</strong> op 90-min adviesgesprek</a></li>
+            <li><a href="#cmp-deepdive">€100 korting op Deep-Dive</a></li>
             <li><a href="#cmp-garantie">30 dagen geld-terug-garantie</a></li>
             <li><a href="#cmp-toegang">Lifetime toegang tot gekochte versie</a></li>
           </ul>
           <a href="https://buy.stripe.com/5kQ5kw32e8vVgiQ206efC03" target="_blank" rel="noopener noreferrer" class="ep-btn ep-btn--primary ep-btn--full">
             Koop Decide — €449
           </a>
-          <p class="ep-pkg__assure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>30 dagen geld-terug-garantie. Direct toegang. Betaal veilig via Stripe.</span></p>
+          <p class="ep-pkg__assure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>30 dagen geld-terug-garantie. Direct toegang, veilig via Stripe.</span></p>
         </div>
       </div>
 
     </div>
 
     <p class="ep-pkg__legal">
-      Je ontvangt na betaling direct toegang tot de tool. Alle pakketten zijn een eenmalige aanschaf met levenslange toegang en onbeperkt gebruik.
+      Eenmalige aankoop, lifetime toegang. Direct na betaling, veilig via Stripe. 30 dagen geld-terug-garantie.
     </p>
 
     <div class="ep-cta-row">
@@ -775,7 +845,7 @@
     <p class="ep-eyebrow">Wat zit er in welk pakket</p>
     <h2 class="ep-h2">Uitgebreide vergelijking</h2>
     <p class="ep-lead ep-narrow-inline">
-      Zo weet je precies wat je kunt verwachten. Klik op de features om meer details te bekijken.
+      Volledige feature-lijst per pakket. Klik een regel open en je ziet precies wat je krijgt.
     </p>
 
     <div class="ep-compare">
@@ -816,7 +886,7 @@
           </tr>
           <tr class="ep-cmp__detail" id="cmp-nederland-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Nederland is altijd je referentiepunt. Het dient als anker voor de volledige doorrekening van box 1, 2 en 3, inclusief eigen woning, en alle inkomensvormen zoals ZZP, loondienst en BV/DGA.</p>
+              <p>Nederland is altijd je referentiepunt. Niet als korting, maar als volledige doorrekening van box 1, 2 en 3, inclusief eigen woning, ZZP, loondienst en DGA.</p>
             </div></td>
           </tr>
 
@@ -828,7 +898,7 @@
           </tr>
           <tr class="ep-cmp__detail" id="cmp-landen-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Je kiest na aankoop zelf welke doellanden je wilt vergelijken. Beschikbaar zijn Griekenland, Cyprus, Portugal, Spanje, Italië, Verenigde Arabische Emiraten, Bulgarije, Hongarije en Malta. Na selectie kun je niet meer wijzigen. Nederland zit er altijd als basis bij.</p>
+              <p>Je kiest na aankoop zelf welke doellanden je inzet. Beschikbaar zijn Griekenland, Cyprus, Portugal, Spanje, Italië, UAE, Bulgarije, Hongarije en Malta. Nederland zit er altijd als basis bij.</p>
             </div></td>
           </tr>
 
@@ -842,12 +912,12 @@
           </tr>
           <tr class="ep-cmp__detail" id="cmp-rekentool-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Wat houd je netto over: per jaar en over je hele horizon.</p>
+              <p>Wat houd je netto over, per maand en per jaar, over je hele horizon.</p>
               <ul class="ep-cmp__sublist">
-                <li><span class="ep-yes" aria-hidden="true"></span>Netto besteedbaar inkomen per jaar</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Vaste lasten en levensonderhoud met indexaties</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Netto besteedbaar inkomen per maand en per jaar</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Vaste lasten en uitgaven</li>
                 <li><span class="ep-yes" aria-hidden="true"></span>Inflatie- en groeiaannames, zichtbaar en aanpasbaar</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Rekenperiode instelbaar van 1 tot 50 jaar</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Volledige horizon tot 50 jaar</li>
               </ul>
             </div></td>
           </tr>
@@ -860,13 +930,13 @@
           </tr>
           <tr class="ep-cmp__detail" id="cmp-belasting-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Niet één tarief, maar elke laag die jou raakt, per land doorgerekend.</p>
+              <p>Niet één tarief, maar elke laag die jouw netto raakt, per land doorgerekend.</p>
               <ul class="ep-cmp__sublist">
-                <li><span class="ep-yes" aria-hidden="true"></span>Inkomstenbelasting (box 1 en lokale inkomstenbelasting)</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Sociale premies (voor ZZP en BV constructies relevant)</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Vermogensbelasting (box 3, capital gains tax, andere varianten)</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Inkomstenbelasting (box 1 of lokaal IB)</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Sociale premies</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Vermogensbelasting waar van toepassing (box 3, patrimonio)</li>
                 <li><span class="ep-yes" aria-hidden="true"></span>Lokale heffingen op vastgoed (IMI, IBI, ENFIA, IMU, AIMI)</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Speciale regimes (o.a. NHR-2, Beckham, non-dom, Article 5B/5C, impatriate)</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Speciale regimes (NHR-2, Beckham, non-dom, Article 5C, impatriate, lump-sum)</li>
               </ul>
             </div></td>
           </tr>
@@ -879,14 +949,14 @@
           </tr>
           <tr class="ep-cmp__detail" id="cmp-vermogen-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Hoe je vermogen groeit i.c.m. belasting, per beleggingscategorie.</p>
+              <p>Hoe je vermogen groeit na belasting, per beleggingscategorie.</p>
               <ul class="ep-cmp__sublist">
                 <li><span class="ep-yes" aria-hidden="true"></span>Aandelen en ETF's</li>
                 <li><span class="ep-yes" aria-hidden="true"></span>Obligaties</li>
                 <li><span class="ep-yes" aria-hidden="true"></span>Crypto</li>
                 <li><span class="ep-yes" aria-hidden="true"></span>Cash</li>
                 <li><span class="ep-yes" aria-hidden="true"></span>Vastgoed</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Jaarlijkse inleg en samengesteld rendement (na belasting)</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Jaarlijkse inleg en samengesteld rendement, na belasting</li>
               </ul>
             </div></td>
           </tr>
@@ -901,12 +971,10 @@
             <td colspan="4"><div class="ep-cmp__detail-inner">
               <p>Wat er met je oudedagsvoorziening gebeurt als je vertrekt.</p>
               <ul class="ep-cmp__sublist">
-                <li><span class="ep-yes" aria-hidden="true"></span>AOW-opbouw en bevriezing, opbouw staatspensioen doellanden</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Indexatie AOW en andere staatspensioenen</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Privépensioen en lijfrente (incl. jaarruimte en premievrije opbouw)</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>AOW-opbouw en bevriezing per emigratiedatum</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>AOW-indexatie</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Privépensioen en lijfrente</li>
                 <li><span class="ep-yes" aria-hidden="true"></span>Pensioenverdrag per land (NL-GR, NL-CY, en meer)</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>AOW uitkering en vergelijkbare staatspensioenen andere landen </li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Belastingdruk per land, per type pensioenpot</li>
               </ul>
             </div></td>
           </tr>
@@ -919,14 +987,12 @@
           </tr>
           <tr class="ep-cmp__detail" id="cmp-woonlasten-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Koop, huur, of verhuur, in Nederland en in je doellanden.</p>
+              <p>Koop of huur, in Nederland en in je doelland.</p>
               <ul class="ep-cmp__sublist">
-                <li><span class="ep-yes" aria-hidden="true"></span>Koop: annuïtair en/of aflossingsvrij, rentes en looptijden</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Huur voor beperkte periodes en met/zonder indexatie</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Lokale onroerendezaakbelasting (OZB, ENFIA, en vergelijkbaar)</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Ontwikkeling van de woningwaarde met lokale groeicijfers</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Verschillen door hypotheekrenteaftrek</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Bijkomende kosten zoals onderhoud en verkoopkosten</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Koop: annuïtair of lineair, rente, HRA waar geldend</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Huur</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Lokale onroerendezaakbelasting</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Ontwikkeling van de woningwaarde</li>
               </ul>
             </div></td>
           </tr>
@@ -939,7 +1005,7 @@
           </tr>
           <tr class="ep-cmp__detail" id="cmp-horizon-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Kies een horizon van 1 tot 50 jaar. Met name pensioen en vermogen worden pas echt zichtbaar bij een langere horizon, dus je ziet meteen het verschil tussen kort en lang vooruit plannen.</p>
+              <p>Schuif van 1 tot 50 jaar. Pensioen en vermogen worden pas echt zichtbaar bij een langere horizon, dus je ziet meteen het verschil tussen kort en lang vooruit plannen.</p>
             </div></td>
           </tr>
 
@@ -953,7 +1019,7 @@
           </tr>
           <tr class="ep-cmp__detail" id="cmp-naast-nl-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Elk land wordt op exact dezelfde aannames als Nederland doorgerekend, zodat de cijfers één-op-één vergelijkbaar zijn. Appels met appels, peren met peren.</p>
+              <p>Elk land wordt op exact dezelfde aannames als Nederland doorgerekend, zodat de cijfers één-op-één vergelijkbaar zijn. Geen appels met peren.</p>
             </div></td>
           </tr>
 
@@ -965,7 +1031,7 @@
           </tr>
           <tr class="ep-cmp__detail" id="cmp-ranking-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Sorteer jouw landen op netto cashflow, totale belasting, vermogen na X jaar of pensioenuitkomst. <br><i>Vanaf Explore, omdat je dan pas meerdere landen tegelijk vergelijkt.</i></p>
+              <p>Sorteer je landen op netto cashflow, totale belasting, vermogen na X jaar of pensioenuitkomst. Vanaf Explore, omdat je dan meerdere landen tegelijk vergelijkt.</p>
             </div></td>
           </tr>
 
@@ -979,37 +1045,34 @@
           </tr>
           <tr class="ep-cmp__detail" id="cmp-beslisgids-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Een rapport dat jouw cijfers vertaalt naar een leesbaar adviesrapport. Acht onderdelen, zelf onbeperkt downloadbaar als PDF.</p>
+              <p>Een rapport dat jouw cijfers vertaalt naar een leesbaar advies. 8 onderdelen, downloadbaar als PDF.</p>
               <ul class="ep-cmp__sublist">
-                <li><span class="ep-yes" aria-hidden="true"></span>Top 3 landen op netto uitkomst</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Top 3 landen op risico en complexiteit</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Sterktes en zwaktes per land voor jouw scenario</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>AOW- en pensioenimpact en aandachtspunten</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Vermogensimpact met box 3 vergelijking</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Partner-vergelijking (wat raakt wie het meest)</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Indicatie van uitvoeringskosten per land</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>Indicatie set-up en doorlopende kosten</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Top 3 op netto resultaat</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Top 3 op risico</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Trade-off matrix per land</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>AOW- en pensioenimpact</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Vermogensimpact</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Partner-view</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Rode vlaggen per land</li>
+                <li><span class="ep-yes" aria-hidden="true"></span>Vragen voor je fiscalist</li>
               </ul>
             </div></td>
           </tr>
 
           <tr class="ep-cmp__row" id="cmp-checklist" aria-controls="cmp-checklist-d" aria-expanded="false">
-            <th scope="row"><span class="ep-cmp__chev" aria-hidden="true"></span><span class="ep-cmp__rowlabel">Fiscalist Voorbereiding Checklist</span></th>
+            <th scope="row"><span class="ep-cmp__chev" aria-hidden="true"></span><span class="ep-cmp__rowlabel">Fiscalist Prep Checklist</span></th>
             <td><span class="ep-no" aria-label="Niet inbegrepen"></span></td>
             <td class="ep-compare__featured"><span class="ep-no" aria-label="Niet inbegrepen"></span></td>
             <td><span class="ep-yes" aria-label="Inbegrepen"></span></td>
           </tr>
           <tr class="ep-cmp__detail" id="cmp-checklist-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Concrete vragen met toelichting op maat over jouw voorkeurscenario. Je komt bij de fiscalist binnen met cijfers en goede vragen. Dat scheelt uren en geld.</p>
-              <ul class="ep-cmp__sublist">
-                <li><span class="ep-yes" aria-hidden="true"></span>8-12 overkoepelende vragen voor je fiscalist</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>5-8 concrete fiscale vragen per gekozen land</li>
+              <p>8 tot 12 vragen op maat van jouw voorkeurscenario. Je komt bij de fiscalist binnen met cijfers in plaats van vragen. Dat scheelt uren en geld.</p>
             </div></td>
           </tr>
 
           <tr class="ep-cmp__row" id="cmp-topflags" aria-controls="cmp-topflags-d" aria-expanded="false">
-            <th scope="row"><span class="ep-cmp__chev" aria-hidden="true"></span><span class="ep-cmp__rowlabel">Top toegelicht met aandachtspunten</span></th>
+            <th scope="row"><span class="ep-cmp__chev" aria-hidden="true"></span><span class="ep-cmp__rowlabel">Top 3 + rode vlaggen</span></th>
             <td><span class="ep-no" aria-label="Niet inbegrepen"></span></td>
             <td class="ep-compare__featured"><span class="ep-no" aria-label="Niet inbegrepen"></span></td>
             <td><span class="ep-yes" aria-label="Inbegrepen"></span></td>
@@ -1017,9 +1080,6 @@
           <tr class="ep-cmp__detail" id="cmp-topflags-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
               <p>Per voorkeurland de risico's en aandachtspunten die je vóór je beslissing moet wegen. Zodat je niet voor verrassingen komt te staan.</p>
-              <ul class="ep-cmp__sublist">
-                <li><span class="ep-yes" aria-hidden="true"></span>Top aandachtspunten & rode vlaggen per land</li>
-                <li><span class="ep-yes" aria-hidden="true"></span>30-dagen plan met logische vervolgstappen</li>
             </div></td>
           </tr>
 
@@ -1033,7 +1093,7 @@
           </tr>
           <tr class="ep-cmp__detail" id="cmp-opslaan-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Sla je scenario op je eigen apparaat op en gebruik het later opnieuw. Geen account, geen cloud. Je data blijft van jou. Je kunt zo vaak exporten en importeren als je zelf wilt. Zo kun je ook meerdere scenario's maken en opslaan.</p>
+              <p>Sla je scenario op je eigen apparaat op en laad het later terug. Geen account, geen cloud. Je data blijft van jou.</p>
             </div></td>
           </tr>
 
@@ -1050,14 +1110,14 @@
           </tr>
 
           <tr class="ep-cmp__row" id="cmp-deepdive" aria-controls="cmp-deepdive-d" aria-expanded="false">
-            <th scope="row"><span class="ep-cmp__chev" aria-hidden="true"></span><span class="ep-cmp__rowlabel">€100 korting op persoonlijke Deep-Dive</span></th>
+            <th scope="row"><span class="ep-cmp__chev" aria-hidden="true"></span><span class="ep-cmp__rowlabel">€100 korting op Deep-Dive</span></th>
             <td><span class="ep-no" aria-label="Niet inbegrepen"></span></td>
             <td class="ep-compare__featured"><span class="ep-yes" aria-label="Inbegrepen"></span></td>
             <td><span class="ep-yes" aria-label="Inbegrepen"></span></td>
           </tr>
           <tr class="ep-cmp__detail" id="cmp-deepdive-d" hidden>
             <td colspan="4"><div class="ep-cmp__detail-inner">
-              <p>Een deep-Dive is een persoonlijke sessie van 90 minuten waarin we jouw scenario samen doorlopen en jij vragen kunt stellen, over de tool, de inhoud, de cijfers. Gewoonlijk €349, met Explore of Decide slechts €249.</p>
+              <p>Deep-Dive is een persoonlijke sessie van 90 minuten waarin we jouw scenario samen doorlopen. Los €349, met Explore of Decide €249.</p>
             </div></td>
           </tr>
 
@@ -1080,7 +1140,7 @@
             <td><a href="https://buy.stripe.com/5kQ5kw32e8vVgiQ206efC03" target="_blank" rel="noopener noreferrer" class="ep-btn ep-btn--primary ep-btn--sm ep-btn--full">Koop Decide</a></td>
           </tr>
           <tr class="ep-compare__assure-row">
-            <td colspan="4"><span class="ep-compare__assure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>30 dagen geld-terug-garantie. Direct toegang na betaling. Betaal veilig via Stripe.</span></td>
+            <td colspan="4"><span class="ep-compare__assure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>30 dagen geld-terug-garantie. Direct toegang na betaling, veilig via Stripe.</span></td>
           </tr>
 
         </tbody>
@@ -1095,15 +1155,15 @@
     <p class="ep-eyebrow">Hoe het eruitziet</p>
     <h2 class="ep-h2">Een kijkje in de tool</h2>
     <p class="ep-lead ep-narrow-inline">
-      Ieder pakket heeft dezelfde schermen en overzichten. Voorbeelden daarvan zie je hieronder. Liever zelf klikken? Open de voorbeeld demo en loop door een ingevulde voorbeeldcasus.
+      Een kijkje in de tool. Deze schermen zitten in elk pakket. Liever zelf klikken? Open de interactieve demo en loop door een ingevulde voorbeeldcasus.
     </p>
 
     <div class="ep-demo-cta">
       <a href="demo/" class="ep-btn ep-btn--accent">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        Open de voorbeeld demo
+        Open de interactieve demo
       </a>
-      <span class="ep-demo-cta__note">Vaste voorbeeldcasus, klik door de tabs.</span>
+      <span class="ep-demo-cta__note">Vaste voorbeeldcasus, klik door de tabs. Geen account, niets te wijzigen.</span>
     </div>
 
     <div class="ep-screenshots">
@@ -1124,7 +1184,7 @@
                onerror="this.style.display='none';">
           <span class="ep-shot__pending">Vergelijking landen · screenshot volgt</span>
         </div>
-        <figcaption><strong>Vier landen naast Nederland.</strong> Gerangschikt op netto uitkomst, op dezelfde aannames.</figcaption>
+        <figcaption><strong>Tien landen naast Nederland.</strong> Gerangschikt op netto uitkomst, op dezelfde aannames.</figcaption>
       </figure>
 
       <figure class="ep-shot" data-shot="pensioen">
@@ -1164,10 +1224,10 @@
             <span class="ep-brief-card__rule" aria-hidden="true"></span>
             <div class="ep-brief-card__heading">
               <span class="ep-brief-card__pg">01</span>
-              <h4 class="ep-brief-card__title">Score-overzicht</h4>
+              <h4 class="ep-brief-card__title">Cover en scoreoverzicht</h4>
             </div>
-            <p class="ep-brief-card__desc">Jouw scenario met de score per land in één oogopslag.</p>
-            <span class="ep-brief-card__open">Bekijk overzicht &rarr;</span>
+            <p class="ep-brief-card__desc">Je scenario op de cover, met de score per land in één oogopslag.</p>
+            <span class="ep-brief-card__open">Bekijk pagina &rarr;</span>
           </div>
         </a>
 
@@ -1179,7 +1239,7 @@
               <span class="ep-brief-card__pg">04</span>
               <h4 class="ep-brief-card__title">Top 3 op netto uitkomst</h4>
             </div>
-            <p class="ep-brief-card__desc">De drie landen die o.b.v. jouw cijfers de hoogste netto cashflow oplevert, met het verschil t.o.v. Nederland.</p>
+            <p class="ep-brief-card__desc">De drie landen die voor jouw cijfers het meeste overhouden, met het verschil t.o.v. Nederland.</p>
             <span class="ep-brief-card__open">Bekijk pagina &rarr;</span>
           </div>
         </a>
@@ -1190,10 +1250,10 @@
             <span class="ep-brief-card__rule" aria-hidden="true"></span>
             <div class="ep-brief-card__heading">
               <span class="ep-brief-card__pg">06</span>
-              <h4 class="ep-brief-card__title">Landen matrix</h4>
+              <h4 class="ep-brief-card__title">Trade-off matrix per land</h4>
             </div>
-            <p class="ep-brief-card__desc">Per land de sterktes en zwaktes: cashflow, vermogen, pensioen en verblijfsrecht.</p>
-            <span class="ep-brief-card__open">Bekijk matrix &rarr;</span>
+            <p class="ep-brief-card__desc">Per land waar het sterk en zwak zit: netto, vermogen, pensioen en verblijfsrecht naast elkaar.</p>
+            <span class="ep-brief-card__open">Bekijk pagina &rarr;</span>
           </div>
         </a>
 
@@ -1205,8 +1265,8 @@
               <span class="ep-brief-card__pg">11</span>
               <h4 class="ep-brief-card__title">Vragen voor je fiscalist</h4>
             </div>
-            <p class="ep-brief-card__desc">8-12 concrete vragen op maat voor jouw scenario, om te bespreken met je fiscalist.</p>
-            <span class="ep-brief-card__open">Bekijk vragen &rarr;</span>
+            <p class="ep-brief-card__desc">8 tot 12 concrete vragen op maat van jouw scenario, klaar om mee te nemen naar je fiscalist.</p>
+            <span class="ep-brief-card__open">Bekijk pagina &rarr;</span>
           </div>
         </a>
       </div>
@@ -1220,7 +1280,7 @@
     </div>
 
     <div class="ep-cta-row">
-      <a href="#pakketten" class="ep-btn ep-btn--accent">Ik wil het Decide pakket</a>
+      <a href="#pakketten" class="ep-btn ep-btn--accent">Bekijk de pakketten</a>
     </div>
   </div>
 </section>
@@ -1228,59 +1288,14 @@
 <!-- ============ TESTIMONIALS ============ -->
 <section id="testimonials" class="ep-section ep-section--alt">
   <div class="ep-container">
-    <p class="ep-eyebrow ep-eyebrow--center">Reviews</p>
-    <h2 class="ep-h2 ep-h2--center">Wat de eerste gebruikers zeggen</h2>
+    <p class="ep-eyebrow ep-eyebrow--center">Beta</p>
+    <h2 class="ep-h2 ep-h2--center">Nu in beta bij de eerste gebruikers</h2>
     <p class="ep-lead ep-lead--center ep-narrow-inline">
-      De eerste gebruikers hebben hun scenario doorgerekend. Dit is wat ze ervan vonden.
+      Emigratieplan komt net uit de bouwfase. De eerste gebruikers rekenen nu hun scenario's door. Reviews plaatsen we hier zodra hun feedback binnen is, met naam en pakket erbij.
     </p>
-
-    <div class="ep-reviews" data-reviews>
-      <div class="ep-reviews__viewport">
-        <ul class="ep-reviews__track">
-          <li class="ep-review">
-            <div class="ep-review__stars" aria-label="5 van 5 sterren">★★★★★</div>
-            <p class="ep-review__quote">Reviewtekst volgt. Stuur je vier reviews en ze komen hier te staan, met naam en pakket erbij.</p>
-            <div class="ep-review__person">
-              <span class="ep-review__avatar" aria-hidden="true">1</span>
-              <span class="ep-review__id"><span class="ep-review__name">Review 1</span><span class="ep-review__meta">naam · pakket</span></span>
-            </div>
-          </li>
-          <li class="ep-review">
-            <div class="ep-review__stars" aria-label="5 van 5 sterren">★★★★★</div>
-            <p class="ep-review__quote">Reviewtekst volgt. Stuur je vier reviews en ze komen hier te staan, met naam en pakket erbij.</p>
-            <div class="ep-review__person">
-              <span class="ep-review__avatar" aria-hidden="true">2</span>
-              <span class="ep-review__id"><span class="ep-review__name">Review 2</span><span class="ep-review__meta">naam · pakket</span></span>
-            </div>
-          </li>
-          <li class="ep-review">
-            <div class="ep-review__stars" aria-label="5 van 5 sterren">★★★★★</div>
-            <p class="ep-review__quote">Reviewtekst volgt. Stuur je vier reviews en ze komen hier te staan, met naam en pakket erbij.</p>
-            <div class="ep-review__person">
-              <span class="ep-review__avatar" aria-hidden="true">3</span>
-              <span class="ep-review__id"><span class="ep-review__name">Review 3</span><span class="ep-review__meta">naam · pakket</span></span>
-            </div>
-          </li>
-          <li class="ep-review">
-            <div class="ep-review__stars" aria-label="5 van 5 sterren">★★★★★</div>
-            <p class="ep-review__quote">Reviewtekst volgt. Stuur je vier reviews en ze komen hier te staan, met naam en pakket erbij.</p>
-            <div class="ep-review__person">
-              <span class="ep-review__avatar" aria-hidden="true">4</span>
-              <span class="ep-review__id"><span class="ep-review__name">Review 4</span><span class="ep-review__meta">naam · pakket</span></span>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="ep-reviews__controls">
-        <button class="ep-reviews__btn" data-prev aria-label="Vorige reviews" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
-        </button>
-        <div class="ep-reviews__dots" aria-hidden="true"></div>
-        <button class="ep-reviews__btn" data-next aria-label="Volgende reviews" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-        </button>
-      </div>
-    </div>
+    <p class="ep-lead ep-lead--center ep-narrow-inline">
+      Wil je meedoen en meedenken? Beta-gebruikers krijgen launch-condities. Mail <a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a>.
+    </p>
 
     <div class="ep-cta-row">
       <a href="#pakketten" class="ep-btn ep-btn--accent">Bekijk de pakketten</a>
@@ -1290,7 +1305,7 @@
 
 <!-- ============ WAT ERIN ZIT ============ -->
 <section id="wat-erin-zit" class="ep-section">
-  <div class="ep-container">
+  <div class="ep-container ep-narrow">
     <p class="ep-eyebrow">Onder de motorkap</p>
     <h2 class="ep-h2">Wat er in de rekentool zit</h2>
 
@@ -1307,8 +1322,8 @@
       </li>
       <li>
         <span class="ep-stats-strip__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 1.8"/></svg></span>
-        <span class="ep-stats-strip__num">1.700+</span>
-        <span class="ep-stats-strip__lbl">development uren voor de bouw</span>
+        <span class="ep-stats-strip__num">50</span>
+        <span class="ep-stats-strip__lbl">jaar horizon, inclusief pensioen</span>
       </li>
       <li>
         <span class="ep-stats-strip__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
@@ -1318,12 +1333,10 @@
     </ul>
 
     <p class="ep-body-lg">
-      Vergelijk appels met appels, dus inkomstenbelasting in Nederland (box 1) met die van bijv. Spanje, Portugal of Griekenland. Datzelfde geldt voor vermogensheffingen, woonlasten en hypotheken, pensioenstelsels, pensioenopbouw, levensonderhoud en meer. <strong>Emigratieplan biedt een compleet financieel overzicht van jouw emigratieplan.</strong>
-      <br><br>
-      Ook de meestvoorkomende bijzondere regimes zijn meegenomen: NHR-2 in Portugal, Article 5B/5C in Griekenland, non-dom in Cyprus, Beckham Law in Spanje, Lump-sum en impatriate in Italië, 0% IB in UAE, vlakke tarieven in Bulgarije en Hongarije, en het refund-systeem in Malta.
+      Per land één rekenmotor op de regimes die ertoe doen. Box 1, 2 en 3 in Nederland. NHR-2 in Portugal. Article 5C in Griekenland. Non-dom in Cyprus. Beckham Law in Spanje. Lump-sum en impatriate in Italië. 0% IB in UAE. Vlakke tarieven in Bulgarije en Hongarije. Refund-systeem in Malta.
     </p>
     <p class="ep-body-lg">
-      Eén consistente set gegevens, zichtbaar en aanpasbaar. Een nieuw land toevoegen kost weken werk, juist omdat we zeker willen weten dat het echt klopt.
+      Geen losse vuistregels. Eén consistente set aannames, zichtbaar en aanpasbaar. Een nieuw land toevoegen kost weken werk, zodat jouw vergelijking blijft staan.
     </p>
 
     <h3 class="ep-h3">Wie dit bouwt</h3>
@@ -1342,32 +1355,176 @@
       </div>
 
       <p class="ep-founder__intro">
-        Ik bouwde Emigratieplan omdat ik mijn eigen vraag niet beantwoord kreeg: <em>wat doet emigreren met mijn netto positie over twintig, dertig jaar?</em> Geen enkele rekentool gaf het volledige plaatje. Dus maakte ik het zelf. Eerst voor mijn partner en mij, nu voor iedereen met dezelfde vraag.
+        Ik bouwde Emigratieplan omdat ik mijn eigen vraag niet beantwoord kreeg: wat doet emigreren met mijn netto positie over twintig, dertig jaar? Geen enkele rekentool gaf het volledige plaatje. Dus maakte ik het zelf. Eerst voor mijn partner en mij, nu voor iedereen met dezelfde vraag.
       </p>
 
       <div class="ep-cred-row">
         <div class="ep-cred">
           <span class="ep-cred__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
           <span class="ep-cred__title">Zelf onderweg</span>
-          <p class="ep-cred__body">Mijn partner en ik bereiden onze eigen emigratie voor. Ik bouw dus geen theorie, maar wat we zelf echt nodig hebben om te kiezen.</p>
+          <p class="ep-cred__body">Mijn partner en ik bereiden onze eigen emigratie voor. Ik bouw geen theorie, maar wat ik zelf nodig heb.</p>
         </div>
         <div class="ep-cred">
           <span class="ep-cred__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9.3 14.6l1.8 1.8 3.4-3.8"/></svg></span>
           <span class="ep-cred__title">Alleen officiële bronnen</span>
-          <p class="ep-cred__body">Elk tarief en elke regeling komt van de belastingdienst van het land zelf of betrouwbare lokale bronnen en fiscaal adviseurs.</p>
+          <p class="ep-cred__body">Elk tarief komt van de belastingdienst van het land zelf. Geen blogs, geen schattingen.</p>
         </div>
         <div class="ep-cred">
           <span class="ep-cred__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
           <span class="ep-cred__title">Systeemdenken</span>
-          <p class="ep-cred__body">Achtergrond in strategie en systemen. Eén consistente rekenstructuur om écht appels met appels te vergelijken.</p>
+          <p class="ep-cred__body">Achtergrond in strategie en systemen. Eén consistente rekenstructuur over tien landen.</p>
         </div>
       </div>
 
       <p class="ep-founder__wft">
-        NB. Ik ben geen WFT-adviseur, Emigratieplan is geen vervanging van een fiscalist. Wel maakt deze tool het gesprek met een fiscalist effectiever, omdat je met cijfers en goede vragen binnenkomt.
+        Geen WFT-adviseur, geen vervanging van een fiscalist. Wel maakt deze tool het gesprek met een fiscalist effectiever, omdat je met cijfers binnenkomt in plaats van met vragen.
       </p>
     </div>
 
+    <div class="ep-sources">
+      <h3 class="ep-h3">Waar de cijfers vandaan komen</h3>
+      <p class="ep-body-lg">
+        Elk tarief komt van de officiële belastingdienst van het betreffende land. Pensioen vanuit SVB en DNB. Macro vanuit CBS en Eurostat. Verdragen vanuit OECD en Ministerie van Financiën. Geen blogs, geen schattingen, geen forums.
+      </p>
+
+      <p class="ep-sources__group-title">Belastingdiensten per land</p>
+      <ul class="ep-sources__grid">
+        <li class="ep-src">
+          <span class="ep-src__flag">🇳🇱</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">Belastingdienst</span>
+            <span class="ep-src__role">Nederland · Box 1, 2, 3 · IB-aangifte</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇵🇹</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">Autoridade Tributária</span>
+            <span class="ep-src__role">Portugal · IRS, IRC, NHR-2 (IFICI)</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇪🇸</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">Agencia Tributaria</span>
+            <span class="ep-src__role">Spanje · IRPF, Beckham Law (Ley 14/2013)</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇬🇷</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">AADE</span>
+            <span class="ep-src__role">Griekenland · Article 5B, Article 5C</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇨🇾</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">Cyprus Tax Department</span>
+            <span class="ep-src__role">Cyprus · Non-dom regime, 15% CIT (2026)</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇮🇹</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">Agenzia delle Entrate</span>
+            <span class="ep-src__role">Italië · Impatriate, lump-sum, IRPEF</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇦🇪</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">Federal Tax Authority</span>
+            <span class="ep-src__role">UAE · 9% CIT, 0% IB, VAT</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇧🇬</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">НАП (NRA)</span>
+            <span class="ep-src__role">Bulgarije · 10% flat IB en CIT</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇭🇺</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">NAV</span>
+            <span class="ep-src__role">Hongarije · 15% flat IB, 9% CIT</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇲🇹</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">Malta Inland Revenue</span>
+            <span class="ep-src__role">Malta · IB, CIT refund-systeem</span>
+          </div>
+        </li>
+      </ul>
+
+      <p class="ep-sources__group-title">Pensioen, sociale zekerheid en macro</p>
+      <ul class="ep-sources__grid">
+        <li class="ep-src">
+          <span class="ep-src__flag">🇳🇱</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">SVB</span>
+            <span class="ep-src__role">Sociale Verzekeringsbank · AOW-opbouw en export</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇳🇱</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">DNB</span>
+            <span class="ep-src__role">De Nederlandsche Bank · pensioenstatistiek, lijfrente</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇳🇱</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">CBS</span>
+            <span class="ep-src__role">Centraal Bureau Statistiek · kosten levensonderhoud</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇪🇺</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">Eurostat</span>
+            <span class="ep-src__role">EU · prijsindexen, woonkosten, koopkracht</span>
+          </div>
+        </li>
+      </ul>
+
+      <p class="ep-sources__group-title">Internationale verdragen en regelgeving</p>
+      <ul class="ep-sources__grid">
+        <li class="ep-src">
+          <span class="ep-src__flag">🌐</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">OECD</span>
+            <span class="ep-src__role">Model Tax Convention, MLI, Pillar 2</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇪🇺</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">Europese Commissie</span>
+            <span class="ep-src__role">ATAD, DAC6, fiscale coördinatie</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇳🇱</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">Ministerie van Financiën</span>
+            <span class="ep-src__role">Bilaterale belastingverdragen NL en protocollen</span>
+          </div>
+        </li>
+        <li class="ep-src">
+          <span class="ep-src__flag">🇳🇱</span>
+          <div class="ep-src__body">
+            <span class="ep-src__name">KNB</span>
+            <span class="ep-src__role">Koninklijke Notariële Beroepsorganisatie · estate planning</span>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -1377,11 +1534,11 @@
     <p class="ep-eyebrow">Veelgestelde vragen</p>
     <h2 class="ep-h2">Wat je vooraf wilt weten</h2>
 
-      <details class="ep-faq">
-      <summary>Voor wie is Emigratieplan?</summary>
-      <p>Emigratieplan is voor mensen die serieus zijn over emigratie en goed voorbereid willen vertrekken. Je herkent je in het volgende: ik wil een onderbouwde keuze maken, ik weet dat emigreren grote impact heeft, en ik wil straks niet denken "had ik vooraf maar beter nagedacht".</p>
+    <details class="ep-faq">
+      <summary>Voor wie is Emigratieplan niet bedoeld?</summary>
+      <p>Niet voor mensen die binnen drie maanden vertrekken zonder fiscale voorbereiding. Niet voor mensen die belasting willen ontwijken via constructies zonder substance. Niet voor mensen die de keuze puur op gevoel willen maken. Wel voor mensen die zorgvuldig willen vertrekken, hun vermogen en pensioen willen beschermen, en de cijfers willen zien voordat ze beslissen.</p>
     </details>
-    
+
     <details class="ep-faq">
       <summary>Wat als ik later wil upgraden?</summary>
       <p>Upgraden van <a href="#pkg-compare" class="ep-pkg-link">Compare</a> naar <a href="#pkg-explore" class="ep-pkg-link">Explore</a> of <a href="#pkg-decide" class="ep-pkg-link">Decide</a> komt in een volgende versie. Voor nu kies je het pakket dat past bij hoeveel landen je wilt vergelijken. Heb je echt de verkeerde keuze gemaakt? Mail me even op <a href="mailto:kevin@emigratieplan.nl">kevin@emigratieplan.nl</a> en we regelen het.</p>
@@ -1409,16 +1566,11 @@
 
     <details class="ep-faq">
       <summary>Wat als ik nog niet weet welk land?</summary>
-      <p>Dan is <a href="#pkg-explore" class="ep-pkg-link">Explore</a> of <a href="#pkg-decide" class="ep-pkg-link">Decide</a> logischer dan <a href="#pkg-compare" class="ep-pkg-link">Compare</a>. Explore geeft je vijf landen plus Nederland op dezelfde aannames. Decide geeft je er tien plus handige tools met vragen, checklists en shortlists.</p>
+      <p>Dan is <a href="#pkg-explore" class="ep-pkg-link">Explore</a> of <a href="#pkg-decide" class="ep-pkg-link">Decide</a> logischer dan <a href="#pkg-compare" class="ep-pkg-link">Compare</a>. Explore geeft je vijf landen plus Nederland op dezelfde aannames. Decide geeft je er tien plus een Beslisgids die de cijfers vertaalt naar top 3's en aandachtspunten.</p>
     </details>
 
-      <details class="ep-faq">
-      <summary>Voor wie is Emigratieplan niet bedoeld?</summary>
-      <p>Niet voor mensen die binnen drie maanden vertrekken zonder fiscale voorbereiding. Niet voor mensen die belasting willen ontwijken via constructies zonder substance. Niet voor mensen die de keuze puur op gevoel willen maken. Wel voor mensen die zorgvuldig willen vertrekken, hun vermogen en pensioen willen beschermen, en de cijfers willen zien voordat ze beslissen.</p>
-    </details>
-    
     <div class="ep-cta-row">
-      <a href="#pakketten" class="ep-btn ep-btn--accent">Kies mijn pakket</a>
+      <a href="#pakketten" class="ep-btn ep-btn--accent">Naar de pakketten</a>
     </div>
   </div>
 </section>
@@ -1430,7 +1582,7 @@
     <h2 class="ep-h2 ep-h2--center">Ontvang een seintje bij volgende updates</h2>
     <p class="ep-lead ep-lead--center">
       Geen spam, promise. Eén mail wanneer er een nieuw land of regime
-      bijkomt, een paar super handige whitepapers over waar je op moet letten bij emigratie, en eenmalig een seintje bij grote releases.
+      bijkomt, een paar super handige content stukken, en eenmalig een seintje bij grote releases.
     </p>
 
     <form id="ep-brevo-form"
@@ -1687,7 +1839,7 @@
   });
 
   // Subtiele flow-cues tussen hoofdsecties (onbewuste downward nudge)
-  ['bronnen', 'patronen', 'voor-wie', 'impact-visual', 'pakketten', 'voorbeeld', 'wat-erin-zit', 'faq'].forEach(function (id) {
+  ['landen', 'patronen', 'voor-wie', 'impact-visual', 'pakketten', 'voorbeeld', 'wat-erin-zit', 'faq'].forEach(function (id) {
     var sec = document.getElementById(id);
     if (!sec || !sec.parentNode) return;
     var cue = document.createElement('div');
@@ -1710,55 +1862,5 @@
 })();
 </script>
 
-<script>
-(function () {
-  var root = document.querySelector('[data-reviews]');
-  if (!root) return;
-  var track = root.querySelector('.ep-reviews__track');
-  var cards = Array.prototype.slice.call(track.children);
-  if (!cards.length) return;
-  var prev = root.querySelector('[data-prev]');
-  var next = root.querySelector('[data-next]');
-  var dotsWrap = root.querySelector('.ep-reviews__dots');
-
-  function perView() { return window.innerWidth <= 720 ? 1 : 2; }
-  function stepPx() { return (cards[0].offsetWidth + 20) * perView(); }
-  function groupCount() { return Math.max(1, Math.ceil(cards.length / perView())); }
-
-  function buildDots() {
-    dotsWrap.innerHTML = '';
-    var n = groupCount();
-    for (var i = 0; i < n; i++) {
-      var b = document.createElement('button');
-      b.className = 'ep-reviews__dot';
-      b.type = 'button';
-      b.setAttribute('aria-label', 'Ga naar reviewgroep ' + (i + 1));
-      (function (idx) { b.addEventListener('click', function () { goTo(idx); }); })(i);
-      dotsWrap.appendChild(b);
-    }
-  }
-  function goTo(i) {
-    var pv = perView();
-    var target = Math.min(i * pv, cards.length - 1);
-    track.scrollTo({ left: cards[target].offsetLeft - cards[0].offsetLeft, behavior: 'smooth' });
-  }
-  function update() {
-    var dots = dotsWrap.children;
-    var cur = Math.round(track.scrollLeft / stepPx());
-    for (var i = 0; i < dots.length; i++) dots[i].classList.toggle('is-active', i === cur);
-    if (prev) prev.disabled = track.scrollLeft < 8;
-    if (next) next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
-  }
-  function step(dir) { track.scrollBy({ left: dir * stepPx(), behavior: 'smooth' }); }
-
-  if (prev) prev.addEventListener('click', function () { step(-1); });
-  if (next) next.addEventListener('click', function () { step(1); });
-  track.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
-  window.addEventListener('resize', function () { buildDots(); update(); });
-
-  buildDots();
-  update();
-})();
-</script>
 </body>
 </html>
