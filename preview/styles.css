@@ -2488,3 +2488,6 @@ tr:nth-last-child(-n+5) .ep-info::before {
   text-align: center; max-width: 660px; margin-left: auto; margin-right: auto;
 }
 #wat-erin-zit .ep-cred { text-align: center; align-items: center; }
+
+/* R30 — hero investment microcopy */
+.ep-hero__note { margin: 14px 0 0; font-size: 13px; color: var(--brown-mute); }
