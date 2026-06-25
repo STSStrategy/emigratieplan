@@ -357,6 +357,16 @@ svg, video, iframe, table { max-width: 100%; }
   display: flex; gap: 12px;
   margin-top: 16px; flex-wrap: wrap;
 }
+.ep-hero__promise {
+  margin: 20px 0 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--orange);
+  font-family: var(--font-serif);
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--brown);
+}
 .ep-hero__stats {
   align-self: start;
   background: var(--cream-warm);
